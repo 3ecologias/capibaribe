@@ -1,0 +1,15 @@
+// var app = require('express').createServer();
+
+var express = require("express");
+var app = express();
+
+app.get('/', function (req, res) {
+  res.sendfile(__dirname + '/index.html');
+});
+
+app.get('/*.(js|css|png)', function(req, res){
+  res.sendfile(__dirname + '/assets'+req.url);
+});
+
+app.listen(8080);
+console.log('capibaribe app at http://localhost:8080');

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>Parque Capibaribe</title>
+  
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
+  <script src='//api.tiles.mapbox.com/mapbox.js/v1.6.0/mapbox.js'></script>
+  <link href='//api.tiles.mapbox.com/mapbox.js/v1.6.0/mapbox.css' rel='stylesheet' />
+  
+  <style>
+    body { margin:0; padding:0; }
+    #map { position:absolute; top:0; bottom:0; width:100%; }
+  </style>
+</head>
+<body>
+<div id='map'></div>
+<script>
+
+var map = L.map('map').setView([-8.05, -34.91], 13);
+
+L.control.layers({
+    'Base Map': L.tileLayer('http://162.243.195.190:8888/v2/pc_base/{z}/{x}/{y}.png').addTo(map)
+}, {
+    'Bikes': L.tileLayer('http://162.243.195.190:8888/v2/pc_bikes/{z}/{x}/{y}.png'),
+    'População': L.tileLayer('http://162.243.195.190:8888/v2/pc_densidade/{z}/{x}/{y}.png')
+}).addTo(map); 
+
+</script>
+</body>
+</html>
