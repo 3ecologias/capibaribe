@@ -66,15 +66,19 @@
 <script>
 var map = L.map('map').setView([-8.05, -34.91], 13);
 var ui = document.getElementById('map-ui');
+addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_default/{z}/{x}/{y}.png'), 'O Rio e a Cidade', 1);
+addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_rpc/{z}/{x}/{y}.png'), 'Renda per Capta', 2);
+addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_density/{z}/{x}/{y}.png'), 'Densidade Populacional', 3);
+addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_vitalidades/{z}/{x}/{y}.png'), 'Vitalidades', 4);
+addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_estacoesbikeps/{z}/{x}/{y}.png'), 'Est. Bicicletas', 5);
+addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_fluviais/{z}/{x}/{y}.png'), 'Est. Barcos', 6);
 
-addLayer(L.tileLayer('http://162.243.195.190:8888/v2/pc_base/{z}/{x}/{y}.png'), 'Base', 1);
-addLayer(L.tileLayer('http://162.243.195.190:8888/v2/pc_bikes/{z}/{x}/{y}.png'), 'Bikes', 2);
-addLayer(L.tileLayer('http://162.243.195.190:8888/v2/pc_densidade/{z}/{x}/{y}.png'), 'Densidade', 3);
+
 
 function addLayer(layer, name, zIndex) {
     layer
-        .setZIndex(zIndex)
-        .addTo(map);
+        .setZIndex(zIndex);
+        // .addTo(map);
 
     // Create a simple layer switcher that toggles layers on
     // and off.
@@ -82,8 +86,18 @@ function addLayer(layer, name, zIndex) {
     var link = document.createElement('a');
 
     link.href = '#';
-    link.className = 'active';
+    // link.className = 'active';
+    link.className = '';
     link.innerHTML = name;
+
+    // hack to set first map to default.
+
+    if (zIndex == 1) {
+        layer.addTo(map);
+        link.className = 'active';
+    }
+
+    // end hack
 
     link.onclick = function(e) {
         e.preventDefault();
