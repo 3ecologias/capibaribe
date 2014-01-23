@@ -45,3 +45,13 @@ body { margin:0; padding:0; }
     border-top-color: #FFF;
     color: #FFF;
 }
+
+.wax-attribution {
+    bottom: 20px !important;
+    font: 10px/20px Arial,sans-serif;
+    left: 20px !important;
+    padding: 0 5px;
+    position: absolute;
+    text-align: center;
+    z-index: 99999;
+}
