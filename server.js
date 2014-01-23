@@ -11,5 +11,5 @@ app.get('/*.(js|css|png)', function(req, res){
   res.sendfile(__dirname + '/assets'+req.url);
 });
 
-app.listen(8080);
+app.listen(80);
 console.log('capibaribe app at http://localhost:8080');
