@@ -7,7 +7,7 @@ app.get('/', function (req, res) {
   res.sendfile(__dirname + '/index.html');
 });
 
-app.get('/*.(js|css|png)', function(req, res){
+app.get('/*.(js|css|png|jpg)', function(req, res){
   res.sendfile(__dirname + '/assets'+req.url);
 });
 
