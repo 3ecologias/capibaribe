@@ -22,7 +22,7 @@ addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_vitalidades/{z}/{x}
 addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_estacoesbikeps/{z}/{x}/{y}.png'), 'Est. Bicicletas', 5);
 addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_fluviais/{z}/{x}/{y}.png'), 'Est. Barcos', 6);
 
-new L.Control.Zoom({ position: 'bottomleft' }).addTo(map);
+new L.Control.Zoom({ position: 'bottomright' }).addTo(map);
 // disable drag and zoom handlers
 map.dragging.disable();
 map.touchZoom.disable();
