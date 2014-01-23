@@ -23,7 +23,13 @@ addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_estacoesbikeps/{z}/
 addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_fluviais/{z}/{x}/{y}.png'), 'Est. Barcos', 6);
 
 new L.Control.Zoom({ position: 'bottomleft' }).addTo(map);
-
+// disable drag and zoom handlers
+map.dragging.disable();
+map.touchZoom.disable();
+map.doubleClickZoom.disable();
+map.scrollWheelZoom.disable();
+// disable tap handler, if present.
+if (map.tap) map.tap.disable();
 
 
 function addLayer(layer, name, zIndex) {
