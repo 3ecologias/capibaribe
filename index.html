@@ -42,12 +42,12 @@
 <script>
 var map = L.map('map', { zoomControl: false }).setView([-8.05, -34.91], 13);
 var ui = document.getElementById('map-ui');
-addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_default/{z}/{x}/{y}.png'), 'O Rio e a Cidade', 1);
-addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_rpc/{z}/{x}/{y}.png'), 'Renda per Capta', 2);
-addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_density/{z}/{x}/{y}.png'), 'Densidade Populacional', 3);
-addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_vitalidades/{z}/{x}/{y}.png'), 'Vitalidades', 4);
-addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_estacoesbikeps/{z}/{x}/{y}.png'), 'Est. Bicicletas', 5);
-addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_fluviais/{z}/{x}/{y}.png'), 'Est. Barcos', 6);
+addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_default/{z}/{x}/{y}.png'), 'o rio e a cidade', 1);
+addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_rpc/{z}/{x}/{y}.png'), 'renda per capta', 2);
+addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_density/{z}/{x}/{y}.png'), 'densidade populacional', 3);
+addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_vitalidades/{z}/{x}/{y}.png'), 'vitalidades', 4);
+addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_estacoesbikeps/{z}/{x}/{y}.png'), 'est. bicicletas', 5);
+addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_fluviais/{z}/{x}/{y}.png'), 'barco bus', 6);
 
 new L.Control.Zoom({ position: 'bottomright' }).addTo(map);
 // disable drag and zoom handlers
