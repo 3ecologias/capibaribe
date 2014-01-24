@@ -13,7 +13,7 @@ header {width: 100%; z-index: 1; position: absolute;}
 
 #map-ui a {
     background: #FFF;
-    color: #3C4E5A;
+    color: #1BABAD;
     display: block;
     margin: 0;
     padding: 0;
@@ -25,7 +25,7 @@ header {width: 100%; z-index: 1; position: absolute;}
 }
 
 #map-ui a:hover {
-    background: #ECF5FA;
+    background: #1BBADA;
 }
 
 #map-ui li:last-child a {
@@ -40,8 +40,8 @@ header {width: 100%; z-index: 1; position: absolute;}
 }
 
 #map-ui a.active {
-    background: #3887BE;
-    border-color: #3887BE;
+    background: #1BABAD;
+    border-color: #1BBADA;
     border-top-color: #FFF;
     color: #FFF;
 }
@@ -52,23 +52,23 @@ header {width: 100%; z-index: 1; position: absolute;}
     border-color: transparent;
 }
 .navbar-default .navbar-nav > li > a {
-    color: #1BABAD;
+    color: #1BBADA;
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-    color: #1BBADA;
+    color: #1BABAD;
 }
 .navbar-default .navbar-nav > .active > a, 
 .navbar-default .navbar-nav > .active > a:hover, 
 .navbar-default .navbar-nav > .active > a:focus {
     color: #fff;
-    background-color: #1BBADA;
+    background-color: #1BABAD;
 }
 .navbar-default .navbar-nav > .open > a, 
 .navbar-default .navbar-nav > .open > a:hover, 
 .navbar-default .navbar-nav > .open > a:focus {
     color: #fff;
-    background-color: #1BABAD;
+    background-color: #1BBADA;
 }
 .navbar-default .navbar-nav > .open > a .caret, 
 .navbar-default .navbar-nav > .open > a:hover .caret, 
@@ -81,7 +81,7 @@ header {width: 100%; z-index: 1; position: absolute;}
 }
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus {
-    background-color: #1BBADA;
+    background-color: #1BABAD;
 }
 .navbar-default .navbar-toggle .icon-bar {
     background-color: #ecf0f1;
