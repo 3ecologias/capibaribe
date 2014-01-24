@@ -3,7 +3,7 @@ header {width: 100%; z-index: 1; position: absolute;}
 #map { position:absolute; top:0; bottom:0; width:100%; }
 #map-ui {
     position: absolute;
-    top: 15em;
+    top: 40%;
     left: 1em;
     list-style: none outside none;
     margin: 0px;
@@ -53,11 +53,11 @@ header {width: 100%; z-index: 1; position: absolute;}
     border-color: transparent;
 }
 .navbar-default .navbar-nav > li > a {
-    color: #1BBADA;
+    color: #1BABAD;
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-    color: #1BABAD;
+    color: #1BBADA;
 }
 .navbar-default .navbar-nav > .active > a, 
 .navbar-default .navbar-nav > .active > a:hover, 
