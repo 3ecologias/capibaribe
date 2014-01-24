@@ -3,18 +3,17 @@ header {width: 100%; z-index: 1; position: absolute;}
 #map { position:absolute; top:0; bottom:0; width:100%; }
 #map-ui {
     position: absolute;
-    top: 75px;
-    right: 10px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+    top: 40%;
+    left: 1em;
+    list-style: none outside none;
+    margin: 0px;
+    padding: 0px;
     z-index: 100;
 }
 
 #map-ui a {
-    font: normal 13px/18px 'Helvetica Neue', Helvetica, sans-serif;
     background: #FFF;
-    color: #3C4E5A;
+    color: #1BABAD;
     display: block;
     margin: 0;
     padding: 0;
@@ -26,7 +25,8 @@ header {width: 100%; z-index: 1; position: absolute;}
 }
 
 #map-ui a:hover {
-    background: #ECF5FA;
+    background: #1BABAD;
+    color: #fff;
 }
 
 #map-ui li:last-child a {
@@ -41,18 +41,65 @@ header {width: 100%; z-index: 1; position: absolute;}
 }
 
 #map-ui a.active {
-    background: #3887BE;
-    border-color: #3887BE;
+    background: #1BABAD;
+    border-color: #1BBADA;
     border-top-color: #FFF;
     color: #FFF;
 }
 
-.wax-attribution {
-    bottom: 20px !important;
-    font: 10px/20px Arial,sans-serif;
-    left: 20px !important;
-    padding: 0 5px;
-    position: absolute;
-    text-align: center;
-    z-index: 99999;
+/* Navbar */
+.navbar-default {
+    background-color: transparent;
+    border-color: transparent;
+}
+.navbar-default .navbar-nav > li > a {
+    color: #1BABAD;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: #1BBADA;
+}
+.navbar-default .navbar-nav > .active > a, 
+.navbar-default .navbar-nav > .active > a:hover, 
+.navbar-default .navbar-nav > .active > a:focus {
+    color: #fff;
+    background-color: #1BABAD;
+}
+.navbar-default .navbar-nav > .open > a, 
+.navbar-default .navbar-nav > .open > a:hover, 
+.navbar-default .navbar-nav > .open > a:focus {
+    color: #fff;
+    background-color: #1BABAD;
+}
+.navbar-default .navbar-nav > .open > a .caret, 
+.navbar-default .navbar-nav > .open > a:hover .caret, 
+.navbar-default .navbar-nav > .open > a:focus .caret {
+    border-top-color: #fff;
+    border-bottom-color: #fff;
+}
+.navbar-default .navbar-toggle {
+    border-color: transparent;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+    background-color: #1BABAD;
+}
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #ecf0f1;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+    border-color: transparent;
+}
+@media (max-width: 767px) {
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+        color: #ecf0f1;
+    }
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+        color: #fff;
+    }
+}
+.navbar-brand img {
+    max-width: 70%;
 }
