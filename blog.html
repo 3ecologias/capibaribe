@@ -1,0 +1,120 @@
+<div class="modal-header">
+	<a class="close" data-dismiss="modal">&times;</a>
+	<h3>Modal header 2</h3>
+</div>
+
+<div class="modal-body">
+
+	<script id="tmpl-audio" type="text/x-jsrender">
+		<article id="post-{{:id}}" class="post-{{:type}}">
+			{{if track_name || artist || album}}
+				<h1>
+					{{:track_name}}
+					{{if artist}} by {{:artist}}{{/if}}
+					{{if album}} from &lsquo;{{:album}}&rsquo;
+						{{if year}}({{:year}}){{/if}}
+					{{/if}}
+				</h1>
+			{{/if}}
+
+			{{:~getTintedAudioPlayer(#view, "#DDDDDD")}}
+
+			{{if plays}}<p>{{:plays}} plays</p>{{/if}}
+
+			{{:source}}
+
+			{{for #data tmpl="#tmpl-metadata"/}}
+		</article>
+	</script>
+
+	<script id="tmpl-chat" type="text/x-jsrender">
+		<article id="post-{{:id}}" class="post-{{:type}}">
+			<h1>{{:title}}</h1>
+
+			{{if dialogue}}
+				<ul class="chat">
+					{{for dialogue}}<li><strong>{{:label}}</strong> {{:phrase}}</li>{{/for}}
+				</ul>
+			{{/if}}
+
+			{{for #data tmpl="#tmpl-metadata"/}}
+		</article>
+	</script>
+
+	<script id="tmpl-link" type="text/x-jsrender">
+		<article id="post-{{:id}}" class="post-{{:type}}">
+			<h1><a href="{{:url}}">{{:title}}</a></h1>
+
+			{{:description}}
+
+			{{for #data tmpl="#tmpl-metadata"/}}
+		</article>
+	</script>
+
+	<script id="tmpl-photo" type="text/x-jsrender">
+		<article id="post-{{:id}}" class="post-{{:type}}">
+			{{if photoset_layout}}
+				<ul class="photoset">
+					{{for photos}}<li><img src="{{:~getPhotoURL(#view, 500)}}" /></li>{{/for}}
+				</ul>
+			{{else}}
+				<img src="{{for photos}}{{:~getPhotoURL(#view, 500)}}{{/for}}" />
+			{{/if}}
+
+			{{:caption}}
+
+			{{for #data tmpl="#tmpl-metadata"/}}
+		</article>
+	</script>
+
+	<script id="tmpl-quote" type="text/x-jsrender">
+		<article id="post-{{:id}}" class="post-{{:type}}">
+			<h1>{{:text}}</h1>
+
+			{{:source}}
+
+			{{for #data tmpl="#tmpl-metadata"/}}
+		</article>
+	</script>
+
+	<script id="tmpl-text" type="text/x-jsrender">
+		<article id="post-{{:id}}" class="post-{{:type}}">
+			<h1>{{:title}}</h1>
+
+			{{:body}}
+
+			{{for #data tmpl="#tmpl-metadata"/}}
+		</article>
+	</script>
+
+	<script id="tmpl-video" type="text/x-jsrender">
+		<article id="post-{{:id}}" class="post-{{:type}}">
+			{{:~getVideoEmbed(#view, 500)}}
+
+			{{:caption}}
+
+			{{for #data tmpl="#tmpl-metadata"/}}
+		</article>
+	</script>
+
+	<!-- Additional Metadata / Tag templates to avoid repetition of code -->
+
+	<script id="tmpl-metadata" type="text/x-jsrender">
+		{{if note_count > 0}}<p><small><a href="{{:post_url}}#notes">{{:note_count}} notes</a></small></p>{{/if}}
+
+		{{if tags}}<ul class="tags">{{for tags tmpl="#tmpl-tag"/}}</ul>{{/if}}
+	</script>
+
+	<script id="tmpl-tag" type="text/x-jsrender">
+		<li><a href="http://{{:~getHostname()}}/tagged/{{:#data}}">{{:#data}}</a></li>
+	</script>
+
+	<!-- Container elements to render posts into -->
+
+	<h1>Blog</h1>
+	<div id="all"></div>
+</div>
+
+<div class="modal-footer">
+	<a class="btn" data-dismiss="modal">Close</a>
+</div>
