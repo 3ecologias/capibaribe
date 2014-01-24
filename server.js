@@ -7,9 +7,13 @@ app.get('/', function (req, res) {
   res.sendfile(__dirname + '/index.html');
 });
 
+app.get('/tumblr', function (req, res) {
+  res.sendfile(__dirname + '/capiba.html');
+});
+
 app.get('/*.(js|css|png|jpg)', function(req, res){
   res.sendfile(__dirname + '/assets'+req.url);
 });
 
-app.listen(8080);
+app.listen(80);
 console.log('capibaribe app at http://localhost:8080');
