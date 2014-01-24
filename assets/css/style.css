@@ -3,16 +3,15 @@ header {width: 100%; z-index: 1; position: absolute;}
 #map { position:absolute; top:0; bottom:0; width:100%; }
 #map-ui {
     position: absolute;
-    top: 75px;
-    right: 10px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+    top: 13em;
+    left: 2em;
+    list-style: none outside none;
+    margin: 0px;
+    padding: 0px;
     z-index: 100;
 }
 
 #map-ui a {
-    font: normal 13px/18px 'Helvetica Neue', Helvetica, sans-serif;
     background: #FFF;
     color: #3C4E5A;
     display: block;
@@ -48,8 +47,6 @@ header {width: 100%; z-index: 1; position: absolute;}
 }
 
 /* Navbar */
-
-
 .navbar-default {
     background-color: transparent;
     border-color: transparent;
