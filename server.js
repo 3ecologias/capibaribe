@@ -7,11 +7,11 @@ app.get('/', function (req, res) {
   res.sendfile(__dirname + '/index.html');
 });
 
-app.get('/tumblr', function (req, res) {
-  res.sendfile(__dirname + '/tumblr.html');
-});
+// app.get('/tumblr', function (req, res) {
+//   res.sendfile(__dirname + '/tumblr.html');
+// });
 
-app.get('/blog', function (req, res) {
+app.get('/tumblr', function (req, res) {
   res.sendfile(__dirname + '/blog.html');
 });
 
