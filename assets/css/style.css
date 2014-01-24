@@ -3,16 +3,15 @@ header {width: 100%; z-index: 1; position: absolute;}
 #map { position:absolute; top:0; bottom:0; width:100%; }
 #map-ui {
     position: absolute;
-    top: 75px;
-    right: 10px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+    top: 13em;
+    left: 2em;
+    list-style: none outside none;
+    margin: 0px;
+    padding: 0px;
     z-index: 100;
 }
 
 #map-ui a {
-    font: normal 13px/18px 'Helvetica Neue', Helvetica, sans-serif;
     background: #FFF;
     color: #3C4E5A;
     display: block;
@@ -48,29 +47,16 @@ header {width: 100%; z-index: 1; position: absolute;}
 }
 
 /* Navbar */
-
-
 .navbar-default {
-    background-color: #1BAAAC;
-    border-color: #1BBADA;
+    background-color: transparent;
+    border-color: transparent;
 }
-
-/**
-.navbar-default .navbar-brand {
-    color: #ecf0f1;
-}
-.navbar-default .navbar-brand:hover,
-.navbar-default .navbar-brand:focus {
-    color: #fff;
-}
-*/
-
 .navbar-default .navbar-nav > li > a {
-    color: #ecf0f1;
+    color: #1BABAD;
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-    color: #fff;
+    color: #1BBADA;
 }
 .navbar-default .navbar-nav > .active > a, 
 .navbar-default .navbar-nav > .active > a:hover, 
@@ -82,24 +68,8 @@ header {width: 100%; z-index: 1; position: absolute;}
 .navbar-default .navbar-nav > .open > a:hover, 
 .navbar-default .navbar-nav > .open > a:focus {
     color: #fff;
-    background-color: #1BBADA;
+    background-color: #1BABAD;
 }
-.navbar-default .navbar-nav > .dropdown > a .caret {
-    border-top-color: #ecf0f1;
-    border-bottom-color: #ecf0f1;
-}
-
-/*
-.navbar-default .navbar-nav > .dropdown > a:hover .caret,
-.navbar-default .navbar-nav > .dropdown > a:focus .caret {
-    border-top-color: #fff;
-    border-bottom-color: #fff;
-}
-.navbar-default .navbar-nav > .dropdown .dropdown-menu .divider {
-    background-color: #ecf0f1;
-}
-*/
-
 .navbar-default .navbar-nav > .open > a .caret, 
 .navbar-default .navbar-nav > .open > a:hover .caret, 
 .navbar-default .navbar-nav > .open > a:focus .caret {
@@ -107,7 +77,7 @@ header {width: 100%; z-index: 1; position: absolute;}
     border-bottom-color: #fff;
 }
 .navbar-default .navbar-toggle {
-    border-color: #1BBADA;
+    border-color: transparent;
 }
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus {
@@ -118,7 +88,7 @@ header {width: 100%; z-index: 1; position: absolute;}
 }
 .navbar-default .navbar-collapse,
 .navbar-default .navbar-form {
-    border-color: #ecf0f1;
+    border-color: transparent;
 }
 @media (max-width: 767px) {
     .navbar-default .navbar-nav .open .dropdown-menu > li > a {
