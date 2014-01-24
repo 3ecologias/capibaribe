@@ -1,4 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>Parque Capibaribe</title>
+  <script src="js/jquery.tumblr-kit.min.js"></script>
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="http://borismoore.github.com/jsrender/jsrender.js"></script>
+    <script>
+      var TUMBLR_API_KEY = "qz5zBeyiO9gTJxUIhlH7bLVZXo88xafsjDxGTElGPBYW2wCRYE";
+      var TUMBLR_HOSTNAME = "parquecapibaribe.tumblr.com";
 
+      // On DOM Ready, perform these actions
+      $(function() {
+
+        function cyclePhotosets() {
+          // Cycle images in photosets
+          $(".photoset:not(.processed)").each(function() {
+            var me = $(this);
+            me.cycle();
+            me.imagesLoaded(function() {
+              me.height(me.find("img").first().height());
+            });
+            me.addClass("processed");
+          });
+        }
+
+        // Example Tumblr Kit usage
+
+        $("#all").getTumblrPosts({
+          limit: 10,
+          done: cyclePhotosets
+        });
+
+      });
+
+    </script>
+</head>
+<body>
 <div class="modal-header">
 	<a class="close" data-dismiss="modal">&times;</a>
 	<h3>Modal header 2</h3>
@@ -119,3 +157,6 @@
 <div class="modal-footer">
 	<a class="btn" data-dismiss="modal">Close</a>
 </div>
+
+</body>
+</html>
