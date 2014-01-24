@@ -8,7 +8,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/tumblr', function (req, res) {
-  res.sendfile(__dirname + '/capiba.html');
+  res.sendfile(__dirname + '/tumblr.html');
 });
 
 app.get('/*.(js|css|png|jpg)', function(req, res){
