@@ -36,51 +36,51 @@
 					done: cyclePhotosets
 				});
 
-				$("#audio").getTumblrPosts({
-					type: "audio",
-					limit: 1,
-					done: function(data, textStatus, jqXHR, url) {
-						if(typeof console !== "undefined") {
-							console.log(data);
-							console.log(textStatus);
-							console.log(jqXHR);
-							console.log(url);
-						}
-					}
-				});
+				// $("#audio").getTumblrPosts({
+				// 	type: "audio",
+				// 	limit: 1,
+				// 	done: function(data, textStatus, jqXHR, url) {
+				// 		if(typeof console !== "undefined") {
+				// 			console.log(data);
+				// 			console.log(textStatus);
+				// 			console.log(jqXHR);
+				// 			console.log(url);
+				// 		}
+				// 	}
+				// });
 
-				$("#chats").getTumblrPosts({
-					type: "chat",
-					limit: 2
-				});
+				// $("#chats").getTumblrPosts({
+				// 	type: "chat",
+				// 	limit: 2
+				// });
 
-				$("#links").getTumblrPosts({
-					type: "link",
-					limit: 3
-				});
+				// $("#links").getTumblrPosts({
+				// 	type: "link",
+				// 	limit: 3
+				// });
 
-				$("#photos").getTumblrPosts({
-					type: "photo",
-					limit: 3,
-					template: "#tmpl-photo",
-					done: cyclePhotosets
-				});
+				// $("#photos").getTumblrPosts({
+				// 	type: "photo",
+				// 	limit: 3,
+				// 	template: "#tmpl-photo",
+				// 	done: cyclePhotosets
+				// });
 
-				$("#quotes").getTumblrPosts({
-					type: "quote",
-					limit: 1,
-					offset: 20
-				});
+				// $("#quotes").getTumblrPosts({
+				// 	type: "quote",
+				// 	limit: 1,
+				// 	offset: 20
+				// });
 
-				$("#text").getTumblrPosts({
-					type: "text",
-					limit: 1
-				});
+				// $("#text").getTumblrPosts({
+				// 	type: "text",
+				// 	limit: 1
+				// });
 
-				$("#videos").getTumblrPosts({
-					type: "video",
-					limit: 3
-				});
+				// $("#videos").getTumblrPosts({
+				// 	type: "video",
+				// 	limit: 3
+				// });
 
 			});
 
@@ -212,7 +212,7 @@
 
 		<!-- Container elements to render posts into -->
 
-		<h1>All post types</h1>
+		<h1>Blog</h1>
 		<div id="all"></div>
 
 		<!-- <h1>Audio</h1>
