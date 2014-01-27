@@ -12,34 +12,8 @@
   <script src="http://code.jquery.com/jquery.js"></script>
   <script src="js/jquery.tumblr-kit.min.js"></script>
   <script src="http://borismoore.github.com/jsrender/jsrender.js"></script>
-    <script>
-      var TUMBLR_API_KEY = "qz5zBeyiO9gTJxUIhlH7bLVZXo88xafsjDxGTElGPBYW2wCRYE";
-      var TUMBLR_HOSTNAME = "parquecapibaribe.tumblr.com";
+  <script src="js/capibaribe.js"></script>
 
-      // On DOM Ready, perform these actions
-      $(function() {
-
-        function cyclePhotosets() {
-          // Cycle images in photosets
-          $(".photoset:not(.processed)").each(function() {
-            var me = $(this);
-            me.cycle();
-            me.imagesLoaded(function() {
-              me.height(me.find("img").first().height());
-            });
-            me.addClass("processed");
-          });
-        }
-
-        // Example Tumblr Kit usage
-
-        $("#all").getTumblrPosts({
-          limit: 10,
-          done: cyclePhotosets
-        });
-      });
-
-    </script>
 </head>
 
 <body>
@@ -178,7 +152,7 @@
       <h1>Blog</h1>
       <div id="all"></div>
     </div>
-    
+
 <ul id='map-ui'></ul>
 <div id='map'></div>
 
@@ -245,7 +219,6 @@ function addLayer(layer, name, zIndex) {
 
 <script src="https://code.jquery.com/jquery.js"></script>
 <script src="js/bootstrap.min.js"></script>
-<script src="js/capibaribe.js"></script>
 <!-- <script src="js/ajax.js"></script> -->
 
 </body>
