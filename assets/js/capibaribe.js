@@ -4,7 +4,9 @@ $(document).ready(function() {
 	 	$( "#blog-content" ).slideToggle( "slow" );
 
 		if($("#blog-content").is(":hidden")) {
-	        $('.nav li a').find('li.active').removeClass('active');	
+	        $('.nav li a').parent('ul').find('li.active').removeClass('active');	
+		} else {
+			$('.nav li a').parent('ul').find('li.active').removeClass('active');
 		}
 	});
 
