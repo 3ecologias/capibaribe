@@ -24,9 +24,9 @@ $(document).ready(function() {
         // }
 
         if($(".closePopsUp").is(":hidden")) {
-			$thisLi.addClass('active'); 
+			$ul.find('li.active').removeClass('active');
 		} else {
-			$ul.find('li.active').removeClass('active'); 
+			$thisLi.addClass('active'); 
 		}
 
     });	
