@@ -23,5 +23,9 @@ $(document).ready(function() {
         // 	});
         // }
 
+        if($(".closePopsUp").is(":visible")) {
+			$ul.find('li.active').removeClass('active'); 
+  		}
+
     });	
 });
