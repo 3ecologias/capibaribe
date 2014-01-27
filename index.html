@@ -167,6 +167,10 @@
 
     <script id="tmpl-photo" type="text/x-jsrender">
       <article id="post-{{:id}}" class="post-{{:type}}">
+        {{:caption}}
+
+        {{for #data tmpl="#tmpl-metadata"/}}
+        
         {{if photoset_layout}}
           <ul class="photoset">
             {{for photos}}<li><img src="{{:~getPhotoURL(#view, 500)}}" /></li>{{/for}}
@@ -174,10 +178,7 @@
         {{else}}
           <img src="{{for photos}}{{:~getPhotoURL(#view, 500)}}{{/for}}" />
         {{/if}}
-
-        {{:caption}}
-
-        {{for #data tmpl="#tmpl-metadata"/}}
+        
       </article>
     </script>
 
