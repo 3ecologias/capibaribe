@@ -23,7 +23,7 @@ $(document).ready(function() {
         // 	});
         // }
 
-        if($(".closePopsUp").click(function() {
+        if ( $(".closePopsUp").click(function()) {
         	$ul.find('li.active').removeClass('active');
         });
 			 
