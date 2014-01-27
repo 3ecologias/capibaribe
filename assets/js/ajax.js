@@ -21,18 +21,22 @@ $(document).ready(function() {
 					var data = {};
 					data.title = "title";
 					data.message = "message";
-					
-					$.ajax({
-						type: 'POST',
-						data: JSON.stringify(data),
-				        contentType: 'application/json',
-                        url: 'http://localhost/tumblr',						
-                        success: function(data) {
-                            console.log('success');
-                            console.log(JSON.stringify(data));
-                            $('<div class="modal hide fade">' + JSON.stringify(data) + '</div>').modal();
-                        }
-                    });
+					var url = $(this).attr('href');
+					if (url.indexOf('#') == 0) {
+						$(url).modal('open');
+					} else {	
+						$.ajax({
+							type: 'POST',
+							data: JSON.stringify(data),
+					        contentType: 'application/json',
+	                        url: 'http://localhost/tumblr',						
+	                        success: function(data) {
+	                            console.log('success');
+	                            console.log(JSON.stringify(data));
+	                            $('<div class="modal hide fade">' + JSON.stringify(data) + '</div>').modal();
+	                        }
+	                    });
+                    }
  
                 });				
 	
