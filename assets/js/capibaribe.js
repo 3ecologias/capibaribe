@@ -1,5 +1,6 @@
 $(document).ready(function() {
-	$( "#blog" ).click(function() {
+
+	$( "#blog, .closePopsUp" ).click(function() {
 	  $( "#blog-content" ).slideToggle( "slow" );
 	});
 
