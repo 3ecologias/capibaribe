@@ -103,3 +103,18 @@ header {width: 100%; z-index: 1; position: absolute;}
 .navbar-brand img {
     max-width: 70%;
 }
+
+#blog-content {
+    float: right;
+    height: auto;
+    border-radius: 1em;
+    width: 42%;
+    padding: 30px 20px;
+    background: none repeat scroll 0% 0% rgba(103, 166, 127, 0.6);
+    color: rgb(255, 255, 255);
+    text-align: justify;
+    position: fixed;
+    right: 50px;
+    bottom: 0;
+    display: none;
+}
