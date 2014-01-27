@@ -16,11 +16,11 @@ $(document).ready(function() {
                 $thisLi.addClass('active');
         }
 
-        if ($thisLi.hasClass('active')) {
-        	$thisLi.click(function() {
-        		$ul.find('li.active').removeClass('active');
-        	});
-        }
+        // if ($thisLi.hasClass('active')) {
+        // 	$thisLi.click(function() {
+        // 		$ul.find('li.active').removeClass('active');
+        // 	});
+        // }
 
     });	
 });
