@@ -23,11 +23,11 @@ $(document).ready(function() {
         // 	});
         // }
 
-        if ( $(".closePopsUp").click(function()) {
-        	$ul.find('li.active').removeClass('active');
-        });
-			 
-  		
+        if($(".closePopsUp").is(":visible")) {
+			$thisLi.addClass('active'); 
+		} else {
+			$ul.find('li.active').removeClass('active'); 
+		}
 
     });	
 });
