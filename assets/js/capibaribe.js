@@ -24,7 +24,10 @@ $(document).ready(function() {
         // }
 
         if($(".closePopsUp").is(":hidden")) {
-			$thisLi.removeClass('active');
+        	if (!$thisLi.hasClass('active')) {
+            	$ul.find('li.active').removeClass('active');
+            }
+				
 		} else {
 			$thisLi.addClass('active');
 		}
