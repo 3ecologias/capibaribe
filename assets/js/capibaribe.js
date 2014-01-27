@@ -23,11 +23,8 @@ $(document).ready(function() {
         // 	});
         // }
 
-        if($(".closePopsUp").is(":hidden")) {
-        	if (!$thisLi.hasClass('active')) {
-            	$ul.find('li.active').removeClass('active');
-            }
-				
+        if($("#blog-content").is(":hidden")) {
+        	$ul.find('li.active').removeClass('active');	
 		} else {
 			$thisLi.addClass('active');
 		}
