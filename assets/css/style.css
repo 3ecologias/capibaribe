@@ -3,7 +3,7 @@ header {width: 100%; z-index: 1; position: absolute;}
 #map { position:absolute; top:0; bottom:0; width:100%; }
 #map-ui {
     position: absolute;
-    top: 40%;
+    top: 33%;
     left: 1em;
     list-style: none outside none;
     margin: 0px;

@@ -268,12 +268,24 @@
 <script>
 var map = L.map('map', { zoomControl: false }).setView([-8.05, -34.91], 13);
 var ui = document.getElementById('map-ui');
-addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_default/{z}/{x}/{y}.png'), 'o rio e a cidade', 1);
-addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_rpc/{z}/{x}/{y}.png'), 'renda per capta', 2);
-addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_density/{z}/{x}/{y}.png'), 'densidade populacional', 3);
-addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_vitalidades/{z}/{x}/{y}.png'), 'vitalidades', 4);
-addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_estacoesbikeps/{z}/{x}/{y}.png'), 'est. bicicletas', 5);
-addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_fluviais/{z}/{x}/{y}.png'), 'barco bus', 6);
+addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_mapabase/{z}/{x}/{y}.png'), 'o rio e a cidade', 1);
+addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_rpa/{z}/{x}/{y}.png'), 'RPA', 2);
+addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_renda/{z}/{x}/{y}.png'), 'renda per capta', 3);
+addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_densidade/{z}/{x}/{y}.png'), 'densidade demográfica', 4);
+addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_livreexiste/{z}/{x}/{y}.png'), 'áreas livres', 5);
+addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_livreadicionais/{z}/{x}/{y}.png'), 'áreas livres adicionais', 6);
+addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_patrimonio/{z}/{x}/{y}.png'), 'patrimônio', 7);
+addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_sub/{z}/{x}/{y}.png'), 'aglomerados subnormais', 8);
+addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_pobres/{z}/{x}/{y}.png'), 'áreas pobres', 9);
+addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_zeis/{z}/{x}/{y}.png'), 'zeis', 10);
+addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_primarias/{z}/{x}/{y}.png'), 'vias primárias', 11);
+addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_secundarias/{z}/{x}/{y}.png'), 'vias secundárias', 12);
+addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_coletora/{z}/{x}/{y}.png'), 'vias coletoras', 13);
+addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_cicloviaexiste/{z}/{x}/{y}.png'), 'ciclovias existentes', 14);
+addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_cicloproposta/{z}/{x}/{y}.png'), 'ciclovias propostas', 15);
+addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pac_barcobus/{z}/{x}/{y}.png'), 'estações de barco', 16);
+addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_bikes/{z}/{x}/{y}.png'), 'escolas', 17);
+addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_mapafauna/{z}/{x}/{y}.png'), 'fauna e flora', 18);
 
 new L.Control.Zoom({ position: 'bottomleft' }).addTo(map);
 // disable drag and zoom handlers
