@@ -54,7 +54,7 @@ $(document).ready(function() {
 
         var $thisLi = $(this).parent('li');
         var $ul = $thisLi.parent('ul');
-        // var $id = $thisLi.find('a').attr('id');
+        var $id = $thisLi.find('a').attr('id');
 
         if (!$thisLi.hasClass('active'));
         {
