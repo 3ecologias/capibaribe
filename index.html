@@ -243,6 +243,7 @@
     <!-- Container elements to render posts into -->
     <div id="sobre-content">
       <div class="close-sobre"> <span class="glyphicon glyphicon-remove-circle"></span></div>
+      <br><br>
       <p>
       Esta plataforma é um produto do Parque Capibaribe - Caminho das Capivaras, convênio de cooperação técnica entre a Prefeitura da Cidade do Recife (PCR), através da Secretaria do Meio Ambiente e Sustentabilidade do Recife (SEMAS) e a Universidade Federal de Pernambuco (UFPE). </p>
 
@@ -261,6 +262,7 @@
       <h1> Diálogo com a população </h1>
       <p>
       Associados a esse corpo teórico e prático especializado, estão sendo desenvolvidos dispositivos de conhecimento para diálogo com a população, como por exemplo a promoção de workshops onde os moradores são convidados a experimentar ideias a serem implantadas nas bordas do rio, como também a criação desta plataforma aberta e georreferenciada para a construção de uma conscientização coletiva, colaborativa e democrática, verificando assim se as ideias propostas têm aderência ao que a população das margens e arredores do Capibaribe realmente necessita. </p>
+      <p><img src="images/marcas.png"></p>
     </div>
 
     <div id="blog-content">
@@ -302,7 +304,7 @@ addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_renda/{z}/{x}/{y}.p
 addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_mapafauna/{z}/{x}/{y}.png'), 'fauna e flora', 19);
 // addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_rpa/{z}/{x}/{y}.png'), 'RPA', 2);
 addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_quadras500/{z}/{x}/{y}.png'), 'áreas de influência', 2);
-
+addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_centralidades/{z}/{x}/{y}.png'), 'vitalidades', 20);
 addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_patrimonio/{z}/{x}/{y}.png'), 'áreas históricas', 7);
 addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_primarias/{z}/{x}/{y}.png'), 'vias primárias', 11);
 addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_secundarias/{z}/{x}/{y}.png'), 'vias secundárias', 12);
@@ -311,6 +313,7 @@ addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_cicloviaexiste/{z}/
 addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_cicloproposta/{z}/{x}/{y}.png'), 'PDCA 2014', 15);
 addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_bikes/{z}/{x}/{y}.png'), 'estações de bicicletas', 17);
 addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_mapaescola/{z}/{x}/{y}.png'), 'escolas', 18);
+
 
 
 new L.Control.Zoom({ position: 'bottomright' }).addTo(map);
