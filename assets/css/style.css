@@ -131,7 +131,7 @@ header {width: 100%; z-index: 1; position: absolute;}
 .post-photo {
     display: inline-block;
 }
-.close-insta, .close-blog {
+.close-insta, .close-blog, .close-twitter {
     top:0.5em;
     right:0.5em;
     width:auto;
@@ -143,6 +143,24 @@ header {width: 100%; z-index: 1; position: absolute;}
 }
 
 #insta-content {
+    float: right;
+    height: 80%;
+    border-radius: 1em;
+    width: 60%;
+    padding: 30px 20px;
+    background: none repeat scroll 0% 0% rgba(103, 166, 127, 0.6);
+    color: rgb(255, 255, 255);
+    text-align: justify;
+    position: fixed;
+    right: 50px;
+    bottom: 0;
+    display: none;
+    z-index: 1;
+    overflow: auto;
+
+}
+
+#twitter-content {
     float: right;
     height: 80%;
     border-radius: 1em;

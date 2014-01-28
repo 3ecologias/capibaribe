@@ -16,6 +16,14 @@ $(document).ready(function() {
 		}
 	});
 
+	$( "#twitter, .close-twitter" ).click(function() {
+	 	$( "#twitter-content" ).slideToggle( "slow" );
+
+		if($("#instafeed").is(":hidden")) {
+			
+		}
+	});
+
     $('.nav li a').on('click', function(e){
 
         e.preventDefault(); // prevent link click if necessary?
