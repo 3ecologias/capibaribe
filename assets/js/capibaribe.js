@@ -26,19 +26,19 @@ $(document).ready(function() {
 
 	$( ".close-blog" ).click(function() {
 	 	$( "#blog-content" ).slideToggle( "slow" );
-	 	$ul.find('li.active').removeClass('active');
+	 	$('.nav').find('li.active').removeClass('active');
 
 	});
 
 	$( ".close-insta" ).click(function() {
 	 	$( "#instagram-content" ).slideToggle( "slow" );
-	 	$ul.find('li.active').removeClass('active');
+	 	$('.nav').find('li.active').removeClass('active');
 
 	});
 
 	$( ".close-twitter" ).click(function() {
 	 	$( "#twitter-content" ).slideToggle( "slow" );
-	 	$ul.find('li.active').removeClass('active');
+	 	$('.nav').find('li.active').removeClass('active');
 	});
 
     $('.nav li a').on('click', function(e){
