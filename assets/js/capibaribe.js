@@ -67,30 +67,36 @@ $(document).ready(function() {
         	if($("#instagram-content").is(":hidden")) {
 	 		} else {
 	 			$( "#instagram-content" ).slideToggle( "fast" );
+	 			$ul.find('li.active').removeClass('active');
 	 		}
 	 		if($("#twitter-content").is(":hidden")) {
 	 		} else {
 	 			$( "#twitter-content" ).slideToggle( "fast" );
+	 			$ul.find('li.active').removeClass('active');
 	 		}
         } else if ($id == 'instagram') {
         	$( "#instagram-content" ).slideToggle( "slow" );
         	if($("#twitter-content").is(":hidden")) {
 	 		} else {
 	 			$( "#twitter-content" ).slideToggle( "fast" );
+	 			$ul.find('li.active').removeClass('active');
 	 		}
 	 		if($("#blog-content").is(":hidden")) {
 	 		} else {
 	 			$( "#blog-content" ).slideToggle( "fast" );
+	 			$ul.find('li.active').removeClass('active');
 	 		}
         } else if ($id == 'twitter') {
         	$( "#twitter-content" ).slideToggle( "slow" );
         	if($("#instagram-content").is(":hidden")) {
 	 		} else {
 	 			$( "#instagram-content" ).slideToggle( "fast" );
+	 			$ul.find('li.active').removeClass('active');
 	 		}
 	 		if($("#blog-content").is(":hidden")) {
 	 		} else {
 	 			$( "#blog-content" ).slideToggle( "fast" );
+	 			$ul.find('li.active').removeClass('active');
 	 		}
         }
 
