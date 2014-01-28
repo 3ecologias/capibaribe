@@ -122,13 +122,14 @@ header {width: 100%; z-index: 1; position: absolute;}
 }
 
 .close-insta, .close-blog {
-    top:0;
-    right:0;
-    /*width:20px;*/
-    /*height:20px;*/
+    top:0.5em;
+    right:0.5em;
+    width:auto;
+    height:auto;
     /*background:#900;*/
     position:absolute;
     cursor:pointer;
+    font-size: 2em;
 }
 
 #insta-content {

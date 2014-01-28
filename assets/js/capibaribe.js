@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-	$( "#blog, .closePopsUp" ).click(function() {
+	$( "#blog, .close-blog" ).click(function() {
 	 	$( "#blog-content" ).slideToggle( "slow" );
 
 		if($("#blog-content").is(":hidden")) {
@@ -8,7 +8,7 @@ $(document).ready(function() {
 		}
 	});
 
-	$( "#instagram, .closePopsUp" ).click(function() {
+	$( "#instagram, .close-insta" ).click(function() {
 	 	$( "#insta-content" ).slideToggle( "slow" );
 
 		if($("#instafeed").is(":hidden")) {
@@ -41,5 +41,5 @@ $(document).ready(function() {
 		openEffect	: 'none',
 		closeEffect	: 'none'
 	});
-		
+
 });
