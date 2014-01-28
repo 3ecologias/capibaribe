@@ -9,6 +9,7 @@ header {width: 100%; z-index: 1; position: absolute;}
     margin: 0px;
     padding: 0px;
     z-index: 100;
+    font-size: 0.8em;
 }
 
 #map-ui a {
