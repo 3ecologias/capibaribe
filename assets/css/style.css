@@ -211,3 +211,6 @@ header {width: 100%; z-index: 1; position: absolute;}
     -webkit-border-radius: 6px;
 }
 
+.leaflet-control-attribution {
+    display: none !important;
+}
