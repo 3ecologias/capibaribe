@@ -190,7 +190,7 @@
         
         {{if photoset_layout}}
           <ul class="photoset">
-            {{for photos}}<li><a class="fancybox" href="{{:~getPhotoURL(#view, 500)}}" rel="blog"><img src="{{:~getPhotoURL(#view, 150)}}" /></a></li>{{/for}}
+            {{for photos}}<li class="blog-gallery"><a class="fancybox" href="{{:~getPhotoURL(#view, 500)}}" rel="blog"><img src="{{:~getPhotoURL(#view, 150)}}" /></a></li>{{/for}}
           </ul>
         {{else}}
           <img src="{{for photos}}{{:~getPhotoURL(#view, 500)}}{{/for}}" />

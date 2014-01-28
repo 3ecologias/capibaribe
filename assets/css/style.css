@@ -121,6 +121,12 @@ header {width: 100%; z-index: 1; position: absolute;}
     overflow: auto;
 }
 
+.blog-gallery {
+    display: inline-block;
+    float: left;
+    list-style-type: none;
+}
+
 .close-insta, .close-blog {
     top:0.5em;
     right:0.5em;
