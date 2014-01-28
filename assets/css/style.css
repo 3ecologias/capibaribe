@@ -61,7 +61,9 @@ header {width: 100%; z-index: 1; position: absolute;}
     border-color: transparent;
 }
 .navbar-default .navbar-nav > li > a {
-    color: #1BABAD;
+    color: #FFF;
+    font-weight: bold;
+    text-shadow: 1px 2px 3px rgba(163, 163, 163, 1);
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
