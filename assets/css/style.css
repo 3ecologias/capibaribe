@@ -127,6 +127,9 @@ header {width: 100%; z-index: 1; position: absolute;}
     display: none;
     z-index: 101;
     overflow: auto;
+    -webkit-box-shadow: 6px 6px 8px 0px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow:    6px 6px 8px 0px rgba(50, 50, 50, 0.75);
+    box-shadow:         6px 6px 8px 0px rgba(50, 50, 50, 0.75);
 }
 
 .blog-gallery {
@@ -168,6 +171,9 @@ header {width: 100%; z-index: 1; position: absolute;}
     display: none;
     z-index: 101;
     overflow: auto;
+    -webkit-box-shadow: 6px 6px 8px 0px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow:    6px 6px 8px 0px rgba(50, 50, 50, 0.75);
+    box-shadow:         6px 6px 8px 0px rgba(50, 50, 50, 0.75);
 
 }
 
@@ -175,7 +181,7 @@ header {width: 100%; z-index: 1; position: absolute;}
     float: right;
     height: 85%;
     border-radius: 1em;
-    width: 42%;
+    width: auto;
     padding: 30px 20px;
     background: none repeat scroll 0% 0% rgba(103, 166, 127, 0.6);
     color: rgb(255, 255, 255);
@@ -186,6 +192,9 @@ header {width: 100%; z-index: 1; position: absolute;}
     display: none;
     z-index: 101;
     overflow: auto;
+    -webkit-box-shadow: 6px 6px 8px 0px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow:    6px 6px 8px 0px rgba(50, 50, 50, 0.75);
+    box-shadow:         6px 6px 8px 0px rgba(50, 50, 50, 0.75);
 
 }
 
