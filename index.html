@@ -102,7 +102,7 @@
         tagName: 'parquecapibaribe',
         clientId: 'ead3f7bcfe2947aeaa730362c007a1cd',
         resolution: 'standard_resolution',
-        template: '<a class="fancybox" rel="galeria" href="{{image}}" target="_blank" title="{{caption}}, {{likes}} likes"><img src="{{image}}" /></a>'
+        template: '<a class="fancybox" rel="galeria" href="{{image}}" title="{{caption}}, {{likes}} likes"><img src="{{image}}" /></a>'
     });
     feed.run();
 </script>
@@ -190,7 +190,7 @@
         
         {{if photoset_layout}}
           <ul class="photoset">
-            {{for photos}}<li><img src="{{:~getPhotoURL(#view, 500)}}" /></li>{{/for}}
+            {{for photos}}<li><a class="fancybox" href="{{:~getPhotoURL(#view, 500)}}" rel="blog"><img src="{{:~getPhotoURL(#view, 150)}}" /></a></li>{{/for}}
           </ul>
         {{else}}
           <img src="{{for photos}}{{:~getPhotoURL(#view, 500)}}{{/for}}" />
