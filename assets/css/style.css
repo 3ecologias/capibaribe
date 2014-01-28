@@ -206,11 +206,11 @@ header {width: 100%; z-index: 1; position: absolute;}
 }
  
 ::-webkit-scrollbar-track-piece  {
-    background-color: #3b3b3b;
+    background-color: #1BABAD;
     -webkit-border-radius: 6px;
 }
  
 ::-webkit-scrollbar-thumb:vertical {
-    background-color: #666;
+    background-color: #f2f2f2;
     -webkit-border-radius: 6px;
 }
