@@ -26,26 +26,19 @@ $(document).ready(function() {
 
 	$( ".close-blog" ).click(function() {
 	 	$( "#blog-content" ).slideToggle( "slow" );
+	 	$ul.find('li.active').removeClass('active');
 
-		if($("#blog-content").is(":hidden")) {
-
-		}
 	});
 
 	$( ".close-insta" ).click(function() {
 	 	$( "#instagram-content" ).slideToggle( "slow" );
+	 	$ul.find('li.active').removeClass('active');
 
-		if($("#instafeed").is(":hidden")) {
-			
-		}
 	});
 
 	$( ".close-twitter" ).click(function() {
 	 	$( "#twitter-content" ).slideToggle( "slow" );
-
-		if($("#instafeed").is(":hidden")) {
-			
-		}
+	 	$ul.find('li.active').removeClass('active');
 	});
 
     $('.nav li a').on('click', function(e){
@@ -67,36 +60,30 @@ $(document).ready(function() {
         	if($("#instagram-content").is(":hidden")) {
 	 		} else {
 	 			$( "#instagram-content" ).slideToggle( "fast" );
-	 			$ul.find('li.active').removeClass('active');
 	 		}
 	 		if($("#twitter-content").is(":hidden")) {
 	 		} else {
 	 			$( "#twitter-content" ).slideToggle( "fast" );
-	 			$ul.find('li.active').removeClass('active');
 	 		}
         } else if ($id == 'instagram') {
         	$( "#instagram-content" ).slideToggle( "slow" );
         	if($("#twitter-content").is(":hidden")) {
 	 		} else {
 	 			$( "#twitter-content" ).slideToggle( "fast" );
-	 			$ul.find('li.active').removeClass('active');
 	 		}
 	 		if($("#blog-content").is(":hidden")) {
 	 		} else {
 	 			$( "#blog-content" ).slideToggle( "fast" );
-	 			$ul.find('li.active').removeClass('active');
 	 		}
         } else if ($id == 'twitter') {
         	$( "#twitter-content" ).slideToggle( "slow" );
         	if($("#instagram-content").is(":hidden")) {
 	 		} else {
 	 			$( "#instagram-content" ).slideToggle( "fast" );
-	 			$ul.find('li.active').removeClass('active');
 	 		}
 	 		if($("#blog-content").is(":hidden")) {
 	 		} else {
 	 			$( "#blog-content" ).slideToggle( "fast" );
-	 			$ul.find('li.active').removeClass('active');
 	 		}
         }
 
