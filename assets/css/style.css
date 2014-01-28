@@ -112,6 +112,26 @@ header {width: 100%; z-index: 1; position: absolute;}
     max-width: 70%;
 }
 
+#sobre-content {
+    float: right;
+    height: 85%;
+    border-radius: 1em;
+    width: 50%;
+    padding: 30px 20px;
+    background: none repeat scroll 0% 0% rgba(103, 166, 127, 0.6);
+    color: rgb(255, 255, 255);
+    text-align: justify;
+    position: fixed;
+    right: 50px;
+    bottom: 0;
+    display: none;
+    z-index: 101;
+    overflow: auto;
+    -webkit-box-shadow: 6px 6px 8px 0px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow:    6px 6px 8px 0px rgba(50, 50, 50, 0.75);
+    box-shadow:         6px 6px 8px 0px rgba(50, 50, 50, 0.75);
+}
+
 #blog-content {
     float: right;
     height: 85%;
@@ -145,7 +165,7 @@ header {width: 100%; z-index: 1; position: absolute;}
     margin-bottom: 5em;
     padding-top: 1em;
 }
-.close-insta, .close-blog, .close-twitter {
+.close-insta, .close-blog, .close-twitter, .close-sobre {
     top:0.5em;
     right:0.5em;
     width:auto;

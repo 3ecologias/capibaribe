@@ -24,6 +24,12 @@ $(document).ready(function() {
 	// 	}
 	// });
 
+	$( ".close-sobre" ).click(function() {
+	 	$( "#sobre-content" ).slideToggle( "slow" );
+	 	$('.nav').find('li.active').removeClass('active');
+
+	});
+
 	$( ".close-blog" ).click(function() {
 	 	$( "#blog-content" ).slideToggle( "slow" );
 	 	$('.nav').find('li.active').removeClass('active');
@@ -65,6 +71,10 @@ $(document).ready(function() {
 	 		} else {
 	 			$( "#twitter-content" ).slideToggle( "fast" );
 	 		}
+	 		if($("#sobre-content").is(":hidden")) {
+	 		} else {
+	 			$( "#sobre-content" ).slideToggle( "fast" );
+	 		}
         } else if ($id == 'instagram') {
         	$( "#instagram-content" ).slideToggle( "slow" );
         	if($("#twitter-content").is(":hidden")) {
@@ -74,6 +84,10 @@ $(document).ready(function() {
 	 		if($("#blog-content").is(":hidden")) {
 	 		} else {
 	 			$( "#blog-content" ).slideToggle( "fast" );
+	 		}
+	 		if($("#sobre-content").is(":hidden")) {
+	 		} else {
+	 			$( "#sobre-content" ).slideToggle( "fast" );
 	 		}
         } else if ($id == 'twitter') {
         	$( "#twitter-content" ).slideToggle( "slow" );
@@ -85,7 +99,25 @@ $(document).ready(function() {
 	 		} else {
 	 			$( "#blog-content" ).slideToggle( "fast" );
 	 		}
-        }
+	 		if($("#sobre-content").is(":hidden")) {
+	 		} else {
+	 			$( "#sobre-content" ).slideToggle( "fast" );
+	 		}
+        } else if ($id == 'sobre') {
+        	$( "#sobre-content" ).slideToggle( "slow" );
+        	if($("#twitter-content").is(":hidden")) {
+	 		} else {
+	 			$( "#twitter-content" ).slideToggle( "fast" );
+	 		}
+	 		if($("#blog-content").is(":hidden")) {
+	 		} else {
+	 			$( "#blog-content" ).slideToggle( "fast" );
+	 		}
+	 		if($("#instagram-content").is(":hidden")) {
+	 		} else {
+	 			$( "#instagram-content" ).slideToggle( "fast" );
+	 		}
+	 	}
 
         // if ($thisLi.hasClass('active')) {
         // 	$thisLi.click(function() {
