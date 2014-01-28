@@ -123,7 +123,7 @@ header {width: 100%; z-index: 1; position: absolute;}
     right: 50px;
     bottom: 0;
     display: none;
-    z-index: 1;
+    z-index: 101;
     overflow: auto;
 }
 
@@ -136,6 +136,8 @@ header {width: 100%; z-index: 1; position: absolute;}
 
 .post-photo {
     display: inline-block;
+    border-top: 3px solid whitesmoke;
+    margin-bottom: 5em;
 }
 .close-insta, .close-blog, .close-twitter {
     top:0.5em;
@@ -161,7 +163,7 @@ header {width: 100%; z-index: 1; position: absolute;}
     right: 50px;
     bottom: 0;
     display: none;
-    z-index: 1;
+    z-index: 101;
     overflow: auto;
 
 }
@@ -179,7 +181,7 @@ header {width: 100%; z-index: 1; position: absolute;}
     right: 50px;
     bottom: 0;
     display: none;
-    z-index: 1;
+    z-index: 101;
     overflow: auto;
 
 }
@@ -220,3 +222,4 @@ header {width: 100%; z-index: 1; position: absolute;}
     background-color: #f2f2f2;
     -webkit-border-radius: 6px;
 }
+
