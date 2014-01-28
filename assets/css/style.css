@@ -182,3 +182,15 @@ header {width: 100%; z-index: 1; position: absolute;}
     width: 20%;
     padding: 7px;
 }
+
+.timeline {
+    font-weight: bolder;
+    color: #fff;
+    background: none !important;
+    margin-bottom: 0px !important;
+
+}
+
+.customisable-border {
+    border: none !important;
+}
