@@ -4,9 +4,15 @@ $(document).ready(function() {
 	 	$( "#blog-content" ).slideToggle( "slow" );
 
 		if($("#blog-content").is(":hidden")) {
-	        $('.nav li a').parent('ul').find('li.active').removeClass('active');	
-		} else {
-			$('.nav li a').parent('ul').find('li.active').removeClass('active');
+
+		}
+	});
+
+	$( "#instagram, .closePopsUp" ).click(function() {
+	 	$( "#instafeed" ).slideToggle( "slow" );
+
+		if($("#instafeed").is(":hidden")) {
+			
 		}
 	});
 

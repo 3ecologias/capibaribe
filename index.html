@@ -13,6 +13,7 @@
   <script src="js/jquery.tumblr-kit.min.js"></script>
   <script src="http://borismoore.github.com/jsrender/jsrender.js"></script>
   <script src="js/capibaribe.js"></script>
+  <script type="text/javascript" src="js/instafeed.min.js"></script>
 <!-- <script src="js/ajax.js"></script> -->
 
   <script>
@@ -90,6 +91,16 @@
       });
 
     </script>
+
+<script type="text/javascript">
+    var feed = new Instafeed({
+        get: 'tagged',
+        tagName: 'parquecapibaribe',
+        clientId: 'ead3f7bcfe2947aeaa730362c007a1cd'
+    });
+    feed.run();
+</script>
+
 </head>
 
 <body>
@@ -112,7 +123,7 @@
       <li><a href="#">sobre</a></li>
       <li><a href="#">equipe</a></li>
       <li><a href="#" id="blog">blog</a></li>
-      <li><a href="#">instagram</a></li>
+      <li><a href="#" id="instagram">instagram</a></li>
       <li><a href="#">twitter</a></li>
     </ul>
   </div><!-- /.navbar-collapse -->
