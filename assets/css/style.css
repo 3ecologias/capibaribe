@@ -125,8 +125,12 @@ header {width: 100%; z-index: 1; position: absolute;}
     display: inline-block;
     float: left;
     list-style-type: none;
+    padding: 7px;
 }
 
+.post-photo {
+    display: inline-block;
+}
 .close-insta, .close-blog {
     top:0.5em;
     right:0.5em;
