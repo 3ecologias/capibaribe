@@ -14,6 +14,9 @@
   <script src="http://borismoore.github.com/jsrender/jsrender.js"></script>
   <script src="js/capibaribe.js"></script>
   <script type="text/javascript" src="js/instafeed.min.js"></script>
+  <script type="text/javascript" src="js/fancybox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
+  <link rel="stylesheet" href="js/fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+  <script type="text/javascript" src="js/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 <!-- <script src="js/ajax.js"></script> -->
 
   <script>
@@ -38,7 +41,7 @@
         // Example Tumblr Kit usage
 
         $("#all").getTumblrPosts({
-          limit: 10,
+          limit: 20,
           done: cyclePhotosets
         });
 
@@ -97,7 +100,8 @@
         get: 'tagged',
         tagName: 'parquecapibaribe',
         clientId: 'ead3f7bcfe2947aeaa730362c007a1cd',
-        template: '<a href="{{link}}" target="_blank"><img src="{{image}}" /></a>'
+        resolution: 'standard_resolution',
+        template: '<a class="fancybox" rel="galeria" href="{{image}}" target="_blank" title="{{caption}}"><img src="{{image}}" /></a>'
     });
     feed.run();
 </script>
