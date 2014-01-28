@@ -9,7 +9,7 @@ $(document).ready(function() {
 	});
 
 	$( "#instagram, .closePopsUp" ).click(function() {
-	 	$( "#instafeed" ).slideToggle( "slow" );
+	 	$( "#insta-content" ).slideToggle( "slow" );
 
 		if($("#instafeed").is(":hidden")) {
 			
