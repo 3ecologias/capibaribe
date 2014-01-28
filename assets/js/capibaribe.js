@@ -64,10 +64,34 @@ $(document).ready(function() {
 
         if ($id == 'blog') {
         	$( "#blog-content" ).slideToggle( "slow" );
+        	if($("#instagram-content").is(":hidden")) {
+	 		} else {
+	 			$( "#instagram-content" ).slideToggle( "fast" );
+	 		}
+	 		if($("#twitter-content").is(":hidden")) {
+	 		} else {
+	 			$( "#twitter-content" ).slideToggle( "fast" );
+	 		}
         } else if ($id == 'instagram') {
         	$( "#instagram-content" ).slideToggle( "slow" );
+        	if($("#twitter-content").is(":hidden")) {
+	 		} else {
+	 			$( "#twitter-content" ).slideToggle( "fast" );
+	 		}
+	 		if($("#blog-content").is(":hidden")) {
+	 		} else {
+	 			$( "#blog-content" ).slideToggle( "fast" );
+	 		}
         } else if ($id == 'twitter') {
         	$( "#twitter-content" ).slideToggle( "slow" );
+        	if($("#instagram-content").is(":hidden")) {
+	 		} else {
+	 			$( "#instagram-content" ).slideToggle( "fast" );
+	 		}
+	 		if($("#blog-content").is(":hidden")) {
+	 		} else {
+	 			$( "#blog-content" ).slideToggle( "fast" );
+	 		}
         }
 
         // if ($thisLi.hasClass('active')) {
