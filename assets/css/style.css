@@ -3,13 +3,18 @@ header {width: 100%; z-index: 1; position: absolute;}
 #map { position:absolute; top:0; bottom:0; width:100%; }
 #map-ui {
     position: absolute;
-    top: 33%;
-    left: 1em;
+    bottom: 2em;
+    left: 5em;
     list-style: none outside none;
     margin: 0px;
     padding: 0px;
     z-index: 100;
     font-size: 0.8em;
+}
+
+#map-ui li {
+    float: left;
+    display: inline-block;
 }
 
 #map-ui a {
