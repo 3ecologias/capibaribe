@@ -101,7 +101,7 @@
         tagName: 'parquecapibaribe',
         clientId: 'ead3f7bcfe2947aeaa730362c007a1cd',
         resolution: 'standard_resolution',
-        template: '<a class="fancybox" rel="galeria" href="{{image}}" target="_blank" title="{{caption}}"><img src="{{image}}" /></a>'
+        template: '<a class="fancybox" rel="galeria" href="{{image}}" target="_blank" title="{{caption}}, {{likes}} likes"><img src="{{image}}" /></a>'
     });
     feed.run();
 </script>
@@ -242,13 +242,13 @@
 
     <!-- Container elements to render posts into -->
     <div id="blog-content">
-      <div class="closePopsUp"></div>
+      <div class="close-blog"> <span class="glyphicon glyphicon-remove-circle"></span></div>
       <h1>Blog</h1>
       <div id="all"></div>
     </div>
 
     <div id="insta-content">
-      <div class="closePopsUp"></div>
+      <div class="close-insta"><span class="glyphicon glyphicon-remove-circle"></span></div>
       <h1>#parquecapibaribe</h1>
       <div id="instafeed"></div>
     </div>

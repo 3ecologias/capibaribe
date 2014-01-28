@@ -121,12 +121,12 @@ header {width: 100%; z-index: 1; position: absolute;}
     overflow: auto;
 }
 
-.closePopsUp {
+.close-insta, .close-blog {
     top:0;
     right:0;
-    width:20px;
-    height:20px;
-    background:#900;
+    /*width:20px;*/
+    /*height:20px;*/
+    /*background:#900;*/
     position:absolute;
     cursor:pointer;
 }
@@ -135,7 +135,7 @@ header {width: 100%; z-index: 1; position: absolute;}
     float: right;
     height: 80%;
     border-radius: 1em;
-    width: 50%;
+    width: 60%;
     padding: 30px 20px;
     background: none repeat scroll 0% 0% rgba(103, 166, 127, 0.6);
     color: rgb(255, 255, 255);
@@ -150,5 +150,5 @@ header {width: 100%; z-index: 1; position: absolute;}
 }
 
 #instafeed img {
-    width: 30%;
+    width: 20%;
 }
