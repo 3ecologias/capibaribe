@@ -96,7 +96,8 @@
     var feed = new Instafeed({
         get: 'tagged',
         tagName: 'parquecapibaribe',
-        clientId: 'ead3f7bcfe2947aeaa730362c007a1cd'
+        clientId: 'ead3f7bcfe2947aeaa730362c007a1cd',
+        template: '<a href="{{link}}" target="_blank"><img src="{{image}}" /></a>'
     });
     feed.run();
 </script>
