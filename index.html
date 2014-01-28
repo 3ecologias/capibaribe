@@ -287,7 +287,7 @@ addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pac_barcobus/{z}/{x}/{
 addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_bikes/{z}/{x}/{y}.png'), 'escolas', 17);
 addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_mapafauna/{z}/{x}/{y}.png'), 'fauna e flora', 18);
 
-new L.Control.Zoom({ position: 'bottomleft' }).addTo(map);
+new L.Control.Zoom({ position: 'bottomright' }).addTo(map);
 // disable drag and zoom handlers
 map.touchZoom.disable();
 map.doubleClickZoom.disable();
