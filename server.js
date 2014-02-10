@@ -2,7 +2,7 @@
 
 var express = require("express");
 var app = express();
-var Syslog = require('./node-syslog');
+var Syslog = require("node-syslog");
 
 app.get('/', function (req, res) {
   res.sendfile(__dirname + '/index.html');
