@@ -114,7 +114,7 @@ header {width: 100%; z-index: 1; position: absolute;}
     }
 }
 .navbar-brand img {
-    max-width: 70%;
+    max-width: 50%;
 }
 
 #sobre-content {
