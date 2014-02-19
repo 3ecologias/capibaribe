@@ -8,6 +8,10 @@ app.get('/', function (req, res) {
   res.sendfile(__dirname + '/index.html');
 });
 
+app.get('/v2', function (req, res) {
+  res.sendfile(__dirname + '/index2.html');
+});
+
 app.get('/tumblr', function (req, res) {
   res.sendfile(__dirname + '/tumblr.html');
 });

@@ -47,6 +47,28 @@ $(document).ready(function() {
 	 	$('.nav').find('li.active').removeClass('active');
 	});
 
+	// map Project
+
+	$( ".close-t1" ).click(function() {
+	 	$( "#t1-content" ).slideToggle( "slow" );
+	 	// $('.nav').find('li.active').removeClass('active');
+	});
+
+	$( ".close-t2" ).click(function() {
+	 	$( "#t2-content" ).slideToggle( "slow" );
+	 	// $('.nav').find('li.active').removeClass('active');
+	});
+	$( ".close-t3" ).click(function() {
+	 	$( "#t3-content" ).slideToggle( "slow" );
+	 	// $('.nav').find('li.active').removeClass('active');
+	});
+	$( ".close-t4" ).click(function() {
+	 	$( "#t4-content" ).slideToggle( "slow" );
+	 	// $('.nav').find('li.active').removeClass('active');
+	});
+
+
+	// nav handlers
     $('.nav li a').on('click', function(e){
 
         e.preventDefault(); // prevent link click if necessary?

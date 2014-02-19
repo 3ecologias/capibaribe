@@ -6,7 +6,7 @@ header {width: 100%; z-index: 1; position: absolute;}
 #map { position:absolute; top:0; bottom:0; width:100%; }
 #map-ui {
     position: absolute;
-    bottom: 10px;
+    bottom: 40px;
     left: 2em;
     list-style: none outside none;
     margin: 0px;
@@ -56,6 +56,62 @@ header {width: 100%; z-index: 1; position: absolute;}
     border-color: #1BBADA;
     border-top-color: #FFF;
     color: #FFF;
+}
+
+/* Map Project */
+
+#map-ui-project {
+    position: absolute;
+    bottom: 10px;
+    left: 2em;
+    list-style: none outside none;
+    margin: 0px;
+    padding: 0px;
+    z-index: 100;
+    font-size: 0.8em;
+}
+
+#map-ui-project li {
+    float: left;
+    display: inline-block;
+    line-height: 0.5em;
+    width: 150px;
+}
+
+#map-ui-project a {
+    background: #FFCC00;
+    color: #3366FF;
+    display: block;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #BBB;
+    border-bottom-width: 0;
+    min-width: 138px;
+    padding: 10px;
+    text-decoration: none;
+}
+
+#map-ui-project a:hover {
+    background: #E6B800;
+    color: #3366FF;
+}
+
+#map-ui-project li:last-child a {
+    border-bottom-width: 1px;
+    -webkit-border-radius: 0 0 3px 3px;
+    border-radius: 0 0 3px 3px;
+}
+
+#map-ui-project li:first-child a {
+    -webkit-border-radius: 3px 3px 0 0;
+    border-radius: 3px 3px 0 0;
+}
+
+#map-ui-project a.active {
+    background: #E6B800;
+    border-color: #1BBADA;
+    border-top-color: #FFF;
+    color: #3366FF;
 }
 
 /* Navbar */
@@ -170,7 +226,7 @@ header {width: 100%; z-index: 1; position: absolute;}
     margin-bottom: 5em;
     padding-top: 1em;
 }
-.close-insta, .close-blog, .close-twitter, .close-sobre {
+.close-insta, .close-blog, .close-twitter, .close-sobre, .close-t1, .close-t2, .close-t3, .close-t4 {
     top:0.5em;
     right:0.5em;
     width:auto;
@@ -207,6 +263,27 @@ header {width: 100%; z-index: 1; position: absolute;}
     height: 85%;
     border-radius: 1em;
     width: auto;
+    padding: 30px 20px;
+    background: none repeat scroll 0% 0% rgba(103, 166, 127, 0.6);
+    color: rgb(255, 255, 255);
+    text-align: justify;
+    position: fixed;
+    right: 50px;
+    bottom: 0;
+    display: none;
+    z-index: 101;
+    overflow: auto;
+    -webkit-box-shadow: 6px 6px 8px 0px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow:    6px 6px 8px 0px rgba(50, 50, 50, 0.75);
+    box-shadow:         6px 6px 8px 0px rgba(50, 50, 50, 0.75);
+
+}
+
+#t1-content, #t2-content, #t3-content, #t4-content {
+    float: right;
+    height: 85%;
+    border-radius: 1em;
+    width: 40%;
     padding: 30px 20px;
     background: none repeat scroll 0% 0% rgba(103, 166, 127, 0.6);
     color: rgb(255, 255, 255);
