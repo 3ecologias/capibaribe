@@ -227,12 +227,12 @@ header {width: 100%; z-index: 1; position: absolute;}
     padding-top: 1em;
 }
 .close-insta, .close-blog, .close-twitter, .close-sobre, .close-t1, .close-t2, .close-t3, .close-t4 {
-    top:0.5em;
-    right:0.5em;
+    top: 17%;
+    right: 5%;
     width:auto;
     height:auto;
     /*background:#900;*/
-    position:absolute;
+    position:fixed;
     cursor:pointer;
     font-size: 2em;
 }
