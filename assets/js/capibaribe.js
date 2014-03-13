@@ -26,7 +26,7 @@ $(document).ready(function() {
 
 	$( ".close-sobre" ).click(function() {
 	 	$( "#sobre-content" ).slideToggle( "slow" );
-	 	$( ".close-sobre" ).fadeOut( "slow");
+	 	$( ".close-sobre" ).fadeToggle( "slow", "linear");
 	 	$('.nav').find('li.active').removeClass('active');
 
 	});
@@ -86,7 +86,7 @@ $(document).ready(function() {
 
         if ($id == 'blog') {
         	$( "#blog-content" ).slideToggle( "slow" );
-        	$( ".close-sobre" ).fadeIn( "slow");
+        	$( ".close-sobre" ).fadeToggle( "slow", "linear");
         	if($("#instagram-content").is(":hidden")) {
 	 		} else {
 	 			$( "#instagram-content" ).slideToggle( "fast" );
