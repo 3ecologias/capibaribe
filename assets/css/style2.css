@@ -14,6 +14,7 @@ header {width: 100%; z-index: 1; position: absolute;}
     z-index: 100;
     font-size: 0.8em;
     width: 20%;
+    opacity: 0.5;
 }
 
 #map-ui li {
@@ -66,7 +67,7 @@ header {width: 100%; z-index: 1; position: absolute;}
 /* Map Áreas Potenciais */
 #map-ui-ap {
     position: absolute;
-    top: 14em;
+    bottom: 30em;
     left: 0%;
     list-style: none outside none;
     margin: 0px;
@@ -74,6 +75,7 @@ header {width: 100%; z-index: 1; position: absolute;}
     z-index: 100;
     font-size: 0.8em;
     width: 11%;
+    opacity: 0.5;
 }
 
 #map-ui-ap li {
@@ -99,6 +101,7 @@ header {width: 100%; z-index: 1; position: absolute;}
 #map-ui-ap a:hover {
     background: #007F93;
     color: #fff;
+    opacity: 1;
 }
 
 #map-ui-ap li:last-child a {
@@ -126,7 +129,7 @@ header {width: 100%; z-index: 1; position: absolute;}
 /* Map Tecido Urbano */
 #map-ui-tu {
     position: absolute;
-    top: 22em;
+    bottom: 17em;
     left: 0%;
     list-style: none outside none;
     margin: 0px;
@@ -134,6 +137,7 @@ header {width: 100%; z-index: 1; position: absolute;}
     z-index: 100;
     font-size: 0.8em;
     width: 11%;
+    opacity: 0.5;
 }
 
 #map-ui-tu li {
@@ -159,6 +163,7 @@ header {width: 100%; z-index: 1; position: absolute;}
 #map-ui-tu a:hover {
     background: #007F93;
     color: #fff;
+    opacity: 1;
 }
 
 #map-ui-tu li:last-child a {
@@ -186,7 +191,7 @@ header {width: 100%; z-index: 1; position: absolute;}
 /* Map Sócio/Econômico */
 #map-ui-se {
     position: absolute;
-    top: 36em;
+    bottom: 10em;
     left: 0%;
     list-style: none outside none;
     margin: 0px;
@@ -194,6 +199,7 @@ header {width: 100%; z-index: 1; position: absolute;}
     z-index: 100;
     font-size: 0.8em;
     width: 11%;
+    opacity: 0.5;
 }
 
 #map-ui-se li {
@@ -219,6 +225,7 @@ header {width: 100%; z-index: 1; position: absolute;}
 #map-ui-se a:hover {
     background: #007F93;
     color: #fff;
+    opacity: 1;
 }
 
 #map-ui-se li:last-child a {
@@ -246,7 +253,7 @@ header {width: 100%; z-index: 1; position: absolute;}
 /* Map Vitalidades */
 #map-ui-vi {
     position: absolute;
-    top: 44em;
+    bottom: 1em;
     left: 0%;
     list-style: none outside none;
     margin: 0px;
@@ -254,6 +261,7 @@ header {width: 100%; z-index: 1; position: absolute;}
     z-index: 100;
     font-size: 0.8em;
     width: 11%;
+    opacity: 0.5;
 }
 
 #map-ui-vi li {
@@ -279,6 +287,7 @@ header {width: 100%; z-index: 1; position: absolute;}
 #map-ui-vi a:hover {
     background: #007F93;
     color: #fff;
+    opacity: 1;
 }
 
 #map-ui-vi li:last-child a {
@@ -359,6 +368,8 @@ header {width: 100%; z-index: 1; position: absolute;}
     border-top-color: #FFF;
     color: #3366FF;
 }
+
+ #map-ui-ap:hover, #map-ui-tu:hover, #map-ui-se:hover, #map-ui-vi:hover {opacity:1;}
 
 /* Navbar */
 .navbar-default {
@@ -528,17 +539,22 @@ header {width: 100%; z-index: 1; position: absolute;}
 #legend-content {
     font-size: 85%;
     width: 213px;
-    z-index: 9999;
+    z-index: 1;
     position: fixed;
     right: 0%;
     top: 11%;
     background: none repeat scroll 0% 0% rgba(230, 230, 230, 0.6);
     padding: 11px;
     color: #007F93;
+    opacity: 0.1;
 }
 
 #legend-content h4 {
   font-size: 16px;
   color: #007F93;
   font-weight: bold;
+}
+
+#legend-content:hover {
+    opacity: 1;
 }
