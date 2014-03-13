@@ -71,7 +71,7 @@ a {transition: all 0.2s ease-in-out 0s;}
 /* Map Áreas Potenciais */
 #map-ui-ap {
     position: absolute;
-    bottom: 30em;
+    bottom: 32em;
     left: 0%;
     list-style: none outside none;
     margin: 0px;
@@ -134,7 +134,7 @@ a {transition: all 0.2s ease-in-out 0s;}
 /* Map Tecido Urbano */
 #map-ui-tu {
     position: absolute;
-    bottom: 17em;
+    bottom: 19em;
     left: 0%;
     list-style: none outside none;
     margin: 0px;
@@ -197,7 +197,7 @@ a {transition: all 0.2s ease-in-out 0s;}
 /* Map Sócio/Econômico */
 #map-ui-se {
     position: absolute;
-    bottom: 10em;
+    bottom: 12em;
     left: 0%;
     list-style: none outside none;
     margin: 0px;
