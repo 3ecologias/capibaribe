@@ -544,7 +544,7 @@ header {width: 100%; z-index: 1; position: absolute;}
     right: 0%;
     top: 11%;
     background: none repeat scroll 0% 0% rgba(230, 230, 230, 0.6);
-    padding: 11px;
+    padding: 0px 11px 12px 11px;
     color: #007F93;
     opacity: 0.1;
 }
