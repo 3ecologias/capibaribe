@@ -480,6 +480,7 @@ a {transition: all 0.2s ease-in-out 0s;}
     position:fixed;
     cursor:pointer;
     font-size: 2em;
+    transition: all 1s ease-in-out 1s;
 }
 
 #t1-content, #t2-content, #t3-content, #t4-content {
