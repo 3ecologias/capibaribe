@@ -26,13 +26,7 @@ $(document).ready(function() {
 
 	$( ".close-sobre" ).click(function() {
 	 	$( "#sobre-content" ).slideToggle( "slow" );
-	 	$( ".close-sobre" ).fadeOut( "slow");
 	 	$('.nav').find('li.active').removeClass('active');
-
-	});
-
-	$( "#sobre-content" ).click(function() {
-	 	$( ".close-sobre" ).fadeToggle( "slow", "linear");
 
 	});
 
@@ -133,7 +127,6 @@ $(document).ready(function() {
 	 		}
         } else if ($id == 'sobre') {
         	$( "#sobre-content" ).slideToggle( "slow" );
-        	$( ".close-sobre" ).fadeIn( "slow");
         	if($("#twitter-content").is(":hidden")) {
 	 		} else {
 	 			$( "#twitter-content" ).slideToggle( "fast" );
