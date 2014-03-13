@@ -1,5 +1,8 @@
 body { margin:0; padding:0; font-family: 'Roboto', sans-serif!important; }
 header {width: 100%; z-index: 1; position: absolute;}
+
+a {transition: all 0.2s ease-in-out 0s;}
+
 #header {
     
 }
@@ -15,6 +18,7 @@ header {width: 100%; z-index: 1; position: absolute;}
     font-size: 0.8em;
     width: 20%;
     opacity: 0.5;
+    transition: all 0.2s ease-in-out 0s;
 }
 
 #map-ui li {
@@ -76,6 +80,7 @@ header {width: 100%; z-index: 1; position: absolute;}
     font-size: 0.8em;
     width: 11%;
     opacity: 0.5;
+    transition: all 0.2s ease-in-out 0s;
 }
 
 #map-ui-ap li {
@@ -138,6 +143,7 @@ header {width: 100%; z-index: 1; position: absolute;}
     font-size: 0.8em;
     width: 11%;
     opacity: 0.5;
+    transition: all 0.2s ease-in-out 0s;
 }
 
 #map-ui-tu li {
@@ -200,6 +206,7 @@ header {width: 100%; z-index: 1; position: absolute;}
     font-size: 0.8em;
     width: 11%;
     opacity: 0.5;
+    transition: all 0.2s ease-in-out 0s;
 }
 
 #map-ui-se li {
@@ -262,6 +269,7 @@ header {width: 100%; z-index: 1; position: absolute;}
     font-size: 0.8em;
     width: 11%;
     opacity: 0.5;
+    transition: all 0.2s ease-in-out 0s;
 }
 
 #map-ui-vi li {
@@ -323,7 +331,8 @@ header {width: 100%; z-index: 1; position: absolute;}
     padding: 0px;
     z-index: 100;
     font-size: 0.8em;
-    width: 20%
+    width: 20%;
+    transition: all 0.2s ease-in-out 0s;
 }
 
 #map-ui-project li {
@@ -369,7 +378,7 @@ header {width: 100%; z-index: 1; position: absolute;}
     color: #3366FF;
 }
 
- #map-ui-ap:hover, #map-ui-tu:hover, #map-ui-se:hover, #map-ui-vi:hover {opacity:1;}
+ #map-ui-ap:hover, #map-ui-tu:hover, #map-ui-se:hover, #map-ui-vi:hover {opacity:1;transition: all 0.2s ease-in-out 0s;}
 
 /* Navbar */
 .navbar-default {
@@ -547,6 +556,7 @@ header {width: 100%; z-index: 1; position: absolute;}
     padding: 0px 11px 12px 11px;
     color: #007F93;
     opacity: 0.1;
+    transition: all 0.2s ease-in-out 0s;
 }
 
 #legend-content h4 {
@@ -557,4 +567,5 @@ header {width: 100%; z-index: 1; position: absolute;}
 
 #legend-content:hover {
     opacity: 1;
+    transition: all 0.2s ease-in-out 0s;
 }
