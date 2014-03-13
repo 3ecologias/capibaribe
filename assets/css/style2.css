@@ -66,7 +66,7 @@ header {width: 100%; z-index: 1; position: absolute;}
 /* Map Áreas Potenciais */
 #map-ui-ap {
     position: absolute;
-    top: 14em;
+    top: 24%;
     left: 0%;
     list-style: none outside none;
     margin: 0px;
@@ -126,7 +126,7 @@ header {width: 100%; z-index: 1; position: absolute;}
 /* Map Tecido Urbano */
 #map-ui-tu {
     position: absolute;
-    top: 21em;
+    top: 33%;
     left: 0%;
     list-style: none outside none;
     margin: 0px;
@@ -186,7 +186,7 @@ header {width: 100%; z-index: 1; position: absolute;}
 /* Map Sócio/Econômico */
 #map-ui-se {
     position: absolute;
-    top: 36.5em;
+    top: 60%;
     left: 0%;
     list-style: none outside none;
     margin: 0px;
@@ -246,7 +246,7 @@ header {width: 100%; z-index: 1; position: absolute;}
 /* Map Vitalidades */
 #map-ui-vi {
     position: absolute;
-    top: 45.5em;
+    top: 73%;
     left: 0%;
     list-style: none outside none;
     margin: 0px;
@@ -419,38 +419,18 @@ header {width: 100%; z-index: 1; position: absolute;}
     max-width: 100%;
 }
 
-#sobre-content {
+#sobre-content, #instagram-content, #blog-content, #twitter-content  {
     float: right;
     height: 85%;
     border-radius: 1em;
     width: 50%;
     padding: 30px 20px;
-    background: none repeat scroll 0% 0% rgba(103, 166, 127, 0.6);
+    background: none repeat scroll 0% 0% rgba(0, 127, 147, 0.6);
     color: rgb(255, 255, 255);
     text-align: justify;
     position: fixed;
     right: 50px;
-    bottom: 0;
-    display: none;
-    z-index: 101;
-    overflow: auto;
-    -webkit-box-shadow: 6px 6px 8px 0px rgba(50, 50, 50, 0.75);
-    -moz-box-shadow:    6px 6px 8px 0px rgba(50, 50, 50, 0.75);
-    box-shadow:         6px 6px 8px 0px rgba(50, 50, 50, 0.75);
-}
-
-#blog-content {
-    float: right;
-    height: 85%;
-    border-radius: 1em;
-    width: 50%;
-    padding: 30px 20px;
-    background: none repeat scroll 0% 0% rgba(103, 166, 127, 0.6);
-    color: rgb(255, 255, 255);
-    text-align: justify;
-    position: fixed;
-    right: 50px;
-    bottom: 0;
+    bottom: -11px;
     display: none;
     z-index: 101;
     overflow: auto;
@@ -481,48 +461,6 @@ header {width: 100%; z-index: 1; position: absolute;}
     position:fixed;
     cursor:pointer;
     font-size: 2em;
-}
-
-#instagram-content {
-    float: right;
-    height: 85%;
-    border-radius: 1em;
-    width: 60%;
-    padding: 30px 20px;
-    background: none repeat scroll 0% 0% rgba(103, 166, 127, 0.6);
-    color: rgb(255, 255, 255);
-    text-align: justify;
-    position: fixed;
-    right: 50px;
-    bottom: 0;
-    display: none;
-    z-index: 101;
-    overflow: auto;
-    -webkit-box-shadow: 6px 6px 8px 0px rgba(50, 50, 50, 0.75);
-    -moz-box-shadow:    6px 6px 8px 0px rgba(50, 50, 50, 0.75);
-    box-shadow:         6px 6px 8px 0px rgba(50, 50, 50, 0.75);
-
-}
-
-#twitter-content {
-    float: right;
-    height: 85%;
-    border-radius: 1em;
-    width: auto;
-    padding: 30px 20px;
-    background: none repeat scroll 0% 0% rgba(103, 166, 127, 0.6);
-    color: rgb(255, 255, 255);
-    text-align: justify;
-    position: fixed;
-    right: 50px;
-    bottom: 0;
-    display: none;
-    z-index: 101;
-    overflow: auto;
-    -webkit-box-shadow: 6px 6px 8px 0px rgba(50, 50, 50, 0.75);
-    -moz-box-shadow:    6px 6px 8px 0px rgba(50, 50, 50, 0.75);
-    box-shadow:         6px 6px 8px 0px rgba(50, 50, 50, 0.75);
-
 }
 
 #t1-content, #t2-content, #t3-content, #t4-content {
