@@ -323,6 +323,39 @@
 <!-- <ul id='map-ui-project' class='unselectable'></ul> -->
 <div id='map'></div>
 
+<!-- Legendas -->
+<div id="legend-content">
+  <span style='color:#007F93'>━</span> Hidrografia <br />
+  <span style='color:#FF5E29'>━</span> Ciclovia <br />
+  <span style='color:#007f90'>▉</span> Area de influência do rio <br />
+  <br />
+  <h4>Áreas verdes</h4>
+  <span style='color:#B2D235'>▉</span> Parques e praças <br />
+  <span style='color:#467241'>▉</span> Áreas livres <br />
+  <span style='color:#56A84B'>▉</span> Áreas livres potenciais <br />
+  <span style='color:#B2D8A2'>▉</span> Áreas livres privadas <br />
+  <h4>Distribuição de renda</h4>
+  <span style='color:#dbd1dd'>▉</span> Abaixo de R$626,00 <br />
+  <span style='color:#b29bb5'>▉</span> R$627,00 - R$1365,00 <br />
+  <span style='color:#8f7291'>▉</span> R$1366,00 - R$2388,00 <br />
+  <span style='color:#8f6191'>▉</span> R$2389,00 - R$3642,00 <br />
+  <span style='color:#620360'>▉</span> R$3643,00 - R$7574,00 <br />
+  <span style='color:#620360'>▉</span> Acima de R$7575,00 <br />
+  <br />
+  <h4>Densidade demografica</h4>
+  <span style='color:#cac3a4'>▉</span> Abaixo de R$626,00 <br />
+  <span style='color:#c7bc8d'>▉</span> R$627,00 - R$1365,00 <br />
+  <span style='color:#c9b76f'>▉</span> R$1366,00 - R$2388,00 <br />
+  <span style='color:#c9ad3d'>▉</span> R$2389,00 - R$3642,00 <br />
+  <span style='color:#c9a100'>▉</span> R$3643,00 - R$7574,00 <br />
+  <br />
+  <h4>Áreas de interesse social</h4>
+  <span style='color:#bd5550'>▉</span> ZEIS <br />
+  <span style='color:#7b201c'>▉</span> Aglomerados subnormais <br />
+</div>
+
+
+<!-- Sistema de Mapas -->
 <script>
 var map = L.map('map', { zoomControl: false, minZoom: 13, maxZoom: 18 }).setView([-8.05, -34.94], 13);
 new L.Control.Zoom({ position: 'bottomright' }).addTo(map);
