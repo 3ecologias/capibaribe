@@ -126,7 +126,7 @@ header {width: 100%; z-index: 1; position: absolute;}
 /* Map Tecido Urbano */
 #map-ui-tu {
     position: absolute;
-    top: 33%;
+    top: 37%;
     left: 0%;
     list-style: none outside none;
     margin: 0px;
