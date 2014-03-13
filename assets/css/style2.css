@@ -525,3 +525,13 @@ header {width: 100%; z-index: 1; position: absolute;}
    -ms-user-select: none;
    user-select: none;
 }
+/* Legendas */
+#legend-content {
+    font-size: 90%;
+    width: 250px;
+    z-index: 9999;
+    position: fixed;
+    right: -3%;
+    top: 11%;
+    background: #fff;
+}
