@@ -373,7 +373,7 @@ addLayerTu(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_viario/{z
 addLayerTu(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_quadras/{z}/{x}/{y}.png'), 'quadras', 5);
 addLayerTu(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_canais/{z}/{x}/{y}.png'), 'canais', 20);
 addLayerTu(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_ciclovia/{z}/{x}/{y}.png'), 'ciclovias', 45);
-addLayerTu(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_bikes/{z}/{x}/{y}.png'), 'estações de bicicletas', 17);
+addLayerTu(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_bikes/{z}/{x}/{y}.png'), 'estações de bicicletas', 45);
 addLayerTu(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pac_barcobus/{z}/{x}/{y}.png'), 'terminais fluviais', 42);
 
 var uise = document.getElementById('map-ui-se');
@@ -382,8 +382,8 @@ addLayerSe(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_densidade/{z}/{x}
 addLayerSe(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_renda/{z}/{x}/{y}.png'), 'renda per capta', 7);
 
 var uivi = document.getElementById('map-ui-vi');
-addLayerVi(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_influencia/{z}/{x}/{y}.png'), 'área de influência', 3);
-addLayerVi(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_buffer1km/{z}/{x}/{y}.png'), 'buffer', 2);
+addLayerVi(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_influencia/{z}/{x}/{y}.png'), 'área de influência', 2);
+addLayerVi(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_buffer1km/{z}/{x}/{y}.png'), 'buffer', 3);
 addLayerVi(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_centralidades/{z}/{x}/{y}.png'), 'vitalidades', 31);
 addLayerVi(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_equipamentos/{z}/{x}/{y}.png'), 'equipamentos', 32);
 addLayerVi(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_escolas/{z}/{x}/{y}.png'), 'escolas', 33);
