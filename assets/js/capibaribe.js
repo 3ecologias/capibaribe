@@ -86,7 +86,6 @@ $(document).ready(function() {
 
         if ($id == 'blog') {
         	$( "#blog-content" ).slideToggle( "slow" );
-        	$( ".close-sobre" ).fadeToggle( "slow", "linear");
         	if($("#instagram-content").is(":hidden")) {
 	 		} else {
 	 			$( "#instagram-content" ).slideToggle( "fast" );
@@ -129,6 +128,7 @@ $(document).ready(function() {
 	 		}
         } else if ($id == 'sobre') {
         	$( "#sobre-content" ).slideToggle( "slow" );
+        	$( ".close-sobre" ).fadeToggle( "slow", "linear");
         	if($("#twitter-content").is(":hidden")) {
 	 		} else {
 	 			$( "#twitter-content" ).slideToggle( "fast" );
