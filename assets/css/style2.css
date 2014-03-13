@@ -66,7 +66,7 @@ header {width: 100%; z-index: 1; position: absolute;}
 /* Map Áreas Potenciais */
 #map-ui-ap {
     position: absolute;
-    top: 24%;
+    top: 14em;
     left: 0%;
     list-style: none outside none;
     margin: 0px;
@@ -84,7 +84,7 @@ header {width: 100%; z-index: 1; position: absolute;}
 }
 
 #map-ui-ap a {
-    background: #FFF;
+    background: none repeat scroll 0% 0% rgba(255, 255, 255, 0.6);
     color: #007F93;
     display: block;
     margin: 0;
@@ -126,7 +126,7 @@ header {width: 100%; z-index: 1; position: absolute;}
 /* Map Tecido Urbano */
 #map-ui-tu {
     position: absolute;
-    top: 37%;
+    top: 22em;
     left: 0%;
     list-style: none outside none;
     margin: 0px;
@@ -144,7 +144,7 @@ header {width: 100%; z-index: 1; position: absolute;}
 }
 
 #map-ui-tu a {
-    background: #FFF;
+    background: none repeat scroll 0% 0% rgba(255, 255, 255, 0.6);
     color: #007F93;
     display: block;
     margin: 0;
@@ -186,7 +186,7 @@ header {width: 100%; z-index: 1; position: absolute;}
 /* Map Sócio/Econômico */
 #map-ui-se {
     position: absolute;
-    top: 60%;
+    top: 36em;
     left: 0%;
     list-style: none outside none;
     margin: 0px;
@@ -204,7 +204,7 @@ header {width: 100%; z-index: 1; position: absolute;}
 }
 
 #map-ui-se a {
-    background: #FFF;
+    background: none repeat scroll 0% 0% rgba(255, 255, 255, 0.6);
     color: #007F93;
     display: block;
     margin: 0;
@@ -246,7 +246,7 @@ header {width: 100%; z-index: 1; position: absolute;}
 /* Map Vitalidades */
 #map-ui-vi {
     position: absolute;
-    top: 73%;
+    top: 44em;
     left: 0%;
     list-style: none outside none;
     margin: 0px;
@@ -264,7 +264,7 @@ header {width: 100%; z-index: 1; position: absolute;}
 }
 
 #map-ui-vi a {
-    background: #FFF;
+    background: none repeat scroll 0% 0% rgba(255, 255, 255, 0.6);
     color: #007F93;
     display: block;
     margin: 0;
@@ -422,14 +422,13 @@ header {width: 100%; z-index: 1; position: absolute;}
 #sobre-content, #instagram-content, #blog-content, #twitter-content  {
     float: right;
     height: 85%;
-    border-radius: 1em;
     width: 50%;
     padding: 30px 20px;
     background: none repeat scroll 0% 0% rgba(0, 127, 147, 0.6);
     color: rgb(255, 255, 255);
     text-align: justify;
     position: fixed;
-    right: 50px;
+    right: 255px;
     bottom: -11px;
     display: none;
     z-index: 101;
@@ -454,7 +453,7 @@ header {width: 100%; z-index: 1; position: absolute;}
 }
 .close-insta, .close-blog, .close-twitter, .close-sobre, .close-t1, .close-t2, .close-t3, .close-t4 {
     top: 17%;
-    right: 5%;
+    right: 274px;
     width:auto;
     height:auto;
     /*background:#900;*/
@@ -527,11 +526,19 @@ header {width: 100%; z-index: 1; position: absolute;}
 }
 /* Legendas */
 #legend-content {
-    font-size: 90%;
-    width: 250px;
+    font-size: 85%;
+    width: 213px;
     z-index: 9999;
     position: fixed;
-    right: -3%;
+    right: 0%;
     top: 11%;
-    background: #fff;
+    background: none repeat scroll 0% 0% rgba(230, 230, 230, 0.6);
+    padding: 11px;
+    color: #007F93;
+}
+
+#legend-content h4 {
+  font-size: 16px;
+  color: #007F93;
+  font-weight: bold;
 }
