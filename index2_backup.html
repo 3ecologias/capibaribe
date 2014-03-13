@@ -75,7 +75,7 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="#"><img src="images/logo2.png" class="img-responsive"></a>
+    <a class="navbar-brand" href="#"><img src="images/logo.png" class="img-responsive"></a>
   </div>
 
   <!-- Collect the nav links for toggling -->
@@ -226,7 +226,7 @@
 
     <div id="instagram-content">
       <div class="close-insta"><span class="glyphicon glyphicon-remove-circle"></span></div>
-      <h1>#parquecapibaribe na rede</h1>
+      <h1>#parquecapibaribe</h1>
       <div id="instafeed"></div>
     </div>
 
@@ -316,42 +316,33 @@
     </div>
 
 <ul id='map-ui' class='unselectable'></ul>
-<ul id='map-ui-ap' class='unselectable'></ul>
-<ul id='map-ui-tu' class='unselectable'></ul>
-<ul id='map-ui-se' class='unselectable'></ul>
-<ul id='map-ui-vi' class='unselectable'></ul>
-<!-- <ul id='map-ui-project' class='unselectable'></ul> -->
+<ul id='map-ui-project' class='unselectable'></ul>
 <div id='map'></div>
 
 <script>
 var map = L.map('map', { zoomControl: false, minZoom: 13, maxZoom: 18 }).setView([-8.05, -34.94], 13);
-new L.Control.Zoom({ position: 'bottomright' }).addTo(map);
 var ui = document.getElementById('map-ui');
-addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_mapabase/{z}/{x}/{y}.png'), 'o rio e a cidade', 1);
+addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_mapabase/{z}/{x}/{y}.png'), 'o rio e a cidade', 1);
+addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_livreexiste/{z}/{x}/{y}.png'), 'áreas verdes', 5);
+addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_livreadicionais/{z}/{x}/{y}.png'), 'áreas livres potenciais', 6);
+addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pac_barcobus/{z}/{x}/{y}.png'), 'terminais fluviais', 16);
+addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_quadras5001/{z}/{x}/{y}.png'), 'área de influência', 2);
+addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_pobres/{z}/{x}/{y}.png'), 'assentamentos precários', 9);
+addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_zeis/{z}/{x}/{y}.png'), 'ZEIS', 10);
+addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_densidade/{z}/{x}/{y}.png'), 'densidade demográfica', 4);
+addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_renda/{z}/{x}/{y}.png'), 'renda per capta', 3);
+addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_mapafauna/{z}/{x}/{y}.png'), 'fauna e flora', 19);
 
-var uiap = document.getElementById('map-ui-ap');
-addLayerAp(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_areasverdes/{z}/{x}/{y}.png'), 'áreas verdes', 2);
-addLayerAp(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_mapafauna/{z}/{x}/{y}.png'), 'fauna e flora', 3);
+addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_centralidades/{z}/{x}/{y}.png'), 'vitalidades', 20);
+addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_patrimonio/{z}/{x}/{y}.png'), 'áreas históricas', 7);
+addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_primarias/{z}/{x}/{y}.png'), 'vias primárias', 11);
+addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_secundarias/{z}/{x}/{y}.png'), 'vias secundárias', 12);
+addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_coletora/{z}/{x}/{y}.png'), 'vias coletoras', 13);
+addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_cicloviaexiste/{z}/{x}/{y}.png'), 'ciclovias existentes', 14);
+addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_cicloproposta/{z}/{x}/{y}.png'), 'PDCA 2014', 15);
+addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_bikes/{z}/{x}/{y}.png'), 'estações de bicicletas', 17);
+addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_mapaescola/{z}/{x}/{y}.png'), 'escolas', 18);
 
-var uitu = document.getElementById('map-ui-tu');
-addLayerTu(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_primarias/{z}/{x}/{y}.png'), 'vias primárias', 11);
-addLayerTu(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_secundarias/{z}/{x}/{y}.png'), 'vias secundárias', 12);
-addLayerTu(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_coletora/{z}/{x}/{y}.png'), 'vias coletoras', 13);
-addLayerTu(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_cicloviaexiste/{z}/{x}/{y}.png'), 'ciclovias existentes', 14);
-addLayerTu(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_cicloproposta/{z}/{x}/{y}.png'), 'PDCA 2014', 15);
-addLayerTu(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_bikes/{z}/{x}/{y}.png'), 'estações de bicicletas', 17);
-addLayerTu(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pac_barcobus/{z}/{x}/{y}.png'), 'terminais fluviais', 16);
-
-var uise = document.getElementById('map-ui-se');
-addLayerSe(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_zeis/{z}/{x}/{y}.png'), 'ZEIS', 10);
-addLayerSe(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_densidade/{z}/{x}/{y}.png'), 'densidade demográfica', 4);
-addLayerSe(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_renda/{z}/{x}/{y}.png'), 'renda per capta', 3);
-
-var uivi = document.getElementById('map-ui-vi');
-addLayerVi(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_quadras5001/{z}/{x}/{y}.png'), 'área de influência', 2);
-addLayerVi(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_centralidades/{z}/{x}/{y}.png'), 'vitalidades', 20);
-addLayerVi(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_patrimonio/{z}/{x}/{y}.png'), 'áreas históricas', 7);
-addLayerVi(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_mapaescola/{z}/{x}/{y}.png'), 'escolas', 18);
 
 var uip = document.getElementById('map-ui-project');
 addLayerProject(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_mapaescola/{z}/{x}/{y}.png'), 'chegar', 20);
@@ -360,7 +351,7 @@ addLayerProject(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_bikes/{z}/{x
 addLayerProject(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_cicloproposta/{z}/{x}/{y}.png'), 'abraçar', 22);
 addLayerProject(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_cicloproposta/{z}/{x}/{y}.png'), 'atravessar', 23);
 
-// new L.Control.Zoom({ position: 'bottomright' }).addTo(map);
+new L.Control.Zoom({ position: 'bottomright' }).addTo(map);
 // disable drag and zoom handlers
 // map.touchZoom.disable();
 // map.doubleClickZoom.disable();
@@ -389,7 +380,6 @@ function addLayer(layer, name, zIndex) {
     if (zIndex == 1) {
         layer.addTo(map);
         link.className = 'active';
-        link.className = 'hidden';
     }
 
     // end hack
@@ -409,148 +399,6 @@ function addLayer(layer, name, zIndex) {
 
     item.appendChild(link);
     ui.appendChild(item);
-}
-
-function addLayerAp(layer, name, zIndex) {
-    layer
-        .setZIndex(zIndex);
-        // .addTo(map);
-
-    // Create a simple layer switcher that toggles layers on
-    // and off.
-    var item = document.createElement('li');
-    var link = document.createElement('a');
-
-    link.href = '#';
-    // link.className = 'active';
-    link.className = '';
-    link.innerHTML = name;
-
-    // hack legend
-    if (zIndex == 2) {
-       // map.legendControl.addLegend(document.getElementByClassName('greenlegend').innerHTML);
-    }
-    
-
-    // end hack
-
-    link.onclick = function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-
-        if (map.hasLayer(layer)) {
-            map.removeLayer(layer);
-            this.className = '';
-        } else {
-            map.addLayer(layer);
-            this.className = 'active';
-        }
-    };
-
-    item.appendChild(link);
-    uiap.appendChild(item);
-}
-
-function addLayerTu(layer, name, zIndex) {
-    layer
-        .setZIndex(zIndex);
-        // .addTo(map);
-
-    // Create a simple layer switcher that toggles layers on
-    // and off.
-    var item = document.createElement('li');
-    var link = document.createElement('a');
-
-    link.href = '#';
-    // link.className = 'active';
-    link.className = '';
-    link.innerHTML = name;
-
-    // end hack
-
-    link.onclick = function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-
-        if (map.hasLayer(layer)) {
-            map.removeLayer(layer);
-            this.className = '';
-        } else {
-            map.addLayer(layer);
-            this.className = 'active';
-        }
-    };
-
-    item.appendChild(link);
-    uitu.appendChild(item);
-}
-
-function addLayerSe(layer, name, zIndex) {
-    layer
-        .setZIndex(zIndex);
-        // .addTo(map);
-
-    // Create a simple layer switcher that toggles layers on
-    // and off.
-    var item = document.createElement('li');
-    var link = document.createElement('a');
-
-    link.href = '#';
-    // link.className = 'active';
-    link.className = '';
-    link.innerHTML = name;
-
-    // end hack
-
-    link.onclick = function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-
-        if (map.hasLayer(layer)) {
-            map.removeLayer(layer);
-            this.className = '';
-        } else {
-            map.addLayer(layer);
-            this.className = 'active';
-        }
-    };
-
-    item.appendChild(link);
-    uise.appendChild(item);
-}
-
-function addLayerVi(layer, name, zIndex) {
-    layer
-        .setZIndex(zIndex);
-        // .addTo(map);
-
-    // Create a simple layer switcher that toggles layers on
-    // and off.
-    var item = document.createElement('li');
-    var link = document.createElement('a');
-
-    link.href = '#';
-    // link.className = 'active';
-    link.className = '';
-    link.innerHTML = name;
-
-    // end hack
-
-    link.onclick = function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-
-        if (map.hasLayer(layer)) {
-            map.removeLayer(layer);
-            this.className = '';
-        } else {
-            map.addLayer(layer);
-            this.className = 'active';
-        }
-    };
-
-    item.appendChild(link);
-    uivi.appendChild(item);
 }
 
 function addLayerProject(layer, name, zIndex) {
