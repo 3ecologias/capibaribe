@@ -31,6 +31,11 @@ $(document).ready(function() {
 
 	});
 
+	$( "#sobre-content" ).click(function() {
+	 	$( ".close-sobre" ).fadeToggle( "slow", "linear");
+
+	});
+
 	$( ".close-blog" ).click(function() {
 	 	$( "#blog-content" ).slideToggle( "slow" );
 	 	$('.nav').find('li.active').removeClass('active');
