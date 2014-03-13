@@ -26,6 +26,7 @@ $(document).ready(function() {
 
 	$( ".close-sobre" ).click(function() {
 	 	$( "#sobre-content" ).slideToggle( "slow" );
+	 	$( "#close-sobre" ).fadeToggle( "slow", "linear" );
 	 	$('.nav').find('li.active').removeClass('active');
 
 	});
