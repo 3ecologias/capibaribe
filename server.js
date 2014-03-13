@@ -5,11 +5,11 @@ var app = express();
 var Syslog = require("node-syslog");
 
 app.get('/', function (req, res) {
-  res.sendfile(__dirname + '/index.html');
+  res.sendfile(__dirname + '/index2.html');
 });
 
 app.get('/v2', function (req, res) {
-  res.sendfile(__dirname + '/index2.html');
+  res.sendfile(__dirname + '/index.html');
 });
 
 app.get('/tumblr', function (req, res) {
