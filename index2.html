@@ -355,7 +355,7 @@
 
 <!-- Sistema de Mapas -->
 <script>
-var map = L.map('map', { zoomControl: false, minZoom: 12, maxZoom: 19 }).setView([-8.05, -34.94], 13);
+var map = L.map('map', { zoomControl: false, minZoom: 12, maxZoom: 19 }).setView([-8.05, -34.94], 12);
 new L.Control.Zoom({ position: 'bottomright' }).addTo(map);
 var ui = document.getElementById('map-ui');
 addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_mapabase/{z}/{x}/{y}.png'), 'a cidade', 1);
