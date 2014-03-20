@@ -153,5 +153,13 @@ $(document).ready(function() {
 		openEffect	: 'none',
 		closeEffect	: 'none'
 	});
+    // http://stackoverflow.com/questions/17059515/jquery-hover-with-animate-then-animate-left-in-second-handler-issue
+	// $('#map-ui-ap a.menu').click( 
+	//     function(){
+	//     $('#map-ui-ap').stop().animate({bottom:'-6em'},'slow')
+	//     },
+	//     function(){
+	//     $('#map-ui-ap').stop().animate({bottom:'0em'},'slow')
+ //    });
 
 });
