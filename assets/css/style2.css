@@ -71,7 +71,7 @@ a {transition: all 0.2s ease-in-out 0s;}
 /* Map Áreas Potenciais */
 #map-ui-ap {
     position: absolute;
-    bottom: 32em;
+    bottom: 40em;
     left: 0%;
     list-style: none outside none;
     margin: 0px;
@@ -131,10 +131,15 @@ a {transition: all 0.2s ease-in-out 0s;}
     display: none;
 }
 
+#map-ui-ap a.menu {
+    background-color: #09AA09;
+    color: #FFF;
+}
+
 /* Map Tecido Urbano */
 #map-ui-tu {
     position: absolute;
-    bottom: 19em;
+    bottom: 29em;
     left: 0%;
     list-style: none outside none;
     margin: 0px;
@@ -194,10 +199,15 @@ a {transition: all 0.2s ease-in-out 0s;}
     display: none;
 }
 
+#map-ui-tu a.menu {
+    background-color: #717194;
+    color: #FFF;
+}
+
 /* Map Sócio/Econômico */
 #map-ui-se {
     position: absolute;
-    bottom: 12em;
+    bottom: 20em;
     left: 0%;
     list-style: none outside none;
     margin: 0px;
@@ -257,10 +267,15 @@ a {transition: all 0.2s ease-in-out 0s;}
     display: none;
 }
 
+#map-ui-se a.menu {
+    background-color: #DDAA3E;
+    color: #FFF;
+}
+
 /* Map Vitalidades */
 #map-ui-vi {
     position: absolute;
-    bottom: 1em;
+    bottom: 7em;
     left: 0%;
     list-style: none outside none;
     margin: 0px;
@@ -318,6 +333,11 @@ a {transition: all 0.2s ease-in-out 0s;}
 
 #map-ui-vi a.hidden {
     display: none;
+}
+
+#map-ui-vi a.menu {
+    background-color: #F0436C;
+    color: #FFF;
 }
 
 /* Map Project */
@@ -569,3 +589,5 @@ a {transition: all 0.2s ease-in-out 0s;}
     opacity: 1;
     transition: all 0.2s ease-in-out 0s;
 }
+
+
