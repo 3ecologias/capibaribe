@@ -561,7 +561,7 @@ a {transition: all 0.2s ease-in-out 0s;}
 }
 .close-insta, .close-blog, .close-twitter, .close-sobre, .close-t1, .close-t2, .close-t3, .close-t4 {
     top: 5px;
-    right: 10px;
+    right: 15px;
     width:auto;
     height:auto;
     /*background:#900;*/
