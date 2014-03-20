@@ -79,7 +79,7 @@
   </div>
 
   <!-- Collect the nav links for toggling -->
-  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+<!--   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav navbar-right">
       <li><a href="#" id="sobre">sobre</a></li>
       <li><a href="#" id="blog">notícias</a></li>
@@ -241,7 +241,7 @@
 
     <div id="t1-content">
       <div class="close-t1"><span class="glyphicon glyphicon-remove-circle"></span></div>
-      <h1>chegar</h1>
+      <h1>Várzea / Dois Irmãos</h1>
       <ul id="tabProject" class="nav nav-tabs">
         <li class="active"><a href="#t1-home" data-toggle="tab">Home</a></li>
         <li><a href="#t1-project" data-toggle="tab">Profile</a></li>
@@ -260,7 +260,7 @@
 
     <div id="t2-content">
       <div class="close-t2"><span class="glyphicon glyphicon-remove-circle"></span></div>
-      <h1>abraçar</h1>
+      <h1>Apipucos / Torre </h1>
       <ul id="tabProject" class="nav nav-tabs">
         <li class="active"><a href="#t2-home" data-toggle="tab">Home</a></li>
         <li><a href="#t2-project" data-toggle="tab">Profile</a></li>
@@ -279,7 +279,7 @@
 
     <div id="t3-content">
       <div class="close-t3"><span class="glyphicon glyphicon-remove-circle"></span></div>
-      <h1>percorrer</h1>
+      <h1>Jaqueira / Madalena</h1>
       <ul id="tabProject" class="nav nav-tabs">
         <li class="active"><a href="#t3-home" data-toggle="tab">Home</a></li>
         <li><a href="#t3-project" data-toggle="tab">Profile</a></li>
@@ -298,7 +298,7 @@
 
     <div id="t4-content">
       <div class="close-t4"><span class="glyphicon glyphicon-remove-circle"></span></div>
-      <h1>atravessar</h1>
+      <h1>Paissandú / Santo Antônio</h1>
       <ul id="tabProject" class="nav nav-tabs">
         <li class="active"><a href="#t4-home" data-toggle="tab">Home</a></li>
         <li><a href="#t4-project" data-toggle="tab">Profile</a></li>
@@ -321,35 +321,46 @@
 <ul id='map-ui-se' class='unselectable'></ul>
 <ul id='map-ui-vi' class='unselectable'></ul>
 <ul id='map-ui-project' class='unselectable'></ul>
+<ul id='map-ui-inst' class='unselectable'></ul>
 <div id='map'></div>
 
 <!-- Legendas -->
 <div id="legend-content">
+  <div id="legend-01">
   <h4>Legenda</h4>
-  <span style='color:#007F93'>━</span> Hidrografia <br />
-  <span style='color:#FF5E29'>━</span> Ciclovia <br />
-  <span style='color:#007f90'>▉</span> Area de influência do rio <br />
+    <span style='color:#007F93'>━</span> Hidrografia <br />
+    <span style='color:#FF5E29'>━</span> Ciclovia <br />
+    <span style='color:#007f90'>▉</span> Area de influência do rio <br />
+  </div>
+  <div id="legend-02">
   <h4>Áreas verdes</h4>
-  <span style='color:#B2D235'>▉</span> Parques e praças <br />
-  <span style='color:#467241'>▉</span> Áreas livres <br />
-  <span style='color:#56A84B'>▉</span> Áreas livres potenciais <br />
-  <span style='color:#B2D8A2'>▉</span> Áreas livres privadas <br />
+    <span style='color:#B2D235'>▉</span> Parques e praças <br />
+    <span style='color:#467241'>▉</span> Áreas livres <br />
+    <span style='color:#56A84B'>▉</span> Áreas livres potenciais <br />
+    <span style='color:#B2D8A2'>▉</span> Áreas livres privadas <br />
+  </div>
+  <div id="legend-03">
   <h4>Distribuição de renda</h4>
-  <span style='color:#dbd1dd'>▉</span> Abaixo de R$626,00 <br />
-  <span style='color:#b29bb5'>▉</span> R$627,00 - R$1365,00 <br />
-  <span style='color:#8f7291'>▉</span> R$1366,00 - R$2388,00 <br />
-  <span style='color:#8f6191'>▉</span> R$2389,00 - R$3642,00 <br />
-  <span style='color:#620360'>▉</span> R$3643,00 - R$7574,00 <br />
-  <span style='color:#620360'>▉</span> Acima de R$7575,00 <br />
+    <span style='color:#dbd1dd'>▉</span> Abaixo de R$626,00 <br />
+    <span style='color:#b29bb5'>▉</span> R$627,00 - R$1365,00 <br />
+    <span style='color:#8f7291'>▉</span> R$1366,00 - R$2388,00 <br />
+    <span style='color:#8f6191'>▉</span> R$2389,00 - R$3642,00 <br />
+    <span style='color:#620360'>▉</span> R$3643,00 - R$7574,00 <br />
+    <span style='color:#620360'>▉</span> Acima de R$7575,00 <br />
+  </div>
+  <div id="legend-04">
   <h4>Densidade demografica</h4>
-  <span style='color:#cac3a4'>▉</span> Abaixo de 9.290 pessoas <br />
-  <span style='color:#c7bc8d'>▉</span> Entre 9.291 e 13.864 pessoas <br />
-  <span style='color:#c9b76f'>▉</span> Entre 13.865 e 19.081 pessoas <br />
-  <span style='color:#c9ad3d'>▉</span> Entre 19.082 e 27.469 pessoas <br />
-  <span style='color:#c9a100'>▉</span> Acima de 27.470 pessoas <br />
+    <span style='color:#cac3a4'>▉</span> Abaixo de 9.290 pessoas <br />
+    <span style='color:#c7bc8d'>▉</span> Entre 9.291 e 13.864 pessoas <br />
+    <span style='color:#c9b76f'>▉</span> Entre 13.865 e 19.081 pessoas <br />
+    <span style='color:#c9ad3d'>▉</span> Entre 19.082 e 27.469 pessoas <br />
+    <span style='color:#c9a100'>▉</span> Acima de 27.470 pessoas <br />
+  </div>
+  <div id="legend-05">
   <h4>Áreas de interesse social</h4>
-  <span style='color:#bd5550'>▉</span> ZEIS <br />
-  <span style='color:#7b201c'>▉</span> Aglomerados subnormais <br />
+    <span style='color:#bd5550'>▉</span> ZEIS <br />
+    <span style='color:#7b201c'>▉</span> Aglomerados subnormais <br />
+  </div>
 </div>
 
 
@@ -367,22 +378,22 @@ addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_quadras/{z}
 var uiap = document.getElementById('map-ui-ap');
 addLayerAp(L.tileLayer('#'), 'áreas potenciais', 100);
 addLayerAp(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_areasverdes/{z}/{x}/{y}.png'), 'áreas verdes', 39);
-addLayerAp(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_mapafauna/{z}/{x}/{y}.png'), 'fauna e flora', 4);
-addLayerAp(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_janelas/{z}/{x}/{y}.png'), 'janelas', 40);
+addLayerAp(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_mapafauna/{z}/{x}/{y}.png'), 'fauna e flora', 52);
+addLayerAp(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_janelas/{z}/{x}/{y}.png'), 'janelas', 51);
 
 
 var uitu = document.getElementById('map-ui-tu');
 addLayerTu(L.tileLayer('#'), 'tecido urbano', 101);
-addLayerTu(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_canais/{z}/{x}/{y}.png'), 'canais', 20);
+addLayerTu(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_canais/{z}/{x}/{y}.png'), 'riachos', 20);
 addLayerTu(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_ciclovias/{z}/{x}/{y}.png'), 'ciclovias', 43);
 addLayerTu(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_bikes/{z}/{x}/{y}.png'), 'estações de bicicletas', 45);
-addLayerTu(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pac_barcobus/{z}/{x}/{y}.png'), 'terminais fluviais', 42);
+addLayerTu(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pac_barcobus/{z}/{x}/{y}.png'), 'terminais fluviais', 50);
 
 var uise = document.getElementById('map-ui-se');
 addLayerSe(L.tileLayer('#'), 'sócio/econômico', 102);
-addLayerSe(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_zeis/{z}/{x}/{y}.png'), 'áreas pobres/ZEIS', 10);
+addLayerSe(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_zeis/{z}/{x}/{y}.png'), 'aglomerados subnormais / ZEIS', 21);
 addLayerSe(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_densidade/{z}/{x}/{y}.png'), 'densidade demográfica', 7);
-addLayerSe(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_renda/{z}/{x}/{y}.png'), 'renda per capta', 7);
+addLayerSe(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_renda/{z}/{x}/{y}.png'), 'renda per capta', 8);
 
 var uivi = document.getElementById('map-ui-vi');
 addLayerVi(L.tileLayer('#'), 'vitalidades', 103);
@@ -390,14 +401,20 @@ addLayerVi(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_influenci
 addLayerVi(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_buffer1km/{z}/{x}/{y}.png'), 'buffer', 3);
 addLayerVi(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_centralidades/{z}/{x}/{y}.png'), 'vitalidades', 31);
 addLayerVi(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_equipamentos/{z}/{x}/{y}.png'), 'equipamentos', 32);
-addLayerVi(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_escolas/{z}/{x}/{y}.png'), 'escolas', 33);
+addLayerVi(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_escolas/{z}/{x}/{y}.png'), 'escolas', 53);
 
 var uip = document.getElementById('map-ui-project');
 addLayerProject(L.tileLayer('#'), 'trechos', 104);
-addLayerProject(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_mapaescola/{z}/{x}/{y}.png'), 'várzea/dois irmãos', 20);
-addLayerProject(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_bikes/{z}/{x}/{y}.png'), 'apipucos/torre', 21);
-addLayerProject(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_cicloproposta/{z}/{x}/{y}.png'), 'jaqueira/madalena', 22);
-addLayerProject(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_cicloproposta/{z}/{x}/{y}.png'), 'paisandú/santo antônio', 23);
+addLayerProject(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_t01/{z}/{x}/{y}.png'), 'várzea/dois irmãos', 20);
+addLayerProject(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_t02/{z}/{x}/{y}.png'), 'apipucos/torre', 21);
+addLayerProject(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_t03/{z}/{x}/{y}.png'), 'jaqueira/madalena', 22);
+addLayerProject(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_t04/{z}/{x}/{y}.png'), 'paisandú/santo antônio', 23);
+
+var uiinst = document.getElementById('map-ui-inst');
+addLayerInst(L.tileLayer('#'), 'institucional', 105);
+addLayerInst(L.tileLayer('#'), 'sobre', 200);
+addLayerInst(L.tileLayer('#'), 'notícias', 201);
+addLayerInst(L.tileLayer('#'), 'imagens', 202);
 
 // new L.Control.Zoom({ position: 'bottomright' }).addTo(map);
 // disable drag and zoom handlers
@@ -498,6 +515,10 @@ function addLayerAp(layer, name, zIndex) {
         e.preventDefault();
         e.stopPropagation();
 
+        if (zIndex == 39) {
+          $("#legend-02").fadeToggle( "slow", "linear" );
+        }
+
         if (zIndex != 100) {
           if (map.hasLayer(layer)) {
               map.removeLayer(layer);
@@ -531,11 +552,24 @@ function addLayerTu(layer, name, zIndex) {
     if (zIndex == 101) {
         link.className = 'menu';                
     }
+
+    if (zIndex == 45) {
+        link.className = 'ciclovia';               
+    }
+
+    // invoke bikes e ciclovias
+    if (zIndex == 43) {
+      link.className = 'bike';
+    }
     // end hack
 
     link.onclick = function(e) {
         e.preventDefault();
         e.stopPropagation();
+
+        if (zIndex == 43) {
+          $("#legend-01").fadeToggle( "slow", "linear" );
+        }
 
         if (zIndex != 101) {
           if (map.hasLayer(layer)) {
@@ -577,6 +611,16 @@ function addLayerSe(layer, name, zIndex) {
     link.onclick = function(e) {
         e.preventDefault();
         e.stopPropagation();
+
+        if (zIndex == 8) {
+          $("#legend-03").fadeToggle( "slow", "linear" );
+        }
+        if (zIndex == 7) {
+          $("#legend-04").fadeToggle( "slow", "linear" );
+        }
+        if (zIndex == 21) {
+          $("#legend-05").fadeToggle( "slow", "linear" );
+        }
 
         if (zIndex != 102) {
           if (map.hasLayer(layer)) {
@@ -669,25 +713,123 @@ function addLayerProject(layer, name, zIndex) {
               map.removeLayer(layer);
               this.className = '';
               if (zIndex == 20) {
-                $(".close-t1").trigger("click");
+                $( "#t1-content" ).slideToggle( "slow" );
+                if($("#t2-content").is(":hidden")) {
+                } else {
+                  $( "#t2-content" ).slideToggle( "fast" );
+                }
+                if($("#t3-content").is(":hidden")) {
+                } else {
+                  $( "#t3-content" ).slideToggle( "fast" );
+                }
+                if($("#t4-content").is(":hidden")) {
+                } else {
+                  $( "#t4-content" ).slideToggle( "fast" );
+                }
               } else if (zIndex == 21) {
-                $(".close-t2").trigger("click");
+                $( "#t2-content" ).slideToggle( "slow" );
+                if($("#t1-content").is(":hidden")) {
+                } else {
+                  $( "#t1-content" ).slideToggle( "fast" );
+                }
+                if($("#t3-content").is(":hidden")) {
+                } else {
+                  $( "#t3-content" ).slideToggle( "fast" );
+                }
+                if($("#t4-content").is(":hidden")) {
+                } else {
+                  $( "#t4-content" ).slideToggle( "fast" );
+                }
+
               } else if (zIndex == 22) {
-                $(".close-t3").trigger("click");
+                $( "#t3-content" ).slideToggle( "slow" );
+                if($("#t2-content").is(":hidden")) {
+                } else {
+                  $( "#t2-content" ).slideToggle( "fast" );
+                }
+                if($("#t1-content").is(":hidden")) {
+                } else {
+                  $( "#t1-content" ).slideToggle( "fast" );
+                }
+                if($("#t4-content").is(":hidden")) {
+                } else {
+                  $( "#t4-content" ).slideToggle( "fast" );
+                }
+
               } else if (zIndex == 23) {
-                $(".close-t4").trigger("click");
+                $( "#t4-content" ).slideToggle( "slow" );
+                if($("#t2-content").is(":hidden")) {
+                } else {
+                  $( "#t2-content" ).slideToggle( "fast" );
+                }
+                if($("#t3-content").is(":hidden")) {
+                } else {
+                  $( "#t3-content" ).slideToggle( "fast" );
+                }
+                if($("#t1-content").is(":hidden")) {
+                } else {
+                  $( "#t1-content" ).slideToggle( "fast" );
+                }
               }
           } else {
               map.addLayer(layer);
               this.className = 'active';
               if (zIndex == 20) {
-                $(".close-t1").trigger("click");
+                $( "#t1-content" ).slideToggle( "slow" );
+                if($("#t2-content").is(":hidden")) {
+                } else {
+                  $( "#t2-content" ).slideToggle( "fast" );
+                }
+                if($("#t3-content").is(":hidden")) {
+                } else {
+                  $( "#t3-content" ).slideToggle( "fast" );
+                }
+                if($("#t4-content").is(":hidden")) {
+                } else {
+                  $( "#t4-content" ).slideToggle( "fast" );
+                }
               } else if (zIndex == 21) {
-                $(".close-t2").trigger("click");
+                $( "#t2-content" ).slideToggle( "slow" );
+                if($("#t1-content").is(":hidden")) {
+                } else {
+                  $( "#t1-content" ).slideToggle( "fast" );
+                }
+                if($("#t3-content").is(":hidden")) {
+                } else {
+                  $( "#t3-content" ).slideToggle( "fast" );
+                }
+                if($("#t4-content").is(":hidden")) {
+                } else {
+                  $( "#t4-content" ).slideToggle( "fast" );
+                }
               } else if (zIndex == 22) {
-                $(".close-t3").trigger("click");
+                $( "#t3-content" ).slideToggle( "slow" );
+                if($("#t2-content").is(":hidden")) {
+                } else {
+                  $( "#t2-content" ).slideToggle( "fast" );
+                }
+                if($("#t1-content").is(":hidden")) {
+                } else {
+                  $( "#t1-content" ).slideToggle( "fast" );
+                }
+                if($("#t4-content").is(":hidden")) {
+                } else {
+                  $( "#t4-content" ).slideToggle( "fast" );
+                }
               } else if (zIndex == 23) {
-                $(".close-t4").trigger("click");
+                $( "#t4-content" ).slideToggle( "slow" );
+                if($("#t2-content").is(":hidden")) {
+                } else {
+                  $( "#t2-content" ).slideToggle( "fast" );
+                }
+                if($("#t3-content").is(":hidden")) {
+                } else {
+                  $( "#t3-content" ).slideToggle( "fast" );
+                }
+                if($("#t1-content").is(":hidden")) {
+                } else {
+                  $( "#t1-content" ).slideToggle( "fast" );
+                }
               }
           }
         }
@@ -696,6 +838,106 @@ function addLayerProject(layer, name, zIndex) {
     item.appendChild(link);
     uip.appendChild(item);
 }
+
+function addLayerInst(layer, name, zIndex) {
+    layer
+        .setZIndex(zIndex);
+        // .addTo(map);
+
+    // Create a simple layer switcher that toggles layers on
+    // and off.
+    var item = document.createElement('li');
+    var link = document.createElement('a');
+
+    link.href = '#';
+    // link.className = 'active';
+    link.className = '';
+    link.innerHTML = name;
+
+    // hack to set first map to default.
+
+    if (zIndex == 105) {
+        link.className = 'menu';                
+    }
+
+    // end hack
+
+    link.onclick = function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        if (zIndex != 105) {
+          if (zIndex == 200) {
+            $( "#sobre-content" ).slideToggle( "slow" );
+
+            if($("#twitter-content").is(":hidden")) {
+            } else {
+              $( "#twitter-content" ).slideToggle( "fast" );
+            }
+            if($("#blog-content").is(":hidden")) {
+            } else {
+              $( "#blog-content" ).slideToggle( "fast" );
+            }
+            if($("#instagram-content").is(":hidden")) {
+            } else {
+              $( "#instagram-content" ).slideToggle( "fast" );
+            }
+            if ( $(this).hasClass('active')) {
+                link.className = '';
+              } else {
+                link.className = 'active';
+              }
+          }
+          if (zIndex == 201) {
+            $( "#blog-content" ).slideToggle( "slow" );
+
+            if($("#instagram-content").is(":hidden")) {
+            } else {
+              $( "#instagram-content" ).slideToggle( "fast" );
+            }
+            if($("#twitter-content").is(":hidden")) {
+            } else {
+              $( "#twitter-content" ).slideToggle( "fast" );
+            }
+            if($("#sobre-content").is(":hidden")) {
+            } else {
+              $( "#sobre-content" ).slideToggle( "fast" );
+            }
+
+            if ( $(this).hasClass('active')) {
+                link.className = '';
+              } else {
+                link.className = 'active';
+              }
+          }
+          if (zIndex == 202) {
+            $( "#instagram-content" ).slideToggle( "slow" );
+            if($("#twitter-content").is(":hidden")) {
+            } else {
+              $( "#twitter-content" ).slideToggle( "fast" );
+            }
+            if($("#blog-content").is(":hidden")) {
+            } else {
+              $( "#blog-content" ).slideToggle( "fast" );
+            }
+            if($("#sobre-content").is(":hidden")) {
+            } else {
+              $( "#sobre-content" ).slideToggle( "fast" );
+            }
+            if ( $(this).hasClass('active')) {
+                link.className = '';
+              } else {
+                link.className = 'active';
+              }
+          }
+        }   
+    };
+
+    item.appendChild(link);
+    uiinst.appendChild(item);
+}
+
+
 </script>
 
 <script type="text/javascript">
