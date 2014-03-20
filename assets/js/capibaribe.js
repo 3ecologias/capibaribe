@@ -149,17 +149,78 @@ $(document).ready(function() {
 
     });
 
+
     $(".fancybox").fancybox({
 		openEffect	: 'none',
 		closeEffect	: 'none'
 	});
-    // http://stackoverflow.com/questions/17059515/jquery-hover-with-animate-then-animate-left-in-second-handler-issue
-	// $('#map-ui-ap a.menu').click( 
-	//     function(){
-	//     $('#map-ui-ap').stop().animate({bottom:'-6em'},'slow')
-	//     },
-	//     function(){
-	//     $('#map-ui-ap').stop().animate({bottom:'0em'},'slow')
- //    });
 
+	// Menu Handlers
+    // http://stackoverflow.com/questions/17059515/jquery-hover-with-animate-then-animate-left-in-second-handler-issue
+    // http://stackoverflow.com/questions/14914372/registering-jquery-click-first-and-second-click
+	$('#map-ui-ap a.menu').click(function() { 
+
+		var clicks = $(this).data('clicks');
+	 	if (clicks) {
+	    	$('#map-ui-ap').animate({bottom:'-8em'},'slow')
+	  	} else {
+	     	$('#map-ui-ap').animate({bottom:'0em'},'slow')
+	  	}
+		$(this).data("clicks", !clicks);
+    });
+
+    $('#map-ui-tu a.menu').click(function() { 
+
+		var clicks = $(this).data('clicks');
+	 	if (clicks) {
+	    	$('#map-ui-tu').animate({bottom:'-11.8em'},'slow')
+	  	} else {
+	     	$('#map-ui-tu').animate({bottom:'0em'},'slow')
+	  	}
+		$(this).data("clicks", !clicks);
+    });
+
+    $('#map-ui-se a.menu').click(function() { 
+
+		var clicks = $(this).data('clicks');
+	 	if (clicks) {
+	    	$('#map-ui-se').animate({bottom:'-11em'},'slow')
+	  	} else {
+	     	$('#map-ui-se').animate({bottom:'0em'},'slow')
+	  	}
+		$(this).data("clicks", !clicks);
+    });
+
+    $('#map-ui-vi a.menu').click(function() { 
+
+		var clicks = $(this).data('clicks');
+	 	if (clicks) {
+	    	$('#map-ui-vi').animate({bottom:'-13.6em'},'slow')
+	  	} else {
+	     	$('#map-ui-vi').animate({bottom:'0em'},'slow')
+	  	}
+		$(this).data("clicks", !clicks);
+    });
+
+    $('#map-ui-project a.menu').click(function() { 
+
+		var clicks = $(this).data('clicks');
+	 	if (clicks) {
+	    	$('#map-ui-project').animate({bottom:'-12.8em'},'slow')
+	  	} else {
+	     	$('#map-ui-project').animate({bottom:'0em'},'slow')
+	  	}
+		$(this).data("clicks", !clicks);
+    });
+
+    $('#map-ui-inst a.menu').click(function() { 
+
+		var clicks = $(this).data('clicks');
+	 	if (clicks) {
+	    	$('#map-ui-inst').animate({bottom:'-8em'},'slow')
+	  	} else {
+	     	$('#map-ui-inst').animate({bottom:'0em'},'slow')
+	  	}
+		$(this).data("clicks", !clicks);
+    });
 });
