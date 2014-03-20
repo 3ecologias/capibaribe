@@ -320,7 +320,7 @@
 <ul id='map-ui-tu' class='unselectable'></ul>
 <ul id='map-ui-se' class='unselectable'></ul>
 <ul id='map-ui-vi' class='unselectable'></ul>
-<!-- <ul id='map-ui-project' class='unselectable'></ul> -->
+<ul id='map-ui-project' class='unselectable'></ul>
 <div id='map'></div>
 
 <!-- Legendas -->
@@ -393,11 +393,11 @@ addLayerVi(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_equipamen
 addLayerVi(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_escolas/{z}/{x}/{y}.png'), 'escolas', 33);
 
 var uip = document.getElementById('map-ui-project');
-addLayerProject(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_mapaescola/{z}/{x}/{y}.png'), 'chegar', 20);
-
-addLayerProject(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_bikes/{z}/{x}/{y}.png'), 'percorrer', 21);
-addLayerProject(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_cicloproposta/{z}/{x}/{y}.png'), 'abraçar', 22);
-addLayerProject(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_cicloproposta/{z}/{x}/{y}.png'), 'atravessar', 23);
+addLayerProject(L.tileLayer('#'), 'trechos', 104);
+addLayerProject(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_mapaescola/{z}/{x}/{y}.png'), 'várzea/dois irmãos', 20);
+addLayerProject(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_bikes/{z}/{x}/{y}.png'), 'apipucos/torre', 21);
+addLayerProject(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_cicloproposta/{z}/{x}/{y}.png'), 'jaqueira/madalena', 22);
+addLayerProject(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_cicloproposta/{z}/{x}/{y}.png'), 'paisandú/santo antônio', 23);
 
 // new L.Control.Zoom({ position: 'bottomright' }).addTo(map);
 // disable drag and zoom handlers
@@ -654,6 +654,9 @@ function addLayerProject(layer, name, zIndex) {
         layer.addTo(map);
         link.className = 'active';
     }
+    if (zIndex == 104) {
+        link.className = 'menu';                
+    }
 
     // end hack
 
@@ -661,30 +664,32 @@ function addLayerProject(layer, name, zIndex) {
         e.preventDefault();
         e.stopPropagation();
 
-        if (map.hasLayer(layer)) {
-            map.removeLayer(layer);
-            this.className = '';
-            if (zIndex == 20) {
-              $(".close-t1").trigger("click");
-            } else if (zIndex == 21) {
-              $(".close-t2").trigger("click");
-            } else if (zIndex == 22) {
-              $(".close-t3").trigger("click");
-            } else if (zIndex == 23) {
-              $(".close-t4").trigger("click");
-            }
-        } else {
-            map.addLayer(layer);
-            this.className = 'active';
-            if (zIndex == 20) {
-              $(".close-t1").trigger("click");
-            } else if (zIndex == 21) {
-              $(".close-t2").trigger("click");
-            } else if (zIndex == 22) {
-              $(".close-t3").trigger("click");
-            } else if (zIndex == 23) {
-              $(".close-t4").trigger("click");
-            }
+        if (zIndex != 104) {
+          if (map.hasLayer(layer)) {
+              map.removeLayer(layer);
+              this.className = '';
+              if (zIndex == 20) {
+                $(".close-t1").trigger("click");
+              } else if (zIndex == 21) {
+                $(".close-t2").trigger("click");
+              } else if (zIndex == 22) {
+                $(".close-t3").trigger("click");
+              } else if (zIndex == 23) {
+                $(".close-t4").trigger("click");
+              }
+          } else {
+              map.addLayer(layer);
+              this.className = 'active';
+              if (zIndex == 20) {
+                $(".close-t1").trigger("click");
+              } else if (zIndex == 21) {
+                $(".close-t2").trigger("click");
+              } else if (zIndex == 22) {
+                $(".close-t3").trigger("click");
+              } else if (zIndex == 23) {
+                $(".close-t4").trigger("click");
+              }
+          }
         }
     };
 
