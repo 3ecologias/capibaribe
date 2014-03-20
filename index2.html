@@ -355,7 +355,7 @@
 
 <!-- Sistema de Mapas -->
 <script>
-var map = L.map('map', { zoomControl: false, minZoom: 13, maxZoom: 18 }).setView([-8.05, -34.94], 13);
+var map = L.map('map', { zoomControl: false, minZoom: 12, maxZoom: 19 }).setView([-8.05, -34.94], 13);
 new L.Control.Zoom({ position: 'bottomright' }).addTo(map);
 var ui = document.getElementById('map-ui');
 addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_mapabase/{z}/{x}/{y}.png'), 'a cidade', 1);
@@ -372,7 +372,7 @@ var uitu = document.getElementById('map-ui-tu');
 addLayerTu(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_viario/{z}/{x}/{y}.png'), 'sistema viário', 44);
 addLayerTu(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_quadras/{z}/{x}/{y}.png'), 'quadras', 5);
 addLayerTu(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_canais/{z}/{x}/{y}.png'), 'canais', 20);
-addLayerTu(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_ciclovia/{z}/{x}/{y}.png'), 'ciclovias', 45);
+addLayerTu(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_ciclovias/{z}/{x}/{y}.png'), 'ciclovias', 45);
 addLayerTu(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_bikes/{z}/{x}/{y}.png'), 'estações de bicicletas', 45);
 addLayerTu(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pac_barcobus/{z}/{x}/{y}.png'), 'terminais fluviais', 42);
 
