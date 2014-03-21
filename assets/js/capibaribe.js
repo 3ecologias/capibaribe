@@ -173,7 +173,7 @@ $(document).ready(function() {
 
 		var clicks = $(this).data('clicks');
 	 	if (clicks) {
-	    	$('#map-ui-tu').animate({bottom:'-11.8em'},'slow')
+	    	$('#map-ui-tu').animate({bottom:'-17.3em'},'slow')
 	  	} else {
 	     	$('#map-ui-tu').animate({bottom:'0em'},'slow')
 	  	}
@@ -184,7 +184,7 @@ $(document).ready(function() {
 
 		var clicks = $(this).data('clicks');
 	 	if (clicks) {
-	    	$('#map-ui-se').animate({bottom:'-11em'},'slow')
+	    	$('#map-ui-se').animate({bottom:'-13.7em'},'slow')
 	  	} else {
 	     	$('#map-ui-se').animate({bottom:'0em'},'slow')
 	  	}
@@ -195,7 +195,7 @@ $(document).ready(function() {
 
 		var clicks = $(this).data('clicks');
 	 	if (clicks) {
-	    	$('#map-ui-vi').animate({bottom:'-13.6em'},'slow')
+	    	$('#map-ui-vi').animate({bottom:'-5.2em'},'slow')
 	  	} else {
 	     	$('#map-ui-vi').animate({bottom:'0em'},'slow')
 	  	}
