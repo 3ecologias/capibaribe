@@ -68,11 +68,11 @@ a {transition: all 0.2s ease-in-out 0s;}
     display: none;
 }
 
-/* Map Áreas Potenciais */
+/* Map Sistemas Naturais */
 #map-ui-ap {
     position: absolute;
     bottom: -8em;
-    left: 0em;
+    left: 10em;
     list-style: none outside none;
     margin: 0px;
     padding: 0px;
@@ -140,7 +140,7 @@ a {transition: all 0.2s ease-in-out 0s;}
 #map-ui-tu {
     position: absolute;
     bottom: -17.3em;
-    left: 10em;
+    left: 20em;
     list-style: none outside none;
     margin: 0px;
     padding: 0px;
@@ -208,7 +208,7 @@ a {transition: all 0.2s ease-in-out 0s;}
 #map-ui-se {
     position: absolute;
     bottom: -13.7em;
-    left: 20em;
+    left: 30em;
     list-style: none outside none;
     margin: 0px;
     padding: 0px;
@@ -272,11 +272,11 @@ a {transition: all 0.2s ease-in-out 0s;}
     color: #FFF;
 }
 
-/* Map Vitalidades */
+/* Map Projeto Parque Capibaribe */
 #map-ui-vi {
     position: absolute;
     bottom: -5.2em;
-    left: 30em;
+    left: 0em;
     list-style: none outside none;
     margin: 0px;
     padding: 0px;
@@ -340,7 +340,7 @@ a {transition: all 0.2s ease-in-out 0s;}
     color: #FFF;
 }
 
-/* Map Project */
+/* Map Diagnóstico */
 
 #map-ui-project {
     position: absolute;
