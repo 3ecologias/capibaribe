@@ -636,7 +636,7 @@ a {transition: all 0.2s ease-in-out 0s;}
     position: fixed;
     left: 0px;
     bottom: 20em;
-    background: none repeat scroll 0% 0% rgba(230, 230, 230, 0.6);
+    /*background: none repeat scroll 0% 0% rgba(230, 230, 230, 0.6);*/
     padding: 0px 11px 12px 11px;
     color: #007F93;
     opacity: 0.1;
@@ -649,7 +649,7 @@ a {transition: all 0.2s ease-in-out 0s;}
   font-weight: bold;
 }
 
-#legend-content:hover {
+#legend-01:hover, #legend-02:hover, #legend-03:hover, #legend-04:hover, #legend-05:hover {
     opacity: 1;
     transition: all 0.2s ease-in-out 0s;
 }
@@ -660,5 +660,8 @@ a {transition: all 0.2s ease-in-out 0s;}
     padding: 3px;
     max-width: 33%;
     display: none;
+    background: none repeat scroll 0% 0% rgba(230, 230, 230, 0.6);
+    opacity: 0.1;
+    transition: all 0.2s ease-in-out 0s;
 }
 
