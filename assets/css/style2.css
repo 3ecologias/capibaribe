@@ -559,7 +559,7 @@ a {transition: all 0.2s ease-in-out 0s;}
     margin-bottom: 5em;
     padding-top: 1em;
 }
-.close-insta, .close-blog, .close-twitter, .close-sobre, .close-t1, .close-t2, .close-t3, .close-t4 {
+.close-insta, .close-blog, .close-twitter, .close-sobre, .close-t1, .close-t2, .close-t3, .close-t4, .close-se {
     top: 5px;
     right: 15px;
     width:auto;
