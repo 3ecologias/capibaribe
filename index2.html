@@ -400,8 +400,11 @@ addLayerSe(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_centralidades/{z}
 
 var uivi = document.getElementById('map-ui-vi');
 addLayerVi(L.tileLayer('#'), 'projeto parque capibaribe', 103);
-addLayerVi(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_influencia/{z}/{x}/{y}.png'), 'área de influência', 2);
-addLayerVi(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_buffer1km/{z}/{x}/{y}.png'), 'buffer', 3);
+addLayerVi(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_influencia/{z}/{x}/{y}.png'), 'setores censitários - 1km', 2);
+addLayerVi(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_buffer1km/{z}/{x}/{y}.png'), 'área de influência', 3);
+addLayerVi(L.tileLayer('#'), 'sobre', 200);
+addLayerVi(L.tileLayer('#'), 'notícias', 201);
+addLayerVi(L.tileLayer('#'), 'imagens', 202);
 
 
 
@@ -413,11 +416,11 @@ addLayerProject(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_t02/
 addLayerProject(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_t03/{z}/{x}/{y}.png'), 'jaqueira/madalena', 22);
 addLayerProject(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_t04/{z}/{x}/{y}.png'), 'paisandú/santo antônio', 23);
 
-var uiinst = document.getElementById('map-ui-inst');
-addLayerInst(L.tileLayer('#'), 'institucional', 105);
-addLayerInst(L.tileLayer('#'), 'sobre', 200);
-addLayerInst(L.tileLayer('#'), 'notícias', 201);
-addLayerInst(L.tileLayer('#'), 'imagens', 202);
+// var uiinst = document.getElementById('map-ui-inst');
+// addLayerInst(L.tileLayer('#'), 'institucional', 105);
+// addLayerInst(L.tileLayer('#'), 'sobre', 200);
+// addLayerInst(L.tileLayer('#'), 'notícias', 201);
+// addLayerInst(L.tileLayer('#'), 'imagens', 202);
 
 // new L.Control.Zoom({ position: 'bottomright' }).addTo(map);
 // disable drag and zoom handlers
@@ -640,6 +643,7 @@ function addLayerSe(layer, name, zIndex) {
     uise.appendChild(item);
 }
 
+// Projeto Parque Capibaribe
 function addLayerVi(layer, name, zIndex) {
     layer
         .setZIndex(zIndex);
@@ -674,12 +678,78 @@ function addLayerVi(layer, name, zIndex) {
               this.className = 'active';
           }
         }
+
+        if (zIndex == 200) {
+            $( "#sobre-content" ).slideToggle( "slow" );
+
+            if($("#twitter-content").is(":hidden")) {
+            } else {
+              $( "#twitter-content" ).slideToggle( "fast" );
+            }
+            if($("#blog-content").is(":hidden")) {
+            } else {
+              $( "#blog-content" ).slideToggle( "fast" );
+            }
+            if($("#instagram-content").is(":hidden")) {
+            } else {
+              $( "#instagram-content" ).slideToggle( "fast" );
+            }
+            if ( $(this).hasClass('active')) {
+                link.className = '';
+              } else {
+                link.className = 'active';
+              }
+          }
+
+        if (zIndex == 201) {
+            $( "#blog-content" ).slideToggle( "slow" );
+
+            if($("#instagram-content").is(":hidden")) {
+            } else {
+              $( "#instagram-content" ).slideToggle( "fast" );
+            }
+            if($("#twitter-content").is(":hidden")) {
+            } else {
+              $( "#twitter-content" ).slideToggle( "fast" );
+            }
+            if($("#sobre-content").is(":hidden")) {
+            } else {
+              $( "#sobre-content" ).slideToggle( "fast" );
+            }
+
+            if ( $(this).hasClass('active')) {
+                link.className = '';
+              } else {
+                link.className = 'active';
+              }
+          }
+        if (zIndex == 202) {
+          $( "#instagram-content" ).slideToggle( "slow" );
+          if($("#twitter-content").is(":hidden")) {
+          } else {
+            $( "#twitter-content" ).slideToggle( "fast" );
+          }
+          if($("#blog-content").is(":hidden")) {
+          } else {
+            $( "#blog-content" ).slideToggle( "fast" );
+          }
+          if($("#sobre-content").is(":hidden")) {
+          } else {
+            $( "#sobre-content" ).slideToggle( "fast" );
+          }
+          if ( $(this).hasClass('active')) {
+              link.className = '';
+            } else {
+              link.className = 'active';
+            }
+        }
     };
 
     item.appendChild(link);
     uivi.appendChild(item);
 }
 
+// Diagnostico
 function addLayerProject(layer, name, zIndex) {
     layer
         .setZIndex(zIndex);
@@ -842,103 +912,103 @@ function addLayerProject(layer, name, zIndex) {
     uip.appendChild(item);
 }
 
-function addLayerInst(layer, name, zIndex) {
-    layer
-        .setZIndex(zIndex);
-        // .addTo(map);
+// function addLayerInst(layer, name, zIndex) {
+//     layer
+//         .setZIndex(zIndex);
+//         // .addTo(map);
 
-    // Create a simple layer switcher that toggles layers on
-    // and off.
-    var item = document.createElement('li');
-    var link = document.createElement('a');
+//     // Create a simple layer switcher that toggles layers on
+//     // and off.
+//     var item = document.createElement('li');
+//     var link = document.createElement('a');
 
-    link.href = '#';
-    // link.className = 'active';
-    link.className = '';
-    link.innerHTML = name;
+//     link.href = '#';
+//     // link.className = 'active';
+//     link.className = '';
+//     link.innerHTML = name;
 
-    // hack to set first map to default.
+//     // hack to set first map to default.
 
-    if (zIndex == 105) {
-        link.className = 'menu';                
-    }
+//     if (zIndex == 105) {
+//         link.className = 'menu';                
+//     }
 
-    // end hack
+//     // end hack
 
-    link.onclick = function(e) {
-        e.preventDefault();
-        e.stopPropagation();
+//     link.onclick = function(e) {
+//         e.preventDefault();
+//         e.stopPropagation();
 
-        if (zIndex != 105) {
-          if (zIndex == 200) {
-            $( "#sobre-content" ).slideToggle( "slow" );
+//         if (zIndex != 105) {
+//           if (zIndex == 200) {
+//             $( "#sobre-content" ).slideToggle( "slow" );
 
-            if($("#twitter-content").is(":hidden")) {
-            } else {
-              $( "#twitter-content" ).slideToggle( "fast" );
-            }
-            if($("#blog-content").is(":hidden")) {
-            } else {
-              $( "#blog-content" ).slideToggle( "fast" );
-            }
-            if($("#instagram-content").is(":hidden")) {
-            } else {
-              $( "#instagram-content" ).slideToggle( "fast" );
-            }
-            if ( $(this).hasClass('active')) {
-                link.className = '';
-              } else {
-                link.className = 'active';
-              }
-          }
-          if (zIndex == 201) {
-            $( "#blog-content" ).slideToggle( "slow" );
+//             if($("#twitter-content").is(":hidden")) {
+//             } else {
+//               $( "#twitter-content" ).slideToggle( "fast" );
+//             }
+//             if($("#blog-content").is(":hidden")) {
+//             } else {
+//               $( "#blog-content" ).slideToggle( "fast" );
+//             }
+//             if($("#instagram-content").is(":hidden")) {
+//             } else {
+//               $( "#instagram-content" ).slideToggle( "fast" );
+//             }
+//             if ( $(this).hasClass('active')) {
+//                 link.className = '';
+//               } else {
+//                 link.className = 'active';
+//               }
+//           }
+//           if (zIndex == 201) {
+//             $( "#blog-content" ).slideToggle( "slow" );
 
-            if($("#instagram-content").is(":hidden")) {
-            } else {
-              $( "#instagram-content" ).slideToggle( "fast" );
-            }
-            if($("#twitter-content").is(":hidden")) {
-            } else {
-              $( "#twitter-content" ).slideToggle( "fast" );
-            }
-            if($("#sobre-content").is(":hidden")) {
-            } else {
-              $( "#sobre-content" ).slideToggle( "fast" );
-            }
+//             if($("#instagram-content").is(":hidden")) {
+//             } else {
+//               $( "#instagram-content" ).slideToggle( "fast" );
+//             }
+//             if($("#twitter-content").is(":hidden")) {
+//             } else {
+//               $( "#twitter-content" ).slideToggle( "fast" );
+//             }
+//             if($("#sobre-content").is(":hidden")) {
+//             } else {
+//               $( "#sobre-content" ).slideToggle( "fast" );
+//             }
 
-            if ( $(this).hasClass('active')) {
-                link.className = '';
-              } else {
-                link.className = 'active';
-              }
-          }
-          if (zIndex == 202) {
-            $( "#instagram-content" ).slideToggle( "slow" );
-            if($("#twitter-content").is(":hidden")) {
-            } else {
-              $( "#twitter-content" ).slideToggle( "fast" );
-            }
-            if($("#blog-content").is(":hidden")) {
-            } else {
-              $( "#blog-content" ).slideToggle( "fast" );
-            }
-            if($("#sobre-content").is(":hidden")) {
-            } else {
-              $( "#sobre-content" ).slideToggle( "fast" );
-            }
-            if ( $(this).hasClass('active')) {
-                link.className = '';
-              } else {
-                link.className = 'active';
-              }
-          }
-        }   
-    };
+//             if ( $(this).hasClass('active')) {
+//                 link.className = '';
+//               } else {
+//                 link.className = 'active';
+//               }
+//           }
+//           if (zIndex == 202) {
+//             $( "#instagram-content" ).slideToggle( "slow" );
+//             if($("#twitter-content").is(":hidden")) {
+//             } else {
+//               $( "#twitter-content" ).slideToggle( "fast" );
+//             }
+//             if($("#blog-content").is(":hidden")) {
+//             } else {
+//               $( "#blog-content" ).slideToggle( "fast" );
+//             }
+//             if($("#sobre-content").is(":hidden")) {
+//             } else {
+//               $( "#sobre-content" ).slideToggle( "fast" );
+//             }
+//             if ( $(this).hasClass('active')) {
+//                 link.className = '';
+//               } else {
+//                 link.className = 'active';
+//               }
+//           }
+//         }   
+//     };
 
-    item.appendChild(link);
-    uiinst.appendChild(item);
-}
+//     item.appendChild(link);
+//     uiinst.appendChild(item);
+// }
 
 
 </script>
