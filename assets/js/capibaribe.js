@@ -195,7 +195,7 @@ $(document).ready(function() {
 
 		var clicks = $(this).data('clicks');
 	 	if (clicks) {
-	    	$('#map-ui-vi').animate({bottom:'-5.2em'},'slow')
+	    	$('#map-ui-vi').animate({bottom:'-14.5em'},'slow')
 	  	} else {
 	     	$('#map-ui-vi').animate({bottom:'0em'},'slow')
 	  	}
