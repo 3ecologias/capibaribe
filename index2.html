@@ -341,6 +341,43 @@
       </div>
     </div>
 
+    <div id="ff-content">
+      <div class="close-ff"><span class="glyphicon glyphicon-remove-circle"></span></div>
+      <h1>Fauna e Flora</h1>
+      <ul id="tabProject" class="nav nav-tabs">
+        <li class="active"><a href="#ff-fauna" data-toggle="tab">Fauna</a></li>
+        <li><a href="#ff-flora" data-toggle="tab">Flora</a></li>
+      </ul>
+
+      <!-- Tab panes -->
+      <div id="content" class="tab-content">
+        <div class="tab-pane fade in active" id="ff-fauna">
+          <p>
+            - Grande diversidade: aves, mamíferos, répteis e crustáceos (caranguejos, camarões, mariscos); <br>
+            - Porta do Rio (Várzea) até a Porta da Mata (Ilha do Bananal): refúgio para lontras, raposas, pacas, tatus, cutias, timbus, saguis, preás e capivaras; <br>
+            - Porta da Mata (Ilha do Bananal/Terminal Fluvial da BR 101) até a Porta do Mar (Foz do Rio Capibaribe): timbus, saguis, preás e capivaras; <br>
+            - As capivaras estão presentes em praticamente toda a extensão do rio; <br>
+            - Cágados, tartarugas, serpentes, lagartos e jacarés ocorrem em muitos trechos ao longo do rio; <br>
+            - Encontram-se também milhares de aves: garças, garças azuis (espécie rara), matriães, gaviões, socós, saracura-de-três-potes, batuíras, frangos-d´água, quero-queros, periquitos, anus pretos, anus brancos, tuins, martins-pescadores, maçaricos (vindos do hemisfério norte);<br>
+            - Encontram-se também peixes: camurim cabo-de-enxada, carapeba, saúna e sardinha, tainha, manjuba, gaiúba, cioba, dentão, arioco, cavala, peixe serra, dourado e guarajuba.
+          </p>
+        </div>
+        <div class="tab-pane fade" id="ff-flora">
+          <p>
+            - Presente em expressivas faixas ao longo do Rio Capibaribe;<br>
+            - De suma importância para a manutenção da biodiversidade;<br>
+            - Espécies típicas de Mata Ciliar: Ingá, Ipê e Ludwigia;<br>
+            - Nenhuma espécie está ameaçada de extinção;<br>
+            - Registra-se: 11 espécies aquáticas e 45 lenhosas;<br>
+            - Registra-se apenas um baobá ao longo do Rio Capibaribe (Espécie de preservação);<br>
+            - As espécies de mangue – apesar de plantadas - fazem parte da paisagem e são protegidas por lei;<br>
+            - As espécies coletadas oferecem abrigo e alimento à fauna, além de proteger o solo.<br>
+
+          </p>
+        </div>
+      </div>
+    </div>
+
 <ul id='map-ui' class='unselectable'></ul>
 <ul id='map-ui-ap' class='unselectable'></ul>
 <ul id='map-ui-tu' class='unselectable'></ul>
@@ -555,6 +592,10 @@ function addLayerAp(layer, name, zIndex) {
 
         if (zIndex == 39) {
           $("#legend-02").fadeToggle( "slow", "linear" );
+        }
+
+        if (zIndex == 52) {
+          $( "#ff-content" ).slideToggle( "slow" );
         }
 
         if (zIndex != 100) {

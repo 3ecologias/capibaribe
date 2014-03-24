@@ -52,6 +52,11 @@ $(document).ready(function() {
 	 	// $('.nav').find('li.active').removeClass('active');
 	});
 
+	$( ".close-ff" ).click(function() {
+	 	$( "#ff-content" ).slideToggle( "slow" );
+	 	// $('.nav').find('li.active').removeClass('active');
+	});
+
 	// map Project
 
 	$( ".close-t1" ).click(function() {
