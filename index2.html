@@ -392,19 +392,21 @@ addLayerTu(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_escolas/{
 addLayerTu(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_equipamentos/{z}/{x}/{y}.png'), 'equipamentos', 32);
 
 var uise = document.getElementById('map-ui-se');
-addLayerSe(L.tileLayer('#'), 'sócio/econômico', 102);
+addLayerSe(L.tileLayer('#'), 'sócio econômico', 102);
 addLayerSe(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_zeis/{z}/{x}/{y}.png'), 'aglomerados subnormais / ZEIS', 21);
 addLayerSe(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_densidade/{z}/{x}/{y}.png'), 'densidade demográfica', 7);
 addLayerSe(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_renda/{z}/{x}/{y}.png'), 'renda per capta', 8);
 addLayerSe(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_centralidades/{z}/{x}/{y}.png'), 'vitalidades', 31);
 
 var uivi = document.getElementById('map-ui-vi');
+
 addLayerVi(L.tileLayer('#'), 'projeto parque capibaribe', 103);
+addLayerVi(L.tileLayer('#'), 'sobre', 200);
 addLayerVi(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_influencia/{z}/{x}/{y}.png'), 'setores censitários - 1km', 2);
 addLayerVi(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_buffer1km/{z}/{x}/{y}.png'), 'área de influência', 3);
-addLayerVi(L.tileLayer('#'), 'sobre', 200);
-addLayerVi(L.tileLayer('#'), 'notícias', 201);
 addLayerVi(L.tileLayer('#'), 'imagens', 202);
+addLayerVi(L.tileLayer('#'), 'notícias', 201);
+
 
 
 
