@@ -559,7 +559,7 @@ a {transition: all 0.2s ease-in-out 0s;}
     margin-bottom: 5em;
     padding-top: 1em;
 }
-.close-insta, .close-blog, .close-twitter, .close-sobre, .close-t1, .close-t2, .close-t3, .close-t4, .close-se {
+.close-insta, .close-blog, .close-twitter, .close-sobre, .close-t1, .close-t2, .close-t3, .close-t4, .close-se, .close-ff {
     top: 5px;
     right: 15px;
     width:auto;
@@ -571,7 +571,7 @@ a {transition: all 0.2s ease-in-out 0s;}
     /*display: none;*/
 }
 
-#t1-content, #t2-content, #t3-content, #t4-content {
+#t1-content, #t2-content, #t3-content, #t4-content, #ff-content {
     float: right;
     height: 100%;
     width: 25%;
