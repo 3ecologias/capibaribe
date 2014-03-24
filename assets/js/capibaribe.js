@@ -47,6 +47,11 @@ $(document).ready(function() {
 	 	$('.nav').find('li.active').removeClass('active');
 	});
 
+	$( ".close-se" ).click(function() {
+	 	$( "#se-content" ).slideToggle( "slow" );
+	 	// $('.nav').find('li.active').removeClass('active');
+	});
+
 	// map Project
 
 	$( ".close-t1" ).click(function() {
