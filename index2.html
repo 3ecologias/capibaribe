@@ -61,10 +61,6 @@
         limit: 60,
         template: '<a class="fancybox" rel="galeria" href="{{image}}" title="{{caption}}, {{likes}} likes"><img src="{{image}}" /></a>'
     });
-    parqueFeed.run();
-</script>
-
-<script type="text/javascript">
     var faunaFeed = new Instafeed({
         target: 'capibaribefauna',
         get: 'tagged',
@@ -74,6 +70,7 @@
         limit: 60,
         template: '<a class="fancybox" rel="galeria" href="{{image}}" title="{{caption}}, {{likes}} likes"><img src="{{image}}" /></a>'
     });
+    parqueFeed.run();
     faunaFeed.run();
 </script>
 
