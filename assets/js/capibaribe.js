@@ -173,7 +173,7 @@ $(document).ready(function() {
 
 		var clicks = $(this).data('clicks');
 	 	if (clicks) {
-	    	$('#map-ui-tu').animate({bottom:'-17.3em'},'slow')
+	    	$('#map-ui-tu').animate({bottom:'-14.4em'},'slow')
 	  	} else {
 	     	$('#map-ui-tu').animate({bottom:'0em'},'slow')
 	  	}
