@@ -531,7 +531,7 @@ a {transition: all 0.2s ease-in-out 0s;}
     max-width: 100%;
 }
 
-#sobre-content, #instagram-content, #blog-content, #twitter-content  {
+#sobre-content, #instagram-content, #blog-content, #twitter-content, #se-content  {
     float: right;
     height: 100%;
     width: 25%;

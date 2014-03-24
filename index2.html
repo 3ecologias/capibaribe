@@ -237,6 +237,32 @@
       <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
     </div>
 
+    <div id="se-content">
+      <div class="close-se"> <span class="glyphicon glyphicon-remove-circle"></span></div>
+      <br><br>
+      <h1> Sócio Econômicos </h1>
+
+      <p>
+
+      - Transformação no cenário urbano e no hábito da população devido à demanda e oferta do mercado imobiliário;
+      <br>
+      - Século XXI: Crescimento econômico do Estado de Pernambuco, aumento de renda da população;
+      <br>
+      -Aumento da demanda de moradia (principalmente classe média): pessoas oriundas de outros estados são atraídas a trabalhar e morar em Pernambuco;
+      <br>
+      - Falta de estrutura urbana, saneamento básico e de transportes faz com que a oferta de imóveis para a classe média contemple os bairros ao redor do Rio Capibaribe e do mar;
+      <br>
+      - O mapa 1 revela que, entre 2000 e 2012 os imóveis próximos ao rio apresentaram aumento no número de transações X valorização superior a 500%. A forma encontrada, para solucionar este problema foi a verticalização;
+      <br>
+      -  As cores escuras no mapa 2 revelam que o número de pavimentos X área construída  em mais da metade dos setores censitários próximos ao Capibaribe apresentam crescimento superior a 300%;
+      <br>
+      - A exceção ocorre principalmente nos 12 bairros, onde a lei de zoneamento recente limitou construção de prédios com múltiplos andares;
+      <br>
+      - O adensamento populacional, mostrado nos mapas gera: congestionamentos, piora de serviços e falta de opções de lazer;
+      <br>
+      - Neste contexto a revitalização e humanização das margens do Capibaribe é uma tentativa de devolver aos moradores das áreas nobres da cidade, a qualidade de vida que a rápida expansão imobiliária subtraiu.
+    </div>
+
     <!-- Steps (t1,t2,t3,t4) contents -->
 
     <div id="t1-content">
@@ -623,6 +649,10 @@ function addLayerSe(layer, name, zIndex) {
     link.onclick = function(e) {
         e.preventDefault();
         e.stopPropagation();
+
+        if (zIndex == 102) {
+          $( "#se-content" ).slideToggle( "slow" );
+        }
 
         if (zIndex == 8) {
           $("#legend-03").fadeToggle( "slow", "linear" );
