@@ -183,7 +183,7 @@ $(document).ready(function() {
 
 		var clicks = $(this).data('clicks');
 	 	if (clicks) {
-	    	$('#map-ui-tu').animate({bottom:'-14.4em'},'slow')
+	    	$('#map-ui-tu').animate({bottom:'-14.11em'},'slow')
 	  	} else {
 	     	$('#map-ui-tu').animate({bottom:'0em'},'slow')
 	  	}
@@ -194,7 +194,7 @@ $(document).ready(function() {
 
 		var clicks = $(this).data('clicks');
 	 	if (clicks) {
-	    	$('#map-ui-se').animate({bottom:'-13.7em'},'slow')
+	    	$('#map-ui-se').animate({bottom:'-12.4em'},'slow')
 	  	} else {
 	     	$('#map-ui-se').animate({bottom:'0em'},'slow')
 	  	}
@@ -216,7 +216,7 @@ $(document).ready(function() {
 
 		var clicks = $(this).data('clicks');
 	 	if (clicks) {
-	    	$('#map-ui-project').animate({bottom:'-12.8em'},'slow')
+	    	$('#map-ui-project').animate({bottom:'-12.4em'},'slow')
 	  	} else {
 	     	$('#map-ui-project').animate({bottom:'0em'},'slow')
 	  	}
