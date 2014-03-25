@@ -4,7 +4,7 @@
     font-weight:400;
 }
 
-body { margin:0; padding:0; font-family: 'ConduitLight', sans-serif; overflow: hidden;}
+body { margin:0; padding:0; font-family: 'ConduitLight'!important, sans-serif; overflow: hidden;}
 header {width: 100%; z-index: 1; position: absolute;}
 
 a {transition: all 0.2s ease-in-out 0s;}
