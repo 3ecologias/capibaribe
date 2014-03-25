@@ -4,8 +4,10 @@
     font-weight:400;
 }
 
-body { margin:0; padding:0; font-family: 'ConduitLight', sans-serif!important; overflow: hidden;}
+body { margin:0; padding:0; font-family: 'ConduitLight', sans-serif!important; overflow: hidden; font-size: 1.6em!important;}
 header {width: 100%; z-index: 1; position: absolute;}
+
+h1 {font-family: 'ConduitLight', sans-serif!important; overflow: hidden; font-size: 1.6em!important;}
 
 a {transition: all 0.2s ease-in-out 0s;}
 
@@ -147,7 +149,7 @@ a {transition: all 0.2s ease-in-out 0s;}
 /* Map Tecido Urbano */
 #map-ui-tu {
     position: absolute;
-    bottom: -14.4em;
+    bottom: -14.11em;
     left: 20em;
     list-style: none outside none;
     margin: 0px;
@@ -215,7 +217,7 @@ a {transition: all 0.2s ease-in-out 0s;}
 /* Map Sócio/Econômico */
 #map-ui-se {
     position: absolute;
-    bottom: -13.7em;
+    bottom: -12.4em;
     left: 30em;
     list-style: none outside none;
     margin: 0px;
@@ -283,7 +285,7 @@ a {transition: all 0.2s ease-in-out 0s;}
 /* Map Projeto Parque Capibaribe */
 #map-ui-vi {
     position: absolute;
-    bottom: -14.5em;
+    bottom: -14.1em;
     left: 0em;
     list-style: none outside none;
     margin: 0px;
@@ -352,7 +354,7 @@ a {transition: all 0.2s ease-in-out 0s;}
 
 #map-ui-project {
     position: absolute;
-    bottom: -12.8em;
+    bottom: -12.4em;
     left: 40em;
     list-style: none outside none;
     margin: 0px;
