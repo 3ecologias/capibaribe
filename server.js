@@ -24,7 +24,7 @@ app.get('/tumblr', function (req, res) {
 //   res.sendfile(__dirname + '/assets/js/jquery.tumblr-kit.min.js');
 // });
 
-app.get('/*.(js|css|png|jpg)', function(req, res){
+app.get('/*.(js|css|png|jpg|woff)', function(req, res){
   res.sendfile(__dirname + '/assets'+req.url);
 });
 
