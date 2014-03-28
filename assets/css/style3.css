@@ -1,0 +1,313 @@
+@font-face {
+    font-family: ConduitLight;
+    src: url('fonts/conduit/light-regular.woff');
+    font-weight:400;
+}
+
+body { margin:0; padding:0; font-family: 'ConduitLight', sans-serif!important; overflow: hidden; font-size: 1.6em!important;}
+header {width: 100%; z-index: 1; position: absolute;}
+
+h1 {font-family: 'ConduitLight', sans-serif!important; overflow: hidden; font-size: 1.6em!important;}
+
+a {transition: all 0.2s ease-in-out 0s;}
+
+
+
+#header {
+    
+}
+#map { position:absolute; top:0; bottom:0; width:100%; }
+#map-ui {
+    position: absolute;
+    bottom: 2%;
+    left: 2%;
+    list-style: none outside none;
+    margin: 0px;
+    padding: 0px;
+    z-index: 100;
+    font-size: 0.8em;
+    width: 20%;
+    opacity: 0.5;
+    transition: all 0.2s ease-in-out 0s;
+}
+
+#map-ui li {
+    float: left;
+    display: inline-block;
+    line-height: 0.3em;
+    width: 150px;
+}
+
+#map-ui a {
+    background: #FFF;
+    color: #007F93;
+    display: block;
+    margin: 0;
+    padding: 0;
+    /*border: 1px solid #BBB;*/
+    border-bottom-width: 0;
+    min-width: 138px;
+    padding: 10px;
+    text-decoration: none;
+}
+
+#map-ui a:hover {
+    background: #007F93;
+    color: #fff;
+}
+
+#map-ui li:last-child a {
+    border-bottom-width: 1px;
+    -webkit-border-radius: 0 0 3px 3px;
+    border-radius: 0 0 3px 3px;
+}
+
+#map-ui li:first-child a {
+    -webkit-border-radius: 3px 3px 0 0;
+    border-radius: 3px 3px 0 0;
+}
+
+#map-ui a.active {
+    background: #007F93;
+    border-color: #1BBADA;
+    border-top-color: #FFF;
+    color: #FFF;
+}
+
+#map-ui a.hidden {
+    display: none;
+}
+
+/* Map Projeto Parque Capibaribe */
+#map-ui-vi {
+    position: absolute;
+    bottom: 0em;
+    left: 0em;
+    list-style: none outside none;
+    margin: 0px;
+    padding: 0px;
+    z-index: 100;
+    font-size: 0.8em;
+    width: 8%;
+    opacity: 1;
+    transition: all 0.2s ease-in-out 0s;
+}
+
+#map-ui-vi li {
+    float: left;
+    display: inline-block;
+    line-height: 1;
+    width: 110px;
+}
+
+#map-ui-vi a {
+    background: none repeat scroll 0% 0% rgba(255, 255, 255, 0.6);
+    color: #007F93;
+    display: block;
+    margin: 0;
+    padding: 0;
+    /*border: 1px solid #BBB;*/
+    border-bottom-width: 0;
+    min-width: auto;
+    padding: 10px;
+    text-decoration: none;
+}
+
+#map-ui-vi a:hover {
+    background: #007F93;
+    color: #fff;
+    opacity: 1;
+}
+
+#map-ui-vi li:last-child a {
+    border-bottom-width: 1px;
+    -webkit-border-radius: 0 0 3px 3px;
+    border-radius: 0 0 3px 3px;
+}
+
+#map-ui-vi li:first-child a {
+    -webkit-border-radius: 3px 3px 0 0;
+    border-radius: 3px 3px 0 0;
+}
+
+#map-ui-vi a.active {
+    background: #007F93;
+    border-color: #1BBADA;
+    border-top-color: #FFF;
+    color: #FFF;
+}
+
+#map-ui-vi a.hidden {
+    display: none;
+}
+
+#map-ui-vi a.menu {
+    background-color: #F0436C;
+    color: #FFF;
+}
+
+
+/* Navbar */
+.navbar-default {
+    background-color: transparent;
+    border-color: transparent;
+}
+.navbar-default .navbar-nav > li > a {
+    color: #FFF;
+    font-weight: bold;
+    text-shadow: 1px 2px 3px rgba(163, 163, 163, 1);
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: #1BBADA;
+}
+.navbar-default .navbar-nav > .active > a, 
+.navbar-default .navbar-nav > .active > a:hover, 
+.navbar-default .navbar-nav > .active > a:focus {
+    color: #fff;
+    background-color: #007F93;
+}
+.navbar-default .navbar-nav > .open > a, 
+.navbar-default .navbar-nav > .open > a:hover, 
+.navbar-default .navbar-nav > .open > a:focus {
+    color: #fff;
+    background-color: #007F93;
+}
+.navbar-default .navbar-nav > .open > a .caret, 
+.navbar-default .navbar-nav > .open > a:hover .caret, 
+.navbar-default .navbar-nav > .open > a:focus .caret {
+    border-top-color: #fff;
+    border-bottom-color: #fff;
+}
+.navbar-default .navbar-toggle {
+    border-color: transparent;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+    background-color: #007F93;
+}
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #ecf0f1;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+    border-color: transparent;
+}
+@media (max-width: 767px) {
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+        color: #ecf0f1;
+    }
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+        color: #fff;
+    }
+}
+.navbar-brand img {
+    max-width: 100%;
+}
+
+#sobre-content, #instagram-content, #blog-content, #twitter-content, #se-content  {
+    float: right;
+    top: 0;
+    height: 100%;
+    width: 25%;
+    padding: 20px 20px;
+    background: none repeat scroll 0% 0% rgba(0, 127, 147, 0.6);
+    color: rgb(255, 255, 255);
+    text-align: justify;
+    position: fixed;
+    right: 0px;
+    display: none;
+    z-index: 101;
+    overflow: auto;
+}
+
+.blog-gallery {
+    display: inline-block;
+    float: left;
+    list-style-type: none;
+    padding: 7px;
+}
+
+.post-photo {
+    display: inline-block;
+    border-top: 3px solid whitesmoke;
+    margin-bottom: 5em;
+    padding-top: 1em;
+}
+.close-insta, .close-blog, .close-twitter, .close-sobre, .close-t1, .close-t2, .close-t3, .close-t4, .close-se, .close-ff {
+    top: 5px;
+    right: 15px;
+    width:auto;
+    height:auto;
+    /*background:#900;*/
+    position:fixed;
+    cursor:pointer;
+    font-size: 2em;
+    /*display: none;*/
+}
+
+#instafeed img, #parquecapibaribe img, #capibaribevivo img {
+    width: 20%;
+    padding: 7px;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+ 
+::-webkit-scrollbar-button:start:decrement,
+::-webkit-scrollbar-button:end:increment  {
+    display: none;
+}
+ 
+::-webkit-scrollbar-track-piece  {
+    background-color: #007F93;
+    -webkit-border-radius: 6px;
+}
+ 
+::-webkit-scrollbar-thumb:vertical {
+    background-color: #f2f2f2;
+    -webkit-border-radius: 6px;
+}
+
+.leaflet-control-attribution {
+    display: none !important;
+}
+
+*.unselectable {
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+
+   /*
+     Introduced in IE 10.
+     See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+   */
+   -ms-user-select: none;
+   user-select: none;
+}
+
+#facebook {
+    position: fixed;
+    top: 43%;
+    left: -1%;
+}
+#facebook img {
+    width: 13%;
+}
+
+.ui-widget-overlay {
+background: #aaa url(images/ui-bg_flat_0_aaaaaa_40x100.png) 50% 50% repeat-x!important;
+opacity: .6!important;
+filter: Alpha(Opacity=30);
+}
+
+#dialog-modal {
+    font-family: 'ConduitLight', sans-serif;
+}
+
+.ui-dialog .ui-dialog-title {
+font-family: ConduitLight;
+}
