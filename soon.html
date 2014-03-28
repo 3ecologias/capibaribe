@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>Parque Capibaribe</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <script src='//api.tiles.mapbox.com/mapbox.js/v1.6.0/mapbox.js'></script>
+  <link href='//api.tiles.mapbox.com/mapbox.js/v1.6.0/mapbox.css' rel='stylesheet' />
+  <link href='css/style3.css' rel='stylesheet' />
+  <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+  <script src="js/jquery.tumblr-kit.min.js"></script>
+  <script src="http://borismoore.github.com/jsrender/jsrender.js"></script>
+  <script src="js/capibaribe.js"></script>
+  <script type="text/javascript" src="js/instafeed.min.js"></script>
+  <script type="text/javascript" src="js/fancybox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
+  <link rel="stylesheet" href="js/fancybox/source/jquery.fancybox.css" type="text/css" media="screen" />
+  <script type="text/javascript" src="js/fancybox/source/jquery.fancybox.pack.js"></script>
+<!-- <script src="js/ajax.js"></script> -->
+
+ <script>
+  $(function() {
+    $( "#dialog-modal" ).dialog({
+      height: 140,
+      modal: true
+    });
+  });
+  </script>
+
+  <script>
+      var TUMBLR_API_KEY = "qz5zBeyiO9gTJxUIhlH7bLVZXo88xafsjDxGTElGPBYW2wCRYE";
+      var TUMBLR_HOSTNAME = "parquecapibaribe.tumblr.com";
+
+      // On DOM Ready, perform these actions
+      $(function() {
+
+        function cyclePhotosets() {
+          // Cycle images in photosets
+          $(".photoset:not(.processed)").each(function() {
+            var me = $(this);
+            me.cycle();
+            me.imagesLoaded(function() {
+              me.height(me.find("img").first().height());
+            });
+            me.addClass("processed");
+          });
+        }
+
+        // Example Tumblr Kit usage
+
+        $("#all").getTumblrPosts({
+          limit: 20,
+          done: cyclePhotosets
+        });
+
+      });
+
+    </script>
+
+<script type="text/javascript">
+    var parqueFeed = new Instafeed({
+        target: 'parquecapibaribe',
+        get: 'tagged',
+        tagName: 'parquecapibaribe',
+        clientId: 'ead3f7bcfe2947aeaa730362c007a1cd',
+        resolution: 'standard_resolution',
+        limit: 60,
+        template: '<a class="fancybox" rel="galeria" href="{{image}}" title="{{caption}}, {{likes}} likes"><img src="{{image}}" /></a>'
+    });
+    var faunaFeed = new Instafeed({
+        target: 'capibaribevivo',
+        get: 'tagged',
+        tagName: 'capibaribevivo',
+        clientId: 'ead3f7bcfe2947aeaa730362c007a1cd',
+        resolution: 'standard_resolution',
+        limit: 60,
+        template: '<a class="fancybox" rel="galeria" href="{{image}}" title="{{caption}}, {{likes}} likes"><img src="{{image}}" /></a>'
+    });
+    parqueFeed.run();
+    faunaFeed.run();
+</script>
+
+</head>
+
+<body>
+<header>
+<nav class="navbar navbar-default unselectable" role="navigation">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="#"><img src="images/logo2.png" class="img-responsive"></a>
+  </div>
+
+  <!-- Collect the nav links for toggling -->
+<!--   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#" id="sobre">sobre</a></li>
+      <li><a href="#" id="blog">notícias</a></li>
+      <li><a href="#" id="instagram">imagens</a></li>
+    </ul>
+  </div><!-- /.navbar-collapse -->
+</nav>
+</header>
+
+<script id="tmpl-audio" type="text/x-jsrender">
+      <article id="post-{{:id}}" class="post-{{:type}}">
+        {{if track_name || artist || album}}
+          <h1>
+            {{:track_name}}
+            {{if artist}} by {{:artist}}{{/if}}
+            {{if album}} from &lsquo;{{:album}}&rsquo;
+              {{if year}}({{:year}}){{/if}}
+            {{/if}}
+          </h1>
+        {{/if}}
+
+        {{:~getTintedAudioPlayer(#view, "#DDDDDD")}}
+
+        {{if plays}}<p>{{:plays}} plays</p>{{/if}}
+
+        {{:source}}
+
+        {{for #data tmpl="#tmpl-metadata"/}}
+      </article>
+    </script>
+
+    <script id="tmpl-chat" type="text/x-jsrender">
+      <article id="post-{{:id}}" class="post-{{:type}}">
+        <h1>{{:title}}</h1>
+
+        {{if dialogue}}
+          <ul class="chat">
+            {{for dialogue}}<li><strong>{{:label}}</strong> {{:phrase}}</li>{{/for}}
+          </ul>
+        {{/if}}
+
+        {{for #data tmpl="#tmpl-metadata"/}}
+      </article>
+    </script>
+
+    <script id="tmpl-link" type="text/x-jsrender">
+      <article id="post-{{:id}}" class="post-{{:type}}">
+        <h1><a href="{{:url}}">{{:title}}</a></h1>
+
+        {{:description}}
+
+        {{for #data tmpl="#tmpl-metadata"/}}
+      </article>
+    </script>
+
+    <script id="tmpl-photo" type="text/x-jsrender">
+      <article id="post-{{:id}}" class="post-{{:type}}">
+        {{:caption}}
+
+        {{for #data tmpl="#tmpl-metadata"/}}
+        
+        {{if photoset_layout}}
+          <ul class="photoset">
+            {{for photos}}<li class="blog-gallery"><a class="fancybox" href="{{:~getPhotoURL(#view, 500)}}" rel="blog"><img src="{{:~getPhotoURL(#view, 150)}}" /></a></li>{{/for}}
+          </ul>
+        {{else}}
+          <img src="{{for photos}}{{:~getPhotoURL(#view, 500)}}{{/for}}" />
+        {{/if}}
+
+      </article>
+    </script>
+
+    <script id="tmpl-quote" type="text/x-jsrender">
+      <article id="post-{{:id}}" class="post-{{:type}}">
+        <h1>{{:text}}</h1>
+
+        {{:source}}
+
+        {{for #data tmpl="#tmpl-metadata"/}}
+      </article>
+    </script>
+
+    <script id="tmpl-text" type="text/x-jsrender">
+      <article id="post-{{:id}}" class="post-{{:type}}">
+        <h1>{{:title}}</h1>
+
+        {{:body}}
+
+        {{for #data tmpl="#tmpl-metadata"/}}
+      </article>
+    </script>
+
+    <script id="tmpl-video" type="text/x-jsrender">
+      <article id="post-{{:id}}" class="post-{{:type}}">
+        {{:~getVideoEmbed(#view, 500)}}
+
+        {{:caption}}
+
+        {{for #data tmpl="#tmpl-metadata"/}}
+      </article>
+    </script>
+
+    <!-- Additional Metadata / Tag templates to avoid repetition of code -->
+
+    <script id="tmpl-metadata" type="text/x-jsrender">
+      {{if note_count > 0}}<p><small><a href="{{:post_url}}#notes">{{:note_count}} notes</a></small></p>{{/if}}
+
+      {{if tags}}<ul class="tags">{{for tags tmpl="#tmpl-tag"/}}</ul>{{/if}}
+    </script>
+
+    <script id="tmpl-tag" type="text/x-jsrender">
+      <li><a href="http://{{:~getHostname()}}/tagged/{{:#data}}">{{:#data}}</a></li>
+    </script>
+
+    <!-- Container elements to render posts into -->
+    <div id="sobre-content">
+      <div class="close-sobre"> <span class="glyphicon glyphicon-remove-circle"></span></div>
+      <br><br>
+      <h1> O que é o Parque Capibaribe? </h1>
+
+      <p>
+
+      Iniciativa que promove diretrizes de articulação entre o Rio Capibaribe e os espaços urbanos, conectando as bordas/margens com equipamentos existentes na cidade e espaços de área verde, criando ciclovias e interligando vias de ônibus com uma nova experiência de articulação modal de transporte. Com isso, o Parque Capibaribe promove tambem uma mudança de mentalidade da população em relação ao rio, lançando um olhar inovador para as inúmeras possibilidades de ações nas águas do Capibaribe. </p>
+
+      <h1> Equipe Transdisciplinar </h1>
+
+      <p>
+
+      De base multidisciplinar, este convênio reúne grupos de pesquisa de excelência em várias áreas de conhecimento e instituições de ensino, como engenharia, sociologia, biologia, recursos hídricos, agronomia, botânica, resíduos sólidos, paisagismo, habitação, estudos espaciais de morfologia, ergonomia, como também grupos ligados à mobilidade urbana, desenvolvimento sustentável e desenho urbano voltado à concepção de espaços públicos de qualidade. </p>
+
+      <h1> Diálogo com a população </h1>
+      <p>
+      Associados a esse corpo teórico e prático especializado, estão sendo desenvolvidos dispositivos de conhecimento para diálogo com a população, como por exemplo a promoção de workshops onde os moradores são convidados a experimentar ideias a serem implantadas nas bordas do rio, como também a criação desta plataforma aberta e georreferenciada para a construção de uma conscientização coletiva, colaborativa e democrática, verificando assim se as ideias propostas têm aderência ao que a população das margens e arredores do Capibaribe realmente necessita. </p>
+      <p>
+      Esta plataforma é um produto do Parque Capibaribe - Caminho das Capivaras, convênio de cooperação técnica entre a Prefeitura da Cidade do Recife (PCR), através da Secretaria do Meio Ambiente e Sustentabilidade do Recife (SEMAS) e a Universidade Federal de Pernambuco (UFPE). </p><br>
+      <p><img src="images/marcas.png"></p>
+    </div>
+
+    <div id="blog-content">
+      <div class="close-blog"> <span class="glyphicon glyphicon-remove-circle"></span></div>
+      <h1>notícias</h1>
+      <div id="all"></div>
+    </div>
+
+    <div id="instagram-content">
+      <div class="close-insta"><span class="glyphicon glyphicon-remove-circle"></span></div>
+      <h1>#parquecapibaribe na rede</h1>
+      <div id="parquecapibaribe"></div>
+    </div>
+
+    <div id="twitter-content">
+      <div class="close-twitter"><span class="glyphicon glyphicon-remove-circle"></span></div>
+      <h1>twitter</h1>
+      <a class="twitter-timeline" href="https://twitter.com/pcapibaribe" data-widget-id="427991570600570880" data-chrome="noheader nofooter noborders noscrollbar transparent">Tweets de @pcapibaribe</a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    </div>
+
+    <div id="se-content">
+      <div class="close-se"> <span class="glyphicon glyphicon-remove-circle"></span></div>
+      <br><br>
+      <h1> Sócio Econômicos </h1>
+
+      <p>
+
+      - Transformação no cenário urbano e no hábito da população devido à demanda e oferta do mercado imobiliário;
+      <br>
+      - Século XXI: Crescimento econômico do Estado de Pernambuco, aumento de renda da população;
+      <br>
+      -Aumento da demanda de moradia (principalmente classe média): pessoas oriundas de outros estados são atraídas a trabalhar e morar em Pernambuco;
+      <br>
+      - Falta de estrutura urbana, saneamento básico e de transportes faz com que a oferta de imóveis para a classe média contemple os bairros ao redor do Rio Capibaribe e do mar;
+      <br>
+      - O mapa 1 revela que, entre 2000 e 2012 os imóveis próximos ao rio apresentaram aumento no número de transações X valorização superior a 500%. A forma encontrada, para solucionar este problema foi a verticalização;
+      <br>
+      -  As cores escuras no mapa 2 revelam que o número de pavimentos X área construída  em mais da metade dos setores censitários próximos ao Capibaribe apresentam crescimento superior a 300%;
+      <br>
+      - A exceção ocorre principalmente nos 12 bairros, onde a lei de zoneamento recente limitou construção de prédios com múltiplos andares;
+      <br>
+      - O adensamento populacional, mostrado nos mapas gera: congestionamentos, piora de serviços e falta de opções de lazer;
+      <br>
+      - Neste contexto a revitalização e humanização das margens do Capibaribe é uma tentativa de devolver aos moradores das áreas nobres da cidade, a qualidade de vida que a rápida expansão imobiliária subtraiu.
+    </div>
+
+    <!-- Steps (t1,t2,t3,t4) contents -->
+
+    <div id="t1-content">
+      <div class="close-t1"><span class="glyphicon glyphicon-remove-circle"></span></div>
+      <h1>Várzea / Dois Irmãos</h1>
+      <ul id="tabProject" class="nav nav-tabs">
+        <li class="active"><a href="#t1-home" data-toggle="tab">Home</a></li>
+        <li><a href="#t1-project" data-toggle="tab">Profile</a></li>
+      </ul>
+
+      <!-- Tab panes -->
+      <div id="content" class="tab-content">
+        <div class="tab-pane fade in active" id="t1-home">
+          <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+        </div>
+        <div class="tab-pane fade" id="t1-project">
+          <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="t2-content">
+      <div class="close-t2"><span class="glyphicon glyphicon-remove-circle"></span></div>
+      <h1>Apipucos / Torre </h1>
+      <ul id="tabProject" class="nav nav-tabs">
+        <li class="active"><a href="#t2-home" data-toggle="tab">Home</a></li>
+        <li><a href="#t2-project" data-toggle="tab">Profile</a></li>
+      </ul>
+
+      <!-- Tab panes -->
+      <div id="content" class="tab-content">
+        <div class="tab-pane fade in active" id="t2-home">
+          <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+        </div>
+        <div class="tab-pane fade" id="t2-project">
+          <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="t3-content">
+      <div class="close-t3"><span class="glyphicon glyphicon-remove-circle"></span></div>
+      <h1>Jaqueira / Madalena</h1>
+      <ul id="tabProject" class="nav nav-tabs">
+        <li class="active"><a href="#t3-home" data-toggle="tab">Home</a></li>
+        <li><a href="#t3-project" data-toggle="tab">Profile</a></li>
+      </ul>
+
+      <!-- Tab panes -->
+      <div id="content" class="tab-content">
+        <div class="tab-pane fade in active" id="t3-home">
+          <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+        </div>
+        <div class="tab-pane fade" id="t3-project">
+          <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="t4-content">
+      <div class="close-t4"><span class="glyphicon glyphicon-remove-circle"></span></div>
+      <h1>Paissandú / Santo Antônio</h1>
+      <ul id="tabProject" class="nav nav-tabs">
+        <li class="active"><a href="#t4-home" data-toggle="tab">Home</a></li>
+        <li><a href="#t4-project" data-toggle="tab">Profile</a></li>
+      </ul>
+
+      <!-- Tab panes -->
+      <div id="content" class="tab-content">
+        <div class="tab-pane fade in active" id="t4-home">
+          <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+        </div>
+        <div class="tab-pane fade" id="t4-project">
+          <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="ff-content">
+      <div class="close-ff"><span class="glyphicon glyphicon-remove-circle"></span></div>
+      <h1>Fauna e Flora</h1>
+      <ul id="tabProject" class="nav nav-tabs">
+        <li class="active"><a href="#ff-fauna" data-toggle="tab">Fauna</a></li>
+        <li><a href="#ff-flora" data-toggle="tab">Flora</a></li>
+      </ul>
+
+      <!-- Tab panes -->
+      <div id="content" class="tab-content">
+        <div class="tab-pane fade in active" id="ff-fauna">
+          <p>
+            - Grande diversidade: aves, mamíferos, répteis e crustáceos (caranguejos, camarões, mariscos); <br>
+            - Porta do Rio (Várzea) até a Porta da Mata (Ilha do Bananal): refúgio para lontras, raposas, pacas, tatus, cutias, timbus, saguis, preás e capivaras; <br>
+            - Porta da Mata (Ilha do Bananal/Terminal Fluvial da BR 101) até a Porta do Mar (Foz do Rio Capibaribe): timbus, saguis, preás e capivaras; <br>
+            - As capivaras estão presentes em praticamente toda a extensão do rio; <br>
+            - Cágados, tartarugas, serpentes, lagartos e jacarés ocorrem em muitos trechos ao longo do rio; <br>
+            - Encontram-se também milhares de aves: garças, garças azuis (espécie rara), matriães, gaviões, socós, saracura-de-três-potes, batuíras, frangos-d´água, quero-queros, periquitos, anus pretos, anus brancos, tuins, martins-pescadores, maçaricos (vindos do hemisfério norte);<br>
+            - Encontram-se também peixes: camurim cabo-de-enxada, carapeba, saúna e sardinha, tainha, manjuba, gaiúba, cioba, dentão, arioco, cavala, peixe serra, dourado e guarajuba.
+          </p>
+          <div id="capibaribevivo"></div>
+        </div>
+        <div class="tab-pane fade" id="ff-flora">
+          <p>
+            - Presente em expressivas faixas ao longo do Rio Capibaribe;<br>
+            - De suma importância para a manutenção da biodiversidade;<br>
+            - Espécies típicas de Mata Ciliar: Ingá, Ipê e Ludwigia;<br>
+            - Nenhuma espécie está ameaçada de extinção;<br>
+            - Registra-se: 11 espécies aquáticas e 45 lenhosas;<br>
+            - Registra-se apenas um baobá ao longo do Rio Capibaribe (Espécie de preservação);<br>
+            - As espécies de mangue – apesar de plantadas - fazem parte da paisagem e são protegeridas por lei;<br>
+            - As espécies coletadas oferecem abrigo e alimento à fauna, além de proteger o solo.<br>
+
+          </p>
+        </div>
+      </div>
+    </div>
+
+<ul id='map-ui' class='unselectable'></ul>
+<ul id='map-ui-ap' class='unselectable'></ul>
+<ul id='map-ui-tu' class='unselectable'></ul>
+<ul id='map-ui-se' class='unselectable'></ul>
+<ul id='map-ui-vi' class='unselectable'></ul>
+<ul id='map-ui-project' class='unselectable'></ul>
+<ul id='map-ui-inst' class='unselectable'></ul>
+<div id='map'></div>
+
+
+<!-- Sistema de Mapas -->
+<script>
+var map = L.map('map', { zoomControl: false, minZoom: 12, maxZoom: 19 }).setView([-8.05, -34.94], 13);
+new L.Control.Zoom({ position: 'bottomright' }).addTo(map);
+var ui = document.getElementById('map-ui');
+addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_mapabase/{z}/{x}/{y}.png'), 'a cidade', 1);
+addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_rio/{z}/{x}/{y}.png'), 'o rio', 40);
+addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_bairros/{z}/{x}/{y}.png'), 'bairros', 45);
+addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_viario/{z}/{x}/{y}.png'), 'sistema viário', 44);
+addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_quadras/{z}/{x}/{y}.png'), 'quadras', 5);
+
+var uivi = document.getElementById('map-ui-vi');
+
+addLayerVi(L.tileLayer('#'), 'projeto parque capibaribe', 103);
+addLayerVi(L.tileLayer('#'), 'sobre', 200);
+addLayerVi(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_buffer1km/{z}/{x}/{y}.png'), 'área de influência', 3);
+addLayerVi(L.tileLayer('#'), 'imagens', 202);
+
+function addLayer(layer, name, zIndex) {
+    layer
+        .setZIndex(zIndex);
+        // .addTo(map);
+
+    // Create a simple layer switcher that toggles layers on
+    // and off.
+    var item = document.createElement('li');
+    var link = document.createElement('a');
+
+    link.href = '#';
+    // link.className = 'active';
+    link.className = '';
+    link.innerHTML = name;
+
+    // hack to set first map to default.
+
+    if (zIndex == 1) {
+        layer.addTo(map);
+        link.className = 'active';
+        link.className = 'hidden';
+    }
+    if (zIndex == 5) {
+        layer.addTo(map);
+        link.className = 'active';
+        link.className = 'hidden';
+    }
+    if (zIndex == 40) {
+        layer.addTo(map);
+        link.className = 'active';
+        link.className = 'hidden';
+    }
+    if (zIndex == 45) {
+        layer.addTo(map);
+        link.className = 'active';
+        link.className = 'hidden';
+    }
+    if (zIndex == 44) {
+        layer.addTo(map);
+        link.className = 'active';
+        link.className = 'hidden';
+    }
+
+
+    // end hack
+
+    link.onclick = function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        if (map.hasLayer(layer)) {
+            map.removeLayer(layer);
+            this.className = '';
+        } else {
+            map.addLayer(layer);
+            this.className = 'active';
+        }
+    };
+
+    item.appendChild(link);
+    ui.appendChild(item);
+}
+// Projeto Parque Capibaribe
+function addLayerVi(layer, name, zIndex) {
+    layer
+        .setZIndex(zIndex);
+        // .addTo(map);
+
+    // Create a simple layer switcher that toggles layers on
+    // and off.
+    var item = document.createElement('li');
+    var link = document.createElement('a');
+
+    link.href = '#';
+    // link.className = 'active';
+    link.className = '';
+    link.innerHTML = name;
+
+    if (zIndex == 103) {
+        link.className = 'menu';                
+    }
+
+    if (zIndex == 201) {
+        link.className = 'redesocial';
+        link.href= 'facebook'                
+    }
+
+    if (zIndex == 200) {
+      link.className = 'active';
+      $( "#sobre-content" ).slideToggle( "fast" );
+    }
+
+    // end hack
+
+    link.onclick = function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        if (zIndex != 103) {
+          if (map.hasLayer(layer)) {
+              map.removeLayer(layer);
+              this.className = '';
+          } else {
+              map.addLayer(layer);
+              this.className = 'active';
+          }
+        }
+
+        if (zIndex == 200) {
+            $( "#sobre-content" ).slideToggle( "slow" );
+
+            if($("#twitter-content").is(":hidden")) {
+            } else {
+              $( "#twitter-content" ).slideToggle( "fast" );
+            }
+            if($("#blog-content").is(":hidden")) {
+            } else {
+              $( "#blog-content" ).slideToggle( "fast" );
+            }
+            if($("#instagram-content").is(":hidden")) {
+            } else {
+              $( "#instagram-content" ).slideToggle( "fast" );
+            }
+            if($("#ff-content").is(":hidden")) {
+            } else {
+              $( "#ff-content" ).slideToggle( "fast" );
+            }
+            if($("#se-content").is(":hidden")) {
+            } else {
+              $( "#se-content" ).slideToggle( "fast" );
+            }
+            if ( $(this).hasClass('active')) {
+                link.className = '';
+              } else {
+                link.className = 'active';
+              }
+          }
+
+        if (zIndex == 201) {
+
+          
+          }
+        if (zIndex == 202) {
+          $( "#instagram-content" ).slideToggle( "slow" );
+          if($("#twitter-content").is(":hidden")) {
+          } else {
+            $( "#twitter-content" ).slideToggle( "fast" );
+          }
+          if($("#blog-content").is(":hidden")) {
+          } else {
+            $( "#blog-content" ).slideToggle( "fast" );
+          }
+          if($("#sobre-content").is(":hidden")) {
+          } else {
+            $( "#sobre-content" ).slideToggle( "fast" );
+          }
+          if($("#ff-content").is(":hidden")) {
+            } else {
+              $( "#ff-content" ).slideToggle( "fast" );
+            }
+            if($("#se-content").is(":hidden")) {
+            } else {
+              $( "#se-content" ).slideToggle( "fast" );
+            }
+            if($("#t1-content").is(":hidden")) {
+            } else {
+              $( "#t1-content" ).slideToggle( "fast" );
+            }
+            if($("#t2-content").is(":hidden")) {
+            } else {
+              $( "#t2-content" ).slideToggle( "fast" );
+            }
+            if($("#t3-content").is(":hidden")) {
+            } else {
+              $( "#t3-content" ).slideToggle( "fast" );
+            }
+            if($("#t4-content").is(":hidden")) {
+            } else {
+              $( "#t4-content" ).slideToggle( "fast" );
+            }
+          if ( $(this).hasClass('active')) {
+              link.className = '';
+            } else {
+              link.className = 'active';
+            }
+        }
+    };
+
+    item.appendChild(link);
+    uivi.appendChild(item);
+}
+
+
+</script>
+
+<script type="text/javascript">
+  // get in http://jsfiddle.net/jhfrench/NQ97h/
+  $('#tabProject a').click(function (e) {
+    e.preventDefault();
+    $(this).tab('show');
+  });
+
+  $(".ui-dialog").addClass("headernew");
+
+</script>
+<div id="dialog-modal" title="em construção">
+  <p>A plataforma será disponibilizada em breve.</p>
+</div>
+
+<div id="facebook">
+<a href="http://facebook.com/parquecapibaribe"><img src="images/face.png"></a>
+</div>
+</body>
+</html>
