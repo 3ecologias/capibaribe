@@ -607,7 +607,7 @@ addLayerProject(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_t04/
           var photo_marker = L.photoMarker([photo.latitude, photo.longitude], {
             src: photo.url_t,
             size: [ photo.width_t, photo.height_t ]
-          }).bindPopup('<img src="'+photo.url_m+'" /><h1>'+photo.title+'</h1><p>'+photo.owner_name+'</p>', {
+          }).bindPopup('<img src="'+photo.url_m+'" /><h1>'+photo.title+'</h1>', {
               minWidth: photo.width_m,
               minHeight: photo.height_m
           });
