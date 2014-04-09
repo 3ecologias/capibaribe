@@ -706,3 +706,15 @@ a {transition: all 0.2s ease-in-out 0s;}
 .popup .cycle a.next {
     float: right;
 }
+
+.map-overlay {
+    position:absolute;
+    top:5px;
+    right:5px;
+    padding:5px;
+    background:#fff;
+    font-size:11px;
+}
+.map-overlay input {
+    font:inherit;
+}
