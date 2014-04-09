@@ -448,6 +448,7 @@
 <script>
 var map = L.map('map', { zoomControl: false, minZoom: 12, maxZoom: 19 }).setView([-8.05, -34.94], 13);
 new L.Control.Zoom({ position: 'bottomright' }).addTo(map);
+
 var ui = document.getElementById('map-ui');
 addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_mapabase/{z}/{x}/{y}.png'), 'a cidade', 1);
 addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_rio/{z}/{x}/{y}.png'), 'o rio', 40);
@@ -1397,6 +1398,93 @@ function addLayerProject(layer, name, zIndex) {
 //     uiinst.appendChild(item);
 // }
 
+// Add Makers via geoJSON
+var geoJson = [{
+    type: 'Feature',
+    "geometry": { "type": "Point", "coordinates": [-8.04, -34.91]},
+    "properties": {
+        'title': 'Santa Luzia',
+
+        // Store the image url and caption in an array
+        'images': [
+          ['https://trello-attachments.s3.amazonaws.com/525fdd09eb61795e1d005827/5331dabb98c59fbf296c16e8/2000x1000/98202964dd4774eb35e5df31f28a956e/SANTA_LUZIA-IMAGEM_01-TRATADA.png','Parque Santa Luzia'],
+          ['https://i.imgur.com/xND1MND.jpg','Ford\'s Theatre in the 19th century, site of the 1865 assassination of President Lincoln'],
+          ['https://i.imgur.com/EKJmqui.jpg','The National Cherry Blossom Festival is celebrated around the city each spring.']
+        ]
+    }
+}, {
+    type: 'Feature',
+    "geometry": { "type": "Point", "coordinates": [-8.03, -34.90]},
+    "properties": {
+        'title': 'La Greca',
+        'images': [
+          ['https://trello-attachments.s3.amazonaws.com/525fdd09eb61795e1d005827/5331dabb98c59fbf296c16e8/2000x1000/35cbbbe4d7e39f894770ed2ae3fa21ae/la_greca_R2.png','Murilo La Greca.'],
+          ['https://i.imgur.com/LHNDBpf.jpg','During the mid-19th Century, Broadway was extended the length of Manhattan.'],
+          ['https://i.imgur.com/Pk3DYH1.jpg','Times Square has the highest annual attendance rate of any tourist attraction in the world.']
+        ]
+
+    }
+}];
+
+// Add custom popup html to each marker
+map.featureLayer.on('layeradd', function(e) {
+    var marker = e.layer;
+    var feature = marker.feature;
+    var images = feature.properties.images
+    var slideshowContent = '';
+
+    for(var i = 0; i < images.length; i++) {
+        var img = images[i];
+
+        slideshowContent += '<div class="image' + (i === 0 ? ' active' : '') + '">' +
+                              '<img src="' + img[0] + '" />' +
+                              '<div class="caption">' + img[1] + '</div>' +
+                            '</div>';
+    }
+
+    // Create custom popup content
+    var popupContent =  '<div id="' + feature.properties.id + '" class="popup">' +
+                            '<h2>' + feature.properties.title + '</h2>' +
+                            '<div class="slideshow">' +
+                                slideshowContent +
+                            '</div>' +
+                            '<div class="cycle">' +
+                                '<a href="#" class="prev">&laquo; Previous</a>' +
+                                '<a href="#" class="next">Next &raquo;</a>' +
+                            '</div>'
+                        '</div>';
+
+    // http://leafletjs.com/reference.html#popup
+    marker.bindPopup(popupContent,{
+        closeButton: false,
+        minWidth: 320
+    });
+});
+
+map.featureLayer.setGeoJSON(geoJson);
+
+// This example uses jQuery to make selecting items in the slideshow easier.
+// Download it from http://jquery.com
+$('#map').on('click', '.popup .cycle a', function() {
+    var $slideshow = $('.slideshow'),
+        $newSlide;
+
+    if ($(this).hasClass('prev')) {
+        $newSlide = $slideshow.find('.active').prev();
+        if ($newSlide.index() < 0) {
+            $newSlide = $('.image').last();
+        }
+    } else {
+        $newSlide = $slideshow.find('.active').next();
+        if ($newSlide.index() < 0) {
+            $newSlide = $('.image').first();
+        }
+    }
+
+    $slideshow.find('.active').removeClass('active').hide();
+    $newSlide.addClass('active').show();
+    return false;
+});
 
 </script>
 
