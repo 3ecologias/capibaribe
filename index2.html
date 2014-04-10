@@ -66,23 +66,23 @@
     var parqueFeed = new Instafeed({
         target: 'parquecapibaribe',
         get: 'tagged',
-        tagName: 'parquecapibaribe',
+        tagName: 'capibaribe',
         clientId: 'ead3f7bcfe2947aeaa730362c007a1cd',
         resolution: 'standard_resolution',
         limit: 60,
         template: '<a class="fancybox" rel="galeria" href="{{image}}" title="{{caption}}, {{likes}} likes"><img src="{{image}}" /></a>'
     });
-    var faunaFeed = new Instafeed({
-        target: 'capibaribevivo',
-        get: 'tagged',
-        tagName: 'capibaribevivo',
-        clientId: 'ead3f7bcfe2947aeaa730362c007a1cd',
-        resolution: 'standard_resolution',
-        limit: 60,
-        template: '<a class="fancybox" rel="galeria" href="{{image}}" title="{{caption}}, {{likes}} likes"><img src="{{image}}" /></a>'
-    });
+    // var faunaFeed = new Instafeed({
+    //     target: 'capibaribevivo',
+    //     get: 'tagged',
+    //     tagName: 'capibaribevivo',
+    //     clientId: 'ead3f7bcfe2947aeaa730362c007a1cd',
+    //     resolution: 'standard_resolution',
+    //     limit: 60,
+    //     template: '<a class="fancybox" rel="galeria" href="{{image}}" title="{{caption}}, {{likes}} likes"><img src="{{image}}" /></a>'
+    // });
     parqueFeed.run();
-    faunaFeed.run();
+    // faunaFeed.run();
 </script>
 
 </head>
@@ -220,7 +220,6 @@
     <!-- Container elements to render posts into -->
     <div id="sobre-content">
       <div class="close-sobre"> <span class="glyphicon glyphicon-remove-circle"></span></div>
-      <br><br>
       <h1> O que é o Parque Capibaribe? </h1>
 
       <p>
@@ -249,7 +248,7 @@
 
     <div id="instagram-content">
       <div class="close-insta"><span class="glyphicon glyphicon-remove-circle"></span></div>
-      <h1>#parquecapibaribe na rede</h1>
+      <h1>#capibaribe</h1>
       <div id="parquecapibaribe"></div>
     </div>
 
@@ -262,7 +261,6 @@
 
     <div id="se-content">
       <div class="close-se"> <span class="glyphicon glyphicon-remove-circle"></span></div>
-      <br><br>
       <h1> Sócio Econômicos </h1>
 
       <p>
@@ -376,26 +374,18 @@
       <div id="content" class="tab-content">
         <div class="tab-pane fade in active" id="ff-fauna">
           <p>
-            - Grande diversidade: aves, mamíferos, répteis e crustáceos (caranguejos, camarões, mariscos); <br>
-            - Porta do Rio (Várzea) até a Porta da Mata (Ilha do Bananal): refúgio para lontras, raposas, pacas, tatus, cutias, timbus, saguis, preás e capivaras; <br>
-            - Porta da Mata (Ilha do Bananal/Terminal Fluvial da BR 101) até a Porta do Mar (Foz do Rio Capibaribe): timbus, saguis, preás e capivaras; <br>
-            - As capivaras estão presentes em praticamente toda a extensão do rio; <br>
-            - Cágados, tartarugas, serpentes, lagartos e jacarés ocorrem em muitos trechos ao longo do rio; <br>
-            - Encontram-se também milhares de aves: garças, garças azuis (espécie rara), matriães, gaviões, socós, saracura-de-três-potes, batuíras, frangos-d´água, quero-queros, periquitos, anus pretos, anus brancos, tuins, martins-pescadores, maçaricos (vindos do hemisfério norte);<br>
-            - Encontram-se também peixes: camurim cabo-de-enxada, carapeba, saúna e sardinha, tainha, manjuba, gaiúba, cioba, dentão, arioco, cavala, peixe serra, dourado e guarajuba.
+            Grande diversidade: aves, mamíferos, répteis e crustáceos (caranguejos, camarões, mariscos);
+            Porta do Rio (Várzea) até a Porta da Mata (Ilha do Bananal): refúgio para lontras, raposas, pacas, tatus, cutias, timbus, saguis, preás e capivaras;
+            Porta da Mata (Ilha do Bananal/Terminal Fluvial da BR 101) até a Porta do Mar (Foz do Rio Capibaribe): timbus, saguis, preás e capivaras.
+            As capivaras estão presentes em praticamente toda a extensão do rio, bem como
+            cágados, tartarugas, serpentes, lagartos e jacarés ocorrem em muitos trechos ao longo do curso d'água. 
+            Encontram-se também milhares de aves: garças, garças azuis (espécie rara), matriães, gaviões, socós, saracura-de-três-potes, batuíras, frangos-d´água, quero-queros, periquitos, anus pretos, anus brancos, tuins, martins-pescadores, maçaricos (vindos do hemisfério norte) e peixes: camurim cabo-de-enxada, carapeba, saúna e sardinha, tainha, manjuba, gaiúba, cioba, dentão, arioco, cavala, peixe serra, dourado e guarajuba.
           </p>
-          <div id="capibaribevivo"></div>
+          <!-- <div id="capibaribevivo"></div> -->
         </div>
         <div class="tab-pane fade" id="ff-flora">
           <p>
-            - Presente em expressivas faixas ao longo do Rio Capibaribe;<br>
-            - De suma importância para a manutenção da biodiversidade;<br>
-            - Espécies típicas de Mata Ciliar: Ingá, Ipê e Ludwigia;<br>
-            - Nenhuma espécie está ameaçada de extinção;<br>
-            - Registra-se: 11 espécies aquáticas e 45 lenhosas;<br>
-            - Registra-se apenas um baobá ao longo do Rio Capibaribe (Espécie de preservação);<br>
-            - As espécies de mangue – apesar de plantadas - fazem parte da paisagem e são protegidas por lei;<br>
-            - As espécies coletadas oferecem abrigo e alimento à fauna, além de proteger o solo.<br>
+            Presente em expressivas faixas ao longo do Rio Capibaribe é de suma importância para a manutenção da biodiversidade com espécies típicas de Mata Ciliar: Ingá, Ipê e Ludwigia. Nenhuma das espécies está ameaçada de extinção, com registro de 11 espécies aquáticas e 45 lenhosas; registra-se apenas um baobá ao longo do Rio Capibaribe (Espécie de preservação). As espécies de mangue – apesar de plantadas - fazem parte da paisagem e são protegidas por lei. As espécies coletadas oferecem abrigo e alimento à fauna, além de proteger o solo.<br>
 
           </p>
         </div>
@@ -409,6 +399,20 @@
 <ul id='map-ui-vi' class='unselectable'></ul>
 <ul id='map-ui-project' class='unselectable'></ul>
 <ul id='map-ui-inst' class='unselectable'></ul>
+<div id="capa">
+  <img src="images/pc-branco.png">
+  <div id="video-capa">
+    <iframe src="//player.vimeo.com/video/91557575?title=0&amp;byline=0&amp;portrait=0&amp;color=c9ff23&amp;autoplay=1" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+  </div>
+  <div id="texto-capa">
+    <h1>
+    Diretrizes de articulação entre o Rio Capibaribe e os espaços urbanos.</h1>
+  </div>
+  <div id="explore">
+    <a href="#" class="explore"><img src="images/explore.png"></a>
+  </div>
+  
+</div>
 <div id='map'></div>
 <!-- <div class='map-overlay'>
     <label for='latitude'>latitude</label><br />
@@ -463,7 +467,7 @@
 
 <!-- Sistema de Mapas -->
 <script>
-var map = L.map('map', { zoomControl: false, minZoom: 5, maxZoom: 19 }).setView([-8.05, -34.94], 13);
+var map = L.map('map', { zoomControl: false, minZoom: 5, maxZoom: 19 }).setView([-8.055, -34.89], 13);
 
 
 // Markers
@@ -511,7 +515,9 @@ var map = L.map('map', { zoomControl: false, minZoom: 5, maxZoom: 19 }).setView(
 
 // end Markers
 
-new L.Control.Zoom({ position: 'bottomright' }).addTo(map);
+L.control.scale({ position: 'bottomleft' }).addTo(map);
+new L.Control.Zoom({ position: 'bottomleft' }).addTo(map);
+
 
 var ui = document.getElementById('map-ui');
 addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_mapabase/{z}/{x}/{y}.png'), 'a cidade', 1);
@@ -549,7 +555,7 @@ addLayerVi(L.tileLayer('#'), 'projeto parque capibaribe', 103);
 addLayerVi(L.tileLayer('#'), 'sobre', 200);
 addLayerVi(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_influencia/{z}/{x}/{y}.png'), 'setores censitários - 1km', 2);
 addLayerVi(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_buffer1km/{z}/{x}/{y}.png'), 'área de influência', 3);
-addLayerVi(L.tileLayer('#'), 'imagens', 202);
+addLayerVi(L.tileLayer('#'), '#capibaribe', 202);
 addLayerVi(L.tileLayer('#'), 'notícias', 201);
 
 
@@ -578,48 +584,7 @@ addLayerProject(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_t04/
 
 
 
-// Flicker
 
-    $.getJSON('http://api.flickr.com/services/rest/?jsoncallback=?', {
-      method: 'flickr.photos.search',
-      api_key: 'd932fc13d98d064a42dcf95677c8f38c',
-      tags: 'capibaribe',
-      bbox: '-34.99317169189453,-8.1115757594567,-34.840736389160156,-7.972197714386866',
-      min_taken_date: Date.now() - ( 24 * 60 * 60 * 60 ),
-      per_page: 50,
-      extras: 'description, license, date_upload, date_taken, owner_name, icon_server, original_format, last_update, geo, tags, machine_tags, o_dims, views, media, path_alias, url_sq,url_t, url_s, url_q, url_m, url_n, url_z, url_c, url_l, url_o',
-      format: 'json'
-    }, display);
-
-    // Display the flickr photos
-    function display(resp) {
-      if ( resp.photos && resp.photos.photo ) {
-        $("#loading").hide();
-        // Marker Cluster group
-        var photo_markers = new L.MarkerClusterGroup({
-          showCoverageOnHover: false,
-          spiderfyDistanceMultiplier: 5,
-          maxClusterRadius: 10
-        }).addTo(map);
-
-        $.each(resp.photos.photo, function(k, photo) {
-          // Create a photo marker
-          var photo_marker = L.photoMarker([photo.latitude, photo.longitude], {
-            src: photo.url_t,
-            size: [ photo.width_t, photo.height_t ]
-          }).bindPopup('<img src="'+photo.url_m+'" /><h1>'+photo.title+'</h1>', {
-              minWidth: photo.width_m,
-              minHeight: photo.height_m
-          });
-          var image = L.DomUtil.create('img');
-          image.onload = function() { photo_markers.addLayer(photo_marker); };
-          image.src = photo.url_t;
-        });
-      }
-    }
-
-
-// end Flicker
 
 function addLayer(layer, name, zIndex) {
     layer
@@ -1003,6 +968,47 @@ function addLayerVi(layer, name, zIndex) {
               }
           }
         if (zIndex == 202) {
+          // Flickr
+
+          $.getJSON('http://api.flickr.com/services/rest/?jsoncallback=?', {
+            method: 'flickr.photos.search',
+            api_key: 'd932fc13d98d064a42dcf95677c8f38c',
+            tags: 'capibaribe',
+            bbox: '-34.99317169189453,-8.1115757594567,-34.840736389160156,-7.972197714386866',
+            min_taken_date: Date.now() - ( 24 * 60 * 60 * 60 ),
+            per_page: 50,
+            extras: 'description, license, date_upload, date_taken, owner_name, icon_server, original_format, last_update, geo, tags, machine_tags, o_dims, views, media, path_alias, url_sq,url_t, url_s, url_q, url_m, url_n, url_z, url_c, url_l, url_o',
+            format: 'json'
+          }, display);
+
+          // Display the flickr photos
+          function display(resp) {
+            if ( resp.photos && resp.photos.photo ) {
+              $("#loading").hide();
+              // Marker Cluster group
+              var photo_markers = new L.MarkerClusterGroup({
+                showCoverageOnHover: false,
+                spiderfyDistanceMultiplier: 5,
+                maxClusterRadius: 10
+              }).addTo(map);
+
+              $.each(resp.photos.photo, function(k, photo) {
+                // Create a photo marker
+                var photo_marker = L.photoMarker([photo.latitude, photo.longitude], {
+                  src: photo.url_t,
+                  size: [ photo.width_t, photo.height_t ]
+                }).bindPopup('<img src="'+photo.url_m+'" /><h1>'+photo.title+'</h1>', {
+                    minWidth: photo.width_m,
+                    minHeight: photo.height_m
+                });
+                var image = L.DomUtil.create('img');
+                image.onload = function() { photo_markers.addLayer(photo_marker); };
+                image.src = photo.url_t;
+              });
+            }
+          }
+
+      // end Flickr
           $( "#instagram-content" ).slideToggle( "slow" );
           if($("#twitter-content").is(":hidden")) {
           } else {
@@ -1042,6 +1048,7 @@ function addLayerVi(layer, name, zIndex) {
             }
           if ( $(this).hasClass('active')) {
               link.className = '';
+              map.removeLayer(layer);
             } else {
               link.className = 'active';
             }
