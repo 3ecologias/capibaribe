@@ -77,6 +77,16 @@ $(document).ready(function() {
 	 	// $('.nav').find('li.active').removeClass('active');
 	});
 
+	$( ".explore" ).click(function() {
+		var clicks = $(this).data('clicks');
+	 	if (clicks) {
+	    	$('#capa').animate({top:'0%'}, 500)
+	  	} else {
+	     	$('#capa').animate({top:'-100%'}, 1000)
+	  	}
+		$(this).data("clicks", !clicks);
+    });
+
 
 	// nav handlers
     $('.nav li a').on('click', function(e){
