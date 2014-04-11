@@ -88,6 +88,15 @@
 </head>
 
 <body>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=692909837439689";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
 <header>
 <nav class="navbar navbar-default unselectable" role="navigation">
   <!-- Brand and toggle get grouped for better mobile display -->
@@ -402,7 +411,7 @@
 <div id="capa">
   <img src="images/pc-branco.png">
   <div id="video-capa">
-    <iframe src="//player.vimeo.com/video/91557575?title=0&amp;byline=0&amp;portrait=0&amp;color=c9ff23&amp;autoplay=1" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    <iframe src="//player.vimeo.com/video/91557575?title=0&amp;byline=0&amp;portrait=0&amp;color=c9ff23&amp;autoplay=1" width="70%" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
   </div>
   <div id="texto-capa">
     <h1>
@@ -413,6 +422,8 @@
   </div>
   
 </div>
+<div id="facebook" class="fb-like" data-href="http://parquecapibaribe.org" data-layout="button_count" data-action="recommend" data-show-faces="false" data-share="false"></div>
+
 <div id='map'></div>
 <!-- <div class='map-overlay'>
     <label for='latitude'>latitude</label><br />
@@ -467,7 +478,7 @@
 
 <!-- Sistema de Mapas -->
 <script>
-var map = L.map('map', { zoomControl: false, minZoom: 5, maxZoom: 19 }).setView([-8.055, -34.89], 13);
+var map = L.map('map', { zoomControl: false, minZoom: 12, maxZoom: 19, maxBounds: [[-7.9,-35.1],[-8.2,-34.70]] }).setView([-8.055, -34.89], 13);
 
 
 // Markers
