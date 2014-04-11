@@ -567,7 +567,7 @@ addLayerVi(L.tileLayer('#'), 'sobre', 200);
 addLayerVi(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_influencia/{z}/{x}/{y}.png'), 'setores censitários - 1km', 2);
 addLayerVi(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_buffer1km/{z}/{x}/{y}.png'), 'área de influência', 3);
 addLayerVi(L.tileLayer('#'), '#capibaribe', 202);
-addLayerVi(L.tileLayer('#'), 'notícias', 201);
+// addLayerVi(L.tileLayer('#'), 'notícias', 201);
 
 
 var uip = document.getElementById('map-ui-project');
@@ -979,47 +979,7 @@ function addLayerVi(layer, name, zIndex) {
               }
           }
         if (zIndex == 202) {
-          // Flickr
-
-          $.getJSON('http://api.flickr.com/services/rest/?jsoncallback=?', {
-            method: 'flickr.photos.search',
-            api_key: 'd932fc13d98d064a42dcf95677c8f38c',
-            tags: 'capibaribe',
-            bbox: '-34.99317169189453,-8.1115757594567,-34.840736389160156,-7.972197714386866',
-            min_taken_date: Date.now() - ( 24 * 60 * 60 * 60 ),
-            per_page: 50,
-            extras: 'description, license, date_upload, date_taken, owner_name, icon_server, original_format, last_update, geo, tags, machine_tags, o_dims, views, media, path_alias, url_sq,url_t, url_s, url_q, url_m, url_n, url_z, url_c, url_l, url_o',
-            format: 'json'
-          }, display);
-
-          // Display the flickr photos
-          function display(resp) {
-            if ( resp.photos && resp.photos.photo ) {
-              $("#loading").hide();
-              // Marker Cluster group
-              var photo_markers = new L.MarkerClusterGroup({
-                showCoverageOnHover: false,
-                spiderfyDistanceMultiplier: 5,
-                maxClusterRadius: 10
-              }).addTo(map);
-
-              $.each(resp.photos.photo, function(k, photo) {
-                // Create a photo marker
-                var photo_marker = L.photoMarker([photo.latitude, photo.longitude], {
-                  src: photo.url_t,
-                  size: [ photo.width_t, photo.height_t ]
-                }).bindPopup('<img src="'+photo.url_m+'" /><h1>'+photo.title+'</h1>', {
-                    minWidth: photo.width_m,
-                    minHeight: photo.height_m
-                });
-                var image = L.DomUtil.create('img');
-                image.onload = function() { photo_markers.addLayer(photo_marker); };
-                image.src = photo.url_t;
-              });
-            }
-          }
-
-      // end Flickr
+          
           $( "#instagram-content" ).slideToggle( "slow" );
           if($("#twitter-content").is(":hidden")) {
           } else {
@@ -1063,6 +1023,60 @@ function addLayerVi(layer, name, zIndex) {
             } else {
               link.className = 'active';
             }
+            // Flickr
+
+          // $.getJSON('http://api.flickr.com/services/rest/?jsoncallback=?', {
+          //   method: 'flickr.photos.search',
+          //   api_key: 'd932fc13d98d064a42dcf95677c8f38c',
+          //   tags: 'capibaribe',
+          //   bbox: '-34.99317169189453,-8.1115757594567,-34.840736389160156,-7.972197714386866',
+          //   min_taken_date: Date.now() - ( 24 * 60 * 60 * 60 ),
+          //   per_page: 50,
+          //   extras: 'description, license, date_upload, date_taken, owner_name, icon_server, original_format, last_update, geo, tags, machine_tags, o_dims, views, media, path_alias, url_sq,url_t, url_s, url_q, url_m, url_n, url_z, url_c, url_l, url_o',
+          //   format: 'json'
+          // }, display);
+
+          $.getJSON('http://api.flickr.com/services/rest/?jsoncallback=?', {
+            method: 'flickr.photos.search',
+            api_key: 'd932fc13d98d064a42dcf95677c8f38c',
+            tags: 'capibaribe',
+            bbox: '-34.99317169189453,-8.1115757594567,-34.840736389160156,-7.972197714386866',
+            min_taken_date: Date.now() - ( 24 * 60 * 60 * 60 ),
+            per_page: 50,
+            extras: 'description, license, date_upload, date_taken, owner_name, icon_server, original_format, last_update, geo, tags, machine_tags, o_dims, views, media, path_alias, url_sq,url_t, url_s, url_q, url_m, url_n, url_z, url_c, url_l, url_o',
+            format: 'json'
+          }, function(json) {
+            display(json);
+          });
+
+          // Display the flickr photos
+          function display(resp) {
+            if ( resp.photos && resp.photos.photo ) {
+              $("#loading").hide();
+              // Marker Cluster group
+              var photo_markers = new L.MarkerClusterGroup({
+                showCoverageOnHover: false,
+                spiderfyDistanceMultiplier: 5,
+                maxClusterRadius: 10
+              }).addTo(map);
+
+              $.each(resp.photos.photo, function(k, photo) {
+                // Create a photo marker
+                var photo_marker = L.photoMarker([photo.latitude, photo.longitude], {
+                  src: photo.url_t,
+                  size: [ photo.width_t, photo.height_t ]
+                }).bindPopup('<img src="'+photo.url_m+'" /><h1>'+photo.title+'</h1>', {
+                    minWidth: photo.width_m,
+                    minHeight: photo.height_m
+                });
+                var image = L.DomUtil.create('img');
+                image.onload = function() { photo_markers.addLayer(photo_marker); };
+                image.src = photo.url_t;
+              });
+            }
+          }
+
+      // end Flickr
         }
     };
 
