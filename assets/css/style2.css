@@ -21,7 +21,7 @@ a {transition: all 0.2s ease-in-out 0s;}
     padding-top: 1em;
     padding-left: 2em;
     padding-right: 2em;
-    background: none repeat scroll 0% 0% rgba(0, 127, 147, 1);
+    background: none repeat scroll 0% 0% rgba(0, 0, 0, 1);
 }
 
 #capa img {
@@ -34,11 +34,17 @@ color: #fff;
 
 #explore {
     position: absolute;
-    bottom: -31px;
+    bottom: -21px;
     left: 47%;
 }
 #video-capa {
 margin-top: 1em;
+}
+#facebook {
+    position: fixed;
+    bottom: 0.2em;
+    left: 6em;
+    z-index: 1000;
 }
 
 #header {
