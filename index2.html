@@ -995,10 +995,10 @@ function addLayerVi(layer, name, zIndex) {
             per_page: 50,
             extras: 'description, license, date_upload, date_taken, owner_name, icon_server, original_format, last_update, geo, tags, machine_tags, o_dims, views, media, path_alias, url_sq,url_t, url_s, url_q, url_m, url_n, url_z, url_c, url_l, url_o',
             format: 'json'
-          }, display);
+          }, displayPhotos);
 
           // Display the flickr photos
-          function display(resp) {
+          function displayPhotos(resp) {
             if ( resp.photos && resp.photos.photo ) {
               $("#loading").hide();
               // Marker Cluster group
