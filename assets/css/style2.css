@@ -7,7 +7,7 @@
 body { margin:0; padding:0; font-family: 'ConduitLight', sans-serif!important; overflow: hidden; font-size: 1.6em!important;}
 header {width: 100%; z-index: 1; position: absolute;}
 
-h1 {font-family: 'ConduitLight', sans-serif!important; overflow: hidden; font-size: 1.6em!important;}
+h1, h2 {font-family: 'ConduitLight', sans-serif!important; overflow: hidden; font-size: 1.6em!important;}
 
 a {transition: all 0.2s ease-in-out 0s;}
 
