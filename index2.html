@@ -984,50 +984,39 @@ function addLayerVi(layer, name, zIndex) {
 
 
 
-                      // Flickr
+           $.getJSON('http://api.flickr.com/services/rest/?jsoncallback=?', {
+      method: 'flickr.photos.search',
+      api_key: 'c375f1e26e8b14300d2945a0fd6c4e8e',
+      bbox: '-34.99317169189453,-8.1115757594567,-34.840736389160156,-7.972197714386866',
+      min_taken_date: Date.now() - ( 24 * 60 * 60 * 60 ),
+      per_page: 50,
+      extras: 'description, license, date_upload, date_taken, owner_name, icon_server, original_format, last_update, geo, tags, machine_tags, o_dims, views, media, path_alias, url_sq,url_t, url_s, url_q, url_m, url_n, url_z, url_c, url_l, url_o',
+      format: 'json'
+    }, display);
 
-                    // Display the flickr photos
-          function display(resp) {
-            if ( resp.photos && resp.photos.photo ) {
-              // $("#loading").hide();
-              // Marker Cluster group
-              var photo_markers = new L.MarkerClusterGroup({
-                showCoverageOnHover: false,
-                spiderfyDistanceMultiplier: 5,
-                maxClusterRadius: 10
-              }).addTo(map);
+    // Display the flickr photos
+    function display(resp) {
+      if ( resp.photos && resp.photos.photo ) {
+        $("#loading").hide();
+        // Marker Cluster group
+        var photo_markers = new L.MarkerClusterGroup({
+          showCoverageOnHover: false,
+          spiderfyDistanceMultiplier: 5,
+          maxClusterRadius: 10
+        }).addTo(map);
 
-              $.each(resp.photos.photo, function(k, photo) {
-                // Create a photo marker
-                var photo_marker = L.photoMarker([photo.latitude, photo.longitude], {
-                  src: photo.url_t,
-                  size: [ photo.width_t, photo.height_t ]
-                }).bindPopup('<img src="'+photo.url_m+'" /><h1>'+photo.title+'</h1>', {
-                    minWidth: photo.width_m,
-                    minHeight: photo.height_m
-                });
-                var image = L.DomUtil.create('img');
-                image.onload = function() { photo_markers.addLayer(photo_marker); };
-                image.src = photo.url_t;
-              });
-            }
-          }
-
-          $.getJSON('http://api.flickr.com/services/rest/?jsoncallback=?', {
-            method: 'flickr.photos.search',
-            api_key: '864e2dc9a1fc274d15de7a95fca58356', 
-            tags: 'capibaribe',
-            bbox: '-34.99317169189453,-8.1115757594567,-34.840736389160156,-7.972197714386866',
-            min_taken_date: Date.now() - ( 24 * 60 * 60 * 60 ),
-            per_page: 50,
-            extras: 'description, license, date_upload, date_taken, owner_name, icon_server, original_format, last_update, geo, tags, machine_tags, o_dims, views, media, path_alias, url_sq,url_t, url_s, url_q, url_m, url_n, url_z, url_c, url_l, url_o',
-            format: 'json'
-          }, display);
-
-
-
-      // end Flickr
-          
+        $.each(resp.photos.photo, function(k, photo) {
+          // Create a photo marker
+          var photo_marker = L.photoMarker([photo.latitude, photo.longitude], {
+            src: photo.url_t,
+            size: [ photo.width_t, photo.height_t ]
+          });
+          var image = L.DomUtil.create('img');
+          image.onload = function() { photo_markers.addLayer(photo_marker); };
+          image.src = photo.url_t;
+        });
+      }
+    } 
           $( "#instagram-content" ).slideToggle( "slow" );
           if($("#twitter-content").is(":hidden")) {
           } else {
