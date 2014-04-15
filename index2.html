@@ -85,12 +85,6 @@
     // faunaFeed.run();
 </script>
 
-<script language="javascript" type="text/javascript">
-  function resizeIframe(obj) {
-    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
-  }
-</script>
-
 </head>
 
 <body>
@@ -417,7 +411,7 @@
 <div id="capa">
   <img src="images/pc-branco.png">
   <div id="video-capa">
-    <iframe src="//player.vimeo.com/video/91557575?title=0&amp;byline=0&amp;portrait=0&amp;color=c9ff23&amp;autoplay=1" onload='javascript:resizeIframe(this);' frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    <iframe src="//player.vimeo.com/video/91557575?title=0&amp;byline=0&amp;portrait=0&amp;color=c9ff23&amp;autoplay=1" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
   </div>
   <div id="texto-capa">
     <h1>
@@ -1553,6 +1547,41 @@ function addLayerProject(layer, name, zIndex) {
     e.preventDefault();
     $(this).tab('show');
   });
+
+</script>
+
+<script>
+$(function() {
+    
+    var $allVideos = $("iframe[src^='http://player.vimeo.com'], iframe[src^='http://www.youtube.com'], object, embed"),
+    $fluidEl = $("figure");
+        
+  $allVideos.each(function() {
+  
+    $(this)
+      // jQuery .data does not work on object/embed elements
+      .attr('data-aspectRatio', this.height / this.width)
+      .removeAttr('height')
+      .removeAttr('width');
+  
+  });
+  
+  $(window).resize(function() {
+  
+    var newWidth = $fluidEl.width();
+    $allVideos.each(function() {
+    
+      var $el = $(this);
+      $el
+          .width(newWidth)
+          .height(newWidth * $el.attr('data-aspectRatio'));
+    
+    });
+  
+  }).resize();
+
+});
+
 
 </script>
 
