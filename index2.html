@@ -1010,8 +1010,8 @@ function addLayerVi(layer, name, zIndex) {
            $.getJSON('http://api.flickr.com/services/rest/?jsoncallback=?', {
       method: 'flickr.photos.search',
       api_key: 'c375f1e26e8b14300d2945a0fd6c4e8e',
-      bbox: '-34.99317169189453,-8.1115757594567,-34.840736389160156,-7.972197714386866',
       tags: 'capibaribe',
+      bbox: '-34.99317169189453,-8.1115757594567,-34.840736389160156,-7.972197714386866',
       min_taken_date: Date.now() - ( 24 * 60 * 60 * 60 ),
       per_page: 50,
       extras: 'description, license, date_upload, date_taken, owner_name, icon_server, original_format, last_update, geo, tags, machine_tags, o_dims, views, media, path_alias, url_sq,url_t, url_s, url_q, url_m, url_n, url_z, url_c, url_l, url_o',
