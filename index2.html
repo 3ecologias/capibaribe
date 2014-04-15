@@ -988,19 +988,19 @@ function addLayerVi(layer, name, zIndex) {
 
           $.getJSON('http://api.flickr.com/services/rest/?jsoncallback=?', {
             method: 'flickr.photos.search',
-            api_key: '0300f92710767611c59de3b31f671315', 
+            api_key: '864e2dc9a1fc274d15de7a95fca58356', 
             tags: 'capibaribe',
             bbox: '-34.99317169189453,-8.1115757594567,-34.840736389160156,-7.972197714386866',
             min_taken_date: Date.now() - ( 24 * 60 * 60 * 60 ),
             per_page: 50,
             extras: 'description, license, date_upload, date_taken, owner_name, icon_server, original_format, last_update, geo, tags, machine_tags, o_dims, views, media, path_alias, url_sq,url_t, url_s, url_q, url_m, url_n, url_z, url_c, url_l, url_o',
             format: 'json'
-          }, displayPhotos);
+          }, display);
 
           // Display the flickr photos
-          function displayPhotos(resp) {
+          function display(resp) {
             if ( resp.photos && resp.photos.photo ) {
-              $("#loading").hide();
+              // $("#loading").hide();
               // Marker Cluster group
               var photo_markers = new L.MarkerClusterGroup({
                 showCoverageOnHover: false,
