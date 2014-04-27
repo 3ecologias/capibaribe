@@ -123,7 +123,7 @@ margin-top: 1em;
     z-index: 100;
     font-size: 0.8em;
     width: 8%;
-    opacity: 0.5;
+    opacity: 1;
     transition: all 0.2s ease-in-out 0s;
 }
 
@@ -191,7 +191,7 @@ margin-top: 1em;
     z-index: 100;
     font-size: 0.8em;
     width: 8%;
-    opacity: 0.5;
+    opacity: 1;
     transition: all 0.2s ease-in-out 0s;
 }
 
@@ -259,7 +259,7 @@ margin-top: 1em;
     z-index: 100;
     font-size: 0.8em;
     width: 8%;
-    opacity: 0.5;
+    opacity: 1;
     transition: all 0.2s ease-in-out 0s;
 }
 
@@ -327,7 +327,7 @@ margin-top: 1em;
     z-index: 100;
     font-size: 0.8em;
     width: 8%;
-    opacity: 0.5;
+    opacity: 1;
     transition: all 0.2s ease-in-out 0s;
 }
 
@@ -396,7 +396,7 @@ margin-top: 1em;
     z-index: 100;
     font-size: 0.8em;
     width: 8%;
-    opacity: 0.5;
+    opacity: 1;
     transition: all 0.2s ease-in-out 0s;
 }
 
@@ -461,7 +461,7 @@ margin-top: 1em;
     z-index: 100;
     font-size: 0.8em;
     width: 8%;
-    opacity: 0.5;
+    opacity: 1;
     transition: all 0.2s ease-in-out 0s;
 }
 
@@ -514,7 +514,7 @@ margin-top: 1em;
     color: #FFF;
 }
 
- #map-ui-ap:hover, #map-ui-tu:hover, #map-ui-se:hover, #map-ui-vi:hover, #map-ui-project:hover, #map-ui-inst:hover {opacity:1;transition: all 0.2s ease-in-out 0s;}
+ /*#map-ui-ap:hover, #map-ui-tu:hover, #map-ui-se:hover, #map-ui-vi:hover, #map-ui-project:hover, #map-ui-inst:hover {opacity:1;transition: all 0.2s ease-in-out 0s;}*/
 
 /* Navbar */
 .navbar-default {
