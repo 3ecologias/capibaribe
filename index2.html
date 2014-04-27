@@ -904,6 +904,11 @@ function addLayerVi(layer, name, zIndex) {
         link.className = 'menu';                
     }
 
+    if (zIndex == 202) {
+      $(this).trigger("click");
+      link.className = 'active';
+    }
+
     // end hack
 
     link.onclick = function(e) {
