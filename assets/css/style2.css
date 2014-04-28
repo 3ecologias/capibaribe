@@ -38,7 +38,8 @@ color: #fff;
     left: 47%;
 }
 #video-capa {
-margin-top: 1em;
+    display: block;
+    margin-top: 1em;
 }
 #facebook {
     position: fixed;
