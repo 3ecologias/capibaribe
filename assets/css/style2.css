@@ -37,6 +37,13 @@ color: #fff;
     bottom: -21px;
     left: 47%;
 }
+
+#explore span {
+    display: block;
+    font-size: 1.6em;
+    margin-bottom: 10px;
+}
+
 #video-capa {
     display: block;
     margin-top: 1em;
