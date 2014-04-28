@@ -410,8 +410,44 @@
 <ul id='map-ui-inst' class='unselectable'></ul>
 <div id="capa">
   <img src="images/pc-branco.png">
+  <script>
+$(function() {
+    
+        var $allVideos = $("iframe[src^='http://player.vimeo.com'], iframe[src^='http://www.youtube.com'], object, embed"),
+        $fluidEl = $("figure");
+            
+      $allVideos.each(function() {
+      
+        $(this)
+          // jQuery .data does not work on object/embed elements
+          .attr('data-aspectRatio', this.height / this.width)
+          .removeAttr('height')
+          .removeAttr('width');
+      
+      });
+      
+      $(window).resize(function() {
+      
+        var newWidth = $fluidEl.width();
+        $allVideos.each(function() {
+        
+          var $el = $(this);
+          $el
+              .width(newWidth)
+              .height(newWidth * $el.attr('data-aspectRatio'));
+        
+        });
+      
+      }).resize();
+
+    });
+
+
+  </script>
   <div id="video-capa">
-    <iframe src="//player.vimeo.com/video/91557575?title=0&amp;byline=0&amp;portrait=0&amp;color=c9ff23&amp;autoplay=1" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    <figure>
+      <iframe src="//player.vimeo.com/video/91557575?title=0&amp;byline=0&amp;portrait=0&amp;color=c9ff23&amp;autoplay=1" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    </figure>
   </div>
   <div id="texto-capa">
     <h1>
@@ -1586,42 +1622,6 @@ function addLayerProject(layer, name, zIndex) {
   });
 
 </script>
-
-<script>
-$(function() {
-    
-    var $allVideos = $("iframe[src^='http://player.vimeo.com'], iframe[src^='http://www.youtube.com'], object, embed"),
-    $fluidEl = $("body");
-        
-  $allVideos.each(function() {
-  
-    $(this)
-      // jQuery .data does not work on object/embed elements
-      .attr('data-aspectRatio', this.height / this.width)
-      .removeAttr('height')
-      .removeAttr('width');
-  
-  });
-  
-  $(window).resize(function() {
-  
-    var newWidth = $fluidEl.width();
-    $allVideos.each(function() {
-    
-      var $el = $(this);
-      $el
-          .width(newWidth)
-          .height(newWidth * $el.attr('data-aspectRatio'));
-    
-    });
-  
-  }).resize();
-
-});
-
-
-</script>
-
 
 </body>
 </html>
