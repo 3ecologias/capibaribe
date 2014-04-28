@@ -339,7 +339,7 @@ new L.Control.Zoom({ position: 'bottomleft' }).addTo(map);
 
 var ui = document.getElementById('map-ui');
 addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_mapabase/{z}/{x}/{y}.png'), 'a cidade', 1);
-addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_rio/{z}/{x}/{y}.png'), 'o rio', 40);
+addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_riocompleto/{z}/{x}/{y}.png'), 'o rio', 40);
 addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_bairros/{z}/{x}/{y}.png'), 'bairros', 45);
 addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_viario/{z}/{x}/{y}.png'), 'sistema viário', 44);
 addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_quadras/{z}/{x}/{y}.png'), 'quadras', 5);
@@ -363,8 +363,8 @@ addLayerTu(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_equipamen
 var uise = document.getElementById('map-ui-se');
 addLayerSe(L.tileLayer('#'), 'sócio econômico', 102);
 addLayerSe(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_zeis/{z}/{x}/{y}.png'), 'aglomerados subnormais / ZEIS', 21);
-addLayerSe(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_densidade/{z}/{x}/{y}.png'), 'densidade demográfica', 7);
-addLayerSe(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_renda/{z}/{x}/{y}.png'), 'renda per capta', 8);
+addLayerSe(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_desidem/{z}/{x}/{y}.png'), 'densidade demográfica', 7);
+addLayerSe(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_renda/{z}/{x}/{y}.png'), 'renda per capta', 8);
 addLayerSe(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_centralidades/{z}/{x}/{y}.png'), 'vitalidades', 31);
 
 var uivi = document.getElementById('map-ui-vi');
