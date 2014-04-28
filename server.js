@@ -20,7 +20,7 @@ app.use(function(err, req, res, next) {
 });
 
 app.get('/', function (req, res) {
-  res.sendfile(__dirname + '/index2.html');
+  res.sendfile(__dirname + '/app.html');
 });
 
 app.get('/v2', function (req, res) {
