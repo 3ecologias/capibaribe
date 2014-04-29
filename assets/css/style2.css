@@ -57,7 +57,7 @@ color: #fff;
 
 #twitter {
     position: fixed;
-    bottom: 0.28em;
+    bottom: -0.1em;
     left: 8.5em;
     z-index: 1000;
 }
