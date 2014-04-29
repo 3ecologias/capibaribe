@@ -55,6 +55,13 @@ color: #fff;
     z-index: 1000;
 }
 
+#twitter {
+    position: fixed;
+    bottom: 0.28em;
+    left: 8.5em;
+    z-index: 1000;
+}
+
 #header {
     
 }
