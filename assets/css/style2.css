@@ -50,8 +50,8 @@ color: #fff;
 }
 #facebook {
     position: fixed;
-    top: 8em;
-    left: 1.5em;
+    bottom: 0.28em;
+    left: 6.5em;
     z-index: 1000;
 }
 
