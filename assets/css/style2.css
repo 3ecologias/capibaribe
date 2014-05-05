@@ -605,6 +605,10 @@ color: #fff;
     overflow: auto;
 }
 
+#sobre-content img {
+    max-width: 100%;
+}
+
 .blog-gallery {
     display: inline-block;
     float: left;
