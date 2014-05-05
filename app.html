@@ -242,6 +242,16 @@
       <h1> Diálogo com a população </h1>
       <p>
       Associados a esse corpo teórico e prático especializado, estão sendo desenvolvidos dispositivos de conhecimento para diálogo com a população, como por exemplo a promoção de workshops onde os moradores são convidados a experimentar ideias a serem implantadas nas bordas do rio, como também a criação desta plataforma aberta e georreferenciada para a construção de uma conscientização coletiva, colaborativa e democrática, verificando assim se as ideias propostas têm aderência ao que a população das margens e arredores do Capibaribe realmente necessita. </p>
+
+      <h1> O rio que queremos </h1>
+      <p>
+        Ao transformar o Recife em uma cidade-parque, o Parque Capibaribe visa elevar a taxa de área verde pública, que hoje é de 1,2 metros quadrados por habitante. Planeja-se mudar este dado para 20 metros quadrados por habitante em 2037, quando o Recife completa 500 anos.
+      </p>
+      <p><img src="images/sobre_av.jpg"></p>
+      <p>
+        O projeto do Parque Capibaribe visa envolver mais de um terço da área da cidade. Isso porque o Parque não foi apenas pensado como linha, em seus 30 km de extensão. Ele trabalha com pelo menos 500 metros ao redor de cada margem, o que delimita 7250 hectares de área de influência. Assim, o Parque Capibaribe influenciará 35 bairros, que vão gradualmente se transformar em bairros-parque, atingindo 400 mil habitantes do Recife. 
+      </p>
+      <p><img src="images/sobre_br.jpg"></p>
       <p>
       Esta plataforma é um produto do Parque Capibaribe - Caminho das Capivaras, convênio de cooperação técnica entre a Prefeitura da Cidade do Recife (PCR), através da Secretaria do Meio Ambiente e Sustentabilidade do Recife (SEMAS) e a Universidade Federal de Pernambuco (UFPE). </p><br>
       <p><img src="images/marcas.png"></p>
@@ -503,6 +513,11 @@ function addLayerAp(layer, name, zIndex) {
     if (zIndex == 100) {
         link.className = 'menu';                
     }
+
+    if (zIndex == 39) {
+        layer.addTo(map);
+        link.className = 'active';
+    }
     
 
     // end hack
@@ -662,6 +677,11 @@ function addLayerVi(layer, name, zIndex) {
         link.className = 'menu';                
     }
 
+    if (zIndex == 3) {
+        layer.addTo(map);
+        link.className = 'active';
+    }
+
     if (zIndex == 202) {
       $( "#instagram-content" ).slideToggle( "slow" );
       link.className = 'active';
@@ -819,6 +839,26 @@ function addLayerProject(layer, name, zIndex) {
     }
     if (zIndex == 104) {
         link.className = 'menu';                
+    }
+
+    if (zIndex == 20) {
+        layer.addTo(map);
+        link.className = 'active';
+    }
+
+    if (zIndex == 21) {
+        layer.addTo(map);
+        link.className = 'active';
+    }
+
+    if (zIndex == 22) {
+        layer.addTo(map);
+        link.className = 'active';
+    }
+
+    if (zIndex == 23) {
+        layer.addTo(map);
+        link.className = 'active';
     }
 
     // end hack
