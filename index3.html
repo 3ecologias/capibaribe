@@ -480,7 +480,15 @@
 <script>
 var map = L.map('map', { zoomControl: false, minZoom: 12, maxZoom: 19, maxBounds: [[-7.9,-35.1],[-8.2,-34.70]] }).setView([-8.055, -34.89], 14);
 
-L.marker([-8.047175939274599, -34.90523815155029]).addTo(map);
+// L.marker([-8.047175939274599, -34.90523815155029]).addTo(map);
+
+var marker = L.marker(new L.LatLng(-8.047175939274599, -34.90523815155029), {
+                icon: L.mapbox.marker.icon({'marker-color': 'CC0033'}),
+                draggable: true
+            });
+
+marker.bindPopup('Agora só falta carregar as imagens aqui');
+marker.addTo(map);
 // Markers
 
 // L.mapbox.featureLayer({
