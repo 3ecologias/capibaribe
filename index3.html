@@ -478,11 +478,11 @@
 
 <!-- Sistema de Mapas -->
 <script>
-// var map = L.map('map', { zoomControl: false, minZoom: 12, maxZoom: 19, maxBounds: [[-7.9,-35.1],[-8.2,-34.70]] }).setView([-8.055, -34.89], 14);
+var map = L.map('map', { zoomControl: false, minZoom: 12, maxZoom: 19, maxBounds: [[-7.9,-35.1],[-8.2,-34.70]] }).setView([-8.055, -34.89], 14);
 
 // L.marker([-8.047175939274599, -34.90523815155029]).addTo(map);
 
-var map = L.mapbox.map('map', 'examples.map-9ijuk24y');
+// var map = L.mapbox.map('map', 'examples.map-9ijuk24y');
 
 var myLayer = L.mapbox.featureLayer().addTo(map);
 
@@ -574,7 +574,7 @@ $('#map').on('click', '.popup .cycle a', function() {
     return false;
 });
 
-map.setView([-8.055, -34.89], 6);
+// map.setView([-8.055, -34.89], 6);
 
 
 
