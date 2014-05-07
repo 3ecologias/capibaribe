@@ -1,34 +1,107 @@
-body { margin:0; padding:0; }
+@font-face {
+    font-family: ConduitLight;
+    src: url('fonts/conduit/light-regular.woff');
+    font-weight:400;
+}
+
+body { margin:0; padding:0; font-family: 'ConduitLight', sans-serif!important; overflow: hidden; font-size: 1.6em!important;}
 header {width: 100%; z-index: 1; position: absolute;}
+
+h1, h2 {font-family: 'ConduitLight', sans-serif!important; overflow: hidden; font-size: 1.6em!important;}
+
+a {transition: all 0.2s ease-in-out 0s;}
+
+#capa {
+    width: 100%;
+    height: 100%;
+    z-index: 1002;
+    position: fixed;
+    top: 0;
+    text-align: center;
+    padding-top: 1em;
+    padding-left: 2em;
+    padding-right: 2em;
+    background: none repeat scroll 0% 0% rgba(0, 0, 0, 1);
+}
+
+#capa img {
+    max-width: 100%;
+}
+
+#texto-capa, #explore {
+color: #fff;
+}
+
+#explore {
+    position: absolute;
+    bottom: -21px;
+    left: 47%;
+}
+
+#explore span {
+    display: block;
+    font-size: 1.6em;
+    margin-bottom: 10px;
+}
+
+.explore:hover {
+    -webkit-filter: grayscale(100%) sepia(100%);
+    -moz-filter: grayscale(100%) sepia(100%);
+    -o-filter: grayscale(100%) sepia(100%);
+    -ms-filter: grayscale(100%) sepia(100%);
+    filter: grayscale(100%) sepia(100%);
+}
+
+#video-capa {
+    display: block;
+    margin-top: 1em;
+}
+#facebook {
+    position: fixed;
+    bottom: 0.28em;
+    left: 6.5em;
+    z-index: 1000;
+}
+
+#twitter {
+    position: fixed;
+    bottom: -0.1em;
+    left: 12em;
+    z-index: 1000;
+}
+
 #header {
     
 }
 #map { position:absolute; top:0; bottom:0; width:100%; }
 #map-ui {
     position: absolute;
-    bottom: 40px;
-    left: 2em;
+    bottom: 2%;
+    left: 2%;
     list-style: none outside none;
     margin: 0px;
     padding: 0px;
     z-index: 100;
     font-size: 0.8em;
+    width: 20%;
+    opacity: 0.5;
+    transition: all 0.2s ease-in-out 0s;
 }
 
 #map-ui li {
     float: left;
     display: inline-block;
-    line-height: 0.5em;
+    line-height: 0.3em;
     width: 150px;
 }
 
 #map-ui a {
     background: #FFF;
-    color: #1BABAD;
+    color: #007F93;
     display: block;
     margin: 0;
     padding: 0;
-    border: 1px solid #BBB;
+    /*border: 1px solid #BBB;*/
     border-bottom-width: 0;
     min-width: 138px;
     padding: 10px;
@@ -36,7 +109,7 @@ header {width: 100%; z-index: 1; position: absolute;}
 }
 
 #map-ui a:hover {
-    background: #1BABAD;
+    background: #007F93;
     color: #fff;
 }
 
@@ -52,48 +125,328 @@ header {width: 100%; z-index: 1; position: absolute;}
 }
 
 #map-ui a.active {
-    background: #1BABAD;
+    background: #007F93;
     border-color: #1BBADA;
     border-top-color: #FFF;
     color: #FFF;
 }
 
-/* Map Project */
+#map-ui a.hidden {
+    display: none;
+}
 
-#map-ui-project {
+/* Map Sistemas Naturais */
+#map-ui-ap {
     position: absolute;
-    bottom: 10px;
-    left: 2em;
+    bottom: -8em;
+    right: 27em;
     list-style: none outside none;
     margin: 0px;
     padding: 0px;
     z-index: 100;
     font-size: 0.8em;
+    width: 8%;
+    opacity: 1;
+    transition: all 0.2s ease-in-out 0s;
+}
+
+#map-ui-ap li {
+    float: left;
+    display: inline-block;
+    line-height: 1;
+    width: 110px;
+}
+
+#map-ui-ap a {
+    background: none repeat scroll 0% 0% rgba(255, 255, 255, 0.6);
+    color: #007F93;
+    display: block;
+    margin: 0;
+    padding: 0;
+    /*border: 1px solid #BBB;*/
+    border-bottom-width: 0;
+    min-width: auto;
+    padding: 10px;
+    text-decoration: none;
+}
+
+#map-ui-ap a:hover {
+    background: #007F93;
+    color: #fff;
+    opacity: 1;
+}
+
+#map-ui-ap li:last-child a {
+    border-bottom-width: 1px;
+    -webkit-border-radius: 0 0 3px 3px;
+    border-radius: 0 0 3px 3px;
+}
+
+#map-ui-ap li:first-child a {
+    -webkit-border-radius: 3px 3px 0 0;
+    border-radius: 3px 3px 0 0;
+}
+
+#map-ui-ap a.active {
+    background: #007F93;
+    border-color: #1BBADA;
+    border-top-color: #FFF;
+    color: #FFF;
+}
+
+#map-ui-ap a.hidden {
+    display: none;
+}
+
+#map-ui-ap a.menu {
+    background-color: #09AA09;
+    color: #FFF;
+}
+
+/* Map Tecido Urbano */
+#map-ui-tu {
+    position: absolute;
+    bottom: -14.11em;
+    right: 18em;
+    list-style: none outside none;
+    margin: 0px;
+    padding: 0px;
+    z-index: 100;
+    font-size: 0.8em;
+    width: 8%;
+    opacity: 1;
+    transition: all 0.2s ease-in-out 0s;
+}
+
+#map-ui-tu li {
+    float: left;
+    display: inline-block;
+    line-height: 1;
+    width: 110px;
+}
+
+#map-ui-tu a {
+    background: none repeat scroll 0% 0% rgba(255, 255, 255, 0.6);
+    color: #007F93;
+    display: block;
+    margin: 0;
+    padding: 0;
+    /*border: 1px solid #BBB;*/
+    border-bottom-width: 0;
+    min-width: auto;
+    padding: 10px;
+    text-decoration: none;
+}
+
+#map-ui-tu a:hover {
+    background: #007F93;
+    color: #fff;
+    opacity: 1;
+}
+
+#map-ui-tu li:last-child a {
+    border-bottom-width: 1px;
+    -webkit-border-radius: 0 0 3px 3px;
+    border-radius: 0 0 3px 3px;
+}
+
+#map-ui-tu li:first-child a {
+    -webkit-border-radius: 3px 3px 0 0;
+    border-radius: 3px 3px 0 0;
+}
+
+#map-ui-tu a.active {
+    background: #007F93;
+    border-color: #1BBADA;
+    border-top-color: #FFF;
+    color: #FFF;
+}
+
+#map-ui-tu a.hidden {
+    display: none;
+}
+
+#map-ui-tu a.menu {
+    background-color: #717194;
+    color: #FFF;
+}
+
+/* Map Sócio/Econômico */
+#map-ui-se {
+    position: absolute;
+    bottom: -12.4em;
+    right: 9em;
+    list-style: none outside none;
+    margin: 0px;
+    padding: 0px;
+    z-index: 100;
+    font-size: 0.8em;
+    width: 8%;
+    opacity: 1;
+    transition: all 0.2s ease-in-out 0s;
+}
+
+#map-ui-se li {
+    float: left;
+    display: inline-block;
+    line-height: 1;
+    width: 110px;
+}
+
+#map-ui-se a {
+    background: none repeat scroll 0% 0% rgba(255, 255, 255, 0.6);
+    color: #007F93;
+    display: block;
+    margin: 0;
+    padding: 0;
+    /*border: 1px solid #BBB;*/
+    border-bottom-width: 0;
+    min-width: auto;
+    padding: 10px;
+    text-decoration: none;
+}
+
+#map-ui-se a:hover {
+    background: #007F93;
+    color: #fff;
+    opacity: 1;
+}
+
+#map-ui-se li:last-child a {
+    border-bottom-width: 1px;
+    -webkit-border-radius: 0 0 3px 3px;
+    border-radius: 0 0 3px 3px;
+}
+
+#map-ui-se li:first-child a {
+    -webkit-border-radius: 3px 3px 0 0;
+    border-radius: 3px 3px 0 0;
+}
+
+#map-ui-se a.active {
+    background: #007F93;
+    border-color: #1BBADA;
+    border-top-color: #FFF;
+    color: #FFF;
+}
+
+#map-ui-se a.hidden {
+    display: none;
+}
+
+#map-ui-se a.menu {
+    background-color: #DDAA3E;
+    color: #FFF;
+}
+
+/* Map Projeto Parque Capibaribe */
+#map-ui-vi {
+    position: absolute;
+    bottom: -11.3em;
+    right: 36em;
+    list-style: none outside none;
+    margin: 0px;
+    padding: 0px;
+    z-index: 100;
+    font-size: 0.8em;
+    width: 8%;
+    opacity: 1;
+    transition: all 0.2s ease-in-out 0s;
+}
+
+#map-ui-vi li {
+    float: left;
+    display: inline-block;
+    line-height: 1;
+    width: 110px;
+}
+
+#map-ui-vi a {
+    background: none repeat scroll 0% 0% rgba(255, 255, 255, 0.6);
+    color: #007F93;
+    display: block;
+    margin: 0;
+    padding: 0;
+    /*border: 1px solid #BBB;*/
+    border-bottom-width: 0;
+    min-width: auto;
+    padding: 10px;
+    text-decoration: none;
+}
+
+#map-ui-vi a:hover {
+    background: #007F93;
+    color: #fff;
+    opacity: 1;
+}
+
+#map-ui-vi li:last-child a {
+    border-bottom-width: 1px;
+    -webkit-border-radius: 0 0 3px 3px;
+    border-radius: 0 0 3px 3px;
+}
+
+#map-ui-vi li:first-child a {
+    -webkit-border-radius: 3px 3px 0 0;
+    border-radius: 3px 3px 0 0;
+}
+
+#map-ui-vi a.active {
+    background: #007F93;
+    border-color: #1BBADA;
+    border-top-color: #FFF;
+    color: #FFF;
+}
+
+#map-ui-vi a.hidden {
+    display: none;
+}
+
+#map-ui-vi a.menu {
+    background-color: #F0436C;
+    color: #FFF;
+}
+
+/* Map Diagnóstico */
+
+#map-ui-project {
+    position: absolute;
+    bottom: -12.4em;
+    right: 0em;
+    list-style: none outside none;
+    margin: 0px;
+    padding: 0px;
+    z-index: 100;
+    font-size: 0.8em;
+    width: 8%;
+    opacity: 1;
+    transition: all 0.2s ease-in-out 0s;
 }
 
 #map-ui-project li {
     float: left;
     display: inline-block;
-    line-height: 0.5em;
-    width: 150px;
+    line-height: 1;
+    width: 110px;
 }
 
 #map-ui-project a {
-    background: #FFCC00;
-    color: #3366FF;
+    background: none repeat scroll 0% 0% rgba(255, 255, 255, 0.6);
+    color: #007F93;
     display: block;
     margin: 0;
     padding: 0;
-    border: 1px solid #BBB;
+    /*border: 1px solid #BBB;*/
     border-bottom-width: 0;
-    min-width: 138px;
+    min-width: auto;
     padding: 10px;
     text-decoration: none;
 }
 
 #map-ui-project a:hover {
-    background: #E6B800;
-    color: #3366FF;
+    background: #007F93;
+    color: #fff;
+    opacity: 1;
 }
 
 #map-ui-project li:last-child a {
@@ -108,11 +461,83 @@ header {width: 100%; z-index: 1; position: absolute;}
 }
 
 #map-ui-project a.active {
-    background: #E6B800;
+    background: #007F93;
     border-color: #1BBADA;
     border-top-color: #FFF;
-    color: #3366FF;
+    color: #FFF;
 }
+
+#map-ui-project a.menu {
+    background-color: #FA6400;
+    color: #FFF;
+}
+
+/* Map inst */
+
+#map-ui-inst {
+    position: absolute;
+    bottom: -8em;
+    left: 50em;
+    list-style: none outside none;
+    margin: 0px;
+    padding: 0px;
+    z-index: 100;
+    font-size: 0.8em;
+    width: 8%;
+    opacity: 1;
+    transition: all 0.2s ease-in-out 0s;
+}
+
+#map-ui-inst li {
+    float: left;
+    display: inline-block;
+    line-height: 1;
+    width: 110px;
+}
+
+#map-ui-inst a {
+    background: none repeat scroll 0% 0% rgba(255, 255, 255, 0.6);
+    color: #007F93;
+    display: block;
+    margin: 0;
+    padding: 0;
+    /*border: 1px solid #BBB;*/
+    border-bottom-width: 0;
+    min-width: auto;
+    padding: 10px;
+    text-decoration: none;
+}
+
+#map-ui-inst a:hover {
+    background: #007F93;
+    color: #fff;
+    opacity: 1;
+}
+
+#map-ui-inst li:last-child a {
+    border-bottom-width: 1px;
+    -webkit-border-radius: 0 0 3px 3px;
+    border-radius: 0 0 3px 3px;
+}
+
+#map-ui-inst li:first-child a {
+    -webkit-border-radius: 3px 3px 0 0;
+    border-radius: 3px 3px 0 0;
+}
+
+#map-ui-inst a.active {
+    background: #007F93;
+    border-color: #1BBADA;
+    border-top-color: #FFF;
+    color: #FFF;
+}
+
+#map-ui-inst a.menu {
+    background-color: #939904;
+    color: #FFF;
+}
+
+ /*#map-ui-ap:hover, #map-ui-tu:hover, #map-ui-se:hover, #map-ui-vi:hover, #map-ui-project:hover, #map-ui-inst:hover {opacity:1;transition: all 0.2s ease-in-out 0s;}*/
 
 /* Navbar */
 .navbar-default {
@@ -132,13 +557,13 @@ header {width: 100%; z-index: 1; position: absolute;}
 .navbar-default .navbar-nav > .active > a:hover, 
 .navbar-default .navbar-nav > .active > a:focus {
     color: #fff;
-    background-color: #1BABAD;
+    background-color: #007F93;
 }
 .navbar-default .navbar-nav > .open > a, 
 .navbar-default .navbar-nav > .open > a:hover, 
 .navbar-default .navbar-nav > .open > a:focus {
     color: #fff;
-    background-color: #1BABAD;
+    background-color: #007F93;
 }
 .navbar-default .navbar-nav > .open > a .caret, 
 .navbar-default .navbar-nav > .open > a:hover .caret, 
@@ -151,7 +576,7 @@ header {width: 100%; z-index: 1; position: absolute;}
 }
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus {
-    background-color: #1BABAD;
+    background-color: #007F93;
 }
 .navbar-default .navbar-toggle .icon-bar {
     background-color: #ecf0f1;
@@ -170,47 +595,30 @@ header {width: 100%; z-index: 1; position: absolute;}
     }
 }
 .navbar-brand img {
-    max-width: 50%;
+    max-width: 100%;
 }
 
-#sobre-content {
+#sobre-content, #instagram-content, #blog-content, #twitter-content, #se-content, #t1-content, #t2-content, #t3-content, #t4-content, #ff-content  {
     float: right;
-    height: 85%;
-    border-radius: 1em;
-    width: 50%;
-    padding: 30px 20px;
-    background: none repeat scroll 0% 0% rgba(103, 166, 127, 0.6);
+    height: 55%;
+    width: 25%;
+    padding: 20px 30px 0px 18px;
+    background: none repeat scroll 0% 0% rgba(0, 127, 147, 0.9);
     color: rgb(255, 255, 255);
-    text-align: justify;
+    text-align: left;
     position: fixed;
-    right: 50px;
-    bottom: 0;
+    right: 0px;
     display: none;
     z-index: 101;
     overflow: auto;
-    -webkit-box-shadow: 6px 6px 8px 0px rgba(50, 50, 50, 0.75);
-    -moz-box-shadow:    6px 6px 8px 0px rgba(50, 50, 50, 0.75);
-    box-shadow:         6px 6px 8px 0px rgba(50, 50, 50, 0.75);
 }
 
-#blog-content {
-    float: right;
-    height: 85%;
-    border-radius: 1em;
-    width: 50%;
-    padding: 30px 20px;
-    background: none repeat scroll 0% 0% rgba(103, 166, 127, 0.6);
-    color: rgb(255, 255, 255);
-    text-align: justify;
-    position: fixed;
-    right: 50px;
-    bottom: 0;
-    display: none;
-    z-index: 101;
-    overflow: auto;
-    -webkit-box-shadow: 6px 6px 8px 0px rgba(50, 50, 50, 0.75);
-    -moz-box-shadow:    6px 6px 8px 0px rgba(50, 50, 50, 0.75);
-    box-shadow:         6px 6px 8px 0px rgba(50, 50, 50, 0.75);
+#sobre-content img {
+    max-width: 100%;
+}
+
+.fanpage {
+    width: 10%;
 }
 
 .blog-gallery {
@@ -226,81 +634,35 @@ header {width: 100%; z-index: 1; position: absolute;}
     margin-bottom: 5em;
     padding-top: 1em;
 }
-.close-insta, .close-blog, .close-twitter, .close-sobre, .close-t1, .close-t2, .close-t3, .close-t4 {
-    top: 17%;
-    right: 5%;
+.close-insta, .close-blog, .close-twitter, .close-sobre, .close-t1, .close-t2, .close-t3, .close-t4, .close-se, .close-ff {
+    top: 5px;
+    right: 15px;
     width:auto;
     height:auto;
     /*background:#900;*/
     position:fixed;
     cursor:pointer;
-    font-size: 2em;
+    font-size: 1.2em;
+    /*display: none;*/
 }
 
-#instagram-content {
+/*#t1-content, #t2-content, #t3-content, #t4-content, #ff-content {
     float: right;
-    height: 85%;
-    border-radius: 1em;
-    width: 60%;
-    padding: 30px 20px;
-    background: none repeat scroll 0% 0% rgba(103, 166, 127, 0.6);
+    height: 100%;
+    width: 25%;
+    padding: 0px 20px;
+    background: none repeat scroll 0% 0% rgba(0, 127, 147, 0.6);
     color: rgb(255, 255, 255);
     text-align: justify;
     position: fixed;
-    right: 50px;
-    bottom: 0;
+    right: 0px;
     display: none;
     z-index: 101;
     overflow: auto;
-    -webkit-box-shadow: 6px 6px 8px 0px rgba(50, 50, 50, 0.75);
-    -moz-box-shadow:    6px 6px 8px 0px rgba(50, 50, 50, 0.75);
-    box-shadow:         6px 6px 8px 0px rgba(50, 50, 50, 0.75);
 
-}
+}*/
 
-#twitter-content {
-    float: right;
-    height: 85%;
-    border-radius: 1em;
-    width: auto;
-    padding: 30px 20px;
-    background: none repeat scroll 0% 0% rgba(103, 166, 127, 0.6);
-    color: rgb(255, 255, 255);
-    text-align: justify;
-    position: fixed;
-    right: 50px;
-    bottom: 0;
-    display: none;
-    z-index: 101;
-    overflow: auto;
-    -webkit-box-shadow: 6px 6px 8px 0px rgba(50, 50, 50, 0.75);
-    -moz-box-shadow:    6px 6px 8px 0px rgba(50, 50, 50, 0.75);
-    box-shadow:         6px 6px 8px 0px rgba(50, 50, 50, 0.75);
-
-}
-
-#t1-content, #t2-content, #t3-content, #t4-content {
-    float: right;
-    height: 85%;
-    border-radius: 1em;
-    width: 40%;
-    padding: 30px 20px;
-    background: none repeat scroll 0% 0% rgba(103, 166, 127, 0.6);
-    color: rgb(255, 255, 255);
-    text-align: justify;
-    position: fixed;
-    right: 50px;
-    bottom: 0;
-    display: none;
-    z-index: 101;
-    overflow: auto;
-    -webkit-box-shadow: 6px 6px 8px 0px rgba(50, 50, 50, 0.75);
-    -moz-box-shadow:    6px 6px 8px 0px rgba(50, 50, 50, 0.75);
-    box-shadow:         6px 6px 8px 0px rgba(50, 50, 50, 0.75);
-
-}
-
-#instafeed img {
+#instafeed img, #parquecapibaribe img, #capibaribevivo img {
     width: 20%;
     padding: 7px;
 }
@@ -316,7 +678,7 @@ header {width: 100%; z-index: 1; position: absolute;}
 }
  
 ::-webkit-scrollbar-track-piece  {
-    background-color: #1BABAD;
+    background-color: #007F93;
     -webkit-border-radius: 6px;
 }
  
@@ -340,4 +702,106 @@ header {width: 100%; z-index: 1; position: absolute;}
    */
    -ms-user-select: none;
    user-select: none;
+}
+/* Legendas */
+#legend-content {
+    font-size: 82%;
+    z-index: 1;
+    position: fixed;
+    left: 3.5em;
+    bottom: 3em;
+    /*background: none repeat scroll 0% 0% rgba(230, 230, 230, 0.6);*/
+    padding: 0px 11px 12px 11px;
+    color: #007F93;
+    /*opacity: 0.1;*/
+    transition: all 0.2s ease-in-out 0s;
+}
+
+#legend-content h4 {
+  font-size: 16px;
+  color: #007F93;
+  font-weight: bold;
+}
+
+#legend-01:hover, #legend-02:hover, #legend-03:hover, #legend-04:hover, #legend-05:hover {
+    opacity: 1;
+    transition: all 0.2s ease-in-out 0s;
+}
+
+#legend-01, #legend-02, #legend-03, #legend-04, #legend-05 {
+    float: left;
+    display: inline-block;
+    padding: 3px;
+    display: none;
+    opacity: 0.5;
+    background: none repeat scroll 0% 0% rgba(230, 230, 230, 0.6);
+    transition: all 0.2s ease-in-out 0s;
+    min-height: 12em;
+}
+
+/* Markers Tooltip */
+.popup {
+    text-align: center;
+}
+.popup .slideshow {
+    width: 100%;
+}
+.popup .slideshow .image {
+    display: none;
+}
+.popup .slideshow .active {
+    display: block;
+}
+.popup .slideshow img {
+    width: 100%;
+}
+.popup .slideshow .caption {
+    background: #eee;
+    padding: 8px;
+}
+.popup .cycle {
+    height: 30px;
+    margin-top: 5px;
+    padding-top: 5px;
+}
+.popup .cycle a.prev {
+    float: left;
+}
+.popup .cycle a.next {
+    float: right;
+}
+
+.map-overlay {
+    position:absolute;
+    top:5px;
+    right:5px;
+    padding:5px;
+    background:#fff;
+    font-size:11px;
+}
+.map-overlay input {
+    font:inherit;
+}
+
+.leaflet-popup-content {
+    margin-left: 0px!important;
+    margin-right: 16px!important;
+    margin-top: 0px!important;
+    margin-bottom: 2px!important;
+    }
+
+.leaflet-popup-content-wrapper {
+    background: none repeat scroll 0% 0% rgba(0, 127, 147, 0.3)!important;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    box-shadow: 0 -2px 32px rgba(0,0,0,0.7)!important;
+    }
+.leaflet-popup-tip {
+    background: none repeat scroll 0% 0% rgba(0, 127, 147, 0.5)!important;
+    border-top: 0px!important;
+}
+
+/*fancybox text line break****/
+.child {
+    white-space: pre-line !important;
 }
