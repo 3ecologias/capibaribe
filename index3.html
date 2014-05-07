@@ -478,29 +478,30 @@
 
 <!-- Sistema de Mapas -->
 <script>
-var map = L.mapbox.map('map', { zoomControl: false, minZoom: 12, maxZoom: 19, maxBounds: [[-7.9,-35.1],[-8.2,-34.70]] }).setView([-8.055, -34.89], 14);
+var map = L.map('map', { zoomControl: false, minZoom: 12, maxZoom: 19, maxBounds: [[-7.9,-35.1],[-8.2,-34.70]] }).setView([-8.055, -34.89], 14);
 
+L.marker([-34.90523815155029,-8.047175939274599]).addTo(map);
 // Markers
 
-L.mapbox.featureLayer({
-    // this feature is in the GeoJSON format: see geojson.org
-    // for the full specification
-    type: 'Feature',
-    geometry: {
-        type: 'Point',
-        // coordinates here are in longitude, latitude order because
-        // x, y is the standard for GeoJSON and many formats
-        coordinates: [-34.90523815155029,-8.047175939274599]
-    },
-    properties: {
-        title: 'A Single Marker',
-        description: 'Just one of me',
-        // one can customize markers by adding simplestyle properties
-        // http://mapbox.com/developers/simplestyle/
-        'marker-size': 'large',
-        'marker-color': '#f0a'
-    }
-}).addTo(map);
+// L.mapbox.featureLayer({
+//     // this feature is in the GeoJSON format: see geojson.org
+//     // for the full specification
+//     type: 'Feature',
+//     geometry: {
+//         type: 'Point',
+//         // coordinates here are in longitude, latitude order because
+//         // x, y is the standard for GeoJSON and many formats
+//         coordinates: [-34.90523815155029,-8.047175939274599]
+//     },
+//     properties: {
+//         title: 'A Single Marker',
+//         description: 'Just one of me',
+//         // one can customize markers by adding simplestyle properties
+//         // http://mapbox.com/developers/simplestyle/
+//         'marker-size': 'large',
+//         'marker-color': '#f0a'
+//     }
+// }).addTo(map);
 
 // Ferramenta lat long
 
