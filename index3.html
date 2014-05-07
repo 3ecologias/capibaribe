@@ -478,12 +478,12 @@
 
 <!-- Sistema de Mapas -->
 <script>
-var map = L.mapbox('map', { zoomControl: false, minZoom: 12, maxZoom: 19, maxBounds: [[-7.9,-35.1],[-8.2,-34.70]] }).setView([-8.055, -34.89], 14);
+var map = L.mapbox.map('map', { zoomControl: false, minZoom: 12, maxZoom: 19, maxBounds: [[-7.9,-35.1],[-8.2,-34.70]] }).setView([-8.055, -34.89], 14);
 
 
 // Test Markers
 
-var myLayer = L.mapbox.featureLayer().addTo(map);
+var myLayer = L.mapbox.map.featureLayer().addTo(map);
 
 var geoJson = [{
     type: 'Feature',
