@@ -478,11 +478,11 @@
 
 <!-- Sistema de Mapas -->
 <script>
-var map = L.map('map', { zoomControl: false, minZoom: 12, maxZoom: 19, maxBounds: [[-7.9,-35.1],[-8.2,-34.70]] }).setView([-8.055, -34.89], 14);
+var map = L.mapbox.map('map', { zoomControl: false, minZoom: 12, maxZoom: 19, maxBounds: [[-7.9,-35.1],[-8.2,-34.70]] }).setView([-8.055, -34.89], 14);
 
 // Markers
 
-L.map.featureLayer({
+L.mapbox.featureLayer({
     // this feature is in the GeoJSON format: see geojson.org
     // for the full specification
     type: 'Feature',
