@@ -545,7 +545,7 @@ myLayer.on('layeradd', function(e) {
 });
 
 // Add features to the map
-myLayer = L.geoJson();
+myLayer = L.geoJson().addTo(map);
 myLayer.addData(geoJson);
 
 
