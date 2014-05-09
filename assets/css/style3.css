@@ -312,6 +312,11 @@ filter: Alpha(Opacity=30);
 font-family: ConduitLight;
 }
 
+.map-overlay {
+    position: fixed;
+    top: 0;
+    right: 10px;
+}
 
 .marker-futuro img {
     width: 100%;
