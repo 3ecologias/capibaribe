@@ -478,9 +478,18 @@
 <script>
 var map = L.map('map', { zoomControl: false, minZoom: 2, maxZoom: 19, maxBounds: [[-7.9,-35.1],[-8.2,-34.70]] }).setView([-8.055, -34.89], 14);
 
-L.marker([-8.047175939274599, -34.90523815155029]).bindPopup("<div class='marker-futuro'> <img src='images/futuro/01.jpg'></div>", {minWidth:500}).openPopup().addTo(map);
+// Markers and Icons
 
-L.marker([-8.047175939274599, -34.80523815155029]).bindPopup("<div class='marker-futuro'> <img src='images/futuro/01.jpg'></div>", {minWidth:500}).openPopup().addTo(map);
+var futuroIcon = L.icon({
+    iconUrl: 'images/icone_futuro.png',
+    iconSize:     [38, 95], // size of the icon
+    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+});
+
+L.marker([-8.047175939274599, -34.90523815155029], {icon: futuroIcon}).bindPopup("<div class='marker-futuro'> <img src='images/futuro/01.jpg'></div>", {minWidth:500}).openPopup().addTo(map);
+
+L.marker([-8.043974892024826, -34.925150871276855], {icon: futuroIcon}).bindPopup("<div class='marker-futuro'> <img src='images/futuro/02.jpg'></div>", {minWidth:500}).openPopup().addTo(map);
 
 // var map = L.mapbox.map('map', 'examples.map-9ijuk24y');
 
