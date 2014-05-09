@@ -423,12 +423,12 @@
 <div id="facebook" class="fb-like" data-href="http://parquecapibaribe.org" data-layout="button_count" data-action="recommend" data-show-faces="false" data-share="false"></div>
 
 <div id='map'></div>
-<!-- <div class='map-overlay'>
+<div class='map-overlay'>
     <label for='latitude'>latitude</label><br />
     <input type='text' size='5' id='latitude' /><br />
     <label for='longitude'>longitude</label><br />
     <input type='text' size='5' id='longitude' />
-</div> -->
+</div>
 
 <!-- Legendas -->
 <div id="legend-content">
@@ -476,10 +476,11 @@
 
 <!-- Sistema de Mapas -->
 <script>
-var map = L.map('map', { zoomControl: false, minZoom: 12, maxZoom: 19, maxBounds: [[-7.9,-35.1],[-8.2,-34.70]] }).setView([-8.055, -34.89], 14);
+var map = L.map('map', { zoomControl: false, minZoom: 2, maxZoom: 19, maxBounds: [[-7.9,-35.1],[-8.2,-34.70]] }).setView([-8.055, -34.89], 14);
 
 L.marker([-8.047175939274599, -34.90523815155029]).bindPopup("<div class='marker-futuro'> <img src='images/futuro/01.jpg'></div>", {minWidth:500}).openPopup().addTo(map);
 
+L.marker([-8.047175939274599, -34.80523815155029]).bindPopup("<div class='marker-futuro'> <img src='images/futuro/01.jpg'></div>", {minWidth:500}).openPopup().addTo(map);
 
 // var map = L.mapbox.map('map', 'examples.map-9ijuk24y');
 
@@ -507,24 +508,24 @@ L.marker([-8.047175939274599, -34.90523815155029]).bindPopup("<div class='marker
 
 // Ferramenta lat long
 
-// var latitude = document.getElementById('latitude');
-// var longitude = document.getElementById('longitude');
+var latitude = document.getElementById('latitude');
+var longitude = document.getElementById('longitude');
 
-// var marker = L.marker([0,0], {
-//     draggable: true
-// }).addTo(map);
+var marker = L.marker([0,0], {
+    draggable: true
+}).addTo(map);
 
-// // every time the marker is dragged, update the form
-// marker.on('dragend', ondragend);
+// every time the marker is dragged, update the form
+marker.on('dragend', ondragend);
 
-// // set the initial values in the form
-// ondragend();
+// set the initial values in the form
+ondragend();
 
-// function ondragend() {
-//     var ll = marker.getLatLng();
-//     latitude.value = ll.lat;
-//     longitude.value = ll.lng;
-// }
+function ondragend() {
+    var ll = marker.getLatLng();
+    latitude.value = ll.lat;
+    longitude.value = ll.lng;
+}
 
 // end Markers
 
