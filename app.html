@@ -708,7 +708,7 @@ function addLayerVi(layer, name, zIndex) {
                 var photo_marker = L.photoMarker([photo.latitude, photo.longitude], {
                   src: photo.url_t,
                   size: [ photo.width_t, photo.height_t ]
-                }).bindPopup('<a href="http://flickr.com/photos/'+photo.pathalias+'/'+photo.id+'"><img src="'+photo.url_m+'" /></a><h1>'+photo.title+'</h1><h1>'+photo.ownername+'</h1>', {
+                }).bindPopup('<a href="http://flickr.com/photos/'+photo.pathalias+'/'+photo.id+' target="_blank"><img src="'+photo.url_m+'" /></a><h1>'+photo.title+'</h1><h1>'+photo.ownername+'</h1>', {
                     minWidth: photo.width_m,
                     minHeight: photo.height_m
                 });
