@@ -175,9 +175,9 @@ $(document).ready(function() {
 		closeEffect	: 'none'
 	});
 
-	$('.carousel').carousel({
- 		interval: 2000
-  	});
+	// $('.carousel').carousel({
+ // 		interval: 2000
+ //  	});
 
 	// Menu Handlers
     // http://stackoverflow.com/questions/17059515/jquery-hover-with-animate-then-animate-left-in-second-handler-issue
