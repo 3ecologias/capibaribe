@@ -175,8 +175,7 @@ $(document).ready(function() {
 		closeEffect	: 'none'
 	});
 
-    $('#carouselFuturo').carousel({
-    });
+
 
 
 	// Menu Handlers
