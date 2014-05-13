@@ -321,3 +321,7 @@ font-family: ConduitLight;
 .marker-futuro img {
     width: 100%;
 }
+
+.marker-futuro-bg {
+    display: none;
+}
