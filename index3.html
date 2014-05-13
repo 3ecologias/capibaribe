@@ -523,10 +523,10 @@ L.marker([-8.043974892024826, -34.925150871276855], {icon: futuroIcon}).bindPopu
       "</div>" +
     "</div>" +
   "</div>" +
-  "<a class='carousel-control left' href='#carouselFuturo' data-slide='prev'>" +
+  "<a class='carousel-control left'>" +
     "<span class='glyphicon glyphicon-chevron-left'></span>" +
   "</a>" +
-  "<a class='carousel-control right' href='#carouselFuturo' data-slide='next'>" +
+  "<a class='carousel-control right'>" +
     "<span class='glyphicon glyphicon-chevron-right'></span>" +
   "</a>" +
 "</div>", {minWidth:500}).openPopup().addTo(map);
@@ -1636,6 +1636,13 @@ function addLayerProject(layer, name, zIndex) {
     <script type="text/javascript">
       $(document).ready(function(){
         $("#carouselFuturo").carousel();
+      });
+      $('.carousel-control.left').click(function() {
+        $('#carouselFuturo').carousel('prev');
+      });
+
+      $('.carousel-control.right').click(function() {
+        $('#carouselFuturo').carousel('next');
       });
 
     </script>
