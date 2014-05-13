@@ -175,6 +175,16 @@ $(document).ready(function() {
 		closeEffect	: 'none'
 	});
 
+	 $("#carouselFuturo").carousel();
+      });
+      $('.carousel-control.left').click(function() {
+        $('#carouselFuturo').carousel('prev');
+      });
+
+      $('.carousel-control.right').click(function() {
+        $('#carouselFuturo').carousel('next');
+      });
+
 
 
 
