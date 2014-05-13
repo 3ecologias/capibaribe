@@ -494,7 +494,7 @@ var futuroIcon = L.icon({
 // L.marker([-8.043974892024826, -34.925150871276855], {icon: futuroIcon}).bindPopup("<div class='marker-futuro'><a class='fancybox' rel='galeria' href='images/futuro/01.jpg'><img src='images/futuro/01.jpg'></a></div>", {minWidth:500}).openPopup().addTo(map);
 
 
-L.marker([-8.043974892024826, -34.925150871276855], {icon: futuroIcon}).bindPopup("<div id='carouselFuturo' class='carousel slide' data-ride='carousel'>" +
+L.marker([-8.043974892024826, -34.925150871276855], {icon: futuroIcon}).bindPopup("<div id='carouselFuturo' class='carousel slide'>" +
   "<ol class='carousel-indicators'>" +
     "<li data-target='#carouselFuturo' data-slide-to='0' class='active'></li>" +
     "<li data-target='#carouselFuturo' data-slide-to='1'></li>" +
@@ -523,10 +523,10 @@ L.marker([-8.043974892024826, -34.925150871276855], {icon: futuroIcon}).bindPopu
       "</div>" +
     "</div>" +
   "</div>" +
-  "<a class='carousel-control left'>" +
+  "<a class='carousel-control left' href='#'>" +
     "<span class='glyphicon glyphicon-chevron-left'></span>" +
   "</a>" +
-  "<a class='carousel-control right'>" +
+  "<a class='carousel-control right' href='#'>" +
     "<span class='glyphicon glyphicon-chevron-right'></span>" +
   "</a>" +
 "</div>", {minWidth:500}).openPopup().addTo(map);
@@ -1631,14 +1631,6 @@ function addLayerProject(layer, name, zIndex) {
 
 
 </script>
-
-
-    <script type="text/javascript">
-      $(document).ready(function(){
-       
-
-    </script>
-
 
 <script type="text/javascript">
   // get in http://jsfiddle.net/jhfrench/NQ97h/
