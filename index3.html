@@ -7,7 +7,7 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href='css/style3.css' rel='stylesheet' />
   <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-  <script src="https://code.jquery.com/jquery.min.js"></script>
+  <script src="js/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
   <script src="js/jquery.tumblr-kit.min.js"></script>
@@ -29,24 +29,7 @@
   <script type="text/javascript" src="js/PhotoMarkerMatrix.js"></script>
   <script type="text/javascript" src="js/PhotoIcon.js"></script>
   <script type="text/javascript" src="js/PhotoMarker.js"></script>
-  <script type="text/javascript">
-    $(document).ready(function(){
-
-      $("#carousel-futuro").carousel();
-      });
-
-      $('a[data-slide="prev"]').click(function() {
-        $('#carousel-futuro').carousel('prev');
-      });
-
-      $('a[data-slide="next"]').click(function() {
-        $('#carousel-futuro').carousel('next');
-      });
-
-    </script>
-
-
-
+  
   <script>
       var TUMBLR_API_KEY = "qz5zBeyiO9gTJxUIhlH7bLVZXo88xafsjDxGTElGPBYW2wCRYE";
       var TUMBLR_HOSTNAME = "parquecapibaribe.tumblr.com";
@@ -509,11 +492,11 @@ var futuroIcon = L.icon({
 // L.marker([-8.043974892024826, -34.925150871276855], {icon: futuroIcon}).bindPopup("<div class='marker-futuro'><a class='fancybox' rel='galeria' href='images/futuro/01.jpg'><img src='images/futuro/01.jpg'></a></div>", {minWidth:500}).openPopup().addTo(map);
 
 
-L.marker([-8.043974892024826, -34.925150871276855], {icon: futuroIcon}).bindPopup("<div id='carousel-futuro' class='carousel slide' data-ride='carousel'>" +
+L.marker([-8.043974892024826, -34.925150871276855], {icon: futuroIcon}).bindPopup("<div id='carouselFuturo' class='carousel slide' data-ride='carousel'>" +
   "<ol class='carousel-indicators'>" +
-    "<li data-target='#carousel-futuro' data-slide-to='0' class='active'></li>" +
-    "<li data-target='#carousel-futuro' data-slide-to='1'></li>" +
-    "<li data-target='#carousel-futuro' data-slide-to='2'></li>" +
+    "<li data-target='#carouselFuturo' data-slide-to='0' class='active'></li>" +
+    "<li data-target='#carouselFuturo' data-slide-to='1'></li>" +
+    "<li data-target='#carouselFuturo' data-slide-to='2'></li>" +
   "</ol>" +
   "<div class='carousel-inner'>" +
     "<div class='item active'>" +
@@ -538,10 +521,10 @@ L.marker([-8.043974892024826, -34.925150871276855], {icon: futuroIcon}).bindPopu
       "</div>" +
     "</div>" +
   "</div>" +
-  "<a class='carousel-control left' href='#carousel-futuro' data-slide='prev'>" +
+  "<a class='carousel-control left' href='#carouselFuturo' data-slide='prev'>" +
     "<span class='glyphicon glyphicon-chevron-left'></span>" +
   "</a>" +
-  "<a class='carousel-control right' href='#carousel-futuro' data-slide='next'>" +
+  "<a class='carousel-control right' href='#carouselFuturo' data-slide='next'>" +
     "<span class='glyphicon glyphicon-chevron-right'></span>" +
   "</a>" +
 "</div>", {minWidth:500}).openPopup().addTo(map);
@@ -1655,6 +1638,22 @@ function addLayerProject(layer, name, zIndex) {
   });
 
 </script>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+
+      $("#carouselFuturo").carousel();
+      });
+
+      $('a[data-slide="prev"]').click(function() {
+        $('#carouselFuturo').carousel('prev');
+      });
+
+      $('a[data-slide="next"]').click(function() {
+        $('#carouselFuturo').carousel('next');
+      });
+
+    </script>
 
 </body>
 </html>
