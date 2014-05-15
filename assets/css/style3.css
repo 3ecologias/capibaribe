@@ -312,6 +312,9 @@ filter: Alpha(Opacity=30);
 font-family: ConduitLight;
 }
 
+.leaflet-popup-content-wrapper {
+    background: none repeat scroll 0% 0% rgba(255,255,255,0.3)!important;
+}
 .map-overlay {
     position: fixed;
     top: 0;
