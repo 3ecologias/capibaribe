@@ -516,7 +516,7 @@ map.on('popupopen', function() {
   // });
 });
 
-L.marker([-8.043974892024826, -34.925150871276855], {icon: futuroIcon}).bindPopup('<div id="carouselFuturo" class="carousel slide" data-ride="carousel">' +
+var markerFuturo = L.marker([-8.043974892024826, -34.925150871276855], {icon: futuroIcon}).bindPopup('<div id="carouselFuturo" class="carousel slide" data-ride="carousel">' +
   '<ol class="carousel-indicators">' +
     '<li data-target="#carouselFuturo" data-slide-to="0" class="active"></li>' +
     '<li data-target="#carouselFuturo" data-slide-to="1"></li>' +
@@ -671,10 +671,10 @@ L.marker([-8.043974892024826, -34.925150871276855], {icon: futuroIcon}).bindPopu
   '<a class="carousel-control right" href="#carouselFuturo" data-slide="next">' +
     '<span class="glyphicon glyphicon-chevron-right"></span>' +
   '</a>' +
-'</div>', {minWidth:500, closeButton:false}).openPopup().addTo(map);
+'</div>', {minWidth:500, closeButton:false}).openPopup();
 
 
-L.marker([-8.03993802757441, -34.90622520446777], {icon: meiodomundoIcon}).bindPopup('<div id="carouselMeioMundo" class="carousel slide" data-ride="carousel">' +
+var markerMeioMundo = L.marker([-8.03993802757441, -34.90622520446777], {icon: meiodomundoIcon}).bindPopup('<div id="carouselMeioMundo" class="carousel slide" data-ride="carousel">' +
   '<ol class="carousel-indicators">' +
     '<li data-target="#carouselMeioMundo" data-slide-to="0" class="active"></li>' +
     '<li data-target="#carouselMeioMundo" data-slide-to="1"></li>' +
@@ -773,10 +773,10 @@ L.marker([-8.03993802757441, -34.90622520446777], {icon: meiodomundoIcon}).bindP
   '<a class="carousel-control right" href="#carouselMeioMundo" data-slide="next">' +
     '<span class="glyphicon glyphicon-chevron-right"></span>' +
   '</a>' +
-'</div>', {minWidth:500, closeButton:false}).openPopup().addTo(map);
+'</div>', {minWidth:500, closeButton:false}).openPopup();
 
 
-L.marker([-8.045419654798856, -34.90317821502685], {icon: culturaIcon}).bindPopup('<div id="carouselCultura" class="carousel slide" data-ride="carousel">' +
+var markerCultura = L.marker([-8.045419654798856, -34.90317821502685], {icon: culturaIcon}).bindPopup('<div id="carouselCultura" class="carousel slide" data-ride="carousel">' +
   '<ol class="carousel-indicators">' +
     '<li data-target="#carouselCultura" data-slide-to="0" class="active"></li>' +
     '<li data-target="#carouselCultura" data-slide-to="1"></li>' +
@@ -923,7 +923,15 @@ L.marker([-8.045419654798856, -34.90317821502685], {icon: culturaIcon}).bindPopu
   '<a class="carousel-control right" href="#carouselCultura" data-slide="next">' +
     '<span class="glyphicon glyphicon-chevron-right"></span>' +
   '</a>' +
-'</div>', {minWidth:500, closeButton:false}).openPopup().addTo(map);
+'</div>', {minWidth:500, closeButton:false}).openPopup();
+
+
+var overlayMaps = {
+    "Parque do Futuro": markerFuturo,
+    "Parque do Meio do Mundo": markerMeioMundo,
+    "Parque da Cultura": markerCultura
+};
+
 
 
 // var map = L.mapbox.map('map', 'examples.map-9ijuk24y');
@@ -973,10 +981,11 @@ function ondragend() {
 
 // end Markers
 
-
+var cities = L.layerGroup([photo_markers]);
 
 L.control.scale({ position: 'bottomleft' }).addTo(map);
 new L.Control.Zoom({ position: 'bottomleft' }).addTo(map);
+L.control.layers(overlayMaps).addTo(map);
 
 
 var ui = document.getElementById('map-ui');
@@ -1352,7 +1361,48 @@ function addLayerVi(layer, name, zIndex) {
     }
 
     if (zIndex == 202) {
+      $( "#instagram-content" ).slideToggle( "slow" );
+      link.className = 'active';
+              // Flickr
 
+          // Display the flickr photos
+          function display(resp) {
+            if ( resp.photos && resp.photos.photo ) {
+              // $("#loading").hide();
+              // Marker Cluster group
+              var photo_markers = new L.MarkerClusterGroup({
+                showCoverageOnHover: false,
+                spiderfyDistanceMultiplier: 5,
+                maxClusterRadius: 10
+              }).addTo(map);
+
+              $.each(resp.photos.photo, function(k, photo) {
+                // Create a photo marker
+                var photo_marker = L.photoMarker([photo.latitude, photo.longitude], {
+                  src: photo.url_t,
+                  size: [ photo.width_t, photo.height_t ]
+                }).bindPopup('<img src="'+photo.url_m+'" /><h1>'+photo.title+'</h1>', {
+                    minWidth: photo.width_m,
+                    minHeight: photo.height_m
+                });
+                var image = L.DomUtil.create('img');
+                image.onload = function() { photo_markers.addLayer(photo_marker); };
+                image.src = photo.url_t;
+              });
+            }
+          }
+
+          $.getJSON('http://api.flickr.com/services/rest/?jsoncallback=?', {
+            method: 'flickr.photos.search',
+            api_key: 'c375f1e26e8b14300d2945a0fd6c4e8e',
+            tags: 'capibaribe, rio', 
+            bbox: '-34.99317169189453,-8.1115757594567,-34.840736389160156,-7.972197714386866',
+            per_page: 50,
+            extras: 'description, license, date_upload, date_taken, owner_name, icon_server, original_format, last_update, geo, tags, machine_tags, o_dims, views, media, path_alias, url_sq,url_t, url_s, url_q, url_m, url_n, url_z, url_c, url_l, url_o',
+            format: 'json'
+          }, display);
+
+          // end Flickr
     }
 
     // end hack
@@ -1433,69 +1483,6 @@ function addLayerVi(layer, name, zIndex) {
           }
         if (zIndex == 202) {
 
-        $( "#instagram-content" ).slideToggle( "slow" );
-        link.className = 'active';
-          // Flickr
-          function hide(e) {
-            if(layerVisibility)
-            {
-                photo_markers.eachLayer(function (marker) {
-                marker.setOpacity(0);
-                layerVisibility = false;
-                });
-            }
-            else
-            {
-                photo_markers.eachLayer(function (marker) {
-                marker.setOpacity(1);
-                layerVisibility = true;
-                });
-            }
-          }
-
-
-          // Display the flickr photos
-          function display(resp) {
-            if ( resp.photos && resp.photos.photo ) {
-              // $("#loading").hide();
-              // Marker Cluster group
-              var photo_markers = new L.MarkerClusterGroup({
-                showCoverageOnHover: false,
-                spiderfyDistanceMultiplier: 5,
-                maxClusterRadius: 10
-              }).addTo(map);
-
-              $.each(resp.photos.photo, function(k, photo) {
-                // Create a photo marker
-                var photo_marker = L.photoMarker([photo.latitude, photo.longitude], {
-                  src: photo.url_t,
-                  size: [ photo.width_t, photo.height_t ]
-                }).bindPopup('<img src="'+photo.url_m+'" /><h1>'+photo.title+'</h1>', {
-                    minWidth: photo.width_m,
-                    minHeight: photo.height_m
-                });
-                var image = L.DomUtil.create('img');
-                image.onload = function() { photo_markers.addLayer(photo_marker); };
-                image.src = photo.url_t;
-              });
-            }
-          }
-
-          $.getJSON('http://api.flickr.com/services/rest/?jsoncallback=?', {
-            method: 'flickr.photos.search',
-            api_key: 'c375f1e26e8b14300d2945a0fd6c4e8e',
-            tags: 'capibaribe, rio', 
-            bbox: '-34.99317169189453,-8.1115757594567,-34.840736389160156,-7.972197714386866',
-            per_page: 50,
-            extras: 'description, license, date_upload, date_taken, owner_name, icon_server, original_format, last_update, geo, tags, machine_tags, o_dims, views, media, path_alias, url_sq,url_t, url_s, url_q, url_m, url_n, url_z, url_c, url_l, url_o',
-            format: 'json'
-          }, display);
-
-          // end Flickr
-
-
-
-
 
         // // Flickr
 
@@ -1540,10 +1527,45 @@ function addLayerVi(layer, name, zIndex) {
 
  
           $( "#instagram-content" ).slideToggle( "slow" );
+          if($("#twitter-content").is(":hidden")) {
+          } else {
+            $( "#twitter-content" ).slideToggle( "fast" );
+          }
+          if($("#blog-content").is(":hidden")) {
+          } else {
+            $( "#blog-content" ).slideToggle( "fast" );
+          }
+          if($("#sobre-content").is(":hidden")) {
+          } else {
+            $( "#sobre-content" ).slideToggle( "fast" );
+          }
+          if($("#ff-content").is(":hidden")) {
+            } else {
+              $( "#ff-content" ).slideToggle( "fast" );
+            }
+            if($("#se-content").is(":hidden")) {
+            } else {
+              $( "#se-content" ).slideToggle( "fast" );
+            }
+            if($("#t1-content").is(":hidden")) {
+            } else {
+              $( "#t1-content" ).slideToggle( "fast" );
+            }
+            if($("#t2-content").is(":hidden")) {
+            } else {
+              $( "#t2-content" ).slideToggle( "fast" );
+            }
+            if($("#t3-content").is(":hidden")) {
+            } else {
+              $( "#t3-content" ).slideToggle( "fast" );
+            }
+            if($("#t4-content").is(":hidden")) {
+            } else {
+              $( "#t4-content" ).slideToggle( "fast" );
+            }
           if ( $(this).hasClass('active')) {
               link.className = '';
               map.removeLayer(layer);
-              hide();
             } else {
               link.className = 'active';
             }
