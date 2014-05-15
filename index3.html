@@ -489,16 +489,22 @@ var futuroIcon = L.icon({
     popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
 });
 
+var meiodomundoIcon = L.icon({
+    iconUrl: 'images/icone_meiomundo.png',
+    iconSize:     [70, 76], // size of the icon
+    iconAnchor:   [35, 75], // point of the icon which will correspond to marker's location
+    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+});
 // Markers and Popups!
 
 // hacked in http://stackoverflow.com/questions/13698975/click-link-inside-leaflet-popup-and-do-javascript
 map.on('popupopen', function() {
-  $("#carouselFuturo").carousel({ interval: 2000 }); 
+  $("#carouselFuturo, #carouselMeioMundo").carousel({ interval: 2000 }); 
   $('.carousel-control.left').click(function(e) {
-    $('#carouselFuturo').carousel('prev');
+    $('#carouselFuturo, #carouselMeioMundo').carousel('prev');
   });
   $('.carousel-control.right').click(function(e) {
-    $('#carouselFuturo').carousel('next');
+    $('#carouselFuturo, #carouselMeioMundo').carousel('next');
   });
   // $('.fancybox').click(function(e) {
   //   $(this).fancybox();
@@ -659,6 +665,108 @@ L.marker([-8.043974892024826, -34.925150871276855], {icon: futuroIcon}).bindPopu
     '<span class="glyphicon glyphicon-chevron-left"></span>' +
   '</a>' +
   '<a class="carousel-control right" href="#carouselFuturo" data-slide="next">' +
+    '<span class="glyphicon glyphicon-chevron-right"></span>' +
+  '</a>' +
+'</div>', {minWidth:500, closeButton:false}).openPopup().addTo(map);
+
+
+L.marker([-8.03993802757441, -34.90622520446777], {icon: meiodomundoIcon}).bindPopup('<div id="carouselMeioMundo" class="carousel slide" data-ride="carousel">' +
+  '<ol class="carousel-indicators">' +
+    '<li data-target="#carouselMeioMundo" data-slide-to="0" class="active"></li>' +
+    '<li data-target="#carouselMeioMundo" data-slide-to="1"></li>' +
+    '<li data-target="#carouselMeioMundo" data-slide-to="2"></li>' +
+    '<li data-target="#carouselMeioMundo" data-slide-to="3"></li>' +
+    '<li data-target="#carouselMeioMundo" data-slide-to="4"></li>' +
+    '<li data-target="#carouselMeioMundo" data-slide-to="5"></li>' +
+    '<li data-target="#carouselMeioMundo" data-slide-to="6"></li>' +
+    '<li data-target="#carouselMeioMundo" data-slide-to="7"></li>' +
+    '<li data-target="#carouselMeioMundo" data-slide-to="9"></li>' +
+    '<li data-target="#carouselMeioMundo" data-slide-to="10"></li>' +
+    '<li data-target="#carouselMeioMundo" data-slide-to="11"></li>' +
+  '</ol>' +
+  '<div class="carousel-inner">' +
+    '<div class="item active">' +
+      '<a class="fancybox" rel="popups" href="images/meiomundo/01.jpg" onclick="$.fancybox(this);return false;"> <img src="images/meiomundo/01.jpg" alt="Parque do Meio do Mundo"></a>' +
+      '<div class="carousel-caption">' +
+        '<h3> Parque do Meio do Mundo </h3>' +
+        '<p> Projetos para o Parque </p>' +
+      '</div>' +
+    '</div>' +
+    '<div class="item">' +
+      '<a class="fancybox" rel="popups" href="images/meiomundo/02.jpg" onclick="$.fancybox(this);return false;"> <img src="images/meiomundo/02.jpg" alt="Parque do Meio do Mundo"></a>' +
+      '<div class="carousel-caption">' +
+        '<h3> Parque do Meio do Mundo </h3>' +
+        '<p> Projetos para o Parque </p>' +
+      '</div>' +
+    '</div>' +
+    '<div class="item">' +
+      '<a class="fancybox" rel="popups" href="images/meiomundo/03.jpg" onclick="$.fancybox(this);return false;"> <img src="images/meiomundo/03.jpg" alt="Parque do Meio do Mundo"></a>' +
+      '<div class="carousel-caption">' +
+        '<h3> Parque do Meio do Mundo </h3>' +
+        '<p> Projetos para o Parque </p>' +
+      '</div>' +
+    '</div>' +
+    '<div class="item">' +
+      '<a class="fancybox" rel="popups" href="images/meiomundo/04.jpg" onclick="$.fancybox(this);return false;"> <img src="images/meiomundo/04.jpg" alt="Parque do Meio do Mundo"></a>' +
+      '<div class="carousel-caption">' +
+        '<h3> Parque do Meio do Mundo </h3>' +
+        '<p> Projetos para o Parque </p>' +
+      '</div>' +
+    '</div>' +
+    '<div class="item">' +
+      '<a class="fancybox" rel="popups" href="images/meiomundo/05.jpg" onclick="$.fancybox(this);return false;"> <img src="images/meiomundo/05.jpg" alt="Parque do Meio do Mundo"></a>' +
+      '<div class="carousel-caption">' +
+        '<h3> Parque do Meio do Mundo </h3>' +
+        '<p> Projetos para o Parque </p>' +
+      '</div>' +
+    '</div>' +
+    '<div class="item">' +
+      '<a class="fancybox" rel="popups" href="images/meiomundo/06.jpg" onclick="$.fancybox(this);return false;"> <img src="images/meiomundo/06.jpg" alt="Parque do Meio do Mundo"></a>' +
+      '<div class="carousel-caption">' +
+        '<h3> Parque do Meio do Mundo </h3>' +
+        '<p> Projetos para o Parque </p>' +
+      '</div>' +
+    '</div>' +
+    '<div class="item">' +
+      '<a class="fancybox" rel="popups" href="images/meiomundo/07.jpg" onclick="$.fancybox(this);return false;"> <img src="images/meiomundo/07.jpg" alt="Parque do Meio do Mundo"></a>' +
+      '<div class="carousel-caption">' +
+        '<h3> Parque do Meio do Mundo </h3>' +
+        '<p> Projetos para o Parque </p>' +
+      '</div>' +
+    '</div>' +
+    '<div class="item">' +
+      '<a class="fancybox" rel="popups" href="images/meiomundo/08.jpg" onclick="$.fancybox(this);return false;"> <img src="images/meiomundo/08.jpg" alt="Parque do Meio do Mundo"></a>' +
+      '<div class="carousel-caption">' +
+        '<h3> Parque do Meio do Mundo </h3>' +
+        '<p> Projetos para o Parque </p>' +
+      '</div>' +
+    '</div>' +
+    '<div class="item">' +
+      '<a class="fancybox" rel="popups" href="images/meiomundo/09.jpg" onclick="$.fancybox(this);return false;"> <img src="images/meiomundo/09.jpg" alt="Parque do Meio do Mundo"></a>' +
+      '<div class="carousel-caption">' +
+        '<h3> Parque do Meio do Mundo </h3>' +
+        '<p> Projetos para o Parque </p>' +
+      '</div>' +
+    '</div>' +
+    '<div class="item">' +
+      '<a class="fancybox" rel="popups" href="images/meiomundo/10.jpg" onclick="$.fancybox(this);return false;"> <img src="images/meiomundo/10.jpg" alt="Parque do Meio do Mundo"></a>' +
+      '<div class="carousel-caption">' +
+        '<h3> Parque do Meio do Mundo </h3>' +
+        '<p> Projetos para o Parque </p>' +
+      '</div>' +
+    '</div>' +
+    '<div class="item">' +
+      '<a class="fancybox" rel="popups" href="images/meiomundo/11.jpg" onclick="$.fancybox(this);return false;"> <img src="images/meiomundo/11.jpg" alt="Parque do Meio do Mundo"></a>' +
+      '<div class="carousel-caption">' +
+        '<h3> Parque do Meio do Mundo </h3>' +
+        '<p> Projetos para o Parque </p>' +
+      '</div>' +
+    '</div>' +
+  '</div>' +
+  '<a class="carousel-control left" href="#carouselMeioMundo" data-slide="prev">' +
+    '<span class="glyphicon glyphicon-chevron-left"></span>' +
+  '</a>' +
+  '<a class="carousel-control right" href="#carouselMeioMundo" data-slide="next">' +
     '<span class="glyphicon glyphicon-chevron-right"></span>' +
   '</a>' +
 '</div>', {minWidth:500, closeButton:false}).openPopup().addTo(map);
