@@ -1378,7 +1378,7 @@ function addLayerVi(layer, name, zIndex) {
                 showCoverageOnHover: false,
                 spiderfyDistanceMultiplier: 5,
                 maxClusterRadius: 10
-              }).addTo(map);
+              });
 
               $.each(resp.photos.photo, function(k, photo) {
                 // Create a photo marker
