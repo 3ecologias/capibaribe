@@ -993,7 +993,7 @@ function ondragend() {
 
 
 L.control.scale({ position: 'bottomleft' }).addTo(map);
-L.Control.Zoom({ position: 'bottomleft' }).addTo(map);
+new L.Control.Zoom({ position: 'bottomleft' }).addTo(map);
 L.control.layers(baseMaps, overlayMaps, {position: 'bottomleft'}).addTo(map);
 
 
