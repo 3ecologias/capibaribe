@@ -489,10 +489,18 @@ var futuroIcon = L.icon({
     popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
 });
 
-// L.marker([-8.047175939274599, -34.90523815155029], {icon: futuroIcon}).bindPopup("<div class='marker-futuro'> <img src='images/futuro/01.jpg'></div>", {minWidth:500}).openPopup().addTo(map);
+// Markers and Popups!
 
-// L.marker([-8.043974892024826, -34.925150871276855], {icon: futuroIcon}).bindPopup("<div class='marker-futuro'><a class='fancybox' rel='galeria' href='images/futuro/01.jpg'><img src='images/futuro/01.jpg'></a></div>", {minWidth:500}).openPopup().addTo(map);
-
+// hacked in http://stackoverflow.com/questions/13698975/click-link-inside-leaflet-popup-and-do-javascript
+map.on('popupopen', function() {
+  $("#carouselFuturo").carousel({ interval: 2000 }); 
+  $('.carousel-control.left').click(function(e) {
+    $('#carouselFuturo').carousel('prev');
+  });
+  $('.carousel-control.right').click(function(e) {
+    $('#carouselFuturo').carousel('next');
+  });
+});
 
 L.marker([-8.043974892024826, -34.925150871276855], {icon: futuroIcon}).bindPopup('<div id="carouselFuturo" class="carousel slide" data-ride="carousel">' +
   '<ol class="carousel-indicators">' +
@@ -531,15 +539,6 @@ L.marker([-8.043974892024826, -34.925150871276855], {icon: futuroIcon}).bindPopu
   '</a>' +
 '</div>', {minWidth:500}).openPopup().addTo(map);
 
-map.on('popupopen', function() {
-  $("#carouselFuturo").carousel({ interval: 2000 }); 
-  $('.carousel-control.left').click(function(e) {
-    $('#carouselFuturo').carousel('prev');
-  });
-  $('.carousel-control.right').click(function(e) {
-    $('#carouselFuturo').carousel('next');
-  });
-});
 
 
 

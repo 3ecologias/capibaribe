@@ -318,10 +318,7 @@ font-family: ConduitLight;
     right: 10px;
 }
 
-.marker-futuro img {
+.carousel-inner img {
     width: 100%;
 }
 
-.marker-futuro-bg {
-    display: none;
-}
