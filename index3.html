@@ -500,8 +500,9 @@ map.on('popupopen', function() {
   $('.carousel-control.right').click(function(e) {
     $('#carouselFuturo').carousel('next');
   });
-  $('.carousel-inner a').click(function(e) {
-    $(this).fancybox();   
+  $('.fancybox').click(function(e) {
+    $(this).fancybox();
+    return false;   
   });
 });
 
