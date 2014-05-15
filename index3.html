@@ -991,10 +991,10 @@ function ondragend() {
 // end Markers
 
 
-L.control.layers(baseMaps, overlayMaps, {position: 'bottomleft'}).addTo(map);
-L.control.scale({ position: 'bottomleft' }).addTo(map);
-new L.Control.Zoom({ position: 'bottomleft' }).addTo(map);
 
+L.control.scale({ position: 'bottomleft' }).addTo(map);
+L.Control.Zoom({ position: 'bottomleft' }).addTo(map);
+L.control.layers(baseMaps, overlayMaps, {position: 'bottomleft'}).addTo(map);
 
 
 var ui = document.getElementById('map-ui');
