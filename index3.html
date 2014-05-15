@@ -1374,7 +1374,7 @@ function addLayerVi(layer, name, zIndex) {
             if ( resp.photos && resp.photos.photo ) {
               // $("#loading").hide();
               // Marker Cluster group
-              photo_markers = new L.MarkerClusterGroup({
+              photo_markers = L.MarkerClusterGroup({
                 showCoverageOnHover: false,
                 spiderfyDistanceMultiplier: 5,
                 maxClusterRadius: 10
