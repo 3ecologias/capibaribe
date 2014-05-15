@@ -805,3 +805,7 @@ color: #fff;
 .child {
     white-space: pre-line !important;
 }
+
+.carousel-inner img {
+    width: 100%;
+}
