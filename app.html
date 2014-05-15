@@ -351,9 +351,6 @@
 <script>
 var map = L.map('map', { zoomControl: false, minZoom: 12, maxZoom: 19, maxBounds: [[-7.9,-35.1],[-8.2,-34.70]] }).setView([-8.055, -34.89], 14);
 
-L.control.scale({ position: 'bottomleft' }).addTo(map);
-new L.Control.Zoom({ position: 'bottomleft' }).addTo(map);
-
 // Markers and Icons
 
 var futuroIcon = L.icon({
@@ -393,7 +390,7 @@ map.on('popupopen', function() {
   // });
 });
 
-L.marker([-8.043974892024826, -34.925150871276855], {icon: futuroIcon}).bindPopup('<div id="carouselFuturo" class="carousel slide" data-ride="carousel">' +
+var markerFuturo = L.marker([-8.043974892024826, -34.925150871276855], {icon: futuroIcon}).bindPopup('<div id="carouselFuturo" class="carousel slide" data-ride="carousel">' +
   '<ol class="carousel-indicators">' +
     '<li data-target="#carouselFuturo" data-slide-to="0" class="active"></li>' +
     '<li data-target="#carouselFuturo" data-slide-to="1"></li>' +
@@ -548,10 +545,10 @@ L.marker([-8.043974892024826, -34.925150871276855], {icon: futuroIcon}).bindPopu
   '<a class="carousel-control right" href="#carouselFuturo" data-slide="next">' +
     '<span class="glyphicon glyphicon-chevron-right"></span>' +
   '</a>' +
-'</div>', {minWidth:500, closeButton:false}).openPopup().addTo(map);
+'</div>', {minWidth:500, closeButton:false}).openPopup();
 
 
-L.marker([-8.03993802757441, -34.90622520446777], {icon: meiodomundoIcon}).bindPopup('<div id="carouselMeioMundo" class="carousel slide" data-ride="carousel">' +
+var markerMeioMundo = L.marker([-8.03993802757441, -34.90622520446777], {icon: meiodomundoIcon}).bindPopup('<div id="carouselMeioMundo" class="carousel slide" data-ride="carousel">' +
   '<ol class="carousel-indicators">' +
     '<li data-target="#carouselMeioMundo" data-slide-to="0" class="active"></li>' +
     '<li data-target="#carouselMeioMundo" data-slide-to="1"></li>' +
@@ -650,10 +647,10 @@ L.marker([-8.03993802757441, -34.90622520446777], {icon: meiodomundoIcon}).bindP
   '<a class="carousel-control right" href="#carouselMeioMundo" data-slide="next">' +
     '<span class="glyphicon glyphicon-chevron-right"></span>' +
   '</a>' +
-'</div>', {minWidth:500, closeButton:false}).openPopup().addTo(map);
+'</div>', {minWidth:500, closeButton:false}).openPopup();
 
 
-L.marker([-8.045419654798856, -34.90317821502685], {icon: culturaIcon}).bindPopup('<div id="carouselCultura" class="carousel slide" data-ride="carousel">' +
+var markerCultura = L.marker([-8.045419654798856, -34.90317821502685], {icon: culturaIcon}).bindPopup('<div id="carouselCultura" class="carousel slide" data-ride="carousel">' +
   '<ol class="carousel-indicators">' +
     '<li data-target="#carouselCultura" data-slide-to="0" class="active"></li>' +
     '<li data-target="#carouselCultura" data-slide-to="1"></li>' +
@@ -800,10 +797,68 @@ L.marker([-8.045419654798856, -34.90317821502685], {icon: culturaIcon}).bindPopu
   '<a class="carousel-control right" href="#carouselCultura" data-slide="next">' +
     '<span class="glyphicon glyphicon-chevron-right"></span>' +
   '</a>' +
-'</div>', {minWidth:500, closeButton:false}).openPopup().addTo(map);
+'</div>', {minWidth:500, closeButton:false}).openPopup();
+
+var photo_markers = new L.MarkerClusterGroup({
+                showCoverageOnHover: false,
+                spiderfyDistanceMultiplier: 5,
+                maxClusterRadius: 10
+              });
+
+var baseMaps = {
+};
+
+var overlayMaps = {
+    "Parque do Futuro": markerFuturo,
+    "Parque do Meio do Mundo": markerMeioMundo,
+    "Parque da Cultura": markerCultura,
+    "Fotos da População": photo_markers
+};
 
 
+// Flickr
 
+// Display the flickr photos
+function display(resp) {
+  if ( resp.photos && resp.photos.photo ) {
+    photo_markers;
+
+    $.each(resp.photos.photo, function(k, photo) {
+      // Create a photo marker
+      var photo_marker = L.photoMarker([photo.latitude, photo.longitude], {
+        src: photo.url_t,
+        size: [ photo.width_t, photo.height_t ]
+      }).bindPopup('<a href="http://flickr.com/photos/'+photo.pathalias+'/'+photo.id+'" target="_blank"><img src="'+photo.url_m+'" /></a><h1>'+photo.title+'</h1><h1>'+photo.ownername+'</h1>', {
+          minWidth: photo.width_m,
+          minHeight: photo.height_m
+      });
+      var image = L.DomUtil.create('img');
+      image.onload = function() { photo_markers.addLayer(photo_marker); };
+      image.src = photo.url_t;
+    });
+  }
+}
+
+$.getJSON('http://api.flickr.com/services/rest/?jsoncallback=?', {
+  method: 'flickr.photos.search',
+  api_key: 'c375f1e26e8b14300d2945a0fd6c4e8e',
+  text: 'rio capibaribe', 
+  bbox: '-34.99317169189453,-8.1115757594567,-34.840736389160156,-7.972197714386866',
+  per_page: 500,
+  extras: 'description, license, date_upload, date_taken, owner_name, icon_server, original_format, last_update, geo, tags, machine_tags, o_dims, views, media, path_alias, url_sq,url_t, url_s, url_q, url_m, url_n, url_z, url_c, url_l, url_o',
+  format: 'json'
+}, display);
+
+// end Flickr
+
+
+// Controles
+
+L.control.layers(baseMaps, overlayMaps, {position: 'bottomleft'}).addTo(map);
+L.control.scale({ position: 'bottomleft' }).addTo(map);
+new L.Control.Zoom({ position: 'bottomleft' }).addTo(map);
+
+// Layers
 var ui = document.getElementById('map-ui');
 addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_mapabase/{z}/{x}/{y}.png'), 'a cidade', 1);
 addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_riocompleto/{z}/{x}/{y}.png'), 'o rio', 40);
@@ -1132,46 +1187,46 @@ function addLayerVi(layer, name, zIndex) {
     if (zIndex == 202) {
       $( "#instagram-content" ).slideToggle( "slow" );
       link.className = 'active';
-          // Flickr
+          // // Flickr
 
-          // Display the flickr photos
-          function display(resp) {
-            if ( resp.photos && resp.photos.photo ) {
-              // $("#loading").hide();
-              // Marker Cluster group
-              var photo_markers = new L.MarkerClusterGroup({
-                showCoverageOnHover: false,
-                spiderfyDistanceMultiplier: 5,
-                maxClusterRadius: 10
-              }).addTo(map);
+          // // Display the flickr photos
+          // function display(resp) {
+          //   if ( resp.photos && resp.photos.photo ) {
+          //     // $("#loading").hide();
+          //     // Marker Cluster group
+          //     var photo_markers = new L.MarkerClusterGroup({
+          //       showCoverageOnHover: false,
+          //       spiderfyDistanceMultiplier: 5,
+          //       maxClusterRadius: 10
+          //     }).addTo(map);
 
-              $.each(resp.photos.photo, function(k, photo) {
-                // Create a photo marker
-                var photo_marker = L.photoMarker([photo.latitude, photo.longitude], {
-                  src: photo.url_t,
-                  size: [ photo.width_t, photo.height_t ]
-                }).bindPopup('<a href="http://flickr.com/photos/'+photo.pathalias+'/'+photo.id+'" target="_blank"><img src="'+photo.url_m+'" /></a><h1>'+photo.title+'</h1><h1>'+photo.ownername+'</h1>', {
-                    minWidth: photo.width_m,
-                    minHeight: photo.height_m
-                });
-                var image = L.DomUtil.create('img');
-                image.onload = function() { photo_markers.addLayer(photo_marker); };
-                image.src = photo.url_t;
-              });
-            }
-          }
+          //     $.each(resp.photos.photo, function(k, photo) {
+          //       // Create a photo marker
+          //       var photo_marker = L.photoMarker([photo.latitude, photo.longitude], {
+          //         src: photo.url_t,
+          //         size: [ photo.width_t, photo.height_t ]
+          //       }).bindPopup('<a href="http://flickr.com/photos/'+photo.pathalias+'/'+photo.id+'" target="_blank"><img src="'+photo.url_m+'" /></a><h1>'+photo.title+'</h1><h1>'+photo.ownername+'</h1>', {
+          //           minWidth: photo.width_m,
+          //           minHeight: photo.height_m
+          //       });
+          //       var image = L.DomUtil.create('img');
+          //       image.onload = function() { photo_markers.addLayer(photo_marker); };
+          //       image.src = photo.url_t;
+          //     });
+          //   }
+          // }
 
-          $.getJSON('http://api.flickr.com/services/rest/?jsoncallback=?', {
-            method: 'flickr.photos.search',
-            api_key: 'c375f1e26e8b14300d2945a0fd6c4e8e',
-            text: 'rio capibaribe', 
-            bbox: '-34.99317169189453,-8.1115757594567,-34.840736389160156,-7.972197714386866',
-            per_page: 500,
-            extras: 'description, license, date_upload, date_taken, owner_name, icon_server, original_format, last_update, geo, tags, machine_tags, o_dims, views, media, path_alias, url_sq,url_t, url_s, url_q, url_m, url_n, url_z, url_c, url_l, url_o',
-            format: 'json'
-          }, display);
+          // $.getJSON('http://api.flickr.com/services/rest/?jsoncallback=?', {
+          //   method: 'flickr.photos.search',
+          //   api_key: 'c375f1e26e8b14300d2945a0fd6c4e8e',
+          //   text: 'rio capibaribe', 
+          //   bbox: '-34.99317169189453,-8.1115757594567,-34.840736389160156,-7.972197714386866',
+          //   per_page: 500,
+          //   extras: 'description, license, date_upload, date_taken, owner_name, icon_server, original_format, last_update, geo, tags, machine_tags, o_dims, views, media, path_alias, url_sq,url_t, url_s, url_q, url_m, url_n, url_z, url_c, url_l, url_o',
+          //   format: 'json'
+          // }, display);
 
-          // end Flickr
+          // // end Flickr
     }
 
     // end hack
