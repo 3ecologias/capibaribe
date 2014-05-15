@@ -926,6 +926,9 @@ var markerCultura = L.marker([-8.045419654798856, -34.90317821502685], {icon: cu
 '</div>', {minWidth:500, closeButton:false}).openPopup();
 
 
+var baseMaps = {
+};
+
 var overlayMaps = {
     "Parque do Futuro": markerFuturo,
     "Parque do Meio do Mundo": markerMeioMundo,
@@ -982,7 +985,7 @@ function ondragend() {
 // end Markers
 
 
-L.control.layers(overlayMaps).addTo(map);
+L.control.layers(baseMaps, overlayMaps).addTo(map);
 L.control.scale({ position: 'bottomleft' }).addTo(map);
 new L.Control.Zoom({ position: 'bottomleft' }).addTo(map);
 
