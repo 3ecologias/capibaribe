@@ -500,6 +500,9 @@ map.on('popupopen', function() {
   $('.carousel-control.right').click(function(e) {
     $('#carouselFuturo').carousel('next');
   });
+  $('.carousel-inner a').click(function(e) {
+    
+  });
   $(".fancybox").fancybox({
     openEffect  : 'none',
     closeEffect : 'none'
@@ -514,7 +517,7 @@ L.marker([-8.043974892024826, -34.925150871276855], {icon: futuroIcon}).bindPopu
   '</ol>' +
   '<div class="carousel-inner">' +
     '<div class="item active">' +
-      '<a class="fancybox" rel="popups" href="images/futuro/01.jpg"> <img src="images/futuro/01.jpg" alt="Parque do Futuro"></a>' +
+      '<a class="fancybox" rel="popups" href="images/futuro/01.jpg" onclick="$.fancybox(this);return false;"> <img src="images/futuro/01.jpg" alt="Parque do Futuro"></a>' +
       '<div class="carousel-caption">' +
         '<h3> Parque do Futuro </h3>' +
         '<p> Projetos para o Parque </p>' +
