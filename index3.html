@@ -925,7 +925,7 @@ var markerCultura = L.marker([-8.045419654798856, -34.90317821502685], {icon: cu
   '</a>' +
 '</div>', {minWidth:500, closeButton:false}).openPopup();
 
-
+var photo_markers;
 var baseMaps = {
 };
 
@@ -1374,7 +1374,7 @@ function addLayerVi(layer, name, zIndex) {
             if ( resp.photos && resp.photos.photo ) {
               // $("#loading").hide();
               // Marker Cluster group
-              var photo_markers = new L.MarkerClusterGroup({
+              photo_markers = new L.MarkerClusterGroup({
                 showCoverageOnHover: false,
                 spiderfyDistanceMultiplier: 5,
                 maxClusterRadius: 10
