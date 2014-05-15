@@ -318,7 +318,7 @@ font-family: ConduitLight;
 .map-overlay {
     position: fixed;
     top: 0;
-    right: 10px;
+    left: 10px;
     z-index: 9999;
 }
 
