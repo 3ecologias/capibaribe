@@ -925,7 +925,12 @@ var markerCultura = L.marker([-8.045419654798856, -34.90317821502685], {icon: cu
   '</a>' +
 '</div>', {minWidth:500, closeButton:false}).openPopup();
 
-var photo_markers = L.MarkerClusterGroup();
+var photo_markers = new L.MarkerClusterGroup({
+                showCoverageOnHover: false,
+                spiderfyDistanceMultiplier: 5,
+                maxClusterRadius: 10
+              });
+
 var baseMaps = {
 };
 
@@ -1374,11 +1379,13 @@ function addLayerVi(layer, name, zIndex) {
             if ( resp.photos && resp.photos.photo ) {
               // $("#loading").hide();
               // Marker Cluster group
-              photo_markers = L.MarkerClusterGroup({
-                showCoverageOnHover: false,
-                spiderfyDistanceMultiplier: 5,
-                maxClusterRadius: 10
-              });
+              // photo_markers = L.MarkerClusterGroup({
+              //   showCoverageOnHover: false,
+              //   spiderfyDistanceMultiplier: 5,
+              //   maxClusterRadius: 10
+              // });
+              photo_markers;
+
 
               $.each(resp.photos.photo, function(k, photo) {
                 // Create a photo marker
