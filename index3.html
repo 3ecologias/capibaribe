@@ -31,6 +31,19 @@
   <script type="text/javascript" src="js/fancybox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
   <link rel="stylesheet" href="js/fancybox/source/jquery.fancybox.css" type="text/css" media="screen" />
   <script type="text/javascript" src="js/fancybox/source/jquery.fancybox.pack.js"></script>
+
+  <script type="text/javascript">
+    $(function () {
+      $("#carouselFuturo").carousel({ interval: 2000 }); 
+      $('.carousel-control.left').click(function() {
+        $('#carouselFuturo').carousel('prev');
+      });
+
+      $('.carousel-control.right').click(function() {
+        $('#carouselFuturo').carousel('next');
+      });
+    });
+  </script>
   
   <script>
       var TUMBLR_API_KEY = "qz5zBeyiO9gTJxUIhlH7bLVZXo88xafsjDxGTElGPBYW2wCRYE";
@@ -1631,9 +1644,7 @@ function addLayerProject(layer, name, zIndex) {
 
 
 </script>
-<script type="text/javascript">
-$(function () { $("#carouselFuturo").carousel({ interval: 2000 }); });
-</script>
+
 
 
 <script type="text/javascript">
