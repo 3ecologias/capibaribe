@@ -500,6 +500,10 @@ map.on('popupopen', function() {
   $('.carousel-control.right').click(function(e) {
     $('#carouselFuturo').carousel('next');
   });
+  $(".fancybox").fancybox({
+    openEffect  : 'none',
+    closeEffect : 'none'
+  });
 });
 
 L.marker([-8.043974892024826, -34.925150871276855], {icon: futuroIcon}).bindPopup('<div id="carouselFuturo" class="carousel slide" data-ride="carousel">' +
@@ -510,21 +514,21 @@ L.marker([-8.043974892024826, -34.925150871276855], {icon: futuroIcon}).bindPopu
   '</ol>' +
   '<div class="carousel-inner">' +
     '<div class="item active">' +
-      '<img src="images/futuro/01.jpg" alt="Parque do Futuro">' +
+      '<a class="fancybox" rel="popups" href="images/futuro/01.jpg"> <img src="images/futuro/01.jpg" alt="Parque do Futuro"></a>' +
       '<div class="carousel-caption">' +
         '<h3> Parque do Futuro </h3>' +
         '<p> Projetos para o Parque </p>' +
       '</div>' +
     '</div>' +
     '<div class="item">' +
-      '<img src="images/futuro/02.jpg" alt="Parque do Futuro">' +
+      '<a class="fancybox" rel="popups" href="images/futuro/02.jpg"> <img src="images/futuro/02.jpg" alt="Parque do Futuro"></a>' +
       '<div class="carousel-caption">' +
         '<h3> Parque do Futuro 02 </h3>' +
         '<p> Projetos para o Parque </p>' +
       '</div>' +
     '</div>' +
     '<div class="item">' +
-      '<img src="images/futuro/03.jpg" alt="Parque do Futuro">' +
+      '<a class="fancybox" rel="popups" href="images/futuro/03.jpg"> <img src="images/futuro/03.jpg" alt="Parque do Futuro"></a>' +
       '<div class="carousel-caption">' +
         '<h3> Parque do Futuro 03 </h3>' +
         '<p> Projetos para o Parque </p>' +
