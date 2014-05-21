@@ -872,28 +872,6 @@ $.getJSON('http://api.flickr.com/services/rest/?jsoncallback=?', {
 
 // Controles
 
-L.Control.Layers = L.Control.extend({
-options: {
-    position: 'topleft',
-},
-
-onAdd: function (map) {
-    var controlDiv = L.DomUtil.create('div', 'leaflet-control-command');
-    L.DomEvent
-        .addListener(controlDiv, 'click', L.DomEvent.stopPropagation)
-        .addListener(controlDiv, 'click', L.DomEvent.preventDefault)
-    .addListener(controlDiv, 'click', function () { MapShowCommand(); });
-
-    var controlUI = L.DomUtil.create('div', 'leaflet-control-command-interior', controlDiv);
-    controlUI.title = 'Map Commands';
-    return controlDiv;
-}
-
-});
-
-L.control.layers = function (options) { return new L.Control.Layers(options); };
-
-
 L.control.scale({ position: 'bottomleft' }).addTo(map);
 new L.Control.Zoom({ position: 'bottomleft' }).addTo(map);
 L.control.layers(baseMaps, overlayMaps, {position: 'bottomleft'}).addTo(map);
