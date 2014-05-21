@@ -910,11 +910,13 @@ addLayerSe(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_centralidades/{z}
 
 var uivi = document.getElementById('map-ui-vi');
 
-addLayerVi(L.tileLayer('#'), 'projeto parque capibaribe', 103);
+addLayerVi(L.tileLayer('#'), 'parque capibaribe', 103);
 addLayerVi(L.tileLayer('#'), 'sobre', 200);
 addLayerVi(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_influencia/{z}/{x}/{y}.png'), 'setores censitários - 1km', 2);
 addLayerVi(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_buffer1km/{z}/{x}/{y}.png'), 'área de influência', 3);
+addLayerVi(L.layerGroup([markerFuturo, markerCultura, markerMeioMundo]), 'Parques', 50);
 addLayerVi(L.tileLayer('#'), '#capibaribe', 202);
+addLayerVi(L.layerGroup([photo_markers]), 'flickr', 203);
 // addLayerVi(L.tileLayer('#'), 'notícias', 201);
 
 
@@ -923,8 +925,8 @@ addLayerProject(L.tileLayer('#'), 'diagnósticos', 104);
 addLayerProject(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_t01/{z}/{x}/{y}.png'), 'várzea/dois irmãos', 20);
 addLayerProject(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_t02/{z}/{x}/{y}.png'), 'apipucos/torre', 21);
 addLayerProject(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_t03/{z}/{x}/{y}.png'), 'jaqueira/madalena', 22);
-// addLayerProject(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_t04/{z}/{x}/{y}.png'), 'paisandú/santo antônio', 23);
-addLayerProject(L.layerGroup([photo_markers]), 'paisandú/santo antônio', 23);
+addLayerProject(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_t04/{z}/{x}/{y}.png'), 'paisandú/santo antônio', 23);
+// addLayerProject(L.layerGroup([photo_markers]), 'paisandú/santo antônio', 23);
 
 // var uiinst = document.getElementById('map-ui-inst');
 // addLayerInst(L.tileLayer('#'), 'institucional', 105);
