@@ -872,6 +872,50 @@ $.getJSON('http://api.flickr.com/services/rest/?jsoncallback=?', {
 
 // Controles
 
+var drawnItems = new L.FeatureGroup();
+map.addLayer(drawnItems);
+
+var drawControl = new L.Control.Draw({
+  draw: {
+    position: 'topleft',
+    polygon: {
+      title: 'Draw a polygon!',
+      allowIntersection: false,
+      drawError: {
+        color: '#b00b00',
+        timeout: 1000
+      },
+      shapeOptions: {
+        color: '#bada55'
+      },
+      showArea: true
+    },
+    polyline: {
+      metric: false
+    },
+    circle: {
+      shapeOptions: {
+        color: '#662d91'
+      }
+    }
+  },
+  edit: {
+    featureGroup: drawnItems
+  }
+});
+map.addControl(drawControl);
+
+map.on('draw:created', function (e) {
+  var type = e.layerType,
+    layer = e.layer;
+
+  if (type === 'marker') {
+    layer.bindPopup('Novo Marker!');
+  }
+
+  drawnItems.addLayer(layer);
+});
+
 L.control.scale({ position: 'bottomleft' }).addTo(map);
 new L.Control.Zoom({ position: 'bottomleft' }).addTo(map);
 // L.control.layers(baseMaps, overlayMaps, {position: 'bottomleft'}).addTo(map);
