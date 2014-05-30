@@ -29,7 +29,7 @@
   <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png">
 
   <!-- leaflet plugins -->
-  <link rel="stylesheet" type="text/css" href="css/leaflet.css">
+  <link rel="stylesheet" type="text/css" href="js/leaflet.css">
   <link rel="stylesheet" type="text/css" href="css/MarkerCluster.css">
   <link rel="stylesheet" type="text/css" href="css/MarkerCluster.Default.css">
   <link rel="stylesheet" type="text/css" href="css/leaflet.photomarker.css">
@@ -876,7 +876,6 @@ $.getJSON('http://api.flickr.com/services/rest/?jsoncallback=?', {
 // Controles
 
 var drawnItems = new L.FeatureGroup();
-map.addLayer(drawnItems);
 
 var drawControl = new L.Control.Draw({
   draw: {
@@ -906,7 +905,6 @@ var drawControl = new L.Control.Draw({
     featureGroup: drawnItems
   }
 });
-map.addControl(drawControl);
 
 map.on('draw:created', function (e) {
   var type = e.layerType,
@@ -915,10 +913,9 @@ map.on('draw:created', function (e) {
   if (type === 'marker') {
     layer.bindPopup('Novo Marker!');
   }
-
   drawnItems.addLayer(layer);
 });
-
+map.addControl(drawControl);
 L.control.scale({ position: 'bottomleft' }).addTo(map);
 new L.Control.Zoom({ position: 'bottomleft' }).addTo(map);
 // L.control.layers(baseMaps, overlayMaps, {position: 'bottomleft'}).addTo(map);
@@ -1415,7 +1412,7 @@ function addLayerProject(layer, name, zIndex) {
     item.appendChild(link);
     uip.appendChild(item);
 }
-
+map.addLayer(drawnItems);
 </script>
 
 <script type="text/javascript">
