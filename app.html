@@ -989,29 +989,31 @@ addLayerProject(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_t04/
 // disable tap handler, if present.
 // if (map.tap) map.tap.disable();
 
-var utfGrid = new L.UtfGrid('http://mapas.3ecologias.net:8888/v2/pc_mapafauna/{z}/{x}/{y}.grid.json?callback={cb}', {
-      resolution: 4,
-      maxZoom: 5
-    });
 
-utfGrid.on('mouseover', function(e){ info.update(e);}).on('mouseout', function(e){ info.update();})
+// UTFGRiD
+// var utfGrid = new L.UtfGrid('http://mapas.3ecologias.net:8888/v2/pc_mapafauna/{z}/{x}/{y}.grid.json?callback={cb}', {
+//       resolution: 4,
+//       maxZoom: 5
+//     });
 
-var info = L.control();
-info.options.position = 'bottomright';
-info.onAdd = function (map) {
-  this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
-  this.update();
-  return this._div;
-};
+// utfGrid.on('mouseover', function(e){ info.update(e);}).on('mouseout', function(e){ info.update();})
 
-info.update = function (props) {
-  this._div.innerHTML = "<h4>Fauna e Flora</h4>" +  (props ?
-  "<values><b>" + props.data.name + "</b><br />Ranking position: <rank>" + props.data.rank+"</rank></values>"
-  : 'Hover over a state');
-};
+// var info = L.control();
+// info.options.position = 'bottomright';
+// info.onAdd = function (map) {
+//   this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
+//   this.update();
+//   return this._div;
+// };
 
-map.addLayer(utfGrid)
-map.addControl(info)
+// info.update = function (props) {
+//   this._div.innerHTML = "<h4>Fauna e Flora</h4>" +  (props ?
+//   "<values><b>" + props.data.name + "</b><br />Ranking position: <rank>" + props.data.rank+"</rank></values>"
+//   : 'Hover over a state');
+// };
+
+// map.addLayer(utfGrid)
+// map.addControl(info)
 
 
 
