@@ -820,8 +820,8 @@ color: #fff;
 
 #social {
     position: fixed;
-    top: 40%;
-    left: 0.9%;
+    bottom: 11%;
+    left: 0.6%;
     z-index: 1;
 }
 
