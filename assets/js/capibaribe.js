@@ -79,19 +79,20 @@ $(document).ready(function() {
 
 	$( "#instagram" ).click(function() {
 	 	$( "#instagram-content" ).slideToggle( "slow" );
-	 	// $('.nav').find('li.active').removeClass('active');
+ 		if($("#twitter-content").is(":hidden")) {
+ 		} else {
+ 			$( "#twitter-content" ).slideToggle( "fast" );
+ 		}
+ 		if($("#blog-content").is(":hidden")) {
+ 		} else {
+ 			$( "#blog-content" ).slideToggle( "fast" );
+ 		}
+ 		if($("#sobre-content").is(":hidden")) {
+ 		} else {
+ 			$( "#sobre-content" ).slideToggle( "fast" );
+ 		}
 	});
-	$( "#flickr" ).click(function() {
-		if (map.hasLayer([photo_markers])) {
-              map.removeLayer([photo_markers]);
-              this.className = '';
-          } else {
-              map.addLayer([photo_markers]);
-              this.className = 'active';
-          }
-	 	//$( "#instagram-content" ).slideToggle( "slow" );
-	 	// $('.nav').find('li.active').removeClass('active');
-	});
+
 
 	$( ".explore" ).click(function() {
 		var clicks = $(this).data('clicks');

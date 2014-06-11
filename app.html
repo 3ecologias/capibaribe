@@ -1352,8 +1352,17 @@ function addLayerVi(layer, name, zIndex) {
     if (zIndex == 203) {
       layer.addTo(map);
       link.className = 'active';
+      $( "#flickr" ).click(function() {
+          if (map.hasLayer([photo_markers])) {
+              map.removeLayer([photo_markers]);
+              this.className = '';
+          } else {
+              map.addLayer([photo_markers]);
+              this.className = 'active';
+          }
+      });
     }
-    
+
 
     // end hack
 
