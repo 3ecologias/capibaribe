@@ -817,3 +817,17 @@ color: #fff;
 #all img {
     width: 100%;
 }
+
+#social {
+    position: fixed;
+    top: 10%;
+    left: 2%;
+}
+
+#instagram, #flickr {
+    display: block;
+}
+
+#instagram img, #flickr img {
+    width: 100%;
+}
