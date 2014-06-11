@@ -1354,7 +1354,7 @@ function addLayerVi(layer, name, zIndex) {
       link.className = 'active';
       $( "#flickr" ).click(function() {
           if (map.hasLayer(layer)) {
-              map.removeLayer([layer);
+              map.removeLayer(layer);
               this.className = '';
           } else {
               map.addLayer(layer);
