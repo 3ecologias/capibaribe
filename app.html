@@ -412,6 +412,19 @@ var culturaIcon = L.icon({
     iconAnchor:   [25, 75], // point of the icon which will correspond to marker's location
     popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
 });
+
+var ciclorrotaC123 = L.icon({
+    iconUrl: 'images/ciclorrota/c123.png',
+    iconSize:     [35, 79], // size of the icon
+    iconAnchor:   [15, 75], // point of the icon which will correspond to marker's location
+    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+});
+
+
+// Ciclorrotas Makers
+
+L.marker([-8.04178649154714, -34.91683602333069], {icon: ciclorrotaC123}).addTo(map);
+
 //Popups!
 
 // hacked in http://stackoverflow.com/questions/13698975/click-link-inside-leaflet-popup-and-do-javascript
