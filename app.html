@@ -1353,11 +1353,11 @@ function addLayerVi(layer, name, zIndex) {
       layer.addTo(map);
       link.className = 'active';
       $( "#flickr" ).click(function() {
-          if (map.hasLayer([photo_markers])) {
-              map.removeLayer([photo_markers]);
+          if (map.hasLayer(layer)) {
+              map.removeLayer([layer);
               this.className = '';
           } else {
-              map.addLayer([photo_markers]);
+              map.addLayer(layer);
               this.className = 'active';
           }
       });
