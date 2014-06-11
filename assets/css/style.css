@@ -820,14 +820,11 @@ color: #fff;
 
 #social {
     position: fixed;
-    top: 10%;
-    left: 2%;
+    top: 40%;
+    left: 0.6%;
+    z-index: 1;
 }
 
 #instagram, #flickr {
     display: block;
-}
-
-#instagram img, #flickr img {
-    width: 100%;
 }

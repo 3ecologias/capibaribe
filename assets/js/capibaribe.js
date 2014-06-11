@@ -77,6 +77,22 @@ $(document).ready(function() {
 	 	// $('.nav').find('li.active').removeClass('active');
 	});
 
+	$( "#instagram" ).click(function() {
+	 	$( "#instagram-content" ).slideToggle( "slow" );
+	 	// $('.nav').find('li.active').removeClass('active');
+	});
+	$( "#flickr" ).click(function() {
+		if (map.hasLayer([photo_markers])) {
+              map.removeLayer([photo_markers]);
+              this.className = '';
+          } else {
+              map.addLayer([photo_markers]);
+              this.className = 'active';
+          }
+	 	//$( "#instagram-content" ).slideToggle( "slow" );
+	 	// $('.nav').find('li.active').removeClass('active');
+	});
+
 	$( ".explore" ).click(function() {
 		var clicks = $(this).data('clicks');
 	 	if (clicks) {
