@@ -24,6 +24,12 @@ $(document).ready(function() {
 	// 	}
 	// });
 
+	//target the entire page, and listen for touch events
+	$('html, body').on('touchstart touchmove', function(e){ 
+	     //prevent native touch activity like scrolling
+	     e.preventDefault(); 
+	});
+
 	$( ".close-sobre" ).click(function() {
 	 	$( "#sobre-content" ).slideToggle( "slow" );
 	 	$('.nav').find('li.active').removeClass('active');
