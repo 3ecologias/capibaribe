@@ -278,8 +278,26 @@
 
     <div id="blog-content">
       <div class="close-blog"> <span class="glyphicon glyphicon-remove-circle"></span></div>
-      <h1>notícias</h1>
+      <h1>Notícias</h1>
       <div id="all"></div>
+<!--       <h2> Ciclorrotas do Parque Capibaribe + Oficina e debate </h2>
+      <p>
+        Venha pedalar, fotografar, anotar, opinar, discutir e construir o Parque Capibaribe conosco!
+        Convidamos você para a Expedição Ciclorrotas do Parque + Oficina e debate, cujo objetivo é promover a difusão e a discussão pública das ciclorrotas propostas pelo Parque Capibaribe.
+      </p>
+      <p>
+        Serão dois grupos, um partindo da UFPE e outro do Fórum Rodolfo Aureliano (Joana Bezerra), que percorrerrão de maneira simultânea três das rotas cicloviárias presentes no plano preliminar do Parque Capibaribe. Elas terminarão no Parque Santana, onde acontecerá uma oficina e debate sobre os trajetos cicloviários do Parque Capibaribe.
+      </p>
+      <p>
+        <strong> Quando? </strong> <br>
+        Sábado, 14 de junho, das 9h às 14h <br>
+        <strong> Onde? </strong> <br>
+        Pontos de partida: UFPE (Biblioteca Central) ou Fórum Rodolfo Aureliano (Joana Bezerra) <br>
+        Ponto de chegada (oficina e debate): Parque Santana <br>
+        Confirme presença e saiba mais: <a href="www.facebook.com/parquecapibaribe" target="_blank">/parquecapibaribe</a><br>
+        Compartilhe com a hashtag <strong>#CiclorrotaCapibaribe</strong> 
+      </p> -->
+
     </div>
 
     <div id="instagram-content">
@@ -964,7 +982,7 @@ addLayerVi(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_buffer1km
 addLayerVi(L.layerGroup([markerFuturo, markerCultura, markerMeioMundo]), 'parques', 50);
 addLayerVi(L.tileLayer('#'), '#capibaribe', 202);
 addLayerVi(L.layerGroup([photo_markers]), 'partipação', 203);
-// addLayerVi(L.tileLayer('#'), 'notícias', 201);
+addLayerVi(L.tileLayer('#'), 'notícias', 201);
 
 
 var uip = document.getElementById('map-ui-project');
@@ -1280,8 +1298,13 @@ function addLayerVi(layer, name, zIndex) {
     //     link.className = 'active';
     // }
 
+    if (zIndex == 201) {
+      $( "#blog-content" ).slideToggle( "slow" );
+      link.className = 'active';
+    }
+
     if (zIndex == 202) {
-      $( "#instagram-content" ).slideToggle( "slow" );
+      // $( "#instagram-content" ).slideToggle( "slow" );
       link.className = 'active';
     }
     if (zIndex == 203) {
