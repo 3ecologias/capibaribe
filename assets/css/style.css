@@ -159,7 +159,7 @@ color: #fff;
 #map-ui-ap li {
     float: left;
     display: inline-block;
-    line-height: 1;
+    line-height: 2;
     width: 110px;
 }
 
@@ -227,7 +227,7 @@ color: #fff;
 #map-ui-tu li {
     float: left;
     display: inline-block;
-    line-height: 1;
+    line-height: 2;
     width: 110px;
 }
 
@@ -295,7 +295,7 @@ color: #fff;
 #map-ui-se li {
     float: left;
     display: inline-block;
-    line-height: 1;
+    line-height: 2;
     width: 110px;
 }
 
@@ -363,7 +363,7 @@ color: #fff;
 #map-ui-vi li {
     float: left;
     display: inline-block;
-    line-height: 1;
+    line-height: 2;
     width: 110px;
 }
 
@@ -432,7 +432,7 @@ color: #fff;
 #map-ui-project li {
     float: left;
     display: inline-block;
-    line-height: 1;
+    line-height: 2;
     width: 110px;
 }
 
@@ -497,7 +497,7 @@ color: #fff;
 #map-ui-inst li {
     float: left;
     display: inline-block;
-    line-height: 1;
+    line-height: 2;
     width: 110px;
 }
 
@@ -825,12 +825,12 @@ color: #fff;
 
 #social {
     position: fixed;
-    bottom: 6.5em;
-    left: 0.6em;
+    bottom: 7.5em;
+    left: 0.7em;
     z-index: 1;
 }
 
 #instagram, #flickr {
     display: block;
-    padding-bottom: 4px;
+    padding-bottom: 0.7em;
 }

@@ -1348,8 +1348,10 @@ function addLayerVi(layer, name, zIndex) {
     if (zIndex == 202) {
       // $( "#instagram-content" ).slideToggle( "slow" );
       // link.className = 'active';
+      link.className = 'hidden';
     }
     if (zIndex == 203) {
+      link.className = 'hidden';
       layer.addTo(map);
       link.className = 'active';
       $( "#flickr" ).click(function() {
