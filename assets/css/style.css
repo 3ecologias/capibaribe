@@ -144,7 +144,7 @@ color: #fff;
 /* Map Sistemas Naturais */
 #map-ui-ap {
     position: absolute;
-    bottom: -8em;
+    bottom: -10.6em;
     right: 27em;
     list-style: none outside none;
     margin: 0px;
@@ -212,7 +212,7 @@ color: #fff;
 /* Map Tecido Urbano */
 #map-ui-tu {
     position: absolute;
-    bottom: -14.11em;
+    bottom: -19.7em;
     right: 18em;
     list-style: none outside none;
     margin: 0px;
@@ -280,7 +280,7 @@ color: #fff;
 /* Map Sócio/Econômico */
 #map-ui-se {
     position: absolute;
-    bottom: -12.4em;
+    bottom: -18.1em;
     right: 9em;
     list-style: none outside none;
     margin: 0px;
@@ -348,7 +348,7 @@ color: #fff;
 /* Map Projeto Parque Capibaribe */
 #map-ui-vi {
     position: absolute;
-    bottom: -19.2em;
+    bottom: -19.7em;
     right: 36em;
     list-style: none outside none;
     margin: 0px;
@@ -417,7 +417,7 @@ color: #fff;
 
 #map-ui-project {
     position: absolute;
-    bottom: -12.4em;
+    bottom: -18.1em;
     right: 0em;
     list-style: none outside none;
     margin: 0px;

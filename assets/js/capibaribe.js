@@ -210,7 +210,7 @@ $(document).ready(function() {
 
 		var clicks = $(this).data('clicks');
 	 	if (clicks) {
-	    	$('#map-ui-ap').animate({bottom:'-8em'},'slow')
+	    	$('#map-ui-ap').animate({bottom:'-10.6em'},'slow')
 	  	} else {
 	     	$('#map-ui-ap').animate({bottom:'0em'},'slow')
 	  	}
@@ -221,7 +221,7 @@ $(document).ready(function() {
 
 		var clicks = $(this).data('clicks');
 	 	if (clicks) {
-	    	$('#map-ui-tu').animate({bottom:'-14.11em'},'slow')
+	    	$('#map-ui-tu').animate({bottom:'-19.7em'},'slow')
 	  	} else {
 	     	$('#map-ui-tu').animate({bottom:'0em'},'slow')
 	  	}
@@ -232,7 +232,7 @@ $(document).ready(function() {
 
 		var clicks = $(this).data('clicks');
 	 	if (clicks) {
-	    	$('#map-ui-se').animate({bottom:'-12.4em'},'slow')
+	    	$('#map-ui-se').animate({bottom:'-18.1em'},'slow')
 	  	} else {
 	     	$('#map-ui-se').animate({bottom:'0em'},'slow')
 	  	}
@@ -243,7 +243,7 @@ $(document).ready(function() {
 
 		var clicks = $(this).data('clicks');
 	 	if (clicks) {
-	    	$('#map-ui-vi').animate({bottom:'-19.2em'},'slow')
+	    	$('#map-ui-vi').animate({bottom:'-19.7em'},'slow')
 	  	} else {
 	     	$('#map-ui-vi').animate({bottom:'0em'},'slow')
 	  	}
@@ -254,7 +254,7 @@ $(document).ready(function() {
 
 		var clicks = $(this).data('clicks');
 	 	if (clicks) {
-	    	$('#map-ui-project').animate({bottom:'-12.4em'},'slow')
+	    	$('#map-ui-project').animate({bottom:'-18.1em'},'slow')
 	  	} else {
 	     	$('#map-ui-project').animate({bottom:'0em'},'slow')
 	  	}
