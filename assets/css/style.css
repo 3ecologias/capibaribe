@@ -830,10 +830,10 @@ color: #fff;
     z-index: 1;
 }
 
-.post-text {
+/*.post-text {
     border-bottom: 1px dashed white;
     padding-bottom: 3em;
-}
+}*/
 
 .post-text a {
     color:rgba(237, 180, 255, 1);
