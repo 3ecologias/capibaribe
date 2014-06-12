@@ -221,7 +221,7 @@ $(document).ready(function() {
 
 		var clicks = $(this).data('clicks');
 	 	if (clicks) {
-	    	$('#map-ui-tu').animate({bottom:'-17.8em'},'slow')
+	    	$('#map-ui-tu').animate({bottom:'-17.9em'},'slow')
 	  	} else {
 	     	$('#map-ui-tu').animate({bottom:'0em'},'slow')
 	  	}
@@ -243,7 +243,7 @@ $(document).ready(function() {
 
 		var clicks = $(this).data('clicks');
 	 	if (clicks) {
-	    	$('#map-ui-vi').animate({bottom:'-17.8em'},'slow')
+	    	$('#map-ui-vi').animate({bottom:'-17.9em'},'slow')
 	  	} else {
 	     	$('#map-ui-vi').animate({bottom:'0em'},'slow')
 	  	}

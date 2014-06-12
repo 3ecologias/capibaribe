@@ -145,7 +145,7 @@ color: #fff;
 #map-ui-ap {
     position: absolute;
     bottom: -10.7em;
-    right: 27em;
+    right: 33em;
     list-style: none outside none;
     margin: 0px;
     padding: 0px;
@@ -212,8 +212,8 @@ color: #fff;
 /* Map Tecido Urbano */
 #map-ui-tu {
     position: absolute;
-    bottom: -17.8em;
-    right: 18em;
+    bottom: -17.9em;
+    right: 22em;
     list-style: none outside none;
     margin: 0px;
     padding: 0px;
@@ -281,7 +281,7 @@ color: #fff;
 #map-ui-se {
     position: absolute;
     bottom: -14.2em;
-    right: 9em;
+    right: 11em;
     list-style: none outside none;
     margin: 0px;
     padding: 0px;
@@ -348,8 +348,8 @@ color: #fff;
 /* Map Projeto Parque Capibaribe */
 #map-ui-vi {
     position: absolute;
-    bottom: -17.8em;
-    right: 36em;
+    bottom: -17.9em;
+    right: 44em;
     list-style: none outside none;
     margin: 0px;
     padding: 0px;
