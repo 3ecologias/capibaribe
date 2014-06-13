@@ -824,16 +824,28 @@ color: #fff;
     z-index: 1;
 }
 
-.post-text {
-    border-bottom: 1px dashed white;
-    padding-bottom: 3em;
-}
-
 .post-photo {
     display: inline-block;
     border-bottom: 1px dashed white;
     padding-bottom: 3em;
     padding-top: 1em;
+}
+
+.post-photo a {
+    color:rgba(237, 180, 255, 1);
+}
+
+.post-photo a:active {
+    color:rgba(220, 130, 255, 0.8);
+}
+
+.post-photo a:hover {
+    color:rgba(208, 120, 255, 0.8);
+}
+
+.post-text {
+    border-bottom: 1px dashed white;
+    padding-bottom: 3em;
 }
 
 .post-text a {
@@ -847,6 +859,7 @@ color: #fff;
 .post-text a:hover {
     color:rgba(208, 120, 255, 0.8);
 }
+
 /* share icons */
 #instagram, #flickr {
     display: block;
