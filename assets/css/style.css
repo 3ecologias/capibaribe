@@ -616,7 +616,8 @@ color: #fff;
     right: 0px;
     display: none;
     z-index: 101;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
     border-bottom: 2px solid;
 }
 
