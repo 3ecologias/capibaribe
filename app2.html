@@ -1208,32 +1208,34 @@ function addLayerMenu(layer, name, zIndex) {
         .setZIndex(zIndex);
         // .addTo(map);
 
+    if (zIndex == 1) {
+      $( ".sobre" ).click(function() {
+        if (map.hasLayer(layer)) {
+            map.removeLayer(layer);
+            // this.className = '';
+        } else {
+            map.addLayer(layer);
+            // this.className = 'active';
+        }
+      });
+    }
+    if (zIndex == 2) {
+      $( ".sckm" ).click(function() {
+        if (map.hasLayer(layer)) {
+            map.removeLayer(layer);
+            // this.className = '';
+        } else {
+            map.addLayer(layer);
+            // this.className = 'active';
+        }
+      });
+    }
+
     link.onclick = function(e) {
         e.preventDefault();
         e.stopPropagation();
 
-        if (zIndex == 1) {
-          $( ".sobre" ).click(function() {
-            if (map.hasLayer(layer)) {
-                map.removeLayer(layer);
-                // this.className = '';
-            } else {
-                map.addLayer(layer);
-                // this.className = 'active';
-            }
-          });
-        }
-        if (zIndex == 2) {
-          $( ".sckm" ).click(function() {
-            if (map.hasLayer(layer)) {
-                map.removeLayer(layer);
-                // this.className = '';
-            } else {
-                map.addLayer(layer);
-                // this.className = 'active';
-            }
-          });
-        }
+        
 
     };
 }
