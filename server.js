@@ -27,6 +27,10 @@ app.get('/v2', function (req, res) {
   res.sendfile(__dirname + '/index3.html');
 });
 
+app.get('/v3', function (req, res) {
+  res.sendfile(__dirname + '/app2.html');
+});
+
 app.get('/tumblr', function (req, res) {
   res.sendfile(__dirname + '/tumblr.html');
 });
