@@ -65,14 +65,14 @@ color: #fff;
 #facebook {
     position: fixed;
     bottom: 0.28em;
-    left: 6.5em;
+    left: 100px;
     z-index: 1000;
 }
 
 #twitter {
     position: fixed;
     bottom: -0.1em;
-    left: 12em;
+    left: 188px;
     z-index: 1000;
 }
 
