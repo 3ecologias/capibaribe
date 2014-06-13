@@ -391,7 +391,7 @@
 
 <!-- Sistema de Mapas -->
 <script>
-var map = L.map('map', { zoomControl: false, minZoom: 12, maxZoom: 19, maxBounds: [[-7.9,-35.1],[-8.2,-34.70]] }).setView([-8.055, -34.91], 15);
+var map = L.map('map', { zoomControl: false, minZoom: 12, maxZoom: 18, maxBounds: [[-7.9,-35.1],[-8.2,-34.70]] }).setView([-8.055, -34.91], 14);
 
 // Markers and Icons
 
@@ -883,7 +883,8 @@ var markerCultura = L.marker([-8.045419654798856, -34.90317821502685], {icon: cu
 var photo_markers = new L.MarkerClusterGroup({
                 showCoverageOnHover: false,
                 spiderfyDistanceMultiplier: 5,
-                maxClusterRadius: 10
+                maxClusterRadius: 10,
+                zoomToBoundsOnClick: false
               });
 
 var baseMaps = {
