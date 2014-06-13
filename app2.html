@@ -1216,18 +1216,6 @@ function addLayerMenu(layer, name, zIndex) {
         link.className = '';
         link.innerHTML = name;
 
-    if (zIndex == 1) {
-      $( "#sobre" ).click(function() {
-        if (map.hasLayer(layer)) {
-            map.removeLayer(layer);
-            // this.className = '';
-        } else {
-            map.addLayer(layer);
-            // this.className = 'active';
-        }
-      });
-    }
-
     link.onclick = function(e) {
         e.preventDefault();
         e.stopPropagation();
