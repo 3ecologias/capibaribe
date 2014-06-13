@@ -1219,21 +1219,22 @@ function addLayerMenu(layer, name, zIndex) {
         }
       });
     }
-    if (zIndex == 2) {
-      $( "#sckm" ).click(function() {
-        if (map.hasLayer(layer)) {
-            map.removeLayer(layer);
-            // this.className = '';
-        } else {
-            map.addLayer(layer);
-            // this.className = 'active';
-        }
-      });
-    }
 
     link.onclick = function(e) {
         e.preventDefault();
         e.stopPropagation();
+
+      if (zIndex == 2) {
+        $( "#sckm" ).click(function() {
+          if (map.hasLayer(layer)) {
+              map.removeLayer(layer);
+              // this.className = '';
+          } else {
+              map.addLayer(layer);
+              // this.className = 'active';
+          }
+        });
+      }
 
         
 
