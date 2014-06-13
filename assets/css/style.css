@@ -634,12 +634,6 @@ color: #fff;
     padding: 7px;
 }
 
-.post-photo {
-    display: inline-block;
-    border-top: 3px solid whitesmoke;
-    margin-bottom: 5em;
-    padding-top: 1em;
-}
 .close-insta, .close-blog, .close-twitter, .close-sobre, .close-t1, .close-t2, .close-t3, .close-t4, .close-se, .close-ff {
     top: 5px;
     right: 15px;
@@ -833,6 +827,13 @@ color: #fff;
 .post-text {
     border-bottom: 1px dashed white;
     padding-bottom: 3em;
+}
+
+.post-photo {
+    display: inline-block;
+    border-bottom: 1px dashed white;
+    padding-bottom: 3em;
+    padding-top: 1em;
 }
 
 .post-text a {
