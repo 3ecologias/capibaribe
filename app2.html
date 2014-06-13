@@ -134,10 +134,26 @@
 </header>
 
 
-<div id="social">
+<div id="menu">
+  <div class="sobre"><a href="#"><img src="images/menu/sobre.png" class="img-responsive"></a></div>
+  <div class="sckm"><a href="#"><img src="images/instagram.png" class="img-responsive"></a></div>
+  <div class="influencia"><a href="#"><img src="images/instagram.png" class="img-responsive"></a></div>
+  <div class="parques"><a href="#"><img src="images/menu/cultura.png" class="img-responsive"></a></div>
+  <div class="noticias"><a href="#"><img src="images/instagram.png" class="img-responsive"></a></div>
+  <div class="verdes"><a href="#"><img src="images/menu/mangue.png" class="img-responsive"></a></div>
+  <div class="fauna"><a href="#"><img src="images/menu/fauna.png" class="img-responsive"></a></div>
+  <div class="riachos"><a href="#"><img src="images/instagram.png" class="img-responsive"></a></div>
+  <div class="ciclovias"><a href="#"><img src="images/instagram.png" class="img-responsive"></a></div>
+  <div class="bicicletas"><a href="#"><img src="images/menu/bike.png" class="img-responsive"></a></div>
+  <div class="fluviais"><a href="#"><img src="images/menu/barco.png" class="img-responsive"></a></div>
+  <div class="escolas"><a href="#"><img src="images/menu/escola.png" class="img-responsive"></a></div>
+  <div class="equipamentos"><a href="#"><img src="images/menu/equipamento.png" class="img-responsive"></a></div>
+  <div class="aglomerados"><a href="#"><img src="images/instagram.png" class="img-responsive"></a></div>
+  <div class="densidade"><a href="#"><img src="images/instagram.png" class="img-responsive"></a></div>
+  <div class="renda"><a href="#"><img src="images/instagram.png" class="img-responsive"></a></div>
+  <div class="vitalidades"><a href="#"><img src="images/instagram.png" class="img-responsive"></a></div>
   <div id="instagram"><a href="#"><img src="images/instagram.png" class="img-responsive"></a></div>
   <div id="flickr"><a href="#"><img src="images/flickr.png" class="img-responsive"></a> </div>
-</div>
 
 </div>
 <script id="tmpl-audio" type="text/x-jsrender">
@@ -326,6 +342,9 @@
 <ul id='map-ui-se' class='unselectable'></ul>
 <ul id='map-ui-project' class='unselectable'></ul>
 <ul id='map-ui-inst' class='unselectable'></ul>
+
+<ul id='map-menu' class='unselectable'></ul>
+
 <div id="capa">
   <img src="images/pc-branco.png">
   <div id="video-capa">
@@ -1081,6 +1100,28 @@ addLayerProject(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_t04/
 // map.addControl(info)
 
 
+var menu = document.getElementById('map-menu');
+addLayerMenu(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_areasverdes/{z}/{x}/{y}.png'), 'áreas verdes', 39);
+addLayerMenu(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_mapafauna/{z}/{x}/{y}.png'), 'fauna e flora', 52);
+addLayerMenu(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_canais/{z}/{x}/{y}.png'), 'riachos', 20);
+addLayerMenu(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_ciclovia/{z}/{x}/{y}.png'), 'ciclovias', 43);
+addLayerMenu(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_bikes/{z}/{x}/{y}.png'), 'estações de bicicletas', 45);
+addLayerMenu(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pac_barcobus/{z}/{x}/{y}.png'), 'terminais fluviais', 50);
+addLayerMenu(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_escolas/{z}/{x}/{y}.png'), 'escolas', 53);
+addLayerMenu(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_equipamentos/{z}/{x}/{y}.png'), 'equipamentos', 32);
+addLayerMenu(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_zeis/{z}/{x}/{y}.png'), 'aglomerados subnormais', 21);
+addLayerMenu(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_densidem/{z}/{x}/{y}.png'), 'densidade demográfica', 7);
+addLayerMenu(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_renda/{z}/{x}/{y}.png'), 'renda per capta', 8);
+addLayerMenu(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_centralidades/{z}/{x}/{y}.png'), 'vitalidades', 31);
+addLayerMenu(L.tileLayer('#'), 'sobre', 200);
+addLayerMenu(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_influencia/{z}/{x}/{y}.png'), 'setores censitários - 1km', 2);
+addLayerMenu(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_buffer1km/{z}/{x}/{y}.png'), 'área de influência', 3);
+addLayerMenu(L.layerGroup([markerFuturo, markerCultura, markerMeioMundo]), 'parques', 50);
+addLayerMenu(L.tileLayer('#'), '#capibaribe', 202);
+addLayerMenu(L.layerGroup([photo_markers]), 'partipação', 203);
+addLayerMenu(L.tileLayer('#'), 'notícias', 201);
+
+
 
 
 function addLayer(layer, name, zIndex) {
@@ -1155,6 +1196,62 @@ function addLayer(layer, name, zIndex) {
 
     item.appendChild(link);
     ui.appendChild(item);
+}
+
+function addLayerMenu(layer, name, zIndex) {
+    layer
+        .setZIndex(zIndex);
+        // .addTo(map);
+
+    // Create a simple layer switcher that toggles layers on
+    // and off.
+    var item = document.createElement('li');
+    var link = document.createElement('a');
+
+    link.href = '#';
+    // link.className = 'active';
+    link.className = '';
+    link.innerHTML = name;
+
+    // hack legend
+    if (zIndex == 100) {
+        link.className = 'menu';                
+    }
+
+    if (zIndex == 39) {
+        layer.addTo(map);
+        link.className = 'active';
+        $("#legend-02").fadeToggle( "slow", "linear" );
+    }
+    
+
+    // end hack
+
+    link.onclick = function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        if (zIndex == 39) {
+          $("#legend-02").fadeToggle( "slow", "linear" );
+        }
+
+        if (zIndex == 52) {
+
+        }
+
+        if (zIndex != 100) {
+          if (map.hasLayer(layer)) {
+              map.removeLayer(layer);
+              this.className = '';
+          } else {
+              map.addLayer(layer);
+              this.className = 'active';
+          }
+        }
+    };
+
+    item.appendChild(link);
+    uiap.appendChild(item);
 }
 
 function addLayerAp(layer, name, zIndex) {

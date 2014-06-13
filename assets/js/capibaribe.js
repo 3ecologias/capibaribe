@@ -83,6 +83,8 @@ $(document).ready(function() {
 	 	// $('.nav').find('li.active').removeClass('active');
 	});
 
+	// menu
+	
 	$( "#instagram" ).click(function() {
 	 	$( "#instagram-content" ).slideToggle( "slow" );
  		if($("#twitter-content").is(":hidden")) {

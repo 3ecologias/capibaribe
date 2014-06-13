@@ -819,13 +819,6 @@ color: #fff;
     width: 100%;
 }
 
-#social {
-    position: fixed;
-    bottom: 7.5em;
-    left: 0.7em;
-    z-index: 1;
-}
-
 .post-photo {
     display: inline-block;
     border-bottom: 1px dashed white;
@@ -863,7 +856,22 @@ color: #fff;
 }
 
 /* share icons */
+
 #instagram, #flickr {
     display: block;
-    padding-bottom: 0.6em;
+    padding-bottom: 0.5em;
+}
+
+/* Menu */
+
+#menu {
+    position: fixed;
+    bottom: 180px;
+    left: 20px;
+    z-index: 1;
+}
+
+.sobre, .sckm, .influencia, .parques, .noticias, .verdes, .fauna, .riachos, .ciclovias, .bicicletas, .fluviais, .escolas, .equipamentos, .aglomerados, .densidade, .renda, .vitalidades {
+    display: block;
+    padding-bottom: 0.5em;
 }
