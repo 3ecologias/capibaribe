@@ -135,8 +135,8 @@
 
 
 <div id="menu">
-  <div class="sobre"><a href="#"><img src="images/menu/sobre.png" class="img-responsive"></a></div>
-  <div class="sckm"><a href="#"><img src="images/instagram.png" class="img-responsive"></a></div>
+  <div id="sobre"><a href="#"><img src="images/menu/sobre.png" class="img-responsive"></a></div>
+  <div id="sckm"><a href="#"><img src="images/instagram.png" class="img-responsive"></a></div>
   <div class="influencia"><a href="#"><img src="images/instagram.png" class="img-responsive"></a></div>
   <div class="parques"><a href="#"><img src="images/menu/cultura.png" class="img-responsive"></a></div>
   <div class="noticias"><a href="#"><img src="images/instagram.png" class="img-responsive"></a></div>
@@ -1209,7 +1209,7 @@ function addLayerMenu(layer, name, zIndex) {
         // .addTo(map);
 
     if (zIndex == 1) {
-      $( ".sobre" ).click(function() {
+      $( "#sobre" ).click(function() {
         if (map.hasLayer(layer)) {
             map.removeLayer(layer);
             // this.className = '';
@@ -1220,7 +1220,7 @@ function addLayerMenu(layer, name, zIndex) {
       });
     }
     if (zIndex == 2) {
-      $( ".sckm" ).click(function() {
+      $( "#sckm" ).click(function() {
         if (map.hasLayer(layer)) {
             map.removeLayer(layer);
             // this.className = '';
