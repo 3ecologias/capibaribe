@@ -864,7 +864,7 @@ color: #fff;
 
 /* Menu */
 
-#menu {
+#menu, #social {
     position: fixed;
     bottom: 180px;
     left: 20px;

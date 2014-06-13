@@ -1101,6 +1101,9 @@ addLayerProject(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_t04/
 
 
 var menu = document.getElementById('map-menu');
+addLayerMenu(L.tileLayer('#'), 'sobre', 1);
+addLayerMenu(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_influencia/{z}/{x}/{y}.png'), 'setores censitários - 1km', 2);
+addLayerMenu(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_buffer1km/{z}/{x}/{y}.png'), 'área de influência', 3);
 addLayerMenu(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_areasverdes/{z}/{x}/{y}.png'), 'áreas verdes', 39);
 addLayerMenu(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_mapafauna/{z}/{x}/{y}.png'), 'fauna e flora', 52);
 addLayerMenu(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_canais/{z}/{x}/{y}.png'), 'riachos', 20);
@@ -1113,9 +1116,7 @@ addLayerMenu(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_zeis/{z
 addLayerMenu(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_densidem/{z}/{x}/{y}.png'), 'densidade demográfica', 7);
 addLayerMenu(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_renda/{z}/{x}/{y}.png'), 'renda per capta', 8);
 addLayerMenu(L.tileLayer('http://mapas.3ecologias.net:8888/v2/pc_centralidades/{z}/{x}/{y}.png'), 'vitalidades', 31);
-addLayerMenu(L.tileLayer('#'), 'sobre', 200);
-addLayerMenu(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_influencia/{z}/{x}/{y}.png'), 'setores censitários - 1km', 2);
-addLayerMenu(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_buffer1km/{z}/{x}/{y}.png'), 'área de influência', 3);
+
 addLayerMenu(L.layerGroup([markerFuturo, markerCultura, markerMeioMundo]), 'parques', 50);
 addLayerMenu(L.tileLayer('#'), '#capibaribe', 202);
 addLayerMenu(L.layerGroup([photo_markers]), 'partipação', 203);
@@ -1185,6 +1186,10 @@ function addLayer(layer, name, zIndex) {
         e.preventDefault();
         e.stopPropagation();
 
+        if (zIndex == 1) {
+
+        }
+
         if (map.hasLayer(layer)) {
             map.removeLayer(layer);
             this.className = '';
@@ -1203,55 +1208,34 @@ function addLayerMenu(layer, name, zIndex) {
         .setZIndex(zIndex);
         // .addTo(map);
 
-    // Create a simple layer switcher that toggles layers on
-    // and off.
-    var item = document.createElement('li');
-    var link = document.createElement('a');
-
-    link.href = '#';
-    // link.className = 'active';
-    link.className = '';
-    link.innerHTML = name;
-
-    // hack legend
-    if (zIndex == 100) {
-        link.className = 'menu';                
-    }
-
-    if (zIndex == 39) {
-        layer.addTo(map);
-        link.className = 'active';
-        $("#legend-02").fadeToggle( "slow", "linear" );
-    }
-    
-
-    // end hack
-
     link.onclick = function(e) {
         e.preventDefault();
         e.stopPropagation();
 
-        if (zIndex == 39) {
-          $("#legend-02").fadeToggle( "slow", "linear" );
+        if (zIndex == 1) {
+          $( ".sobre" ).click(function() {
+            if (map.hasLayer(layer)) {
+                map.removeLayer(layer);
+                // this.className = '';
+            } else {
+                map.addLayer(layer);
+                // this.className = 'active';
+            }
+          });
+        }
+        if (zIndex == 2) {
+          $( ".sckm" ).click(function() {
+            if (map.hasLayer(layer)) {
+                map.removeLayer(layer);
+                // this.className = '';
+            } else {
+                map.addLayer(layer);
+                // this.className = 'active';
+            }
+          });
         }
 
-        if (zIndex == 52) {
-
-        }
-
-        if (zIndex != 100) {
-          if (map.hasLayer(layer)) {
-              map.removeLayer(layer);
-              this.className = '';
-          } else {
-              map.addLayer(layer);
-              this.className = 'active';
-          }
-        }
     };
-
-    item.appendChild(link);
-    uiap.appendChild(item);
 }
 
 function addLayerAp(layer, name, zIndex) {
