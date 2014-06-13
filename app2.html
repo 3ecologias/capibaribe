@@ -1208,6 +1208,14 @@ function addLayerMenu(layer, name, zIndex) {
         .setZIndex(zIndex);
         // .addTo(map);
 
+        var item = document.createElement('li');
+        var link = document.createElement('a');
+
+        link.href = '#';
+        // link.className = 'active';
+        link.className = '';
+        link.innerHTML = name;
+
     if (zIndex == 1) {
       $( "#sobre" ).click(function() {
         if (map.hasLayer(layer)) {
