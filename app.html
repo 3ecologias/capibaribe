@@ -451,10 +451,10 @@ var ciclorrotaBarco = L.icon({
 
 // Ciclorrotas Makers
 
-L.marker([-8.04178649154714, -34.91683602333069], {icon: ciclorrotaC123}).addTo(map);
-L.marker([-8.051379246800296, -34.9514901638031], {icon: ciclorrotaS12}).addTo(map);
-L.marker([-8.069299986886191, -34.8960542678833], {icon: ciclorrotaS3}).addTo(map);
-L.marker([-8.033478960896403, -34.92706060409546], {icon: ciclorrotaBarco}).addTo(map);
+//L.marker([-8.04178649154714, -34.91683602333069], {icon: ciclorrotaC123}).addTo(map);
+//L.marker([-8.051379246800296, -34.9514901638031], {icon: ciclorrotaS12}).addTo(map);
+//L.marker([-8.069299986886191, -34.8960542678833], {icon: ciclorrotaS3}).addTo(map);
+//L.marker([-8.033478960896403, -34.92706060409546], {icon: ciclorrotaBarco}).addTo(map);
 
 
 //Popups!
@@ -994,7 +994,6 @@ addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_riocompleto
 addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_rio/{z}/{x}/{y}.png'), 'o rio', 39);
 addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_bairros/{z}/{x}/{y}.png'), 'bairros', 45);
 addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_viario/{z}/{x}/{y}.png'), 'sistema viário', 44);
-addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_ciclorrota/{z}/{x}/{y}.png'), 'ciclorrota', 43);
 addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_quadras/{z}/{x}/{y}.png'), 'quadras', 5);
 
 var uiap = document.getElementById('map-ui-ap');
@@ -1127,11 +1126,6 @@ function addLayer(layer, name, zIndex) {
         link.className = 'hidden';
     }
     if (zIndex == 44) {
-        layer.addTo(map);
-        link.className = 'active';
-        link.className = 'hidden';
-    }
-    if (zIndex == 43) {
         layer.addTo(map);
         link.className = 'active';
         link.className = 'hidden';
