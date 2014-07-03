@@ -1,9 +1,17 @@
 // var app = require('express').createServer();
 
+var fs = require('fs');
+var http = require('http');
+var https = require('https');
+var privateKey  = fs.readFileSync('server.key', 'utf8');
+var certificate = fs.readFileSync('server.crt', 'utf8');
+var credentials = {key: privateKey, cert: certificate};
 var express = require("express");
 var app = express();
 var Syslog = require("node-syslog");
 
+var httpServer = http.createServer(app);
+var httpsServer = https.createServer(credentials, app);
 
 // Middleware
 // http://stackoverflow.com/questions/15684130/express-js-error-handling
@@ -55,5 +63,6 @@ app.get('/*.(js|css|png|jpg|woff)', function(req, res){
 // });
 
 
-
-app.listen(80);
+httpServer.listen(80);
+httpsServer.listen(443);
+// app.listen(80);
