@@ -28,7 +28,7 @@ app.use(function(err, req, res, next) {
 });
 
 app.get('/', function (req, res) {
-  res.sendfile(__dirname + '/app.html');
+  res.sendfile(__dirname + '/aguarde.html');
 });
 
 app.get('/v2', function (req, res) {
@@ -37,6 +37,10 @@ app.get('/v2', function (req, res) {
 
 app.get('/v3', function (req, res) {
   res.sendfile(__dirname + '/app2.html');
+});
+
+app.get('/aguarde', function (req, res) {
+  res.sendfile(__dirname + '/aguarde.html');
 });
 
 app.get('/tumblr', function (req, res) {
