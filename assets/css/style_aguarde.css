@@ -22,7 +22,7 @@ a {transition: all 0.2s ease-in-out 0s;}
     z-index: 1002;
     position: fixed;
     top: 0;
-    text-align: center;
+    text-align: left;
     padding-top: 1em;
     padding-left: 2em;
     padding-right: 2em;
@@ -622,49 +622,50 @@ color: #fff;
 }
 
 #instagram-content {
-    float: right;
-    height: 55%;
-    width: 40%;
-    padding: 20px 30px 0px 18px;
-    background: none repeat scroll 0% 0% rgba(134, 24, 131, 0.8);
-    color: rgb(255, 255, 255);
-    text-align: left;
-    position: fixed;
-    right: 0px;
-    z-index: 101;
-    overflow-y: auto;
-    overflow-x: hidden;
-    border-bottom: 2px solid;
+float: right;
+height: 85%;
+width: 32%;
+padding: 20px 30px 0px 18px;
+background: none repeat scroll 0% 0% rgba(83, 233, 233, 0.8);
+color: #FFF;
+text-align: left;
+position: fixed;
+z-index: 1003;
+overflow-y: auto;
+overflow-x: hidden;
+left: 34%;
+bottom: 0%;
 }
 #sobre-content {
     float: right;
-    height: 55%;
-    width: 40%;
+    width: 34%;
     padding: 20px 30px 0px 18px;
-    background: none repeat scroll 0% 0% rgba(134, 24, 131, 0.8);
-    color: rgb(255, 255, 255);
+    color: #FFF;
     text-align: left;
     position: fixed;
-    right: 0px;
-    z-index: 101;
     overflow-y: auto;
     overflow-x: hidden;
-    border-bottom: 2px solid;
+    z-index: 1003;
+    bottom: 0%;
+    left: 0%;
+    height: 85%;
+    background: none repeat scroll 0% 0% rgba(134, 24, 131, 0.8);
+}
 }
 #blog-content {
-    float: right;
-    height: 55%;
-    width: 40%;
-    padding: 20px 30px 0px 18px;
-    background: none repeat scroll 0% 0% rgba(134, 24, 131, 0.8);
-    color: rgb(255, 255, 255);
-    text-align: left;
-    position: fixed;
-    right: 0px;
-    z-index: 101;
-    overflow-y: auto;
-    overflow-x: hidden;
-    border-bottom: 2px solid;
+float: right;
+height: 85%;
+width: 34%;
+padding: 20px 30px 0px 18px;
+background: none repeat scroll 0% 0% rgba(15, 81, 180, 0.82);
+color: #FFF;
+text-align: left;
+position: fixed;
+right: 0px;
+z-index: 1003;
+overflow-y: auto;
+overflow-x: hidden;
+bottom: 0%;
 }
 
 #sobre-content img {

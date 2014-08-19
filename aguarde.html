@@ -286,24 +286,6 @@
     <div id="blog-content">
       <div class="close-blog"> <span class="glyphicon glyphicon-remove-circle"></span></div>
       <div id="all"></div>
-<!--       <h2> Ciclorrotas do Parque Capibaribe + Oficina e debate </h2>
-      <p>
-        Venha pedalar, fotografar, anotar, opinar, discutir e construir o Parque Capibaribe conosco!
-        Convidamos você para a Expedição Ciclorrotas do Parque + Oficina e debate, cujo objetivo é promover a difusão e a discussão pública das ciclorrotas propostas pelo Parque Capibaribe.
-      </p>
-      <p>
-        Serão dois grupos, um partindo da UFPE e outro do Fórum Rodolfo Aureliano (Joana Bezerra), que percorrerrão de maneira simultânea três das rotas cicloviárias presentes no plano preliminar do Parque Capibaribe. Elas terminarão no Parque Santana, onde acontecerá uma oficina e debate sobre os trajetos cicloviários do Parque Capibaribe.
-      </p>
-      <p>
-        <strong> Quando? </strong> <br>
-        Sábado, 14 de junho, das 9h às 14h <br>
-        <strong> Onde? </strong> <br>
-        Pontos de partida: UFPE (Biblioteca Central) ou Fórum Rodolfo Aureliano (Joana Bezerra) <br>
-        Ponto de chegada (oficina e debate): Parque Santana <br>
-        Confirme presença e saiba mais: <a href="www.facebook.com/parquecapibaribe" target="_blank">/parquecapibaribe</a><br>
-        Compartilhe com a hashtag <strong>#CiclorrotaCapibaribe</strong> 
-      </p> -->
-
     </div>
 
     <div id="instagram-content">
@@ -319,14 +301,8 @@
       <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
     </div>
 
-<!-- <ul id='map-ui' class='unselectable'></ul>
-<ul id='map-ui-vi' class='unselectable'></ul>
-<ul id='map-ui-ap' class='unselectable'></ul>
-<ul id='map-ui-tu' class='unselectable'></ul>
-<ul id='map-ui-se' class='unselectable'></ul>
-<ul id='map-ui-project' class='unselectable'></ul>
-<ul id='map-ui-inst' class='unselectable'></ul>
- --><div id="capa">
+<ul id='map-ui' class='unselectable'></ul>
+<div id="capa">
   <img src="images/pc-branco.png">
   <div id="video-capa">
       <!-- <iframe src="//player.vimeo.com/video/93193824?title=0&amp;byline=0&amp;portrait=0&amp;color=c9ff23&amp;autoplay=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> -->
@@ -342,6 +318,86 @@
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 </div>
 
+<script>
+// Layers
+var map = L.map('map', { zoomControl: false, minZoom: 12, maxZoom: 18, maxBounds: [[-7.9,-35.1],[-8.2,-34.70]] }).setView([-8.055, -34.91], 14);
+var ui = document.getElementById('map-ui');
+addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_mapabase/{z}/{x}/{y}.png'), 'a cidade', 1);
+addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_riocompleto/{z}/{x}/{y}.png'), 'o rio', 40);
+addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_rio/{z}/{x}/{y}.png'), 'o rio', 39);
+addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_bairros/{z}/{x}/{y}.png'), 'bairros', 45);
+addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_viario/{z}/{x}/{y}.png'), 'sistema viário', 44);
+addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_quadras/{z}/{x}/{y}.png'), 'quadras', 5);
+
+function addLayer(layer, name, zIndex) {
+    layer
+        .setZIndex(zIndex);
+        // .addTo(map);
+
+    // Create a simple layer switcher that toggles layers on
+    // and off.
+    var item = document.createElement('li');
+    var link = document.createElement('a');
+
+    link.href = '#';
+    // link.className = 'active';
+    link.className = '';
+    link.innerHTML = name;
+
+    // hack to set first map to default.
+
+    if (zIndex == 1) {
+        layer.addTo(map);
+        link.className = 'active';
+        link.className = 'hidden';
+    }
+    if (zIndex == 5) {
+        layer.addTo(map);
+        link.className = 'active';
+        link.className = 'hidden';
+    }
+    if (zIndex == 39) {
+        layer.addTo(map);
+        link.className = 'active';
+        link.className = 'hidden';
+    }
+    if (zIndex == 40) {
+        layer.addTo(map);
+        link.className = 'active';
+        link.className = 'hidden';
+    }
+
+    if (zIndex == 45) {
+        layer.addTo(map);
+        link.className = 'active';
+        link.className = 'hidden';
+    }
+    if (zIndex == 44) {
+        layer.addTo(map);
+        link.className = 'active';
+        link.className = 'hidden';
+    }
+
+
+    // end hack
+
+    link.onclick = function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        if (map.hasLayer(layer)) {
+            map.removeLayer(layer);
+            this.className = '';
+        } else {
+            map.addLayer(layer);
+            this.className = 'active';
+        }
+    };
+
+    item.appendChild(link);
+    ui.appendChild(item);
+}
+</script>
 <script type="text/javascript">
   // get in http://jsfiddle.net/jhfrench/NQ97h/
   $('#tabProject a').click(function (e) {
