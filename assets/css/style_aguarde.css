@@ -63,10 +63,10 @@ color: #fff;
     margin-top: 1em;
 }
 #facebook {
-    position: fixed;
-    bottom: 0.28em;
-    left: 120px;
-    z-index: 1000;
+position: fixed;
+z-index: 1003;
+top: 11%;
+right: 1em;
 }
 
 #twitter {
@@ -691,7 +691,7 @@ bottom: 0%;
     position:fixed;
     cursor:pointer;
     font-size: 1.2em;
-    /*display: none;*/
+    display: none;
 }
 
 /*#t1-content, #t2-content, #t3-content, #t4-content, #ff-content {
