@@ -637,21 +637,6 @@ left: 34%;
 bottom: 0%;
 }
 #sobre-content {
-    float: right;
-    width: 34%;
-    padding: 20px 30px 0px 18px;
-    color: #FFF;
-    text-align: left;
-    position: fixed;
-    overflow-y: auto;
-    overflow-x: hidden;
-    z-index: 1003;
-    bottom: 0%;
-    left: 0%;
-    height: 85%;
-    background: none repeat scroll 0% 0% rgba(134, 24, 131, 0.8);
-}
-#blog-content {
 width: 40%;
 padding: 20px 30px 0px 18px;
 color: #FFF;
@@ -664,6 +649,21 @@ bottom: 0%;
 left: 30%;
 height: 85%;
 background: none repeat scroll 0% 0% rgba(0, 0, 0, 0.8);
+}
+#blog-content {
+float: right;
+height: 85%;
+width: 34%;
+padding: 20px 30px 0px 18px;
+background: none repeat scroll 0% 0% rgba(15, 81, 180, 0.82);
+color: #FFF;
+text-align: left;
+position: fixed;
+right: 0px;
+z-index: 1003;
+overflow-y: auto;
+overflow-x: hidden;
+bottom: 0%;
 }
 
 #sobre-content img {
