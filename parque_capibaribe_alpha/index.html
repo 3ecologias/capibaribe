@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Parque Capibaribe - Caminho das Capivaras.</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
+  <meta name="description" content="Iniciativa que promove diretrizes de articulação entre o Rio Capibaribe e os espaços urbanos, conectando as bordas/margens com equipamentos existentes na cidade e espaços de área verde, criando ciclovias e interligando vias de ônibus com uma nova experiência de articulação modal de transporte.">
+  <meta name="keywords" content="Rio Capibaribe,Parque Capibaribe, Mapas, Recife">
+  <meta name="author" content="3Ecologias.net">
+  <meta charset=utf-8 />
+  <!-- css and icons -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href='css/style_aguarde.css' rel='stylesheet' />
+  <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+  <!-- For iPad with high-resolution Retina display running iOS ≥ 7: -->
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="assets/apple-touch-icon-152x152-precomposed.png">
+  <!-- For iPad with high-resolution Retina display running iOS ≤ 6: -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/apple-touch-icon-144x144-precomposed.png">
+  <!-- For iPhone with high-resolution Retina display running iOS ≥ 7: -->
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="assets/apple-touch-icon-120x120-precomposed.png">
+  <!-- For iPhone with high-resolution Retina display running iOS ≤ 6: -->
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/apple-touch-icon-114x114-precomposed.png">
+  <!-- For the iPad mini and the first- and second-generation iPad on iOS ≥ 7: -->
+  <link rel="apple-touch-icon-precomposed" sizes="76x76" href="assets/apple-touch-icon-76x76-precomposed.png">
+  <!-- For the iPad mini and the first- and second-generation iPad on iOS ≤ 6: -->
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/apple-touch-icon-72x72-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="assets/apple-touch-icon-57x57-precomposed.png">
+  <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+  <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png">
+
+  <!-- leaflet plugins -->
+  <link rel="stylesheet" type="text/css" href="js/leaflet.css">
+  <link rel="stylesheet" type="text/css" href="css/MarkerCluster.css">
+  <link rel="stylesheet" type="text/css" href="css/MarkerCluster.Default.css">
+  <link rel="stylesheet" type="text/css" href="css/leaflet.photomarker.css">
+  <link rel="stylesheet" type="text/css" href="css/leaflet.draw.css">
+  <script type="text/javascript" src="js/leaflet.js"></script>
+  <script type="text/javascript" src="js/leaflet.markercluster-src.js"></script>
+  <script type="text/javascript" src="js/PhotoMarkerMatrix.js"></script>
+  <script type="text/javascript" src="js/PhotoIcon.js"></script>
+  <script type="text/javascript" src="js/PhotoMarker.js"></script>
+  <script type="text/javascript" src="js/leaflet.draw.js"></script>
+  <script src="http://danzel.github.io/Leaflet.utfgrid/src/leaflet.utfgrid.js"></script>
+
+  <!-- Bootstrap, jQuery, Scripts -->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/capibaribe.js"></script>
+  <script src="js/jquery.tumblr-kit.min.js"></script>
+  <script src="http://borismoore.github.com/jsrender/jsrender.js"></script>
+  <script type="text/javascript" src="js/instafeed.min.js"></script>
+  <script type="text/javascript" src="js/fancybox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
+  <link rel="stylesheet" href="js/fancybox/source/jquery.fancybox.css" type="text/css" media="screen" />
+  <script type="text/javascript" src="js/fancybox/source/jquery.fancybox.pack.js"></script>
+
+  <script>
+      var TUMBLR_API_KEY = "qz5zBeyiO9gTJxUIhlH7bLVZXo88xafsjDxGTElGPBYW2wCRYE";
+      var TUMBLR_HOSTNAME = "parquecapibaribe.tumblr.com";
+
+      // On DOM Ready, perform these actions
+      $(function() {
+
+        function cyclePhotosets() {
+          // Cycle images in photosets
+          $(".photoset:not(.processed)").each(function() {
+            var me = $(this);
+            me.cycle();
+            me.imagesLoaded(function() {
+              me.height(me.find("img").first().height());
+            });
+            me.addClass("processed");
+          });
+        }
+
+        // Example Tumblr Kit usage
+
+        $("#all").getTumblrPosts({
+          limit: 20,
+          done: cyclePhotosets
+        });
+
+      });
+
+    </script>
+
+<script type="text/javascript">
+    var parqueFeed = new Instafeed({
+        target: 'parquecapibaribe',
+        get: 'tagged',
+        tagName: 'capibaribe',
+        clientId: 'ead3f7bcfe2947aeaa730362c007a1cd',
+        resolution: 'standard_resolution',
+        limit: 60,
+        template: '<a class="fancybox" rel="galeria" href="{{image}}" title="{{caption}}, {{likes}} likes"><img src="{{image}}" /></a>'
+    });
+    // var faunaFeed = new Instafeed({
+    //     target: 'capibaribevivo',
+    //     get: 'tagged',
+    //     tagName: 'capibaribevivo',
+    //     clientId: 'ead3f7bcfe2947aeaa730362c007a1cd',
+    //     resolution: 'standard_resolution',
+    //     limit: 60,
+    //     template: '<a class="fancybox" rel="galeria" href="{{image}}" title="{{caption}}, {{likes}} likes"><img src="{{image}}" /></a>'
+    // });
+    parqueFeed.run();
+    // faunaFeed.run();
+</script>
+
+</head>
+
+<body>
+<!-- <div id='map'></div> -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=692909837439689";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<header>
+<nav class="navbar navbar-default unselectable" role="navigation">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="#"><img src="images/logo2.png" class="img-responsive"></a>
+  </div>
+</nav>
+</header>
+
+
+<div id="social">
+  <div id="instagram"><a href="#"><img src="images/instagram.png" class="img-responsive"></a></div>
+  <div id="flickr"><a href="#"><img src="images/flickr.png" class="img-responsive"></a> </div>
+</div>
+
+</div>
+<script id="tmpl-audio" type="text/x-jsrender">
+      <article id="post-{{:id}}" class="post-{{:type}}">
+        {{if track_name || artist || album}}
+          <h1>
+            {{:track_name}}
+            {{if artist}} by {{:artist}}{{/if}}
+            {{if album}} from &lsquo;{{:album}}&rsquo;
+              {{if year}}({{:year}}){{/if}}
+            {{/if}}
+          </h1>
+        {{/if}}
+
+        {{:~getTintedAudioPlayer(#view, "#DDDDDD")}}
+
+        {{if plays}}<p>{{:plays}} plays</p>{{/if}}
+
+        {{:source}}
+
+        {{for #data tmpl="#tmpl-metadata"/}}
+      </article>
+    </script>
+
+    <script id="tmpl-chat" type="text/x-jsrender">
+      <article id="post-{{:id}}" class="post-{{:type}}">
+        <h1>{{:title}}</h1>
+
+        {{if dialogue}}
+          <ul class="chat">
+            {{for dialogue}}<li><strong>{{:label}}</strong> {{:phrase}}</li>{{/for}}
+          </ul>
+        {{/if}}
+
+        {{for #data tmpl="#tmpl-metadata"/}}
+      </article>
+    </script>
+
+    <script id="tmpl-link" type="text/x-jsrender">
+      <article id="post-{{:id}}" class="post-{{:type}}">
+        <h1><a href="{{:url}}">{{:title}}</a></h1>
+
+        {{:description}}
+
+        {{for #data tmpl="#tmpl-metadata"/}}
+      </article>
+    </script>
+
+    <script id="tmpl-photo" type="text/x-jsrender">
+      <article id="post-{{:id}}" class="post-{{:type}}">
+        {{:caption}}
+
+        {{for #data tmpl="#tmpl-metadata"/}}
+        
+        {{if photoset_layout}}
+          <ul class="photoset">
+            {{for photos}}<li class="blog-gallery"><a class="fancybox" href="{{:~getPhotoURL(#view, 500)}}" rel="blog"><img src="{{:~getPhotoURL(#view, 150)}}" /></a></li>{{/for}}
+          </ul>
+        {{else}}
+          <img src="{{for photos}}{{:~getPhotoURL(#view, 500)}}{{/for}}" />
+        {{/if}}
+
+      </article>
+    </script>
+
+    <script id="tmpl-quote" type="text/x-jsrender">
+      <article id="post-{{:id}}" class="post-{{:type}}">
+        <h1>{{:text}}</h1>
+
+        {{:source}}
+
+        {{for #data tmpl="#tmpl-metadata"/}}
+      </article>
+    </script>
+
+    <script id="tmpl-text" type="text/x-jsrender">
+      <article id="post-{{:id}}" class="post-{{:type}}">
+        <h1>{{:title}}</h1>
+
+        {{:body}}
+
+        {{for #data tmpl="#tmpl-metadata"/}}
+      </article>
+    </script>
+
+    <script id="tmpl-video" type="text/x-jsrender">
+      <article id="post-{{:id}}" class="post-{{:type}}">
+        {{:~getVideoEmbed(#view, 500)}}
+
+        {{:caption}}
+
+        {{for #data tmpl="#tmpl-metadata"/}}
+      </article>
+    </script>
+
+    <!-- Additional Metadata / Tag templates to avoid repetition of code -->
+
+    <script id="tmpl-metadata" type="text/x-jsrender">
+      {{if note_count > 0}}<p><small><a href="{{:post_url}}#notes">{{:note_count}} notes</a></small></p>{{/if}}
+
+      {{if tags}}<ul class="tags">{{for tags tmpl="#tmpl-tag"/}}</ul>{{/if}}
+    </script>
+
+    <script id="tmpl-tag" type="text/x-jsrender">
+      <li><a href="http://{{:~getHostname()}}/tagged/{{:#data}}">{{:#data}}</a></li>
+    </script>
+
+    <!-- Container elements to render posts into -->
+    <div id="sobre-content">
+      <div class="close-sobre"> <span class="glyphicon glyphicon-remove-circle"></span></div>
+      <h1> O que é o Parque Capibaribe? </h1>
+
+      <p>
+
+      Iniciativa que promove diretrizes de articulação entre o Rio Capibaribe e os espaços urbanos, conectando as bordas/margens com equipamentos existentes na cidade e espaços de área verde, criando ciclovias e interligando vias de ônibus com uma nova experiência de articulação modal de transporte. Com isso, o Parque Capibaribe promove tambem uma mudança de mentalidade da população em relação ao rio, lançando um olhar inovador para as inúmeras possibilidades de ações nas águas do Capibaribe. </p>
+
+      <h1> O rio que queremos </h1>
+      <p>
+        Ao transformar o Recife em uma cidade-parque, o Parque Capibaribe visa elevar a taxa de área verde pública, que hoje é de 1,2 metros quadrados por habitante. Planeja-se mudar este dado para 20 metros quadrados por habitante em 2037, quando o Recife completa 500 anos.
+      </p>
+      <p><img src="images/sobre_av.jpg"></p>
+      <p>
+        O projeto do Parque Capibaribe visa envolver mais de um terço da área da cidade. Isso porque o Parque não foi apenas pensado como linha, em seus 30 km de extensão. Ele trabalha com pelo menos 500 metros ao redor de cada margem, o que delimita 7250 hectares de área de influência. Assim, o Parque Capibaribe influenciará 35 bairros, que vão gradualmente se transformar em bairros-parque, atingindo 400 mil habitantes do Recife. 
+      </p>
+      <p><img src="images/sobre_br.jpg"></p>
+
+
+      <h1> Equipe Transdisciplinar </h1>
+
+      <p>
+
+      De base multidisciplinar, este convênio reúne grupos de pesquisa de excelência em várias áreas de conhecimento e instituições de ensino, como engenharia, sociologia, biologia, recursos hídricos, agronomia, botânica, resíduos sólidos, paisagismo, habitação, estudos espaciais de morfologia, ergonomia, como também grupos ligados à mobilidade urbana, desenvolvimento sustentável e desenho urbano voltado à concepção de espaços públicos de qualidade. </p>
+
+      <h1> Diálogo com a população </h1>
+      <p>
+      Associados a esse corpo teórico e prático especializado, estão sendo desenvolvidos dispositivos de conhecimento para diálogo com a população, como por exemplo a promoção de workshops onde os moradores são convidados a experimentar ideias a serem implantadas nas bordas do rio, como também a criação desta plataforma aberta e georreferenciada para a construção de uma conscientização coletiva, colaborativa e democrática, verificando assim se as ideias propostas têm aderência ao que a população das margens e arredores do Capibaribe realmente necessita. </p>
+
+      <h1><a href="http://facebook.com/parquecapibaribe" target="_blank"><img class="fanpage" src="images/face.png">/parquecapibaribe</a></h1>
+
+
+      <p>
+      Esta plataforma é um produto do Parque Capibaribe - Caminho das Capivaras, convênio de cooperação técnica entre a Prefeitura da Cidade do Recife (PCR), através da Secretaria do Meio Ambiente e Sustentabilidade do Recife (SEMAS) e a Universidade Federal de Pernambuco (UFPE). </p><br>
+      <p><img src="images/marcas.png"></p>
+    </div>
+
+    <!-- <div id="blog-content">
+      <div class="close-blog"> <span class="glyphicon glyphicon-remove-circle"></span></div>
+      <div id="all"></div>
+    </div> -->
+
+    <!-- <div id="instagram-content">
+      <div class="close-insta"><span class="glyphicon glyphicon-remove-circle"></span></div>
+      <h1>#capibaribe</h1>
+      <div id="parquecapibaribe"></div>
+    </div> -->
+
+    <div id="twitter-content">
+      <div class="close-twitter"><span class="glyphicon glyphicon-remove-circle"></span></div>
+      <h1>twitter</h1>
+      <a class="twitter-timeline" href="https://twitter.com/pcapibaribe" data-widget-id="427991570600570880" data-chrome="noheader nofooter noborders noscrollbar transparent">Tweets de @pcapibaribe</a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    </div>
+
+<ul id='map-ui' class='unselectable'></ul>
+<div id="capa">
+  <img src="images/pc-branco.png">
+  <div id="video-capa">
+      <!-- <iframe src="//player.vimeo.com/video/93193824?title=0&amp;byline=0&amp;portrait=0&amp;color=c9ff23&amp;autoplay=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> -->
+      <!-- <iframe width="560" height="315" src="//www.youtube.com/embed/tlPAJeqStzg?rel=0" frameborder="0" allowfullscreen></iframe> -->
+  </div>
+</div>
+<div id="facebook" class="fb-share-button" data-href="http://parquecapibaribe.org" data-type="button_count"></div>
+<div id="twitter"><a href="https://twitter.com/share" class="twitter-share-button" data-url="http://parquecapibaribe.org" data-text="Conheça a plataforma do Projeto Parque Capibaribe" data-lang="pt" data-hashtags="capibaribe">Tweetar</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+</div>
+
+<script>
+// Layers
+var map = L.map('map', { zoomControl: false, minZoom: 12, maxZoom: 18, maxBounds: [[-7.9,-35.1],[-8.2,-34.70]] }).setView([-8.055, -34.91], 14);
+var ui = document.getElementById('map-ui');
+addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_mapabase/{z}/{x}/{y}.png'), 'a cidade', 1);
+addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_riocompleto/{z}/{x}/{y}.png'), 'o rio', 40);
+addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_rio/{z}/{x}/{y}.png'), 'o rio', 39);
+addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_bairros/{z}/{x}/{y}.png'), 'bairros', 45);
+addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_viario/{z}/{x}/{y}.png'), 'sistema viário', 44);
+addLayer(L.tileLayer('http://mapas.3ecologias.net:8888/v2/capibaribe_quadras/{z}/{x}/{y}.png'), 'quadras', 5);
+
+function addLayer(layer, name, zIndex) {
+    layer
+        .setZIndex(zIndex);
+        // .addTo(map);
+
+    // Create a simple layer switcher that toggles layers on
+    // and off.
+    var item = document.createElement('li');
+    var link = document.createElement('a');
+
+    link.href = '#';
+    // link.className = 'active';
+    link.className = '';
+    link.innerHTML = name;
+
+    // hack to set first map to default.
+
+    if (zIndex == 1) {
+        layer.addTo(map);
+        link.className = 'active';
+        link.className = 'hidden';
+    }
+    if (zIndex == 5) {
+        layer.addTo(map);
+        link.className = 'active';
+        link.className = 'hidden';
+    }
+    if (zIndex == 39) {
+        layer.addTo(map);
+        link.className = 'active';
+        link.className = 'hidden';
+    }
+    if (zIndex == 40) {
+        layer.addTo(map);
+        link.className = 'active';
+        link.className = 'hidden';
+    }
+
+    if (zIndex == 45) {
+        layer.addTo(map);
+        link.className = 'active';
+        link.className = 'hidden';
+    }
+    if (zIndex == 44) {
+        layer.addTo(map);
+        link.className = 'active';
+        link.className = 'hidden';
+    }
+
+
+    // end hack
+
+    link.onclick = function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        if (map.hasLayer(layer)) {
+            map.removeLayer(layer);
+            this.className = '';
+        } else {
+            map.addLayer(layer);
+            this.className = 'active';
+        }
+    };
+
+    item.appendChild(link);
+    ui.appendChild(item);
+}
+</script>
+<script type="text/javascript">
+  // get in http://jsfiddle.net/jhfrench/NQ97h/
+  $('#tabProject a').click(function (e) {
+    e.preventDefault();
+    $(this).tab('show');
+  });
+
+</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-49491832-1', 'parquecapibaribe.org');
+  ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>
