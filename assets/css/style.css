@@ -871,6 +871,10 @@ color: #fff;
     z-index: 1;
 }
 
+#social div{
+    padding-bottom: 0.5em;
+}
+
 #sobre, #sckm, .influencia, .parques, .noticias, .verdes, .fauna, .riachos, .ciclovias, .bicicletas, .fluviais, .escolas, .equipamentos, .aglomerados, .densidade, .renda, .vitalidades {
     display: block;
     padding-bottom: 0.5em;
