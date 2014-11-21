@@ -606,14 +606,15 @@ color: #fff;
 
 #sobre-content, #instagram-content, #blog-content, #twitter-content, #se-content, #t1-content, #t2-content, #t3-content, #t4-content, #ff-content  {
     float: right;
-    height: 55%;
-    width: 40%;
+    height: 80%;
+    width: 80%;
     padding: 20px 30px 0px 18px;
     background: none repeat scroll 0% 0% rgba(134, 24, 131, 0.8);
     color: rgb(255, 255, 255);
     text-align: left;
     position: fixed;
-    right: 0px;
+    right: 10%;
+    box-shadow: 10px 10px 25px #000;
     display: none;
     z-index: 101;
     overflow-y: auto;
