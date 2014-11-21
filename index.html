@@ -135,8 +135,10 @@
 
 
 <div id="social">
+  <div id="escolas"><a href="#"><img src="assets/images/icones/icones-parquecapibaribe-arte-10.svg" class="img-responsive"></a></div>
   <div id="fluviais"><a href="#"><img src="assets/images/icones/icones-parquecapibaribe-arte-10.svg" class="img-responsive"></a></div>
   <div id="ciclovias"><a href="#"><img src="assets/images/icones/icones-parquecapibaribe-arte-08.svg" class="img-responsive"></a></div>
+  <div id="estacoesbikes"><a href="#"><img src="assets/images/icones/icones-parquecapibaribe-arte-09.svg" class="img-responsive"></a></div>
   <div id="areaverde"><a href="#"><img src="assets/images/icones/icones-parquecapibaribe-arte-06.svg" class="img-responsive"></a></div>
   <div id="riachos"><a href="#"><img src="assets/images/icones/icones-parquecapibaribe-arte-05.svg" class="img-responsive"></a></div>
   <div id="instagram"><a href="#"><img src="assets/images/icones/icones-parquecapibaribe-arte-18.svg" class="img-responsive"></a></div>
@@ -1050,7 +1052,7 @@ function addLayerTu(layer, name, zIndex) {
 
     // invoke bikes e ciclovias
     if (zIndex == 43) {
-      link.className = 'bike';
+      link.className = 'hidden';           
       $( "#ciclovias" ).click(function() {
           if (map.hasLayer(layer)) {
               map.removeLayer(layer);
@@ -1063,8 +1065,21 @@ function addLayerTu(layer, name, zIndex) {
 
     }
 
-        // invoke bikes e ciclovias
+    if (zIndex == 47) {
+      link.className = 'hidden';
+      $( "#estacoesbikes" ).click(function() {
+          if (map.hasLayer(layer)) {
+              map.removeLayer(layer);
+              // this.className = '';
+          } else {
+              map.addLayer(layer);
+              // this.className = 'active';
+          }
+      });
+
+    }
     if (zIndex == 50) {
+      link.className = 'hidden';
       $( "#fluviais" ).click(function() {
           if (map.hasLayer(layer)) {
               map.removeLayer(layer);
@@ -1076,6 +1091,21 @@ function addLayerTu(layer, name, zIndex) {
       });
 
     }
+    if (zIndex == 53) {
+      link.className = 'hidden';
+      $( "#escolas" ).click(function() {
+          if (map.hasLayer(layer)) {
+              map.removeLayer(layer);
+              // this.className = '';
+          } else {
+              map.addLayer(layer);
+              // this.className = 'active';
+          }
+      });
+
+    }
+
+   
 
 
     // end hack
