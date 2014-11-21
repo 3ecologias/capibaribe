@@ -135,7 +135,8 @@
 
 
 <div id="social">
-  <div id="escolas"><a href="#"><img src="assets/images/icones/icones-parquecapibaribe-arte-10.svg" class="img-responsive"></a></div>
+  <div id="parques"><a href="#"><img src="assets/images/icones/icones-parquecapibaribe-arte-15.svg" class="img-responsive"></a></div>
+  <div id="escolas"><a href="#"><img src="assets/images/icones/icones-parquecapibaribe-arte-15.svg" class="img-responsive"></a></div>
   <div id="fluviais"><a href="#"><img src="assets/images/icones/icones-parquecapibaribe-arte-10.svg" class="img-responsive"></a></div>
   <div id="ciclovias"><a href="#"><img src="assets/images/icones/icones-parquecapibaribe-arte-08.svg" class="img-responsive"></a></div>
   <div id="estacoesbikes"><a href="#"><img src="assets/images/icones/icones-parquecapibaribe-arte-09.svg" class="img-responsive"></a></div>
@@ -1168,6 +1169,20 @@ function addLayerVi(layer, name, zIndex) {
       // link.className = 'active';
       link.className = 'hidden';
     }
+
+    if (zIndex == 50) {
+      link.className = 'hidden';
+      $( "#parques" ).click(function() {
+          if (map.hasLayer(layer)) {
+              map.removeLayer(layer);
+              // this.className = '';
+          } else {
+              map.addLayer(layer);
+              // this.className = 'active';
+          }
+      });
+    }
+
     if (zIndex == 203) {
       layer.addTo(map);
       // link.className = 'active';
