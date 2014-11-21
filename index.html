@@ -969,15 +969,16 @@ function addLayerAp(layer, name, zIndex) {
     }
 
     if (zIndex == 39) {
-        layer.addTo(map);
-        link.className = 'active';
-        $("#legend-02").fadeToggle( "slow", "linear" );
+        //layer.addTo(map);
+        //link.className = 'active';
+        
         $( "#areaverde" ).click(function() {
           if (map.hasLayer(layer)) {
               map.removeLayer(layer);
               // this.className = '';
           } else {
               map.addLayer(layer);
+              $("#legend-02").fadeToggle( "slow", "linear" );
               // this.className = 'active';
           }
       });
