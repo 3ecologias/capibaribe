@@ -867,7 +867,7 @@ color: #fff;
 #menu, #social {
     position: fixed;
     bottom: 180px;
-    left: 20px;
+    right: 20px;
     z-index: 1;
 }
 
