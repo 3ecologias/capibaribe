@@ -135,6 +135,7 @@
 
 
 <div id="social">
+  <div id="fluviais"><a href="#"><img src="assets/images/icones/icones-parquecapibaribe-arte-10.svg" class="img-responsive"></a></div>
   <div id="ciclovias"><a href="#"><img src="assets/images/icones/icones-parquecapibaribe-arte-08.svg" class="img-responsive"></a></div>
   <div id="areaverde"><a href="#"><img src="assets/images/icones/icones-parquecapibaribe-arte-06.svg" class="img-responsive"></a></div>
   <div id="riachos"><a href="#"><img src="assets/images/icones/icones-parquecapibaribe-arte-05.svg" class="img-responsive"></a></div>
@@ -1061,6 +1062,22 @@ function addLayerTu(layer, name, zIndex) {
       });
 
     }
+
+        // invoke bikes e ciclovias
+    if (zIndex == 50) {
+      $( "#fluviais" ).click(function() {
+          if (map.hasLayer(layer)) {
+              map.removeLayer(layer);
+              // this.className = '';
+          } else {
+              map.addLayer(layer);
+              // this.className = 'active';
+          }
+      });
+
+    }
+
+
     // end hack
 
     link.onclick = function(e) {
