@@ -119,7 +119,8 @@
 }(document, 'script', 'facebook-jssdk'));</script>
 
 <div id="social">
-  <div id="areaverde" data-toggle="tooltip" data-placement="left" title="Área Verde"><a href="#"><img src="assets/images/icones/icones-parquecapibaribe-arte-06.svg" class="img-responsive"></a></div>
+  <div id="areainfluencia" data-toggle="tooltip" data-placement="left" title="Áreas de Influência"><a href="#"><img src="assets/images/icones/icones-parquecapibaribe-arte-01.svg" class="img-responsive"></a></div>
+  <div id="areaverde" data-toggle="tooltip" data-placement="left" title="Áreas Verdes"><a href="#"><img src="assets/images/icones/icones-parquecapibaribe-arte-06.svg" class="img-responsive"></a></div>
   <div id="parques" data-toggle="tooltip" data-placement="left" title="Parques"><a href="#"><img src="assets/images/icones/icones-parquecapibaribe-arte-16.svg" class="img-responsive"></a></div>
   <div id="riachos" data-toggle="tooltip" data-placement="left" title="Riachos"><a href="#"><img src="assets/images/icones/icones-parquecapibaribe-arte-05.svg" class="img-responsive"></a></div>
   <div id="ciclovias" data-toggle="tooltip" data-placement="left" title="Ciclovias"><a href="#"><img src="assets/images/icones/icones-parquecapibaribe-arte-08.svg" class="img-responsive"></a></div>
@@ -1132,24 +1133,16 @@ function addLayerVi(layer, name, zIndex) {
     link.className = '';
     link.innerHTML = name;
 
-    if (zIndex == 103) {
-        link.className = 'menu';                
-    }
-
-    // if (zIndex == 3) {
-    //     layer.addTo(map);
-    //     link.className = 'active';
-    // }
-
-    if (zIndex == 201) {
-      // $( "#blog-content" ).slideToggle( "slow" );
-      // link.className = 'active';
-    }
-
-    if (zIndex == 202) {
-      // $( "#instagram-content" ).slideToggle( "slow" );
-      // link.className = 'active';
-      link.className = 'hidden';
+    if (zIndex == 2) {
+      $( "#areainfluencia" ).click(function() {
+          if (map.hasLayer(layer)) {
+              map.removeLayer(layer);
+              // this.className = '';
+          } else {
+              map.addLayer(layer);
+              // this.className = 'active';
+          }
+      });
     }
 
     if (zIndex == 50) {
