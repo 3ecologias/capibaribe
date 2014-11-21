@@ -64,14 +64,14 @@ color: #fff;
 }
 #facebook {
     position: fixed;
-    bottom: 0.28em;
+    top: 0.28em;
     left: 120px;
     z-index: 1000;
 }
 
 #twitter {
     position: fixed;
-    bottom: -0.1em;
+    top: -0.1em;
     left: 208px;
     z-index: 1000;
 }
