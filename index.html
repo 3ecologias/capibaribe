@@ -1048,7 +1048,17 @@ function addLayerTu(layer, name, zIndex) {
     }
 
     if (zIndex == 45) {
-        link.className = 'ciclovia';               
+        //link.className = 'ciclovia';
+      link.className = 'hidden';
+      $( "#estacoesbikes" ).click(function() {
+          if (map.hasLayer(layer)) {
+              map.removeLayer(layer);
+              // this.className = '';
+          } else {
+              map.addLayer(layer);
+              // this.className = 'active';
+          }
+      });               
     }
 
     // invoke bikes e ciclovias
@@ -1066,20 +1076,7 @@ function addLayerTu(layer, name, zIndex) {
 
     }
 
-    if (zIndex == 47) {
-      link.className = 'hidden';
-      $( "#estacoesbikes" ).click(function() {
-          if (map.hasLayer(layer)) {
-              map.removeLayer(layer);
-              // this.className = '';
-          } else {
-              map.addLayer(layer);
-              // this.className = 'active';
-          }
-      });
-
-    }
-    if (zIndex == 50) {
+   if (zIndex == 50) {
       link.className = 'hidden';
       $( "#fluviais" ).click(function() {
           if (map.hasLayer(layer)) {
