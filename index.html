@@ -135,6 +135,7 @@
 
 
 <div id="social">
+  <div id="areaverde"><a href="#"><img src="assets/images/icones/icones-parquecapibaribe-arte-06.svg" class="img-responsive"></a></div>
   <div id="riachos"><a href="#"><img src="assets/images/icones/icones-parquecapibaribe-arte-05.svg" class="img-responsive"></a></div>
   <div id="instagram"><a href="#"><img src="assets/images/icones/icones-parquecapibaribe-arte-18.svg" class="img-responsive"></a></div>
   <div id="flickr"><a href="#"><img src="assets/images/icones/icones-parquecapibaribe-arte-19.svg" class="img-responsive"></a> </div>
@@ -966,6 +967,15 @@ function addLayerAp(layer, name, zIndex) {
         layer.addTo(map);
         link.className = 'active';
         $("#legend-02").fadeToggle( "slow", "linear" );
+        $( "#areaverde" ).click(function() {
+          if (map.hasLayer(layer)) {
+              map.removeLayer(layer);
+              // this.className = '';
+          } else {
+              map.addLayer(layer);
+              // this.className = 'active';
+          }
+      });
     }
 
     if (zIndex == 20) {
