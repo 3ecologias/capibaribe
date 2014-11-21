@@ -118,22 +118,6 @@
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
-<header>
-<nav class="navbar navbar-default unselectable" role="navigation">
-  <!-- Brand and toggle get grouped for better mobile display -->
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-    <a class="navbar-brand" href="#"><img src="assets/images/logo2.png" class="img-responsive"></a>
-  </div>
-</nav>
-</header>
-
-
 <div id="social">
   <div id="areaverde" data-toggle="tooltip" data-placement="left" title="Área Verde"><a href="#"><img src="assets/images/icones/icones-parquecapibaribe-arte-06.svg" class="img-responsive"></a></div>
   <div id="parques" data-toggle="tooltip" data-placement="left" title="Parques"><a href="#"><img src="assets/images/icones/icones-parquecapibaribe-arte-16.svg" class="img-responsive"></a></div>
@@ -846,28 +830,6 @@ $.getJSON('https://api.flickr.com/services/rest/?jsoncallback=?', {
 
 L.control.scale({ position: 'bottomleft' }).addTo(map);
 new L.Control.Zoom({ position: 'bottomleft' }).addTo(map);
-
-var legend = L.control({position: 'topleft'});  
-    legend.onAdd = function (map) {
-
-    var div = L.DomUtil.create('div', 'info legend'),
-        grades = [50, 100, 150, 200, 250, 300],
-        labels = ['<strong> THE TITLE </strong>'],
-        from, to;
-
-    for (var i = 0; i < grades.length; i++) {
-        from = grades [i];
-        to = grades[i+1]-1;
-
-    labels.push(
-        '<i style="background:' + getColor(from + 1) + '"></i> ' +
-        from + (to ? '&ndash;' + to : '+'));
-        }
-        div.innerHTML = labels.join('<br>');
-        return div;
-
-
-        };
 
 // Layers
 var ui = document.getElementById('map-ui');
