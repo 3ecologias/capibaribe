@@ -618,8 +618,7 @@ color: #fff;
     display: none;
     z-index: 101;
     overflow-y: auto;
-    overflow-x: hidden;
-    border-bottom: 2px solid;
+    overflow-x: hidden;   
 }
 
 #sobre-content img {
@@ -639,7 +638,7 @@ color: #fff;
 
 .close-insta, .close-blog, .close-twitter, .close-sobre, .close-t1, .close-t2, .close-t3, .close-t4, .close-se, .close-ff {
     top: 5px;
-    right: 15px;
+    right: 11.5%;
     width:auto;
     height:auto;
     /*background:#900;*/
