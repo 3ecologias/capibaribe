@@ -52,6 +52,7 @@
   <script type="text/javascript" src="assets/js/fancybox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
   <link rel="stylesheet" href="assets/js/fancybox/source/jquery.fancybox.css" type="text/css" media="screen" />
   <script type="text/javascript" src="assets/js/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script src="assets/js/moment.js"></script>
 
   <script>
       var TUMBLR_API_KEY = "qz5zBeyiO9gTJxUIhlH7bLVZXo88xafsjDxGTElGPBYW2wCRYE";
@@ -129,127 +130,124 @@
   <div id="escolas" data-toggle="tooltip" data-placement="left" title="Escolas"><a href="#"><img src="assets/images/icones/icones-parquecapibaribe-arte-15.svg" class="img-responsive"></a></div>
   <div id="instagram" data-toggle="tooltip" data-placement="left" title="Instagram"><a href="#"><img src="assets/images/icones/icones-parquecapibaribe-arte-18.svg" class="img-responsive"></a></div>
   <div id="flickr" data-toggle="tooltip" data-placement="left" title="Flickr"><a href="#"><img src="assets/images/icones/icones-parquecapibaribe-arte-19.svg" class="img-responsive"></a> </div>
+  <div id="twitter-btn" data-toggle="tooltip" data-placement="left" title="Twitter"><a href="#"><img src="assets/images/icones/icone-parque-capibaribe-twitter.png" class="img-responsive"></a> </div>
 </div>
 
-</div>
 <script id="tmpl-audio" type="text/x-jsrender">
-      <article id="post-{{:id}}" class="post-{{:type}}">
-        {{if track_name || artist || album}}
-          <h1>
-            {{:track_name}}
-            {{if artist}} by {{:artist}}{{/if}}
-            {{if album}} from &lsquo;{{:album}}&rsquo;
-              {{if year}}({{:year}}){{/if}}
-            {{/if}}
-          </h1>
+  <article id="post-{{:id}}" class="post-{{:type}}">
+    {{if track_name || artist || album}}
+      <h1>
+        {{:track_name}}
+        {{if artist}} by {{:artist}}{{/if}}
+        {{if album}} from &lsquo;{{:album}}&rsquo;
+          {{if year}}({{:year}}){{/if}}
         {{/if}}
+      </h1>
+    {{/if}}
 
-        {{:~getTintedAudioPlayer(#view, "#DDDDDD")}}
+    {{:~getTintedAudioPlayer(#view, "#DDDDDD")}}
 
-        {{if plays}}<p>{{:plays}} plays</p>{{/if}}
+    {{if plays}}<p>{{:plays}} plays</p>{{/if}}
 
-        {{:source}}
+    {{:source}}
 
-        {{for #data tmpl="#tmpl-metadata"/}}
-      </article>
-    </script>
+    {{for #data tmpl="#tmpl-metadata"/}}
+  </article>
+</script>
 
-    <script id="tmpl-chat" type="text/x-jsrender">
-      <article id="post-{{:id}}" class="post-{{:type}}">
-        <h1>{{:title}}</h1>
+<script id="tmpl-chat" type="text/x-jsrender">
+  <article id="post-{{:id}}" class="post-{{:type}}">
+    <h1>{{:title}}</h1>
 
-        {{if dialogue}}
-          <ul class="chat">
-            {{for dialogue}}<li><strong>{{:label}}</strong> {{:phrase}}</li>{{/for}}
-          </ul>
-        {{/if}}
+    {{if dialogue}}
+      <ul class="chat">
+        {{for dialogue}}<li><strong>{{:label}}</strong> {{:phrase}}</li>{{/for}}
+      </ul>
+    {{/if}}
 
-        {{for #data tmpl="#tmpl-metadata"/}}
-      </article>
-    </script>
+    {{for #data tmpl="#tmpl-metadata"/}}
+  </article>
+</script>
 
-    <script id="tmpl-link" type="text/x-jsrender">
-      <article id="post-{{:id}}" class="post-{{:type}}">
-        <h1><a href="{{:url}}">{{:title}}</a></h1>
+<script id="tmpl-link" type="text/x-jsrender">
+  <article id="post-{{:id}}" class="post-{{:type}}">
+    <h1><a href="{{:url}}">{{:title}}</a></h1>
 
-        {{:description}}
+    {{:description}}
 
-        {{for #data tmpl="#tmpl-metadata"/}}
-      </article>
-    </script>
+    {{for #data tmpl="#tmpl-metadata"/}}
+  </article>
+</script>
 
-    <script id="tmpl-photo" type="text/x-jsrender">
-      <article id="post-{{:id}}" class="post-{{:type}}">
-        {{:caption}}
+<script id="tmpl-photo" type="text/x-jsrender">
+  <article id="post-{{:id}}" class="post-{{:type}}">
+    {{:caption}}
 
-        {{for #data tmpl="#tmpl-metadata"/}}
-        
-        {{if photoset_layout}}
-          <ul class="photoset">
-            {{for photos}}<li class="blog-gallery"><a class="fancybox" href="{{:~getPhotoURL(#view, 500)}}" rel="blog"><img src="{{:~getPhotoURL(#view, 150)}}" /></a></li>{{/for}}
-          </ul>
-        {{else}}
-          <img src="{{for photos}}{{:~getPhotoURL(#view, 500)}}{{/for}}" />
-        {{/if}}
+    {{for #data tmpl="#tmpl-metadata"/}}
+    
+    {{if photoset_layout}}
+      <ul class="photoset">
+        {{for photos}}<li class="blog-gallery"><a class="fancybox" href="{{:~getPhotoURL(#view, 500)}}" rel="blog"><img src="{{:~getPhotoURL(#view, 150)}}" /></a></li>{{/for}}
+      </ul>
+    {{else}}
+      <img src="{{for photos}}{{:~getPhotoURL(#view, 500)}}{{/for}}" />
+    {{/if}}
 
-      </article>
-    </script>
+  </article>
+</script>
 
-    <script id="tmpl-quote" type="text/x-jsrender">
-      <article id="post-{{:id}}" class="post-{{:type}}">
-        <h1>{{:text}}</h1>
+<script id="tmpl-quote" type="text/x-jsrender">
+  <article id="post-{{:id}}" class="post-{{:type}}">
+    <h1>{{:text}}</h1>
 
-        {{:source}}
+    {{:source}}
 
-        {{for #data tmpl="#tmpl-metadata"/}}
-      </article>
-    </script>
+    {{for #data tmpl="#tmpl-metadata"/}}
+  </article>
+</script>
 
-    <script id="tmpl-text" type="text/x-jsrender">
-      <article id="post-{{:id}}" class="post-{{:type}}">
-        <h1>{{:title}}</h1>
+<script id="tmpl-text" type="text/x-jsrender">
+  <article id="post-{{:id}}" class="post-{{:type}}">
+    <h1>{{:title}}</h1>
 
-        {{:body}}
+    {{:body}}
 
-        {{for #data tmpl="#tmpl-metadata"/}}
-      </article>
-    </script>
+    {{for #data tmpl="#tmpl-metadata"/}}
+  </article>
+</script>
 
-    <script id="tmpl-video" type="text/x-jsrender">
-      <article id="post-{{:id}}" class="post-{{:type}}">
-        {{:~getVideoEmbed(#view, 500)}}
+<script id="tmpl-video" type="text/x-jsrender">
+  <article id="post-{{:id}}" class="post-{{:type}}">
+    {{:~getVideoEmbed(#view, 500)}}
 
-        {{:caption}}
+    {{:caption}}
 
-        {{for #data tmpl="#tmpl-metadata"/}}
-      </article>
-    </script>
+    {{for #data tmpl="#tmpl-metadata"/}}
+  </article>
+</script>
 
-    <!-- Additional Metadata / Tag templates to avoid repetition of code -->
+<!-- Additional Metadata / Tag templates to avoid repetition of code -->
+<script id="tmpl-metadata" type="text/x-jsrender">
+  {{if note_count > 0}}<p><small><a href="{{:post_url}}#notes">{{:note_count}} notes</a></small></p>{{/if}}
 
-    <script id="tmpl-metadata" type="text/x-jsrender">
-      {{if note_count > 0}}<p><small><a href="{{:post_url}}#notes">{{:note_count}} notes</a></small></p>{{/if}}
+  {{if tags}}<ul class="tags">{{for tags tmpl="#tmpl-tag"/}}</ul>{{/if}}
+</script>
 
-      {{if tags}}<ul class="tags">{{for tags tmpl="#tmpl-tag"/}}</ul>{{/if}}
-    </script>
+<script id="tmpl-tag" type="text/x-jsrender">
+  <li><a href="http://{{:~getHostname()}}/tagged/{{:#data}}">{{:#data}}</a></li>
+</script>
 
-    <script id="tmpl-tag" type="text/x-jsrender">
-      <li><a href="http://{{:~getHostname()}}/tagged/{{:#data}}">{{:#data}}</a></li>
-    </script>
+<!-- Container elements to render posts into -->
+<div id="blog-content">
+  <div class="close-blog"> <span class="glyphicon glyphicon-remove-circle"></span></div>
+  <div id="all"></div>
+</div>
 
-    <!-- Container elements to render posts into -->
-    <div id="blog-content">
-      <div class="close-blog"> <span class="glyphicon glyphicon-remove-circle"></span></div>
-      <div id="all"></div>
-    </div>
-
-    <div id="instagram-content">
-      <div class="close-insta"><span class="glyphicon glyphicon-remove-circle"></span></div>
-      <h1>#capibaribe</h1>
-      <div id="parquecapibaribe"></div>
-    </div>
-
-
+<div id="instagram-content">
+  <div class="close-insta"><span class="glyphicon glyphicon-remove-circle"></span></div>
+  <h1>#capibaribe</h1>
+  <div id="parquecapibaribe"></div>
+</div>
 
 <ul id='map-ui' class='unselectable'></ul>
 <ul id='map-ui-vi' class='unselectable'></ul>
@@ -289,7 +287,6 @@
 var map = L.map('map', { zoomControl: false, scrollWheelZoom: false, minZoom: 12, maxZoom: 18, maxBounds: [[-7.9,-35.1],[-8.2,-34.70]] }).setView([-8.055, -34.91], 14);
 
 // Markers and Icons
-
 var futuroIcon = L.icon({
     iconUrl: 'assets/images/icone_futuro.png',
     iconSize:     [50, 76], // size of the icon
@@ -366,6 +363,7 @@ map.on('popupopen', function() {
   // });
 });
 
+// Marker clusters
 var markerFuturo = L.marker([-8.043974892024826, -34.925150871276855], {icon: futuroIcon}).bindPopup('<div id="carouselFuturo" class="carousel slide" data-ride="carousel">' +
   '<ol class="carousel-indicators">' +
     '<li data-target="#carouselFuturo" data-slide-to="0" class="active"></li>' +
@@ -783,6 +781,14 @@ var photo_markers = new L.MarkerClusterGroup({
                 spiderfyOnMaxZoom: true
               });
 
+var tweet_markers = new L.MarkerClusterGroup({
+                showCoverageOnHover: false,
+                spiderfyDistanceMultiplier: 5,
+                maxClusterRadius: 10,
+                zoomToBoundsOnClick: true,
+                spiderfyOnMaxZoom: true
+              });
+
 var baseMaps = {
 };
 
@@ -790,14 +796,15 @@ var overlayMaps = {
     "Parque do Futuro": markerFuturo,
     "Parque do Meio do Mundo": markerMeioMundo,
     "Parque da Cultura": markerCultura,
-    "Fotos da População": photo_markers
+    "Fotos da População": photo_markers,
+    "Tweets": tweet_markers // TODO Sei lá se precisa
 };
 
-
-// Flickr
-
+/*
+ * Flickr Photos
+ ********************/
 // Display the flickr photos
-function display(resp) {
+function displayFlickrPhotos(resp) {
   if ( resp.photos && resp.photos.photo ) {
     photo_markers;
 
@@ -825,9 +832,46 @@ $.getJSON('https://api.flickr.com/services/rest/?jsoncallback=?', {
   per_page: 500,
   extras: 'description, license, date_upload, date_taken, owner_name, icon_server, original_format, last_update, geo, tags, machine_tags, o_dims, views, media, path_alias, url_sq,url_t, url_s, url_q, url_m, url_n, url_z, url_c, url_l, url_o',
   format: 'json'
-}, display);
+}, displayFlickrPhotos);
 
-// end Flickr
+// End Flickr
+
+/*
+ * Twitter
+ ********************/
+// Display the twitter data 
+// TODO latitude e longitue estão vindo trocados do servidor
+$.getJSON('http://parquecapibaribe.meevo.club/wp-admin/admin-ajax.php?action=ws_rio_capibaribe_tweets',
+  function(tweets_data) {
+    if (tweets_data) {
+      tweet_markers;
+
+      $.each(tweets_data, function(id, tweet) {
+        var date = moment(tweet.created_at).format("DD/MM/YYYY [às] HH:mm:ss");
+
+        // User profile image as icon
+        var tweet_icon = L.icon( {
+          iconUrl: tweet.profile_image_url,
+
+          iconSize:     [40, 40],
+          popupAnchor:  [-5, -10]
+        })
+
+        // Tweet marker content
+        var tweet_marker = L.marker([tweet.longitude, tweet.latitude], {icon: tweet_icon})
+          .bindPopup('<h1>'+tweet.tweet_text+'</h1>'
+                    +'<h1>Tweetado por: '+tweet.user_name+' em  ' + date + '</h1>'
+                    +'<h1>'
+                      +'<span class="twitter_icon" title="' + tweet.retweet_count + ' retweets"><img src="assets/images/twitter_retweet_icon.png">' + tweet.retweet_count + '</img>' + '</span>' 
+                      +'<span class="twitter_icon" title="' + tweet.favorite_count + ' pessoas favoritaram"><img src="assets/images/twitter_fav_icon.png">' + tweet.favorite_count + '</img>' + '</span>'
+                    +'</h1>');
+        tweet_markers.addLayer(tweet_marker);
+      });  
+    }
+
+  });
+
+// End Twitter
 
 L.control.scale({ position: 'topleft' }).addTo(map);
 new L.Control.Zoom({ position: 'topleft' }).addTo(map);
@@ -862,6 +906,7 @@ addLayerVi(L.layerGroup([markerFuturo, markerCultura, markerMeioMundo]), 'parque
 addLayerVi(L.tileLayer('#'), '#capibaribe', 202);
 addLayerVi(L.layerGroup([photo_markers]), 'partipação', 203);
 addLayerVi(L.tileLayer('#'), 'notícias', 201);
+addLayerVi(L.layerGroup([tweet_markers]), '#twitter-btn', 666); // Using '#twitter-btn' instead of '#twitter' to avoid conflicts with the "tweet" button
 
 function addLayer(layer, name, zIndex) {
     layer
@@ -969,7 +1014,7 @@ function addLayerAp(layer, name, zIndex) {
     }
 
     if (zIndex == 20) {
-      //layer.addTo(map);
+      // layer.addTo(map);
       // link.className = 'active';
       link.className = 'hidden';
       $( "#riachos" ).click(function() {
@@ -1162,6 +1207,21 @@ function addLayerVi(layer, name, zIndex) {
       // link.className = 'active';
       link.className = 'hidden';
       $( "#flickr" ).click(function() {
+          if (map.hasLayer(layer)) {
+              map.removeLayer(layer);
+              // this.className = '';
+          } else {
+              map.addLayer(layer);
+              // this.className = 'active';
+          }
+      });
+    }
+
+    if (zIndex == 666) {
+      //layer.addTo(map);
+      // link.className = 'active';
+      link.className = 'hidden';
+      $( "#twitter-btn" ).click(function() {
           if (map.hasLayer(layer)) {
               map.removeLayer(layer);
               // this.className = '';
